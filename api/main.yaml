@@ -34,6 +34,8 @@ paths:
                 $ref: "#/components/schemas/SubjectInfoResponse"
   /x/activity/page/list:
     get:
+      servers:
+        - url: https://api.bilibili.com
       tags:
         - 活动
       summary: 获取活动列表
