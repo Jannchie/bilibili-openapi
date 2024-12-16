@@ -12103,7 +12103,9 @@ paths:
         - 昵称检查
       servers:
         - url: https://passport.bilibili.com
-      summary: 检查昵称是否可注册
+      summary: |-
+        检查昵称是否可注册。
+        此接口疑似已经无法正常使用，无论输入是什么，返回值都是 `{"code": 0}`。
       parameters:
         - in: query
           name: nickName
