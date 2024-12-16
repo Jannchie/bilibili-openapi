@@ -23031,19 +23031,19 @@ components:
                 fan:
                   type: object
                   description: 粉丝播放地区情况
-                  properties:
-                    上海:
-                      type: integer
-                      description: 该地区的粉丝播放量, 字段名为行政区名
-                      example: 7
+                  additionalProperties:
+                    type: integer
+                    description: 该地区的粉丝播放量，字段名为行政区名
+                  example:
+                    上海: 7
                 not_fan:
                   type: object
                   description: 路人播放地区情况
-                  properties:
-                    上海:
-                      type: integer
-                      description: 该地区的路人播放量, 字段名为行政区名
-                      example: 28
+                  additionalProperties:
+                    type: integer
+                    description: 该地区的路人播放量，字段名为行政区名
+                  example:
+                    上海: 1
             viewer_base:
               type: object
               description: 播放数据情况
