@@ -22647,16 +22647,18 @@ components:
                 type_rank:
                   type: object
                   description: 分区排名情况
-                  properties:
-                    生活:
-                      type: integer
-                      example: 1392
-                    科技:
-                      type: integer
-                      example: 1597
-                    音乐:
-                      type: integer
-                      example: 105
+                  additionalProperties:
+                    description: 分区排名
+                    example:
+                      生活:
+                        type: integer
+                        example: 1392
+                      科技:
+                        type: integer
+                        example: 1597
+                      音乐:
+                        type: integer
+                        example: 105
     SeasonSectionEpisodesAddResponse:
       type: object
       properties:
