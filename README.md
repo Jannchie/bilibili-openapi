@@ -1,5 +1,7 @@
 # Bilibili OpenAPI
 
+![swagger validator](https://validator.swagger.io/validator/?url=https%3A%2F%2Fraw.githubusercontent.com%2FJannchie%2Fbilibili-openapi%2Frefs%2Fheads%2Fmain%2Fapi%2Fmain.yaml&resolve=true&resolveFully=true&validateInternalRefs=true&validateExternalRefs=true&resolveRequestBody=true&resolveCombinators=true&allowEmptyStrings=true&legacyYamlDeserialization=true&inferSchemaType=true&jsonSchemaValidation=true&legacyJsonSchemaValidation=true)
+
 本项目从 [bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect) 衍生而来，旨在生成一个符合 OpenAPI 3.0 规范的完整文档。通过读取 Markdown 文件，并结合 Gemini、Github Copilot 和 OpenAI 进行分析，手动整理出所需的文档。它将包含大部分接口，并详细说明每个接口的参数和返回值类型。通过自动化工具生成 SDK，期待能减少手动解析 JSON 的繁琐流程。
 
 目前，由于资源限制，已完成约 90% 的文档生成，尚有部分接口待完善。文档尚未进行完（任）整（何）的功能测试，欢迎各位提交 PR 进行改进与完善。
