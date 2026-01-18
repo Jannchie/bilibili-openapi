@@ -1,0 +1,28 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误，1006：请输入正确的短信验证码，1007：短信验证码已过期
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      mid:
+        type: string
+        description: 用户 uid
+      expires_in:
+        type: string
+        description: 过时时间
+      access_token:
+        type: string
+        description: 登录 token
+      refresh_token:
+        type: string
+        description: 刷新 token
+      cookie_info:
+        type: array
+        description: cookie 集合
+        items:
+          type: object

@@ -1,0 +1,12 @@
+type: object
+properties:
+  items:
+    type: array
+    description: 相簿列表
+    items:
+      $ref: ./AlbumIndexItem.yaml
+  total_count:
+    type: integer
+    format: int64
+    description: 总计条目数
+    example: 500

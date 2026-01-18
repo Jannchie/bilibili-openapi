@@ -1,0 +1,13 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，65530：token 错误（登录错误），1：错误
+  data:
+    type: object
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'

@@ -1,0 +1,15 @@
+post:
+  tags:
+    - 积分商城
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 获取当前持有点数
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 当前持有点数
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetUserPointResponse.yaml

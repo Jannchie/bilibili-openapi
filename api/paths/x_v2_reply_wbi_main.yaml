@@ -1,0 +1,72 @@
+get:
+  tags:
+    - 评论区
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: 评论区类型代码, [类型代码见表](readme.md#评论区类型代码)
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 11
+          - 12
+          - 17
+      required: true
+    - name: oid
+      in: query
+      description: 目标评论区 id
+      schema:
+        type: integer
+      required: true
+    - name: mode
+      in: query
+      description: 排序方式, 默认为 3, 0 3:仅按热度 1:按热度+按时间 2:仅按时间
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+    - name: next
+      in: query
+      description: 翻页, 不推荐, 已弃用, 优先级比 `pagination_str` 高
+      schema:
+        type: integer
+    - name: pagination_str
+      in: query
+      description: 分页信息, 见下
+      schema:
+        type: object
+        properties:
+          offset:
+            type: string
+    - name: plat
+      in: query
+      description: 平台类型
+      schema:
+        type: integer
+    - name: seek_rpid
+      in: query
+      description: 空, 当获取第一页评论时存在
+      schema:
+        type: string
+    - name: web_location
+      in: query
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ReplyWbiMainResponse.yaml

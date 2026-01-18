@@ -1,0 +1,195 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      case_id:
+        type: string
+        description: 案件id
+        example: AC2SiaD8jlrL
+      case_type:
+        type: integer
+        description: 任务类型
+        example: 3
+      jury_state:
+        type: integer
+        description: 改版后未见过其它值
+        example: 1
+      participate:
+        type: integer
+        description: 是否投票, 0:未投票 1:已投票
+        example: 1
+      vote_items:
+        type: object
+        description: 投票选项, 见开头「投票选项码总览」
+        properties:
+          vote:
+            type: integer
+            example: 1
+          vote_text:
+            type: string
+            example: 合适
+      default_vote:
+        type: integer
+        description: 默认投票选项, `4`或`14`即`无法判断`
+        example: 4
+      status:
+        type: integer
+        description: 裁决状态(新版), 0:进行中 1:已结束
+        example: 1
+      origin_start:
+        type: integer
+        description: 案件关联视频, 播放进度条起始坐标, 单位:`秒`
+        example: 0
+      avid:
+        type: integer
+        description: 视频av号
+        example: 727792866
+      cid:
+        type: integer
+        description: 弹幕dmid
+        example: 756815216
+      vote_cd:
+        type: integer
+        description: 暂不明确
+        example: -1
+      result:
+        type: integer
+        description: 众议结论, 见开头「投票选项码总览」
+        example: 3
+      result_text:
+        type: string
+        description: 众议结论文本, 见开头「投票选项码总览」
+        example: 不合适
+      title:
+        type: string
+        description: 视频标题
+        example: “国家队”守门员和朋友打赌，谁能在湿滑的地面踢进足球就送美刀
+      case_info:
+        type: object
+        description: 案件信息
+        properties:
+          comment:
+            type: object
+            description: 单条评论信息, 仅当`case_type`为`1`有值. 见「对象:评论信息」
+          danmu_img:
+            type: string
+            description: 弹幕截图, 仅当`case_type`为`4`有值, 截图URL
+            example: ''
+          comments:
+            type: array
+            description: 若干条评论, 仅当`case_type`为`2`有值. 见「对象:评论信息」
+            items:
+              type: object
+          single_danmu:
+            type: object
+            description: 单条弹幕信息, 仅当`case_type`为`3`有值. 见「对象:评论信息」
+            properties:
+              id_str:
+                type: string
+                description: 弹幕dmid
+                example: '1086612690354524160'
+              content:
+                type: string
+                description: 弹幕内容
+                example: 这守门员干啥呢？给块骨头我家狗都比他防的好
+              progress:
+                type: integer
+                description: 尚不明确
+                example: 27859
+      my_point:
+        type: object
+        description: 我的观点, 仅自己投过票才有该字段
+        properties:
+          opid:
+            type: integer
+            description: 观点编号, 每当某个一个风纪委员给某个仲裁案件发表观点, 就+1
+            example: 10001
+          mid:
+            type: integer
+            description: 风纪委员用户ID
+            example: 10001
+          uname:
+            type: string
+            description: 风纪委员用户名, 风纪委勾选匿名投票则显示“匿名用户”
+            example: 风纪委员用户名
+          face:
+            type: string
+            description: 头像URL, 头像
+            example: >-
+              http://i0.hdslb.com/bfs/face/e48952d599dbf011c2235239fafa2bf0deccef5a.jpg
+          vote:
+            type: integer
+            description: >-
+              投票选项, “合适题”分别为`1`或者`2`或者`3`或者`4`,
+              对应:“合适”,“一般”,“不合适”,“无法判断”<br/>“氛围题”分别为`11`或者`12`或者`13`或者`14`,
+              对应:“好”,“一般”,“差”,“无法判断”<br/>注释<br/>合适题:“单条弹幕(评论)是否合适?”<br/>氛围题:“弹幕(评论区)氛围如何?”
+            example: 3
+          vote_text:
+            type: string
+            description: 内容为空, *现在系统已不再展示其他风纪委所投的票*
+            example: 不合适
+          content:
+            type: string
+            description: 观点内容, 该风纪委员所发表的观点内容
+            example: ''
+          anonymous:
+            type: integer
+            description: 尚不明确
+            example: 0
+          like:
+            type: integer
+            description: 被点赞数量
+            example: 0
+          hate:
+            type: integer
+            description: 被点踩数量
+            example: 0
+          like_status:
+            type: integer
+            description: '点赞(踩)状态, 本账号是否给该条评论点赞: 0:没做操作 1:给评论点赞 2:给评论点踩'
+            example: 0
+          vote_time:
+            type: integer
+            description: 投票时间, 时间戳, 精确到秒
+            example: 1663655000
+          insiders:
+            type: integer
+            description: 是否观看此类视频, 1:平时观看此类视频 0:平时不观看此类视频
+            example: 1
+      vote_info:
+        type: object
+        properties:
+          all_count:
+            type: integer
+            description: 总投票数
+            example: 306
+          counts:
+            type: array
+            description: 观点分布, 格式:`[合适, 一般, 不合适, 无法判断]`
+            example:
+              - 90
+              - 33
+              - 177
+              - 6
+            items:
+              type: integer
+          insiders_counts:
+            type: array
+            description: 行为分布, 格式:`[平时会看此类视频, 平时不看此类视频]`
+            example:
+              - 245
+              - 61
+            items:
+              type: integer

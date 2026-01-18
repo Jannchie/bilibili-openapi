@@ -1,0 +1,436 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 响应码 0：成功 -101：账号未登录
+  message:
+    type: string
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      has_more:
+        type: boolean
+        description: 是否有更多数据
+      offset:
+        type: string
+        description: 偏移量
+      update_baseline:
+        type: string
+        description: 更新基线
+      update_num:
+        type: integer
+        description: 本次获取获取到了多少条新动态
+      items:
+        type: array
+        items:
+          type: object
+          properties:
+            basic:
+              type: object
+              properties:
+                comment_id_str:
+                  type: string
+                comment_type:
+                  type: integer
+                like_icon:
+                  type: object
+                  properties:
+                    action_url:
+                      type: string
+                      example: ''
+                    end_url:
+                      type: string
+                      example: ''
+                    id:
+                      type: integer
+                      example: 0
+                    start_url:
+                      type: string
+                      example: ''
+                rid_str:
+                  type: string
+            id_str:
+              type: string
+              description: 动态id
+            modules:
+              type: object
+              properties:
+                module_author:
+                  type: object
+                  properties:
+                    avatar:
+                      type: object
+                      properties:
+                        container_size:
+                          type: object
+                          properties:
+                            height:
+                              type: number
+                              format: float
+                              example: 1.35
+                            width:
+                              type: number
+                              format: float
+                              example: 1.35
+                        fallback_layers:
+                          type: object
+                          properties:
+                            is_critical_group:
+                              type: boolean
+                              example: true
+                            layers:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  general_spec:
+                                    type: object
+                                    properties:
+                                      pos_spec:
+                                        type: object
+                                        properties:
+                                          axis_x:
+                                            type: number
+                                            format: float
+                                            example: 0.675
+                                          axis_y:
+                                            type: number
+                                            format: float
+                                            example: 0.675
+                                          coordinate_pos:
+                                            type: integer
+                                            example: 2
+                                      render_spec:
+                                        type: object
+                                        properties:
+                                          opacity:
+                                            type: integer
+                                            example: 1
+                                      size_spec:
+                                        type: object
+                                        properties:
+                                          height:
+                                            type: integer
+                                            example: 1
+                                          width:
+                                            type: integer
+                                            example: 1
+                                  layer_config:
+                                    type: object
+                                    properties:
+                                      is_critical:
+                                        type: boolean
+                                        example: true
+                                      tags:
+                                        type: object
+                                        properties:
+                                          AVATAR_LAYER:
+                                            type: object
+                                          GENERAL_CFG:
+                                            type: object
+                                            properties:
+                                              config_type:
+                                                type: integer
+                                                example: 1
+                                              general_config:
+                                                type: object
+                                                properties:
+                                                  web_css_style:
+                                                    type: object
+                                                    properties:
+                                                      borderRadius:
+                                                        type: string
+                                                        example: 50%
+                                  resource:
+                                    type: object
+                                    properties:
+                                      res_image:
+                                        type: object
+                                        properties:
+                                          image_src:
+                                            type: object
+                                            properties:
+                                              placeholder:
+                                                type: integer
+                                                example: 6
+                                              remote:
+                                                type: object
+                                                properties:
+                                                  bfs_style:
+                                                    type: string
+                                                    example: widget-layer-avatar
+                                                  url:
+                                                    type: string
+                                                    example: >-
+                                                      https://i2.hdslb.com/bfs/face/b1c15dd8814d79e648008815517aa5ef50a2fb9c.jpg
+                                              src_type:
+                                                type: integer
+                                                example: 1
+                                      res_type:
+                                        type: integer
+                                        example: 3
+                                  visible:
+                                    type: boolean
+                                    example: true
+                        mid:
+                          type: string
+                          example: '3546730050096047'
+                    face:
+                      type: string
+                      example: >-
+                        https://i2.hdslb.com/bfs/face/b1c15dd8814d79e648008815517aa5ef50a2fb9c.jpg
+                    face_nft:
+                      type: boolean
+                      example: false
+                    following:
+                      type: boolean
+                      example: true
+                    jump_url:
+                      type: string
+                      example: //space.bilibili.com/3546730050096047/dynamic
+                    label:
+                      type: string
+                      example: ''
+                    mid:
+                      type: integer
+                      example: 3546730050096047
+                    name:
+                      type: string
+                      example: 青岛LUCIFER
+                    official_verify:
+                      type: object
+                      properties:
+                        desc:
+                          type: string
+                          example: ''
+                        type:
+                          type: integer
+                          example: -1
+                    pendant:
+                      type: object
+                      properties:
+                        expire:
+                          type: integer
+                          example: 0
+                        image:
+                          type: string
+                          example: ''
+                        image_enhance:
+                          type: string
+                          example: ''
+                        image_enhance_frame:
+                          type: string
+                          example: ''
+                        n_pid:
+                          type: integer
+                          example: 0
+                        name:
+                          type: string
+                          example: ''
+                        pid:
+                          type: integer
+                          example: 0
+                    pub_action:
+                      type: string
+                      example: 投稿了视频
+                    pub_location_text:
+                      type: string
+                      example: ''
+                    pub_time:
+                      type: string
+                      example: 刚刚
+                    pub_ts:
+                      type: integer
+                      example: 1723959548
+                    type:
+                      type: string
+                      example: AUTHOR_TYPE_NORMAL
+                    vip:
+                      type: object
+                      properties:
+                        avatar_subscript:
+                          type: integer
+                          example: 0
+                        avatar_subscript_url:
+                          type: string
+                          example: ''
+                        due_date:
+                          type: integer
+                          example: 0
+                        label:
+                          type: object
+                          properties:
+                            bg_color:
+                              type: string
+                              example: ''
+                            bg_style:
+                              type: integer
+                              example: 0
+                            border_color:
+                              type: string
+                              example: ''
+                            img_label_uri_hans:
+                              type: string
+                              example: ''
+                            img_label_uri_hans_static:
+                              type: string
+                              example: >-
+                                https://i0.hdslb.com/bfs/vip/d7b702ef65a976b20ed854cbd04cb9e27341bb79.png
+                            img_label_uri_hant:
+                              type: string
+                              example: ''
+                            img_label_uri_hant_static:
+                              type: string
+                              example: >-
+                                https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/KJunwh19T5.png
+                            label_theme:
+                              type: string
+                              example: ''
+                            path:
+                              type: string
+                              example: ''
+                            text:
+                              type: string
+                              example: ''
+                            text_color:
+                              type: string
+                              example: ''
+                            use_img_label:
+                              type: boolean
+                              example: true
+                        nickname_color:
+                          type: string
+                          example: ''
+                        status:
+                          type: integer
+                          example: 0
+                        theme_type:
+                          type: integer
+                          example: 0
+                        type:
+                          type: integer
+                          example: 0
+                module_dynamic:
+                  type: object
+                  properties:
+                    additional:
+                      type: object
+                    desc:
+                      type: object
+                    major:
+                      type: object
+                      properties:
+                        archive:
+                          type: object
+                          properties:
+                            aid:
+                              type: integer
+                              example: 112981396619958
+                            badge:
+                              type: object
+                              properties:
+                                bg_color:
+                                  type: string
+                                  example: '#FB7299'
+                                color:
+                                  type: string
+                                  example: '#FFFFFF'
+                                icon_url:
+                                  type: object
+                                text:
+                                  type: string
+                                  example: 投稿视频
+                            bvid:
+                              type: string
+                              example: BV1oeWNebEv2
+                            cover:
+                              type: string
+                              example: >-
+                                http://i2.hdslb.com/bfs/archive/0e3d26d90eb0642d90c7552e63ce690e2fe7f8ce.jpg
+                            desc:
+                              type: string
+                              example: 给老板娘贴睫毛贴了半天，老登眼皮总动，夹睫毛疼了还骂我，不开心哈哈哈。
+                            disable_preview:
+                              type: integer
+                              example: 0
+                            duration_text:
+                              type: string
+                              example: '00:16'
+                            jump_url:
+                              type: string
+                              example: //www.bilibili.com/video/BV1oeWNebEv2/
+                            stat:
+                              type: object
+                              properties:
+                                danmaku:
+                                  type: integer
+                                  example: 0
+                                play:
+                                  type: integer
+                                  example: 0
+                            title:
+                              type: string
+                              example: 老板娘今天是可爱鬼呀！
+                            type:
+                              type: integer
+                              example: 1
+                        type:
+                          type: string
+                          example: MAJOR_TYPE_ARCHIVE
+                    topic:
+                      type: object
+                module_more:
+                  type: object
+                  properties:
+                    three_point_items:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          label:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                              - THREE_POINT_FOLLOWING
+                              - THREE_POINT_REPORT
+                module_stat:
+                  type: object
+                  properties:
+                    comment:
+                      type: object
+                      properties:
+                        count:
+                          type: integer
+                          example: 0
+                        forbidden:
+                          type: boolean
+                          example: false
+                    forward:
+                      type: object
+                      properties:
+                        count:
+                          type: integer
+                          example: 0
+                        forbidden:
+                          type: boolean
+                          example: false
+                    like:
+                      type: object
+                      properties:
+                        count:
+                          type: integer
+                          example: 0
+                        forbidden:
+                          type: boolean
+                          example: false
+                        status:
+                          type: boolean
+                          example: false
+            type:
+              type: string
+            visible:
+              type: boolean

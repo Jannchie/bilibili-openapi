@@ -1,0 +1,63 @@
+post:
+  tags:
+    - 合集管理
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: csrf
+      in: query
+      description: CSRF Token(即Cookies中bili_jct)
+      schema:
+        type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            section:
+              type: object
+              description: 小节信息
+              required:
+                - id
+                - seasonId
+                - title
+                - type
+              properties:
+                id:
+                  type: integer
+                  description: 小节ID
+                seasonId:
+                  type: integer
+                  description: 合集ID
+                title:
+                  type: string
+                  description: 小节标题
+                type:
+                  type: integer
+                  description: '1'
+            sorts:
+              type: array
+              description: 排序列表
+              items:
+                type: object
+                required:
+                  - id
+                  - order
+                properties:
+                  id:
+                    type: integer
+                    description: 合集内视频ID
+                  order:
+                    type: integer
+                    description: 排序位置
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonSectionEditResponse.yaml

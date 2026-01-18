@@ -1,0 +1,62 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  result:
+    type: object
+    properties:
+      main_section:
+        type: object
+        properties:
+          episodes:
+            type: array
+            items:
+              type: object
+              properties:
+                aid:
+                  type: integer
+                  description: 视频av号
+                badge:
+                  type: string
+                badge_info:
+                  type: object
+                  properties:
+                    bg_color:
+                      type: string
+                    bg_color_night:
+                      type: string
+                    text:
+                      type: string
+                badge_type:
+                  type: integer
+                  example: 0
+                cid:
+                  type: integer
+                  description: 分集cid
+                cover:
+                  type: string
+                  description: 分集封面
+                from:
+                  type: string
+                  example: bangumi
+                id:
+                  type: integer
+                  description: 分集epId
+                is_premiere:
+                  type: integer
+                  example: 0
+                long_title:
+                  type: string
+                  description: 长标题
+                share_url:
+                  type: string
+                  description: 分集播放页url
+                status:
+                  type: integer
+                  example: 2

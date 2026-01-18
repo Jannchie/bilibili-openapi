@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 搜索
+  servers:
+    - url: https://api.bilibili.com
+  summary: 综合搜索（web 端）
+  parameters:
+    - $ref: ../components/parameters/WbiSearchParams.yaml
+    - in: query
+      name: keyword
+      schema:
+        type: string
+      required: true
+      description: 需要搜索的关键词
+  responses:
+    '200':
+      description: 综合搜索结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SearchAllResponse.yaml

@@ -1,0 +1,11 @@
+type: object
+properties:
+  numResults:
+    type: integer
+    description: 总计数量
+  total:
+    type: integer
+    description: 总计数量
+  pages:
+    type: integer
+    description: 分页数量

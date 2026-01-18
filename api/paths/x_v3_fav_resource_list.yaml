@@ -1,0 +1,74 @@
+get:
+  tags:
+    - 收藏夹
+  summary: 获取收藏夹内容明细列表
+  description: 注：查询权限收藏夹时需要相应用户登录
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: media_id
+      in: query
+      description: 目标收藏夹mlid（完整id）
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: tid
+      in: query
+      description: 分区tid
+      schema:
+        type: integer
+        format: int32
+    - name: keyword
+      in: query
+      description: 搜索关键字
+      schema:
+        type: string
+    - name: order
+      in: query
+      description: 排序方式
+      schema:
+        type: string
+        enum:
+          - mtime
+          - view
+          - pubtime
+    - name: type
+      in: query
+      description: 查询范围
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+    - name: ps
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 20
+      required: true
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    - name: platform
+      in: query
+      description: 平台标识
+      schema:
+        type: string
+        example: web
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavResourceListResponse.yaml

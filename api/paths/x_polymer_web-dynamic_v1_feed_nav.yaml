@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 动态
+  summary: 获取导航栏动态列表
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: update_baseline
+      in: query
+      description: 更新基线
+      schema:
+        type: integer
+    - name: offset
+      in: query
+      description: 分页偏移量
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NavDynamicResponse.yaml

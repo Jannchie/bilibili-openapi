@@ -1,0 +1,19 @@
+type: object
+required:
+  - rid
+  - type
+properties:
+  rid:
+    type: integer
+    description: 稿件 avid
+  type:
+    type: integer
+    default: 2
+    enum:
+      - 2
+  add_media_ids:
+    type: string
+    description: 需要加入的收藏夹 mlid
+  del_media_ids:
+    type: string
+    description: 需要取消的收藏夹 mlid

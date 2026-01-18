@@ -1,0 +1,42 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      trackid:
+        type: string
+      list:
+        type: array
+        items:
+          type: object
+          properties:
+            position:
+              type: integer
+              description: 名次
+            keyword:
+              type: string
+              description: 关键词
+            show_name:
+              type: string
+              description: 完整关键词
+            word_type:
+              type: integer
+              description: 条目属性
+            icon:
+              type: string
+              description: 图标 URL
+            hot_id:
+              type: integer
+              description: 热词 ID
+            is_commercial:
+              type: string
+        description: 热搜列表

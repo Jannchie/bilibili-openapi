@@ -1,0 +1,35 @@
+get:
+  tags:
+    - 众裁信息
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: Cookie
+      in: header
+      description: Cookie
+      schema:
+        type: string
+      required: true
+    - name: case_id
+      in: query
+      description: 仲裁案件id
+      schema:
+        type: string
+      required: true
+    - name: pn
+      in: query
+      description: 显示第x页
+      schema:
+        type: integer
+    - name: ps
+      in: query
+      description: 每页显示y条观点
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryCaseOpinionResponse.yaml

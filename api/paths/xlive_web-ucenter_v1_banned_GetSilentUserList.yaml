@@ -1,0 +1,42 @@
+post:
+  tags:
+    - 直播间管理
+  summary: 查询直播间禁言列表
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - room_id
+            - ps1
+            - csrf_token
+            - csrf
+          type: object
+          properties:
+            room_id:
+              type: string
+              description: 直播间 ID
+            ps1:
+              type: integer
+              format: int32
+              description: 列表页码
+            csrf_token:
+              type: string
+              description: CSRF Token
+            csrf:
+              type: string
+              description: CSRF Token
+            visit_id:
+              type: string
+              description: 不明
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetSilentUserListResponse.yaml

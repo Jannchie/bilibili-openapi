@@ -1,0 +1,25 @@
+get:
+  tags:
+    - 统计与数据
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: t
+      in: query
+      description: 时间戳
+      schema:
+        type: integer
+    - name: size
+      in: query
+      description: 比较最近的N条视频, 默认5
+      schema:
+        type: integer
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArchiveDiagnoseResponse.yaml

@@ -1,0 +1,17 @@
+type: object
+required:
+  - csrf
+properties:
+  aid:
+    type: integer
+    description: 置顶目标稿件 avid
+  bvid:
+    type: string
+    description: 置顶目标稿件 bvid
+  reason:
+    type: string
+    maxLength: 40
+    description: 置顶视频备注
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

@@ -1,0 +1,33 @@
+post:
+  tags:
+    - 稍后再看
+  summary: 删除稍后再看视频
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      x-www-form-urlencoded:
+        schema:
+          required:
+            - csrf
+          type: object
+          properties:
+            viewed:
+              type: boolean
+              default: false
+            aid:
+              type: integer
+              format: int32
+              description: 删除的目标记录的 avid
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ToviewDelResponse.yaml

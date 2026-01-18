@@ -1,0 +1,28 @@
+post:
+  tags:
+    - 登录
+  summary: 获取公钥&盐 (APP 端)
+  servers:
+    - url: http://passport.bilibili.com
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - appkey
+            - sign
+          type: object
+          properties:
+            appkey:
+              type: string
+              description: APP 密钥
+            sign:
+              type: string
+              description: APP 签名
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AppKeyResponse.yaml

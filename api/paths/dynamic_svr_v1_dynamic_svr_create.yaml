@@ -1,0 +1,75 @@
+post:
+  tags:
+    - 动态
+  summary: 发表纯文本动态
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          required:
+            - dynamic_id
+            - type
+            - rid
+            - content
+            - csrf_token
+            - csrf
+          type: object
+          properties:
+            dynamic_id:
+              type: integer
+              description: dynamic_id
+            type:
+              type: integer
+              description: type
+            rid:
+              type: integer
+              description: rid
+            content:
+              type: string
+              description: 动态内容
+            up_choose_comment:
+              type: integer
+              description: up_choose_comment
+            up_close_comment:
+              type: integer
+              description: up_close_comment
+            extension:
+              type: object
+              description: 位置信息
+            at_uids:
+              type: string
+              description: 动态中 at 到的用户的 uid
+            ctrl:
+              type: array
+              items:
+                type: object
+                properties:
+                  location:
+                    type: integer
+                    description: 从全文第几个字开始变蓝
+                  type:
+                    type: integer
+                    description: 1 (可能1代表链接到用户uid)
+                  length:
+                    type: integer
+                    description: 这一段变蓝多少字
+                  data:
+                    type: string
+                    description: 链接目标(被at人的uid)
+            csrf_token:
+              type: string
+              description: CSRF Token (位于 cookie)
+            csrf:
+              type: string
+              description: CSRF Token (位于 cookie)
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateDynamicResponse.yaml

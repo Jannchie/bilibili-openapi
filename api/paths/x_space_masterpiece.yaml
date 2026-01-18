@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 用户空间相关
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询用户代表作视频列表
+  parameters:
+    - in: query
+      name: vmid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+  responses:
+    '200':
+      description: 代表作视频列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MasterpieceListResponse.yaml

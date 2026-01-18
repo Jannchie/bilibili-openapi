@@ -1,0 +1,28 @@
+get:
+  tags:
+    - APP
+  servers:
+    - url: https://app.bilibili.com
+  summary: 获取版本信息
+  parameters:
+    - name: mobi_app
+      in: query
+      description: 目标客户端类型
+      required: false
+      schema:
+        type: string
+        enum:
+          - android
+          - iphone
+          - ipad
+          - win
+          - android_tv_yst
+          - android_car
+          - pc_client
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/VersionResponse.yaml

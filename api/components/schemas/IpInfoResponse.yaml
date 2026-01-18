@@ -1,0 +1,45 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: ''
+  msg:
+    type: string
+    description: 错误信息
+    example: ''
+  data:
+    type: object
+    properties:
+      addr:
+        type: string
+        description: 公网IP地址
+        example: 8.8.8.8
+      country:
+        type: string
+        description: 国家/地区名
+        example: GOOGLE.COM
+      province:
+        type: string
+        description: 省/州, 非必须存在项
+        example: GOOGLE.COM
+      city:
+        type: string
+        description: 城市, 非必须存在项
+        example: ''
+      isp:
+        type: string
+        description: 运营商名
+        example: level3.com
+      latitude:
+        type: string
+        description: 纬度
+        example: ''
+      longitude:
+        type: string
+        description: 经度
+        example: ''

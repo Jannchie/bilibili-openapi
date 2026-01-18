@@ -1,0 +1,86 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              description: 笔记标题
+            summary:
+              type: string
+              description: 笔记预览文本
+            mtime:
+              type: string
+              description: 提交时间
+            arc:
+              type: object
+              properties:
+                oid:
+                  type: integer
+                  description: 目标 ID
+                bvid:
+                  type: string
+                  description: 稿件 bvid
+                pic:
+                  type: string
+                  description: 稿件封面图片 URL
+                desc:
+                  type: string
+                  description: 视频简介
+                status:
+                  type: integer
+                oid_type:
+                  type: integer
+                  description: 目标 ID 类型
+                aid:
+                  type: integer
+                  description: 稿件 avid
+            note_id:
+              type: integer
+              description: 笔记 ID
+            audit_status:
+              type: integer
+            web_url:
+              type: string
+              description: 笔记 h5 页 URL
+            note_id_str:
+              type: string
+              description: 笔记 ID str
+            message:
+              type: string
+              description: 更新信息
+            forbid_note_entrance:
+              type: boolean
+            likes:
+              type: integer
+              description: 点赞数
+            has_like:
+              type: boolean
+              description: 是否点赞
+        description: 明细列表
+      page:
+        type: object
+        properties:
+          total:
+            type: integer
+            description: 笔记总数
+          size:
+            type: integer
+            description: 每页项数
+          num:
+            type: integer
+            description: 页码

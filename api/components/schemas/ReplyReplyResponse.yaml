@@ -1,0 +1,135 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      page:
+        type: object
+        description: 页信息
+        properties:
+          count:
+            type: integer
+            description: 二级评论数
+            example: 230
+          num:
+            type: integer
+            description: 当前页码
+            example: 1
+          size:
+            type: integer
+            description: 每页项数
+            example: 5
+      config:
+        type: object
+        description: 评论区显示控制
+        properties:
+          showadmin:
+            type: integer
+            description: 是否显示管理置顶
+            example: 0
+          showentry:
+            type: integer
+            example: 0
+          showfloor:
+            type: integer
+            description: 是否显示楼层号
+            example: 0
+          showtopic:
+            type: integer
+            description: 是否显示话题
+            example: 0
+          show_up_flag:
+            type: boolean
+            description: 是否显示"UP 觉得很赞"标志
+            example: false
+          read_only:
+            type: boolean
+            description: 是否只读评论区
+            example: false
+          show_del_log:
+            type: boolean
+            description: 是否显示删除记录
+            example: false
+      replies:
+        type: array
+        description: 评论对话树列表
+        items:
+          type: object
+      root:
+        type: object
+      show_bvid:
+        type: boolean
+        description: 显示 bvid?
+      show_text:
+        type: string
+      show_type:
+        type: integer
+      upper:
+        type: object
+        description: UP主 mid
+        properties:
+          mid:
+            type: integer
+      control:
+        type: object
+        description: 评论区输入属性
+        properties:
+          input_disable:
+            type: boolean
+            example: false
+          root_input_text:
+            type: string
+            description: 评论框文字
+            example: 发一条友善的评论
+          child_input_text:
+            type: string
+            description: 评论框文字
+            example: ''
+          giveup_input_text:
+            type: string
+            example: 不发没关系, 请继续友善哦~
+          bg_text:
+            type: string
+            description: 空评论区文字
+            example: 看看下面~来发评论吧
+          web_selection:
+            type: boolean
+            description: 评论是否筛选后可见, false:无需筛选 true:需要筛选
+            example: false
+          answer_guide_text:
+            type: string
+            description: 答题页面链接文字
+            example: 需要升级成为lv2会员后才可以评论, 先去答题转正吧!
+          answer_guide_icon_url:
+            type: string
+            description: 答题页面图标 url
+            example: >-
+              http://i0.hdslb.com/bfs/emote/96940d16602cacbbac796245b7bb99fa9b5c970c.png
+          answer_guide_ios_url:
+            type: string
+            description: 答题页面 ios url
+            example: https://www.bilibili.com/h5/newbie/entry?navhide=1&re_src=12
+          answer_guide_android_url:
+            type: string
+            description: 答题页面安卓 url
+            example: https://www.bilibili.com/h5/newbie/entry?navhide=1&re_src=6
+          show_type:
+            type: integer
+            example: 1
+          show_text:
+            type: string
+            example: ''
+          disable_jump_emote:
+            type: boolean
+            example: false

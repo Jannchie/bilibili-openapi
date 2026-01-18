@@ -1,0 +1,34 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      pvdata:
+        type: string
+        description: bin 格式截取时间表 url
+      img_x_len:
+        type: integer
+        description: 每行图片数
+      img_y_len:
+        type: integer
+        description: 每列图片数
+      img_x_size:
+        type: integer
+        description: 每张图片长
+      img_y_size:
+        type: integer
+        description: 每张图片宽
+      image:
+        type: array
+        items:
+          type: string
+        description: 图片拼版

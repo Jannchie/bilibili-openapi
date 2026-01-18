@@ -1,0 +1,109 @@
+type: object
+properties:
+  like:
+    type: integer
+    format: int64
+    description: 是否点赞
+    example: 0
+  attention:
+    type: boolean
+    description: 是否关注文章作者
+    example: false
+  favorite:
+    type: boolean
+    description: 是否收藏
+    example: false
+  coin:
+    type: integer
+    format: int64
+    description: 为文章投币数
+    example: 0
+  stats:
+    $ref: ./ArticleViewInfoStats.yaml
+  title:
+    type: string
+    description: 文章标题
+    example: 专栏行为准则
+  banner_url:
+    type: string
+    format: url
+    description: 文章头图 URL
+    example: >-
+      https://i0.hdslb.com/bfs/article/131b1d41b857d5308f5bff36591d117bddc48d96.jpg@90p.webp
+  mid:
+    type: integer
+    format: int64
+    description: 文章作者 mid
+    example: 144900660
+  author_name:
+    type: string
+    description: 文章作者昵称
+    example: 专栏小天使
+  is_author:
+    type: boolean
+    description: is_author
+    example: true
+  image_urls:
+    type: array
+    description: 动态封面
+    items:
+      type: string
+      format: url
+      example: >-
+        https://i0.hdslb.com/bfs/article/0a72422ce8e77d8512f010d93b1b7f9bc4e64e52.jpg
+  origin_image_urls:
+    type: array
+    description: 封面图片
+    items:
+      type: string
+      format: url
+      example: >-
+        https://i0.hdslb.com/bfs/article/131b1d41b857d5308f5bff36591d117bddc48d96.jpg
+  shareable:
+    type: boolean
+    description: shareable
+    example: true
+  show_later_watch:
+    type: boolean
+    description: show_later_watch
+    example: true
+  show_small_window:
+    type: boolean
+    description: show_small_window
+    example: true
+  in_list:
+    type: boolean
+    description: 是否收于文集
+    example: false
+  pre:
+    type: integer
+    format: int64
+    description: 上一篇文章 cv id
+    example: 115914
+  next:
+    type: integer
+    format: int64
+    description: 下一篇文章 cv id
+    example: 38575
+  share_channels:
+    type: array
+    description: 分享方式列表
+    items:
+      $ref: ./ArticleViewInfoShareChannel.yaml
+  type:
+    type: integer
+    format: int64
+    description: 文章类别
+    example: 0
+  video_url:
+    type: string
+    description: video_url
+    example: ''
+  location:
+    type: string
+    description: location
+    example: ''
+  disable_share:
+    type: boolean
+    description: disable_share
+    example: false

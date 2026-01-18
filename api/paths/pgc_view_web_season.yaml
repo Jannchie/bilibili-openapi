@@ -1,0 +1,23 @@
+get:
+  tags:
+    - 剧集信息
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: season_id
+      in: query
+      description: 番剧ssid
+      schema:
+        type: integer
+    - name: ep_id
+      in: query
+      description: 剧集epid
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PgcViewWebSeasonResponse.yaml

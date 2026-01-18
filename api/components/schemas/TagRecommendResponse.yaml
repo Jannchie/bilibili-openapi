@@ -1,0 +1,31 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  data:
+    type: array
+    description: 标签信息
+    items:
+      type: object
+      properties:
+        tag:
+          type: string
+          description: 标签名称
+          example: 学习
+        checked:
+          type: integer
+          example: 0
+        request_id:
+          type: string
+          description: 请求ID
+          example: TAG_1723543336295_3371
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  request_id:
+    type: string
+    description: 请求ID
+    example: TAG_1723543336295_3371

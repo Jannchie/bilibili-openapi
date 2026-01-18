@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          success:
+            type: integer
+            description: '1'
+          gt:
+            type: string
+            description: 极验 ID
+          challenge:
+            type: string
+            description: 极验 KEY
+          key:
+            type: string
+            description: 登录秘钥
+      type:
+        type: integer
+        description: '1'

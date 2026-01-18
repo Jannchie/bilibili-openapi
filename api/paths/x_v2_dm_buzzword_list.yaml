@@ -1,0 +1,33 @@
+get:
+  tags:
+    - 名词解释
+  summary: 拉取名词解释列表
+  description: 该功能用于解释和科普 B 站弹幕、评论等的专有名词及梗，展示其出处，并推荐相关站内内容。
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: type_id
+      in: query
+      description: 名词类型，如：4代表“哔哩哔哩热词图鉴”，5代表“语言类”
+      schema:
+        type: integer
+      required: true
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        default: 1
+    - name: ps
+      in: query
+      description: 每页项数
+      schema:
+        type: integer
+        default: 20
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BuzzwordListResponse.yaml

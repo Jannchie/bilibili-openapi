@@ -1,0 +1,80 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误，-404：无视频，62001：不需要展示充电信息
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      show_info:
+        type: object
+        properties:
+          show:
+            type: boolean
+            description: 是否展示视频充电鸣谢名单
+          state:
+            type: integer
+            description: '0'
+      av_count:
+        type: integer
+        description: 目标视频充电人数
+      count:
+        type: integer
+        description: 本月充电人数
+      total_count:
+        type: integer
+        description: 总计充电人数
+      special_day:
+        type: integer
+        description: '0'
+      display_num:
+        type: integer
+        description: '0'
+      list:
+        type: array
+        description: 本月充电用户列表
+        items:
+          type: object
+          properties:
+            mid:
+              type: integer
+              description: 充电对象mid
+            pay_mid:
+              type: integer
+              description: 充电用户mid
+            rank:
+              type: integer
+              description: 充电用户排名
+            uname:
+              type: string
+              description: 充电用户昵称
+            avatar:
+              type: string
+              description: 充电用户头像url
+            message:
+              type: string
+              description: 充电留言
+            msg_deleted:
+              type: integer
+              description: '0'
+            vip_info:
+              type: object
+              properties:
+                vipType:
+                  type: integer
+                  description: 大会员类型
+                vipDueMsec:
+                  type: integer
+                  description: '0'
+                vipStatus:
+                  type: integer
+                  description: 大会员状态
+            trend_type:
+              type: integer
+              description: '0'

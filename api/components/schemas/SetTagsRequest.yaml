@@ -1,0 +1,11 @@
+type: object
+required:
+  - csrf
+properties:
+  tags:
+    type: string
+    description: 要设置的 TAG 内容
+    example: minecraft,技术宅,大佬,小哥哥,可爱
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

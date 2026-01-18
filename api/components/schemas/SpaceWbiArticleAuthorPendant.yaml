@@ -1,0 +1,20 @@
+type: object
+properties:
+  pid:
+    type: integer
+    format: int64
+    description: 头像框 ID
+    example: 0
+  name:
+    type: string
+    description: 头像框名称
+    example: ''
+  image:
+    type: string
+    description: 头像框图片 URL
+    example: ''
+  expire:
+    type: integer
+    format: int64
+    description: 过期时间
+    example: 0

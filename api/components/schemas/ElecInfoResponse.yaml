@@ -1,0 +1,38 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 当前用户 mid
+      level:
+        type: integer
+        description: 电磁力等级
+        example: 4
+      score:
+        type: integer
+        description: 电磁力分数
+        example: 326
+      credit:
+        type: integer
+        description: 信用分
+        example: 100
+      state:
+        type: integer
+        example: 2
+      update_date:
+        type: integer
+        description: 数据刷新时间, 时间戳
+        example: 1694966400

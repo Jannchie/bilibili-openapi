@@ -1,0 +1,11 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-111：csrf 校验失败，-400：请求错误，20004：充电服务异常
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'

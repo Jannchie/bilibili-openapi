@@ -1,0 +1,95 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 活动 id
+    example: 4017552
+  oid:
+    type: integer
+    format: int64
+    description: OID
+    example: 0
+  type:
+    type: integer
+    format: int64
+    description: 类型
+    example: 13
+  state:
+    type: integer
+    format: int64
+    description: 状态
+    example: 1
+  stime:
+    type: integer
+    format: int64
+    description: 开始时间 (UNIX 秒级时间戳)
+    example: 1720540800
+  etime:
+    type: integer
+    format: int64
+    description: 结束时间 (UNIX 秒级时间戳)
+    example: 1728575999
+  ctime:
+    type: integer
+    format: int64
+    description: 创建时间 (UNIX 秒级时间戳)
+    example: 1720439769
+  mtime:
+    type: integer
+    format: int64
+    description: 修改时间 (UNIX 秒级时间戳)
+    example: 1720591285
+  name:
+    type: string
+    description: 活动名称
+    example: 科技猎手2024第2季
+  act_url:
+    type: string
+    description: 活动链接
+    example: https://www.bilibili.com/blackboard/era/kejilieshou2PC.html
+  lstime:
+    type: integer
+    format: int64
+    description: '?'
+    example: 1720540800
+  letime:
+    type: integer
+    format: int64
+    description: '?'
+    example: 1728575999
+  cover:
+    type: string
+    description: 封面图片
+    example: >-
+      https://i0.hdslb.com/bfs/activity-plat/static/98bc38873cc71e154019070975cd20a0/fLOEOStVUV.jpg
+  dic:
+    type: string
+    description: 简介
+    example: 科技猎手召集中！投稿赢奖金>>
+  h5_cover:
+    type: string
+    description: H5 封面
+    example: >-
+      https://i0.hdslb.com/bfs/activity-plat/static/98bc38873cc71e154019070975cd20a0/PTIFsXkV0o.jpg
+  android_url:
+    type: string
+    description: Android 端活动链接
+    example: https://www.bilibili.com/blackboard/era/kejilieshou2H5.html
+  ios_url:
+    type: string
+    description: iOS 端活动链接
+    example: https://www.bilibili.com/blackboard/era/kejilieshou2H5.html
+  child_sids:
+    type: string
+    description: 子活动 id?
+    example: ''
+  calendar:
+    type: string
+    description: 日历?
+    example: ''
+  lid:
+    type: integer
+    format: int64
+    description: '?'
+    example: 294258214

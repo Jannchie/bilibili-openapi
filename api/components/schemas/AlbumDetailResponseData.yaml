@@ -1,0 +1,6 @@
+type: object
+properties:
+  user:
+    $ref: ./AlbumDetailUser.yaml
+  item:
+    $ref: ./AlbumDetailItem.yaml

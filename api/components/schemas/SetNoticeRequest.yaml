@@ -1,0 +1,11 @@
+type: object
+required:
+  - csrf
+properties:
+  notice:
+    type: string
+    maxLength: 150
+    description: 要设置的公告内容
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

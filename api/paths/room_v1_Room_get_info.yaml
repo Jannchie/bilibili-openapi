@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 直播间
+  summary: 获取直播间信息
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: room_id
+      in: query
+      description: 直播间号
+      schema:
+        type: integer
+        format: int32
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RoomInfoResponse.yaml

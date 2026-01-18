@@ -1,0 +1,14 @@
+get:
+  tags:
+    - 统计与数据
+  servers:
+    - url: https://member.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/StatBaseDataResponse.yaml

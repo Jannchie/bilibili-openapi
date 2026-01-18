@@ -1,0 +1,47 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      has_more:
+        type: boolean
+        description: 是否有更多
+      items:
+        type: array
+        description: 赞与转发列表
+        items:
+          type: object
+          properties:
+            action:
+              type: string
+              description: 操作类型
+            attend:
+              type: integer
+              description: 参与数
+            desc:
+              type: string
+              description: 描述
+            face:
+              type: string
+              description: 头像 URL
+            mid:
+              type: string
+              description: 用户 mid
+            name:
+              type: string
+              description: 用户名
+      offset:
+        type: string
+        description: 偏移量
+      total:
+        type: integer
+        description: 总数

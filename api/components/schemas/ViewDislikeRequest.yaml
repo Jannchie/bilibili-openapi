@@ -1,0 +1,14 @@
+type: object
+required:
+  - aid
+  - dislike
+properties:
+  aid:
+    type: integer
+    description: 视频 aid
+  dislike:
+    type: integer
+    description: 操作类型
+    enum:
+      - 0
+      - 1

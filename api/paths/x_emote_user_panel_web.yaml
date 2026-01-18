@@ -1,0 +1,25 @@
+get:
+  tags:
+    - 表情
+  summary: 获取我的表情列表
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: business
+      in: query
+      description: 使用场景
+      schema:
+        type: string
+        enum:
+          - reply
+          - dynamic
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MyEmoteResponse.yaml

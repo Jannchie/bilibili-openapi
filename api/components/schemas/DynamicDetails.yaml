@@ -1,0 +1,57 @@
+type: object
+properties:
+  user:
+    type: object
+    description: 转发者用户信息
+    properties:
+      uid:
+        type: integer
+        description: 用户 ID
+      uname:
+        type: string
+        description: 用户名
+      face:
+        type: string
+        description: 头像
+  item:
+    type: object
+    description: 转发相关信息
+    properties:
+      rp_id:
+        type: integer
+        description: 转发 ID
+      uid:
+        type: integer
+        description: 用户 ID
+      content:
+        type: string
+        description: 转发附言
+      ctrl:
+        type: string
+      orig_dy_id:
+        type: integer
+        description: 被转发动态 ID
+      pre_dy_id:
+        type: integer
+        description: 被转发动态 ID
+      timestamp:
+        type: integer
+        description: 时间戳
+      reply:
+        type: integer
+        description: 回复数
+      orig_type:
+        type: integer
+        description: 被转发动态类型
+  origin:
+    type: string
+    description: 被转发动态信息
+  origin_extend_json:
+    type: string
+    description: 被转发动态补充信息
+  origin_user:
+    type: object
+    description: 被转发用户信息
+  activity_infos:
+    type: object
+    description: 被转发动态参与的活动

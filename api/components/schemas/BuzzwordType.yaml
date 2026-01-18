@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 类型 id
+  name:
+    type: string
+    description: 类型名称
+  name_pinyin:
+    type: object
+    description: 拼音信息
+    additionalProperties:
+      type: string
+  level:
+    type: integer
+    description: 权重？

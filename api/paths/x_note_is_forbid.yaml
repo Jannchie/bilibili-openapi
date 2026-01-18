@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 笔记详细信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询该稿件是否禁止笔记
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: true
+      description: 稿件 avid
+  responses:
+    '200':
+      description: 查询结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NoteIsForbidResponse.yaml

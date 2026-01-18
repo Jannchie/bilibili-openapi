@@ -1,0 +1,57 @@
+get:
+  servers:
+    - url: https://api.bilibili.com
+  tags:
+    - 活动
+  summary: 获取活动列表
+  parameters:
+    - name: plat
+      in: query
+      description: 活动平台类型?
+      required: true
+      schema:
+        type: string
+        enum:
+          - '1'
+          - '3'
+          - 1,3
+        default: 1,3
+    - name: mold
+      in: query
+      description: mold
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 0
+    - name: http
+      in: query
+      description: http
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 3
+    - name: pn
+      in: query
+      description: 目标页码
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 1
+    - name: ps
+      in: query
+      description: 每页条数
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 15
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ActivityListResponse.yaml

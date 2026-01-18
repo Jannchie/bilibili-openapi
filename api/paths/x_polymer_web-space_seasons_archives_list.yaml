@@ -1,0 +1,71 @@
+get:
+  tags:
+    - 合集和视频列表信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取视频合集信息
+  parameters:
+    - in: query
+      name: mid
+      schema:
+        type: integer
+      required: true
+      description: 用户 mid
+    - in: query
+      name: season_id
+      schema:
+        type: integer
+      required: true
+      description: 视频合集 ID
+    - in: query
+      name: sort_reverse
+      schema:
+        type: boolean
+      required: false
+      description: 排序方式
+    - in: query
+      name: page_num
+      schema:
+        type: integer
+        default: 1
+      required: false
+      description: 页码索引
+    - in: query
+      name: page_size
+      schema:
+        type: integer
+        default: 30
+      required: false
+      description: 单页内容数量
+    - in: query
+      name: gaia_vtoken
+      schema:
+        type: string
+      required: false
+      description: 风控验证?
+    - in: query
+      name: web_location
+      schema:
+        type: string
+        default: '333.999'
+      required: false
+      description: 页面位置?
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: UNIX 秒级时间戳
+  responses:
+    '200':
+      description: 视频合集信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonsArchivesListResponse.yaml

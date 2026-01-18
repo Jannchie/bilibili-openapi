@@ -1,0 +1,32 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        description: 变化记录条目列表
+        items:
+          type: object
+          properties:
+            time:
+              type: string
+              description: 变化时间
+            delta:
+              type: integer
+              description: 变化量
+            reason:
+              type: string
+              description: 变化说明
+      count:
+        type: integer
+        description: 变化记录条目数

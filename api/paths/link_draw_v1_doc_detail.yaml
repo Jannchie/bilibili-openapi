@@ -1,0 +1,27 @@
+get:
+  servers:
+    - url: https://api.vc.bilibili.com
+  tags:
+    - 相簿
+  summary: 获取相簿详细信息
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+    - name: doc_id
+      in: query
+      description: 目标相簿 ID
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AlbumDetailResponse.yaml

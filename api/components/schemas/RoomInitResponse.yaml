@@ -1,0 +1,73 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，60004：直播间不存在
+  msg:
+    type: string
+    description: 错误信息
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      room_id:
+        type: integer
+        format: int32
+        description: 直播间真实 ID
+      short_id:
+        type: integer
+        format: int32
+        description: 直播间 ID（短号）
+      uid:
+        type: integer
+        format: int32
+        description: 主播用户 mid
+      need_p2p:
+        type: integer
+        format: int32
+        description: 是否 P2P
+      is_hidden:
+        type: boolean
+        description: 是否隐藏
+      is_locked:
+        type: boolean
+        description: 是否锁定
+      is_portrait:
+        type: boolean
+        description: 是否竖屏
+      live_status:
+        type: integer
+        format: int32
+        description: 直播状态
+      hidden_till:
+        type: integer
+        format: int64
+        description: 隐藏时间戳
+      lock_till:
+        type: integer
+        format: int64
+        description: 锁定时间戳
+      encrypted:
+        type: boolean
+        description: 是否加密
+      pwd_verified:
+        type: boolean
+        description: 加密房间是否通过密码验证
+      live_time:
+        type: integer
+        format: int32
+        description: 开播时间
+      room_shield:
+        type: integer
+        format: int32
+        description: 未知
+      is_sp:
+        type: integer
+        format: int32
+        description: 是否为特殊直播间
+      special_type:
+        type: integer
+        format: int32
+        description: 特殊直播间标志

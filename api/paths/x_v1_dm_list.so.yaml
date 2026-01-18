@@ -1,0 +1,24 @@
+get:
+  tags:
+    - xml弹幕
+  summary: 获取实时弹幕1
+  description: |
+    实时弹幕池容量有限（根据视频类型500-8000条不等），占满后再发送会使实时弹幕池底部的弹幕压入历史弹幕池（类似于堆栈）。
+
+    **使用deflate压缩，注意解码**
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: oid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/DanmakuList.yaml

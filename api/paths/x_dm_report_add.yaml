@@ -1,0 +1,62 @@
+post:
+  tags:
+    - 弹幕操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+    - name: cid
+      in: query
+      description: 视频 cid
+      schema:
+        type: integer
+      required: true
+    - name: dmid
+      in: query
+      description: 弹幕 dmid
+      schema:
+        type: integer
+      required: true
+    - name: reason
+      in: query
+      description: 举报类型, 类型代码见下表
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+      required: true
+    - name: content
+      in: query
+      description: 其他举报备注, `reason=11` 时有效
+      schema:
+        type: string
+    - name: csrf
+      in: query
+      description: CSRF Token(位于 cookie)
+      schema:
+        type: string
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuReportAddResponse.yaml

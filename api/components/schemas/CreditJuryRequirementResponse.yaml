@@ -1,0 +1,28 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      blocked:
+        type: boolean
+        description: 是否被封禁, true:是 false:否 下同
+        example: false
+      cert:
+        type: boolean
+        description: 是否实名认证
+        example: true
+      rule:
+        type: boolean
+        description: 是否90天内无违规
+        example: true

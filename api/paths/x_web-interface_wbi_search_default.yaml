@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 默认搜索&热搜
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取默认搜索内容（web 端）
+  parameters:
+    - $ref: ../components/parameters/WbiSearchParams.yaml
+  responses:
+    '200':
+      description: 默认搜索内容
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DefaultSearchResponse.yaml

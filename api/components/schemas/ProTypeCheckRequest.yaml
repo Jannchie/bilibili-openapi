@@ -1,0 +1,7 @@
+type: object
+required:
+  - types
+properties:
+  types:
+    type: string
+    description: 自选题分类（新版）

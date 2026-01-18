@@ -1,0 +1,30 @@
+get:
+  tags:
+    - 通知消息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取未读消息数
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: build
+      schema:
+        type: integer
+        default: 0
+      required: false
+      description: 客户端内部版本号
+    - in: query
+      name: mobi_app
+      schema:
+        type: string
+        default: web
+      required: false
+      description: 平台标识
+  responses:
+    '200':
+      description: 未读消息数
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UnreadMessageCountResponse.yaml

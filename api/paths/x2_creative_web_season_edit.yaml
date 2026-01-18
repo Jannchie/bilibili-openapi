@@ -1,0 +1,80 @@
+post:
+  tags:
+    - 合集管理
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: csrf
+      in: query
+      description: CSRF Token(即Cookies中bili_jct)
+      schema:
+        type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            season:
+              type: object
+              description: 合集信息
+              required:
+                - id
+                - title
+                - cover
+                - desc
+                - season_price
+                - isEnd
+              properties:
+                cover:
+                  type: string
+                  description: 封面图, 从[上传封面](upload.md#上传封面)处获取
+                  example: >-
+                    https://archive.biliimg.com/bfs/archive/77906db03b1eefac02613de184afad03f7bc58d7.jpg
+                id:
+                  type: integer
+                  description: 合集ID
+                  example: 3541327
+                title:
+                  type: string
+                  description: 合集标题
+                  example: IWILLBEDEL
+                desc:
+                  type: string
+                  description: 合集简介
+                season_price:
+                  type: integer
+                  description: 0, 作用尚不明确
+                  enum:
+                    - 0
+                isEnd:
+                  type: integer
+                  description: 是否完结, 0:未完结 1:完结
+                  enum:
+                    - 0
+                    - 1
+            sorts:
+              type: array
+              description: 排序列表
+              items:
+                type: object
+                required:
+                  - id
+                  - sort
+                properties:
+                  id:
+                    type: integer
+                    description: 小节ID
+                  sort:
+                    type: integer
+                    description: 排序位置
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonEditResponse.yaml

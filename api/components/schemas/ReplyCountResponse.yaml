@@ -1,0 +1,20 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      count:
+        type: integer
+        description: 评论条数
+        example: 65521

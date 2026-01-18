@@ -1,0 +1,178 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 漫画id
+      title:
+        type: string
+        description: 漫画名称
+      comic_type:
+        type: integer
+      page_default:
+        type: integer
+      page_allow:
+        type: integer
+      horizontal_cover:
+        type: string
+        description: 横板封面
+      square_cover:
+        type: string
+        description: 方形封面
+      vertical_cover:
+        type: string
+        description: 竖版封面
+      author_name:
+        type: array
+        items:
+          type: string
+        description: 作者列表
+      styles:
+        type: array
+        items:
+          type: string
+      last_ord:
+        type: integer
+        description: 最新一话序号
+      is_finish:
+        type: integer
+        description: 完结状态 0：未完结 1：已完结
+      status:
+        type: integer
+      fav:
+        type: integer
+      read_order:
+        type: integer
+      evaluate:
+        type: string
+        description: 漫画简介
+      total:
+        type: integer
+        description: 总话数
+      ep_list:
+        type: array
+        items:
+          $ref: ./EpListObject.yaml
+        description: 章节信息
+      release_time:
+        type: string
+      is_limit:
+        type: integer
+      read_epid:
+        type: integer
+      last_read_time:
+        type: string
+      is_download:
+        type: integer
+      read_short_title:
+        type: string
+      styles2:
+        type: array
+        items:
+          $ref: ./Styles2Object.yaml
+      renewal_time:
+        type: string
+      last_short_title:
+        type: string
+        description: 最新一话短标题
+      discount_type:
+        type: integer
+      discount:
+        type: number
+      discount_end:
+        type: string
+      no_reward:
+        type: boolean
+      batch_discount_type:
+        type: integer
+      ep_discount_type:
+        type: integer
+      has_fav_activity:
+        type: boolean
+      fav_free_amount:
+        type: integer
+      allow_wait_free:
+        type: boolean
+        description: 是否等就免费
+      wait_hour:
+        type: integer
+        description: 等待时间（小时）
+      wait_free_at:
+        type: string
+      no_danmaku:
+        type: integer
+      auto_pay_status:
+        type: integer
+      no_month_ticket:
+        type: boolean
+      immersive:
+        type: boolean
+      no_discount:
+        type: boolean
+      show_type:
+        type: integer
+      pay_mode:
+        type: integer
+      chapters:
+        type: array
+        items:
+          type: object
+      classic_lines:
+        type: string
+        description: 漫画简介
+      pay_for_new:
+        type: integer
+      fav_comic_info:
+        $ref: ./FavComicInfoObject.yaml
+      serial_status:
+        type: integer
+      series_info:
+        $ref: ./SeriesInfoObject.yaml
+      album_count:
+        type: integer
+      wiki_id:
+        type: integer
+      disable_coupon_amount:
+        type: integer
+      japan_comic:
+        type: boolean
+        description: 是否为日本漫画
+      interact_value:
+        type: string
+      temporary_finish_time:
+        type: string
+      video:
+        type: object
+      introduction:
+        type: string
+        description: 介绍
+      comment_status:
+        type: integer
+      no_screenshot:
+        type: boolean
+      type:
+        type: integer
+      vomic_cvs:
+        type: array
+        items:
+          type: object
+      no_rank:
+        type: boolean
+      presale_eps:
+        type: array
+        items:
+          type: object
+      presale_text:
+        type: string
+      presale_discount:
+        type: integer
+      no_leaderboard:
+        type: boolean

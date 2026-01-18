@@ -1,0 +1,74 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: object
+    properties:
+      '20200418':
+        type: object
+        description: 上一天的情况, 字段名为日期
+        properties:
+          arc_inc:
+            type: array
+            description: 稿件情况
+            items:
+              type: object
+              properties:
+                aid:
+                  type: integer
+                  description: 稿件 avid
+                  example: 94916552
+                bvid:
+                  type: string
+                  description: 稿件 bvid
+                  example: BV1ZE411K7ux
+                incr:
+                  type: integer
+                  description: 稿件增长情况数
+                  example: 18
+                title:
+                  type: string
+                  description: 稿件标题
+                  example: 【8-bit】影 流 之 主(爱河)
+                daytime:
+                  type: integer
+                  description: 统计时间, 时间戳
+                  example: 1587155030
+                ptime:
+                  type: integer
+                  description: 稿件发布时间, 时间戳
+                  example: 1583760165
+                interactive:
+                  type: integer
+                  description: 作用尚不明确
+                  example: 0
+          total_inc:
+            type: integer
+            description: 总计增长情况
+            example: 55
+          type_rank:
+            type: object
+            description: 分区排名情况
+            additionalProperties:
+              description: 分区排名
+              example:
+                生活:
+                  type: integer
+                  example: 1392
+                科技:
+                  type: integer
+                  example: 1597
+                音乐:
+                  type: integer
+                  example: 105

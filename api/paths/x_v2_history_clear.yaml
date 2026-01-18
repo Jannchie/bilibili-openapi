@@ -1,0 +1,26 @@
+post:
+  tags:
+    - 历史记录
+  summary: 清空历史记录
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      x-www-form-urlencoded:
+        schema:
+          required:
+            - csrf
+          type: object
+          properties:
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HistoryClearResponse.yaml

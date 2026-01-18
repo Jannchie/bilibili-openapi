@@ -1,0 +1,24 @@
+get:
+  tags:
+    - 动态信息
+  summary: 获取发布新动态的已关注者
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: teenagers_mode
+      in: query
+      description: 是否开启青少年模式
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WDynUplistResponse.yaml

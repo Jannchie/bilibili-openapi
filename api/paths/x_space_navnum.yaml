@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 用户状态数
+  servers:
+    - url: https://api.bilibili.com
+  summary: 用户导航栏状态数
+  parameters:
+    - in: query
+      name: mid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+    - in: query
+      name: web_location
+      schema:
+        type: string
+        default: '333.999'
+      required: false
+  responses:
+    '200':
+      description: 用户导航栏状态数
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NavnumResponse.yaml

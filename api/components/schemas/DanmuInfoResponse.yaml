@@ -1,0 +1,51 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，65530：token 错误（登录错误），1：错误，60009：分区不存在
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      group:
+        type: string
+        description: live
+      business_id:
+        type: integer
+        description: '0'
+      refresh_row_factor:
+        type: number
+        format: float
+        example: 0.125
+      refresh_rate:
+        type: integer
+        example: 100
+      max_delay:
+        type: integer
+        example: 5000
+      token:
+        type: string
+        description: 认证秘钥
+      host_list:
+        type: array
+        description: 信息流服务器节点列表
+        items:
+          type: object
+          properties:
+            host:
+              type: string
+              description: 服务器域名
+            port:
+              type: integer
+              description: TCP 端口
+            wss_port:
+              type: integer
+              description: WSS 端口
+            ws_port:
+              type: integer
+              description: WS 端口

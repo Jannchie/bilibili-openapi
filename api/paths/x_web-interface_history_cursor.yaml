@@ -1,0 +1,65 @@
+get:
+  tags:
+    - 历史记录
+  summary: 获取历史记录列表 (web 端)
+  description: |
+    注：`max`、`business`、`view_at`参数用于历史记录列表的 IFS (无限滚动)，其用法类似链表的 next 指针
+
+    本接口也可以返回已失效稿件的信息
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: max
+      in: query
+      description: 历史记录截止目标 ID
+      schema:
+        type: integer
+        format: int32
+        default: 0
+    - name: business
+      in: query
+      description: 历史记录截止目标业务类型
+      schema:
+        type: string
+        enum:
+          - archive
+          - pgc
+          - live
+          - article-list
+          - article
+        default: ''
+    - name: view_at
+      in: query
+      description: 历史记录截止时间
+      schema:
+        type: integer
+        format: int32
+        default: 0
+    - name: type
+      in: query
+      description: 历史记录分类筛选
+      schema:
+        type: string
+        enum:
+          - all
+          - archive
+          - live
+          - article
+        default: all
+    - name: ps
+      in: query
+      description: 每页项数
+      schema:
+        type: integer
+        format: int32
+        default: 20
+        maximum: 30
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HistoryCursorResponse.yaml

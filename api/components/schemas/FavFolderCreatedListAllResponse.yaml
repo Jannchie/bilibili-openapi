@@ -1,0 +1,50 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    oneOf:
+      - type: object
+        properties:
+          count:
+            type: integer
+            description: 创建的收藏夹数
+          list:
+            oneOf:
+              - type: array
+                description: 收藏夹列表
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: 收藏夹 ID
+                    fid:
+                      type: integer
+                      description: 收藏夹 fid
+                    mid:
+                      type: integer
+                      description: 创建者 mid
+                    attr:
+                      type: integer
+                      description: 属性位
+                    title:
+                      type: string
+                      description: 收藏夹标题
+                    fav_state:
+                      type: integer
+                      description: 目标 ID 是否存在于该收藏夹
+                    media_count:
+                      type: integer
+                      description: 收藏夹内容数量
+              - type: object
+          season:
+            type: object
+      - type: object

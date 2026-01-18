@@ -1,0 +1,86 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      up_info:
+        type: object
+        properties:
+          mid:
+            type: integer
+            description: UP主mid
+          nickname:
+            type: string
+            description: UP主昵称
+          avatar:
+            type: string
+            description: UP主头像url
+          type:
+            type: integer
+            description: UP主认证类型
+          title:
+            type: string
+            description: UP主认证信息
+      rank_info:
+        type: array
+        description: 充电用户排名
+        items:
+          type: object
+          properties:
+            mid:
+              type: integer
+              description: 充电用户mid
+            nickname:
+              type: string
+              description: 充电用户昵称
+            avatar:
+              type: string
+              description: 充电用户头像url
+            rank:
+              type: integer
+              description: 充电用户排名
+            day:
+              type: integer
+              description: 包月充电天数
+            expire_at:
+              type: integer
+              description: 包月充电过期时间
+            remain_days:
+              type: integer
+              description: 剩余天数
+      user_info:
+        type: object
+        properties:
+          mid:
+            type: integer
+            description: 用户mid
+          nickname:
+            type: string
+            description: 用户昵称
+          avatar:
+            type: string
+            description: 用户头像url
+          rank:
+            type: integer
+            description: 包月充电排名
+          day:
+            type: integer
+            description: 包月充电天数
+          expire_at:
+            type: integer
+            description: 包月充电过期时间
+          remain_days:
+            type: integer
+            description: 未过期时：剩余天数<br />已过期且之前给UP主包月充电过：自过期以来的天数
+      member_total:
+        type: integer
+        description: 充电用户总数

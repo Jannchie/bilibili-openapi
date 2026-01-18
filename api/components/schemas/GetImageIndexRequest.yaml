@@ -1,0 +1,7 @@
+type: object
+required:
+  - epId
+properties:
+  epId:
+    type: integer
+    description: 当前话的id

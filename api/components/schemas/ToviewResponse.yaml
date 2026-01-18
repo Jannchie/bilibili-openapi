@@ -1,0 +1,22 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      count:
+        type: integer
+        description: 稍后再看视频数
+      list:
+        type: array
+        description: 稍后再看视频列表
+        items:
+          type: object

@@ -1,0 +1,21 @@
+get:
+  tags:
+    - protobuf弹幕
+  summary: BAS/代码弹幕专包
+  description: 2020年5月23日，哔哩哔哩网页端及移动端启用了新的默认弹幕 API，网页端弹幕显示的上限变为原弹幕池上限的两倍。
+  servers:
+    - url: https://i0.hdslb.com
+  parameters:
+    - name: data
+      in: path
+      description: data
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/protobuf:
+          schema:
+            $ref: ../components/schemas/DmSegMobileReply.yaml

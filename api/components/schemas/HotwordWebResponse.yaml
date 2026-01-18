@@ -1,0 +1,86 @@
+type: object
+properties:
+  exp_str:
+    type: string
+  code:
+    type: integer
+    description: 返回值
+  cost:
+    type: object
+    properties:
+      reas_request:
+        type: string
+        format: float
+      params_check:
+        type: string
+        format: float
+      reas_response_format:
+        type: string
+        format: float
+      deserialize_response:
+        type: string
+        format: float
+      reas_request_format:
+        type: string
+        format: float
+      total:
+        type: string
+        format: float
+      main_handler:
+        type: string
+        format: float
+    description: 详细搜索用时
+  seid:
+    type: string
+    description: 搜索 seid
+  timestamp:
+    type: integer
+    description: 榜单统计时间
+  message:
+    type: string
+    description: 错误信息
+  list:
+    type: array
+    items:
+      type: object
+      properties:
+        status:
+          type: string
+        hot_id:
+          type: integer
+          description: 热词 ID
+        keyword:
+          type: string
+          description: 关键词
+        resource_id:
+          type: integer
+        goto_type:
+          type: integer
+        res:
+          type: array
+          items:
+            type: object
+        show_name:
+          type: string
+          description: 完整关键词
+        pos:
+          type: integer
+          description: 名次
+        word_type:
+          type: integer
+          description: 条目属性
+        id:
+          type: integer
+          description: 名次
+        goto_value:
+          type: string
+        live_id:
+          type: array
+          items:
+            type: object
+        name_type:
+          type: string
+        icon:
+          type: string
+          description: 图标 URL
+    description: 热搜列表

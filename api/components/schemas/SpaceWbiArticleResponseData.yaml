@@ -1,0 +1,22 @@
+type: object
+properties:
+  articles:
+    type: array
+    description: 专栏文章信息列表
+    items:
+      $ref: ./SpaceWbiArticleInfo.yaml
+  pn:
+    type: integer
+    format: int64
+    description: 本次请求分页页数
+    example: 1
+  ps:
+    type: integer
+    format: int64
+    description: 本次请求分页大小
+    example: 2
+  count:
+    type: integer
+    format: int64
+    description: 专栏文章总数
+    example: 1563

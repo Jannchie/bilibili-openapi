@@ -1,0 +1,18 @@
+type: object
+properties:
+  step_sec:
+    type: integer
+    description: 采样间隔时间
+  tagstr:
+    type: string
+  events:
+    type: object
+    properties:
+      default:
+        type: array
+        items:
+          type: number
+        description: 顶点值列表
+  debug:
+    type: string
+    description: 调试信息

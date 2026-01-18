@@ -1,0 +1,15 @@
+type: object
+required:
+  - product_id
+  - product_num
+  - point
+properties:
+  product_id:
+    type: integer
+    description: 物品id
+  product_num:
+    type: integer
+    description: 兑换个数
+  point:
+    type: integer
+    description: 物品所需点数 现价（real_cost）

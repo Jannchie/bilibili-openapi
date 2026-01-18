@@ -1,0 +1,33 @@
+type: object
+properties:
+  exp_str:
+    type: string
+    description: 实验字符串?
+  code:
+    type: integer
+    description: 返回值
+  result:
+    type: object
+    properties:
+      tag:
+        type: array
+        items:
+          type: object
+          properties:
+            value:
+              type: string
+              description: 关键词内容
+            ref:
+              type: integer
+              default: 0
+            name:
+              type: string
+              description: 显示内容
+            spid:
+              type: integer
+              default: 5
+            type:
+              type: string
+        description: 搜索建议结果
+  stoken:
+    type: string

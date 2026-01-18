@@ -1,0 +1,20 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      refresh:
+        type: boolean
+        description: 是否应该刷新 Cookie
+      timestamp:
+        type: integer
+        description: 当前毫秒时间戳

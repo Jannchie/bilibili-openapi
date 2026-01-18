@@ -1,0 +1,56 @@
+get:
+  tags:
+    - web 播放器信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: web 播放器信息
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+    - in: query
+      name: cid
+      schema:
+        type: integer
+      required: true
+      description: 稿件 cid
+    - in: query
+      name: season_id
+      schema:
+        type: integer
+      required: false
+      description: 番剧 season_id
+    - in: query
+      name: ep_id
+      schema:
+        type: integer
+      required: false
+      description: 剧集 ep_id
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: 当前 unix 时间戳
+  responses:
+    '200':
+      description: 播放器信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PlayerWbiV2Response.yaml

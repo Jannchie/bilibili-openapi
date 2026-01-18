@@ -1,0 +1,35 @@
+post:
+  tags:
+    - 稍后再看
+  summary: 视频添加稍后再看
+  description: 最多添加100个视频
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      x-www-form-urlencoded:
+        schema:
+          required:
+            - aid
+            - csrf
+          type: object
+          properties:
+            aid:
+              type: integer
+              format: int32
+              description: 稿件 avid
+            bvid:
+              type: string
+              description: 稿件 bvid
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ToviewAddResponse.yaml

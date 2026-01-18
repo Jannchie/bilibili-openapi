@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 视频杂项
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+      required: true
+    - name: ps
+      in: query
+      description: 每页数量, 留空为100
+      schema:
+        type: integer
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArchiveSpResponse.yaml

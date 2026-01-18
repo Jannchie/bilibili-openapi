@@ -1,0 +1,30 @@
+get:
+  tags:
+    - 历史记录
+  summary: 获取视频观看历史记录 (web 端旧版)
+  description: 本接口也可以返回已失效稿件的信息
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    - name: ps
+      in: query
+      description: 每页项数
+      schema:
+        type: integer
+        format: int32
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HistoryResponse.yaml

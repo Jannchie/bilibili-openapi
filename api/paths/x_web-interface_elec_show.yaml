@@ -1,0 +1,30 @@
+get:
+  tags:
+    - 充电
+  summary: 获取视频充电鸣谢名单
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: mid
+      in: query
+      description: 目标用户 mid
+      schema:
+        type: integer
+      required: true
+    - name: aid
+      in: query
+      description: 目标稿件 avid
+      schema:
+        type: integer
+    - name: bvid
+      in: query
+      description: 目标稿件 bvid
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ElecShowResponse.yaml

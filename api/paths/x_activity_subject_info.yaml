@@ -1,0 +1,27 @@
+get:
+  tags:
+    - 活动
+  servers:
+    - url: https://api.bilibili.com
+  summary: 主题信息
+  parameters:
+    - name: sid
+      in: query
+      description: 活动 id
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: bvid
+      in: query
+      description: 来源视频 bvid
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SubjectInfoResponse.yaml

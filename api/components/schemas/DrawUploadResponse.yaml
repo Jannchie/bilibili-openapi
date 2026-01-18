@@ -1,0 +1,20 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-1：未添加图片，-2：参数错误，-3：图片尺寸过小，-4：账号未登录，-7：图片信息错误
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      image_url:
+        type: string
+        description: 已上传图片url
+      image_width:
+        type: integer
+        description: 已上传图片宽度
+      image_height:
+        type: integer
+        description: 已上传图片高度

@@ -1,0 +1,95 @@
+post:
+  tags:
+    - 视频观看数据上报
+  servers:
+    - url: https://api.bilibili.com
+  summary: 上报视频播放心跳（web 端）
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: w_start_ts
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_mid
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_aid
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_dt
+      schema:
+        type: integer
+        default: 2
+      required: false
+    - in: query
+      name: w_realtime
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_playedtime
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_real_played_time
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_video_duration
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: w_last_play_progress_time
+      schema:
+        type: integer
+      required: false
+      description: 参见请求正文同名无 `w_` 前缀参数
+    - in: query
+      name: web_location
+      schema:
+        type: integer
+        default: 1315873
+      required: false
+      description: 网页位置
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: UNIX 秒级时间戳
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/HeartbeatRequest.yaml
+  responses:
+    '200':
+      description: 上报结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HeartbeatResponse.yaml

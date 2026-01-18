@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 登录
+  summary: 申请 captcha 验证码
+  servers:
+    - url: https://passport.bilibili.com
+  parameters:
+    - name: source
+      in: query
+      description: 来源
+      schema:
+        type: string
+        default: main_web
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CaptchaResponse.yaml

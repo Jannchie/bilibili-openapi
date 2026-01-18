@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 登录
+  summary: 检查是否需要刷新
+  servers:
+    - url: https://passport.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: csrf
+      in: query
+      description: CSRF Token（位于 Cookie）
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CookieInfoResponse.yaml

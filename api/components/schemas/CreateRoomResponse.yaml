@@ -1,0 +1,17 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，1531193016：已经创建直播间~，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      roomID:
+        type: integer
+        description: 直播间房间号

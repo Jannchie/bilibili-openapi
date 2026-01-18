@@ -1,0 +1,47 @@
+get:
+  tags:
+    - 直播间
+  summary: 批量查询直播间状态
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: uids[]
+      in: query
+      description: 要查询的主播 mid
+      schema:
+        type: array
+        items:
+          type: integer
+        format: int32
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetStatusInfoByUidsResponse.yaml
+post:
+  tags:
+    - 直播间
+  summary: 批量查询直播间状态
+  servers:
+    - url: https://api.live.bilibili.com
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - uids
+          type: object
+          properties:
+            uids:
+              type: string
+              description: 要查询的主播 mid
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetStatusInfoByUidsResponse.yaml

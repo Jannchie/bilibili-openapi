@@ -1,0 +1,32 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 登录用户 mid
+      device_name:
+        type: string
+        description: 登录设备
+      login_type:
+        type: string
+        description: 登录方式
+      login_time:
+        type: string
+        description: 登录时间
+      location:
+        type: string
+        description: 登录位置
+      ip:
+        type: string
+        description: 登录 IP

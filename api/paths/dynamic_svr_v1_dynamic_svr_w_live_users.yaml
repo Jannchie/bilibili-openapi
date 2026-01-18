@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 动态信息
+  summary: 获取正在直播的已关注者
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: size
+      in: query
+      description: 每页显示数
+      schema:
+        type: integer
+        default: 10
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WLiveUsersResponse.yaml

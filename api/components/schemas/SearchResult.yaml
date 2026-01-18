@@ -1,0 +1,2 @@
+type: object
+description: 搜索结果详情，具体字段取决于搜索类型

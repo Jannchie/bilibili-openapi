@@ -1,0 +1,80 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      aid:
+        type: integer
+        description: 稿件 avid
+      videos:
+        type: integer
+        description: 视频分 P 总数
+      tid:
+        type: integer
+        description: 分区 tid
+      tname:
+        type: string
+        description: 子分区名称
+      copyright:
+        type: integer
+        description: 是否转载
+      pic:
+        type: string
+        description: 视频封面图片 url
+      title:
+        type: string
+        description: 稿件标题
+      pubdate:
+        type: integer
+        description: 稿件发布时间
+      ctime:
+        type: integer
+        description: 用户提交稿件的时间
+      desc:
+        type: string
+        description: 视频简介
+      state:
+        type: integer
+        description: 视频状态
+      attribute:
+        type: integer
+        description: 稿件属性位配置
+      duration:
+        type: integer
+        description: 视频总计持续时长（所有分 P）
+      rights:
+        type: object
+        description: 视频属性标志
+      owner:
+        type: object
+        description: 视频 UP 主信息
+      stat:
+        type: object
+        description: 视频状态数
+      dynamic:
+        type: string
+        description: 视频同步发布的动态的文字内容
+      cid:
+        type: integer
+        description: 视频 1P cid
+      dimension:
+        type: object
+        description: 视频 1P 分辨率
+      bvid:
+        type: string
+        description: 稿件 bvid
+      reason:
+        type: string
+        description: 置顶视频备注
+      inter_video:
+        type: boolean
+        description: 是否为合作视频

@@ -1,0 +1,14 @@
+type: object
+required:
+  - aid
+  - like
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  like:
+    type: integer
+    description: 操作方式
+    enum:
+      - 0
+      - 1

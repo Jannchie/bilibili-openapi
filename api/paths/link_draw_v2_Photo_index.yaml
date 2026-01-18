@@ -1,0 +1,44 @@
+get:
+  tags:
+    - 相簿
+  servers:
+    - url: https://api.vc.bilibili.com
+  summary: 获取摄影首页列表
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+    - name: type
+      in: query
+      description: 排序方式
+      required: true
+      schema:
+        type: string
+        enum:
+          - recommend
+    - name: page_num
+      in: query
+      description: 页码
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 1
+    - name: page_size
+      in: query
+      description: 每页项数
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 45
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AlbumIndexResponse.yaml

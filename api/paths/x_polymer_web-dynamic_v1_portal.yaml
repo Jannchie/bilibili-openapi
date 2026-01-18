@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 动态
+  summary: 最近更新UP主列表
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PortalResponse.yaml

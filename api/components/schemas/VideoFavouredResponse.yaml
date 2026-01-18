@@ -1,0 +1,19 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      count:
+        type: integer
+      favoured:
+        type: boolean
+        description: 是否收藏

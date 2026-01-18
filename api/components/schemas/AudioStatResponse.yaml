@@ -1,0 +1,33 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: object
+    properties:
+      sid:
+        type: integer
+        description: 音频auid
+        example: 15664
+      play:
+        type: integer
+        description: 播放次数
+        example: 1377390
+      collect:
+        type: integer
+        description: 收藏数
+        example: 44340
+      comment:
+        type: integer
+        description: 评论数
+        example: 2756
+      share:
+        type: integer
+        description: 分享数
+        example: 4114

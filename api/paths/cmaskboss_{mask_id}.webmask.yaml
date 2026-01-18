@@ -1,0 +1,25 @@
+get:
+  tags:
+    - 智能防挡弹幕
+  summary: webmask 资源
+  description: |
+    B 站部分视频提供“智能防挡弹幕”功能，其原理是提供了一个 webmask 二进制文件，其中保存了视频中各个位置的 svg 格式蒙版。
+
+    获取的 url 没有权鉴，不需要后面的参数也可以获取。
+  servers:
+    - url: https://upos-sz-staticcos-cmask.bilivideo.com
+  parameters:
+    - name: mask_id
+      in: path
+      description: mask_id
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary

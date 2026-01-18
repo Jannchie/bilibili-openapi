@@ -1,0 +1,37 @@
+get:
+  tags:
+    - 动态
+  summary: 获取用户空间动态
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: offset
+      in: query
+      description: 分页偏移量
+      schema:
+        type: string
+    - name: host_mid
+      in: query
+      description: 用户UID
+      schema:
+        type: string
+      required: true
+    - name: timezone_offset
+      in: query
+      description: 时区偏移量
+      schema:
+        type: integer
+        example: -480
+    - name: features
+      in: query
+      description: 功能
+      schema:
+        type: string
+        example: itemOpusStyle
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetAllDynamicList.yaml

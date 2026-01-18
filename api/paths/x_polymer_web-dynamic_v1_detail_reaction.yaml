@@ -1,0 +1,33 @@
+get:
+  tags:
+    - 动态
+  summary: 动态赞与转发列表
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: id
+      in: query
+      description: 动态 ID
+      schema:
+        type: integer
+      required: true
+    - name: offset
+      in: query
+      description: 偏移量
+      schema:
+        type: string
+    - name: web_location
+      in: query
+      description: web_location
+      schema:
+        type: string
+        example: '333.1369'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DetailReactionResponse.yaml

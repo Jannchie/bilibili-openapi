@@ -1,0 +1,31 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          type: object
+        description: 明细列表
+      page:
+        type: object
+        properties:
+          total:
+            type: integer
+            description: 笔记总数
+          size:
+            type: integer
+            description: 每页项数
+          num:
+            type: integer
+            description: 页码

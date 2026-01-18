@@ -1,0 +1,16 @@
+allOf:
+  - $ref: ./RelationResponse.yaml
+properties:
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          $ref: ./RelationListItem.yaml
+        description: 明细列表
+      re_version:
+        type: integer
+      total:
+        type: integer
+        description: 粉丝总数

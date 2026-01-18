@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 个人中心
+  summary: 查询大会员状态
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/VipUserInfoResponse.yaml

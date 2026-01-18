@@ -1,0 +1,27 @@
+type: object
+properties:
+  tag:
+    type: string
+    description: TAG 名
+    example: 魔女之旅
+  type:
+    type: integer
+    format: int64
+    description: 类型?
+    example: 4
+  category:
+    type: string
+    description: TAG 所属子分区名
+    example: illustration
+  link:
+    type: string
+    nullable: true
+    description: 活动页面 URL
+  text:
+    type: string
+    description: TAG 名
+    example: 魔女之旅
+  name:
+    type: string
+    description: TAG 名
+    example: 魔女之旅

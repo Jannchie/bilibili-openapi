@@ -1,0 +1,123 @@
+type: object
+properties:
+  biz:
+    type: integer
+    format: int64
+    description: 相簿分区
+    example: 1
+  doc_id:
+    type: integer
+    format: int64
+    description: 相簿 ID
+    example: 99184721
+  poster_uid:
+    type: integer
+    format: int64
+    description: 作者 mid
+    example: 813818
+  category:
+    type: string
+    description: 子分区标识
+    example: illustration
+  type:
+    type: integer
+    format: int64
+    description: 相簿类型
+    example: 1
+  title:
+    type: string
+    description: 标题
+    example: 旅行
+  tags:
+    type: array
+    description: 相簿 TAG
+    items:
+      $ref: ./AlbumDetailItemTag.yaml
+  pictures:
+    type: array
+    description: 相簿图片
+    items:
+      $ref: ./AlbumDetailItemPicture.yaml
+  source:
+    type: string
+    nullable: true
+    description: source
+    example: null
+  upload_time:
+    type: string
+    description: 投稿时间 (时间码)
+    example: '2020-11-23 23:03:12'
+  upload_timestamp:
+    type: integer
+    format: int64
+    description: 投稿时间 (时间戳)
+    example: 1606143792
+  upload_time_text:
+    type: string
+    description: 投稿时间 (文本)
+    example: 3天前
+  description:
+    type: string
+    description: 简介
+    example: 伊蕾娜世界第一~！
+  role:
+    type: string
+    nullable: true
+    description: role
+    example: null
+  settings:
+    $ref: ./AlbumDetailItemSettings.yaml
+  already_collected:
+    type: integer
+    format: int64
+    description: 是否已收藏
+    example: 0
+  already_liked:
+    type: integer
+    format: int64
+    description: already_liked
+    example: 0
+  user_status:
+    type: integer
+    format: int64
+    description: user_status
+    example: 0
+  at_control:
+    type: string
+    description: at_control
+    example: ''
+  view_count:
+    type: integer
+    format: int64
+    description: 观看数
+    example: 143699
+  like_count:
+    type: integer
+    format: int64
+    description: like_count
+    example: 0
+  collect_count:
+    type: integer
+    format: int64
+    description: 收藏数
+    example: 54
+  verify_status:
+    type: integer
+    format: int64
+    description: verify_status
+    example: 1
+  already_voted:
+    type: integer
+    format: int64
+    description: 是否已点赞
+    example: 0
+  vote_count:
+    type: integer
+    format: int64
+    description: 点赞数
+    example: 2258
+  comment_count:
+    type: integer
+    format: int64
+    description: 评论数
+    example: 98

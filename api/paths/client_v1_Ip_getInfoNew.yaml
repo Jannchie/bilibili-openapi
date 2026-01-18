@@ -1,0 +1,18 @@
+get:
+  tags:
+    - 地理位置
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: ip
+      in: query
+      description: IP地址, IPv4或IPv6地址不限, 留空与[根据请求IP确定地理位置](#根据请求ip确定地理位置)基本相同
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IpInfoResponse.yaml

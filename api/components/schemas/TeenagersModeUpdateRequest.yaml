@@ -1,0 +1,72 @@
+type: object
+required:
+  - access_key
+  - appkey
+  - ts
+  - sign
+  - device_model
+  - channel
+  - mobi_app
+  - platform
+  - statistics
+  - pwd
+  - teenagers_mode
+  - teenagers_status
+properties:
+  appkey:
+    type: string
+    description: APP 密钥
+    example: 1d8b6e7d45233436
+  ts:
+    type: integer
+    description: 当前时间戳
+    example: 1699301298
+  sign:
+    type: string
+    description: APP 签名
+    example: 0666c38cb79691c4a0d9570a0669ec96
+  access_key:
+    type: string
+    description: APP 登录 Token
+  device_model:
+    type: string
+    description: 设备 Model
+    example: samsung%257CSM-G955N
+  channel:
+    type: string
+    description: APP 下载渠道
+    example: yingyongbao
+  mobi_app:
+    type: string
+    description: APP 包类型
+  platform:
+    type: string
+    description: 平台类型
+    example: android
+  c_locale:
+    type: string
+    description: 语言
+    default: zh_CN
+  s_locale:
+    type: string
+    description: 语言
+    default: zh_CN
+  statistics:
+    type: string
+    description: 统计信息
+    example: '{"appId":1,"platform":3,"version":"7.27.0","abtest":""}'
+  pwd:
+    type: integer
+    description: 密码
+  teenagers_mode:
+    type: integer
+    description: 开启/关闭模式
+    enum:
+      - 0
+      - 1
+  teenagers_status:
+    type: integer
+    description: 当前模式状态
+    enum:
+      - 0
+      - 1

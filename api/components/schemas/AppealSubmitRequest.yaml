@@ -1,0 +1,22 @@
+type: object
+required:
+  - csrf
+  - aid
+  - tid
+  - desc
+properties:
+  csrf:
+    type: string
+    description: csrf token (位于 cookie bili_jct)
+  aid:
+    type: integer
+    description: 稿件 aid
+  tid:
+    type: integer
+    description: 投诉理由 tid
+  desc:
+    type: string
+    description: 投诉理由详细描述
+  attach:
+    type: string
+    description: 附件（多个附件用逗号隔开）

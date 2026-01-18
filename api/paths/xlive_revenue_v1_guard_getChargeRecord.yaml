@@ -1,0 +1,31 @@
+get:
+  tags:
+    - 包月充电
+  summary: 获取包月充电列表
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+      required: true
+    - name: type
+      in: query
+      description: 充电状态
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetChargeRecordResponse.yaml

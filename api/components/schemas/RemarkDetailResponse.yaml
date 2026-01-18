@@ -1,0 +1,60 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: '0'
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      aid:
+        type: integer
+      bvid:
+        type: string
+      id:
+        type: integer
+        description: 留言id
+      mid:
+        type: integer
+        description: 留言者uid（充电用户）
+      reply_mid:
+        type: integer
+        description: UP主uid
+      elec_num:
+        type: integer
+        description: '0'
+      state:
+        type: integer
+        description: UP是否已经回复这条留言
+      msg:
+        type: string
+        description: 留言内容
+      aname:
+        type: string
+        description: 空
+      uname:
+        type: string
+        description: 留言者用户名
+      avator:
+        type: string
+        description: 留言者头像
+      reply_name:
+        type: string
+        description: UP主用户名
+      reply_avator:
+        type: string
+        description: UP主头像
+      reply_msg:
+        type: string
+        description: 回复内容
+      ctime:
+        type: integer
+        description: 留言时间
+      reply_time:
+        type: integer
+        description: 回复时间

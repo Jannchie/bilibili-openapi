@@ -1,0 +1,17 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，500404：已经删除过该动态，500406：动态不是自己的
+  msg:
+    type: string
+    description: 错误信息
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      _gt_:
+        type: integer
+        description: 作用尚不明确

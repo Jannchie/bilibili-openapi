@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 名词解释
+  summary: 查询名词解释详情
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: id
+      in: query
+      description: 名词id，如：1代表“kksk”，2代表“打脸”
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BuzzwordDetailResponse.yaml

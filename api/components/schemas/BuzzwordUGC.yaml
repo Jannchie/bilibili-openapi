@@ -1,0 +1,26 @@
+type: object
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  cid:
+    type: integer
+    description: 视频 cid
+  name:
+    type: string
+    description: 视频标题
+  link:
+    type: string
+    description: 空
+  play:
+    type: integer
+    description: 播放数
+  danmaku:
+    type: integer
+    description: 弹幕数
+  duration:
+    type: integer
+    description: 视频时长，单位为秒
+  cover:
+    type: string
+    description: 视频封面 url

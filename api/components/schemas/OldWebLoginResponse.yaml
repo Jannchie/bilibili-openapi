@@ -1,0 +1,39 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: >-
+      返回值，0：成功，-400：请求错误，-629：账号或密码错误，-653：用户名或密码不能为空，-662：提交超时,请重新提交，-2001：缺少必要的的参数，-2100：需验证手机号或邮箱，2400：登录秘钥错误，2406：验证极验服务出错，86000：RSA解密失败
+  ts:
+    type: integer
+    description: 当前时间戳
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      redirectUrl:
+        type: string
+        description: 游戏分站跨域登录 URL
+      isLogin:
+        type: boolean
+        default: true
+      goUrl:
+        type: string
+        description: https://www.bilibili.com
+      mid:
+        type: integer
+        description: 用户 mid
+      tel:
+        type: string
+        description: 绑定的手机号
+      email:
+        type: string
+        description: 绑定的邮箱
+      sorce:
+        type: integer
+        description: '0'
+      keeptime:
+        type: integer
+        description: '1'

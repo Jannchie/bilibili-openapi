@@ -1,0 +1,73 @@
+post:
+  tags:
+    - 弹幕操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: 互动弹幕类型
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 5
+      required: true
+    - name: aid
+      in: query
+      description: 稿件 avid
+      schema:
+        type: integer
+      required: true
+    - name: cid
+      in: query
+      description: 视频 cid
+      schema:
+        type: integer
+      required: true
+    - name: progress
+      in: query
+      description: 弹幕出现在视频内的时间, 单位为毫秒, 默认为 0
+      schema:
+        type: integer
+    - name: plat
+      in: query
+      description: 平台标识
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 8
+      required: true
+    - name: data
+      in: query
+      description: json 序列
+      schema:
+        type: string
+      required: true
+    - name: dmid
+      in: query
+      description: 修改互动弹幕的弹幕 id, 注:修改弹幕`plat`必须为 8
+      schema:
+        type: integer
+    - name: csrf
+      in: query
+      description: CSRF Token(位于 cookie)
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuCommandPostResponse.yaml

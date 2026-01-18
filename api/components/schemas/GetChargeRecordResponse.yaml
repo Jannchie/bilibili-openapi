@@ -1,0 +1,95 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误，25100004：参数错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        description: 包月充电UP主列表
+        items:
+          type: object
+          properties:
+            up_uid:
+              type: integer
+              description: 充电UP主mid
+            user_name:
+              type: string
+              description: 充电UP主昵称
+            user_face:
+              type: string
+              description: 充电UP主头像url
+            item:
+              type: array
+              description: 充电详情
+              items:
+                type: object
+                properties:
+                  privilege_type:
+                    type: integer
+                    description: 10（？）
+                  icon:
+                    type: string
+                    description: 充电图标
+                  name:
+                    type: string
+                    description: 包月充电
+                  expire_time:
+                    type: integer
+                    description: 充电过期时间
+                  renew:
+                    type: object
+                    properties:
+                      uid:
+                        type: integer
+                        description: 自己的mid
+                      ruid:
+                        type: integer
+                        description: UP主的mid
+                      goods_id:
+                        type: integer
+                        description: 充电类型
+                      status:
+                        type: integer
+                        description: 充电状态
+                      next_execute_time:
+                        type: integer
+                        description: 下次续费时间
+                      signed_time:
+                        type: integer
+                        description: 签约时间
+                      signed_price:
+                        type: integer
+                        description: 下次续费金额
+                      pay_channel:
+                        type: integer
+                        description: 签约平台
+                      period:
+                        type: integer
+                        description: 下次充电天数
+            start:
+              type: integer
+              description: 开始充电时间
+      page:
+        type: integer
+        description: 当前页数
+      page_size:
+        type: integer
+        description: 当前分页大小
+      total_page:
+        type: integer
+        description: 总页数
+      total_num:
+        type: integer
+        description: 用户总数
+      is_more:
+        type: integer
+        description: 是否有更多用户

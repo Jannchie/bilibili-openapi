@@ -1,0 +1,20 @@
+type: object
+properties:
+  uid:
+    type: integer
+    description: 用户 ID
+  time:
+    type: integer
+    description: 时间戳
+  face_url:
+    type: string
+    description: 头像 URL
+  uname:
+    type: string
+    description: 用户名
+  user_info:
+    type: object
+    description: 用户信息
+  attend:
+    type: integer
+    description: 是否参加活动

@@ -1,0 +1,144 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          type: object
+          properties:
+            medal_info:
+              type: object
+              properties:
+                target_id:
+                  type: integer
+                  description: 主播 mid
+                level:
+                  type: integer
+                  description: 勋章等级
+                medal_name:
+                  type: string
+                  description: 勋章名称
+                medal_color_start:
+                  type: integer
+                  description: 勋章开始颜色
+                medal_color_end:
+                  type: integer
+                  description: 勋章结束颜色
+                medal_color_border:
+                  type: integer
+                  description: 勋章边框颜色
+                guard_level:
+                  type: integer
+                wearing_status:
+                  type: integer
+                  description: 佩戴状态
+                medal_id:
+                  type: integer
+                  description: 勋章 ID
+                intimacy:
+                  type: integer
+                  description: 当前亲密度
+                next_intimacy:
+                  type: integer
+                  description: 下一等级所需亲密度
+                today_feed:
+                  type: integer
+                  description: 今日已获得亲密度
+                day_limit:
+                  type: integer
+                guard_icon:
+                  type: string
+                honor_icon:
+                  type: string
+              description: 勋章信息
+            target_name:
+              type: string
+              description: 主播名称
+            target_icon:
+              type: string
+              description: 主播头像 URL
+            link:
+              type: string
+              description: 主播主页 URL
+            live_status:
+              type: integer
+              description: 直播状态
+            official:
+              type: integer
+              description: 主播认证类型
+            uinfo_medal:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 勋章名称
+                level:
+                  type: integer
+                  description: 勋章等级
+                color_start:
+                  type: integer
+                color_end:
+                  type: integer
+                color_border:
+                  type: integer
+                color:
+                  type: integer
+                id:
+                  type: integer
+                typ:
+                  type: integer
+                is_light:
+                  type: integer
+                ruid:
+                  type: integer
+                guard_level:
+                  type: integer
+                score:
+                  type: integer
+                guard_icon:
+                  type: string
+                honor_icon:
+                  type: string
+                v2_medal_color_start:
+                  type: string
+                v2_medal_color_end:
+                  type: string
+                v2_medal_color_border:
+                  type: string
+                v2_medal_color_text:
+                  type: string
+                v2_medal_color_level:
+                  type: string
+                user_receive_count:
+                  type: integer
+        description: 勋章列表
+      count:
+        type: integer
+        description: 勋章数
+      close_space_medal:
+        type: integer
+      only_show_wearing:
+        type: integer
+      name:
+        type: string
+        description: 目标用户名
+      icon:
+        type: string
+        description: 目标用户头像 URL
+      uid:
+        type: integer
+        description: 目标用户 mid
+      level:
+        type: integer
+        description: 目标用户等级

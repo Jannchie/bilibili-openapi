@@ -1,0 +1,62 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  msg:
+    type: string
+    description: 错误信息
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: array
+    description: 父分区列表
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 父分区 ID
+        name:
+          type: string
+          description: 父分区名
+        list:
+          type: array
+          description: 子分区列表
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 子分区 ID
+              parent_id:
+                type: string
+                description: 父分区 ID
+              old_area_id:
+                type: string
+                description: 旧分区 ID
+              name:
+                type: string
+                description: 子分区名
+              act_id:
+                type: string
+                description: '0'
+              pk_status:
+                type: string
+                description: ？？？
+              hot_status:
+                type: integer
+                description: 是否为热门分区
+              lock_status:
+                type: string
+                description: '0'
+              pic:
+                type: string
+                description: 子分区标志图片 URL
+              parent_name:
+                type: string
+                description: 父分区名
+              area_type:
+                type: integer
+                description: '0'

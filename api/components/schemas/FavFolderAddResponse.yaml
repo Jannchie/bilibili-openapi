@@ -1,0 +1,95 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-102：账号被封停
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 收藏夹 ID
+      fid:
+        type: integer
+        description: 收藏夹 fid
+      mid:
+        type: integer
+        description: 用户 mid
+      attr:
+        type: integer
+        description: 属性
+      title:
+        type: string
+        description: 标题
+      cover:
+        type: string
+        description: 封面
+      upper:
+        type: object
+        properties:
+          mid:
+            type: integer
+            description: UP 主 mid
+          name:
+            type: string
+            description: UP 主名称
+          face:
+            type: string
+            description: UP 主头像
+          followed:
+            type: boolean
+            description: 是否关注 UP 主
+          vip_type:
+            type: integer
+            description: UP 主会员类型
+          vip_statue:
+            type: integer
+            description: UP 主会员状态
+      cover_type:
+        type: integer
+        description: 封面类型
+      cnt_info:
+        type: object
+        properties:
+          collect:
+            type: integer
+            description: 收藏数
+          play:
+            type: integer
+            description: 播放数
+          thumb_up:
+            type: integer
+            description: 点赞数
+          share:
+            type: integer
+            description: 分享数
+      type:
+        type: integer
+        description: 收藏夹类型
+      intro:
+        type: string
+        description: 简介
+      ctime:
+        type: integer
+        description: 创建时间
+      mtime:
+        type: integer
+        description: 修改时间
+      state:
+        type: integer
+        description: 收藏夹状态
+      fav_state:
+        type: integer
+        description: 收藏状态
+      like_state:
+        type: integer
+        description: 点赞状态
+      media_count:
+        type: integer
+        description: 媒体计数

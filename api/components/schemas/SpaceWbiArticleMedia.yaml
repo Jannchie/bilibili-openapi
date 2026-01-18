@@ -1,0 +1,38 @@
+type: object
+properties:
+  score:
+    type: integer
+    format: int64
+    description: score
+    example: 0
+  media_id:
+    type: integer
+    format: int64
+    description: media_id
+    example: 0
+  title:
+    type: string
+    description: title
+    example: ''
+  cover:
+    type: string
+    description: cover
+    example: ''
+  area:
+    type: string
+    description: area
+    example: ''
+  type_id:
+    type: integer
+    format: int64
+    description: type_id
+    example: 0
+  type_name:
+    type: string
+    description: type_name
+    example: ''
+  spoiler:
+    type: integer
+    format: int64
+    description: spoiler
+    example: 0

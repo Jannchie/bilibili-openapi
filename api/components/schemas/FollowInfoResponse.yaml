@@ -1,0 +1,74 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      days:
+        type: integer
+        description: 已保持多少天包月充电状态
+      up_card:
+        type: object
+        properties:
+          nickname:
+            type: string
+            description: UP主昵称
+          official_title:
+            type: string
+            description: UP主认证信息
+          avatar:
+            type: string
+            description: UP主头像url
+      user_card:
+        type: object
+        properties:
+          avatar:
+            type: string
+            description: 用户头像url
+          nickname:
+            type: string
+            description: 用户昵称
+      remain_days:
+        type: integer
+        description: 剩余天数
+      remain_less_1day:
+        type: integer
+        description: 剩余的天数小于1天
+      upower_rank:
+        type: object
+        properties:
+          total:
+            type: integer
+            description: 充电用户总数
+          total_desc:
+            type: string
+            description: 充电总数文字说明
+          list:
+            type: array
+            description: 充电用户列表
+            items:
+              type: object
+              properties:
+                rank:
+                  type: integer
+                  description: 充电用户索引
+                mid:
+                  type: integer
+                  description: 充电用户mid
+                nickname:
+                  type: string
+                  description: 充电用户昵称
+                avatar:
+                  type: string
+                  description: 充电用户头像url
+      upower_icon:
+        type: string
+        description: 充电图标url

@@ -1,0 +1,37 @@
+post:
+  tags:
+    - 稍后再看
+  summary: 添加频道中所有视频到稍后再看
+  description: 超过容量后会截取容量之内的添加
+  servers:
+    - url: https://space.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      x-www-form-urlencoded:
+        schema:
+          required:
+            - cid
+            - mid
+            - csrf
+          type: object
+          properties:
+            cid:
+              type: integer
+              format: int32
+              description: 目标频道 ID
+            mid:
+              type: integer
+              format: int32
+              description: 目标频道所属的用户 mid
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AddAllToViewResponse.yaml

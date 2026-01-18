@@ -1,0 +1,24 @@
+get:
+  tags:
+    - 音频
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: list_id
+      in: query
+      description: 榜单id, 见[获取音频榜单每期列表](#获取音频榜单每期列表)
+      schema:
+        type: integer
+      required: true
+    - name: csrf
+      in: query
+      description: CSRF Token(位于cookie)
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ToplistDetailResponse.yaml

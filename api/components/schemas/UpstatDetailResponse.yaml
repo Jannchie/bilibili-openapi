@@ -1,0 +1,89 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: object
+    properties:
+      inc_coin:
+        type: integer
+        description: 新增投币数
+        example: 0
+      inc_elec:
+        type: integer
+        description: 新增充电数
+        example: 0
+      inc_fav:
+        type: integer
+        description: 新增收藏数
+        example: 0
+      inc_like:
+        type: integer
+        description: 新增点赞数
+        example: 0
+      inc_share:
+        type: integer
+        description: 新增分享数
+        example: 0
+      incr_click:
+        type: integer
+        description: 新增播放数
+        example: 0
+      incr_dm:
+        type: integer
+        description: 新增弹幕数
+        example: 0
+      incr_fans:
+        type: integer
+        description: 新增粉丝数
+        example: 1
+      incr_reply:
+        type: integer
+        description: 新增评论数
+        example: 0
+      total_click:
+        type: integer
+        description: 总计播放数
+        example: 9
+      total_coin:
+        type: integer
+        description: 总计投币数
+        example: 1
+      total_dm:
+        type: integer
+        description: 总计弹幕数
+        example: 0
+      total_elec:
+        type: integer
+        description: 总计充电数
+        example: 0
+      total_fans:
+        type: integer
+        description: 总计粉丝数
+        example: 29
+      total_fav:
+        type: integer
+        description: 总计收藏数
+        example: 1
+      total_like:
+        type: integer
+        description: 总计点赞数
+        example: 1
+      total_reply:
+        type: integer
+        description: 总计评论数
+        example: 0
+      total_share:
+        type: integer
+        description: 总计分享数
+        example: 0

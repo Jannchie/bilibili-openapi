@@ -1,0 +1,21 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    oneOf:
+      - type: object
+        properties:
+          packages:
+            type: array
+            description: 表情包
+            items:
+              $ref: ./EmotePackage.yaml
+      - type: object

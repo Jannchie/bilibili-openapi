@@ -1,0 +1,42 @@
+get:
+  tags:
+    - 充电
+  summary: 查询我收到的充电留言
+  servers:
+    - url: https://member.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: begin
+      in: query
+      description: 起始日期
+      schema:
+        type: string
+        format: date
+        default: '2016-01-01'
+    - name: end
+      in: query
+      description: 结束日期
+      schema:
+        type: string
+        format: date
+        default: '2050-01-01'
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+    - name: ps
+      in: query
+      description: 分页大小
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 12
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RemarkListResponse.yaml

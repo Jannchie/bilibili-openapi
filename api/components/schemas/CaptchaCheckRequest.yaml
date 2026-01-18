@@ -1,0 +1,21 @@
+type: object
+properties:
+  types:
+    type: string
+    description: 自选题分类（旧版）
+  type:
+    type: string
+    description: 验证码类型
+  bilibili_token:
+    type: string
+  bilibili_code:
+    type: string
+  geetest_challenge:
+    type: string
+    description: 极验 key
+  geetest_seccode:
+    type: string
+    description: 极验结果 + '|jordan'
+  geetest_validate:
+    type: string
+    description: 极验结果

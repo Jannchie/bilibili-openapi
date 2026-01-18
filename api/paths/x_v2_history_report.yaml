@@ -1,0 +1,18 @@
+post:
+  tags:
+    - 视频观看数据上报
+  servers:
+    - url: https://api.bilibili.com
+  summary: 上报观看进度（双端）
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/HistoryReportRequest.yaml
+  responses:
+    '200':
+      description: 上报结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HistoryReportResponse.yaml

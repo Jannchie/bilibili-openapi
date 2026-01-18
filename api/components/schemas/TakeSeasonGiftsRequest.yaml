@@ -1,0 +1,7 @@
+type: object
+required:
+  - season_id
+properties:
+  season_id:
+    type: string
+    description: 赛季 id

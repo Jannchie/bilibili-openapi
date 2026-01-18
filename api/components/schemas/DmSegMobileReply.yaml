@@ -1,0 +1,7 @@
+type: object
+properties:
+  elems:
+    type: array
+    description: 弹幕条目
+    items:
+      $ref: ./DanmakuElem.yaml

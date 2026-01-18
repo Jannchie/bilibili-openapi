@@ -1,0 +1,11 @@
+type: object
+properties:
+  type:
+    type: integer
+    format: int64
+    description: 是否认证
+    example: -1
+  desc:
+    type: string
+    description: 认证备注
+    example: ''

@@ -1,0 +1,55 @@
+get:
+  servers:
+    - url: https://api.vc.bilibili.com
+  tags:
+    - 相簿
+    - 活动
+  summary: 获取相簿热门活动列表
+  parameters:
+    - name: type
+      in: query
+      description: 活动类型
+      required: false
+      schema:
+        type: integer
+        format: int64
+        enum:
+          - 0
+          - 1
+          - 2
+        default: 0
+    - name: biz
+      in: query
+      description: 分区
+      required: false
+      schema:
+        type: integer
+        format: int64
+        enum:
+          - 0
+          - 1
+          - 2
+        default: 0
+    - name: page_num
+      in: query
+      description: 页码
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 4
+    - name: page_size
+      in: query
+      description: 每页项数
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 0
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ActivityListResponse.yaml

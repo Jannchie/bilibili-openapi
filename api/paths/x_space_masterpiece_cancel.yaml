@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 用户空间相关
+  servers:
+    - url: https://api.bilibili.com
+  summary: 删除代表作视频
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/MasterpieceCancelRequest.yaml
+  responses:
+    '200':
+      description: 删除结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MasterpieceCancelResponse.yaml

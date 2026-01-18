@@ -1,0 +1,7 @@
+type: object
+required:
+  - comicId
+properties:
+  comicId:
+    type: integer
+    description: 漫画id

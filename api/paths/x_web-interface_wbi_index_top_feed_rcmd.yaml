@@ -1,0 +1,118 @@
+get:
+  tags:
+    - 视频推荐
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取首页视频推荐列表 (web 端)
+  parameters:
+    - in: query
+      name: fresh_type
+      schema:
+        type: integer
+        default: 4
+      required: false
+      description: 相关性
+    - in: query
+      name: ps
+      schema:
+        type: integer
+        default: 12
+      required: false
+      description: 单页返回的记录条数
+    - in: query
+      name: fresh_idx
+      schema:
+        type: integer
+      required: false
+      description: 当前翻页号
+    - in: query
+      name: fresh_idx_1h
+      schema:
+        type: integer
+      required: false
+      description: 当前翻页号 (一小时前?)
+    - in: query
+      name: brush
+      schema:
+        type: integer
+      required: false
+      description: 刷子?
+    - in: query
+      name: fetch_row
+      schema:
+        type: integer
+      required: false
+      description: 本次抓取的最后一行行号
+    - in: query
+      name: web_location
+      schema:
+        type: integer
+        default: 1430650
+      required: false
+      description: 网页位置
+    - in: query
+      name: y_num
+      schema:
+        type: integer
+      required: false
+      description: 普通列数
+    - in: query
+      name: last_y_num
+      schema:
+        type: integer
+      required: false
+      description: 总列数
+    - in: query
+      name: feed_version
+      schema:
+        type: string
+        default: V8
+      required: false
+    - in: query
+      name: homepage_ver
+      schema:
+        type: integer
+        default: 1
+      required: false
+      description: 首页版本
+    - in: query
+      name: screen
+      schema:
+        type: string
+      required: false
+      description: 浏览器视口大小
+    - in: query
+      name: seo_info
+      schema:
+        type: string
+      required: false
+    - in: query
+      name: last_showlist
+      schema:
+        type: string
+      required: false
+      description: 上次抓取的视频 av 号列表
+    - in: query
+      name: uniq_id
+      schema:
+        type: string
+      required: false
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: UNIX 时间戳
+  responses:
+    '200':
+      description: 首页视频推荐列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/IndexTopFeedRcmdResponse.yaml

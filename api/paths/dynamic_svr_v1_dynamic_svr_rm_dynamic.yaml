@@ -1,0 +1,37 @@
+post:
+  tags:
+    - 动态操作
+  summary: 删除动态
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      form-data:
+        schema:
+          required:
+            - dynamic_id
+            - csrf_token
+            - csrf
+          type: object
+          properties:
+            dynamic_id:
+              type: integer
+              description: 动态id
+              example: 0
+            csrf_token:
+              type: string
+              description: csrf
+              example: ''
+            csrf:
+              type: string
+              description: csrf
+              example: ''
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RmDynamicResponse.yaml

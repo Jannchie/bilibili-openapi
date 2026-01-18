@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 所有粉丝勋章
+  servers:
+    - url: https://api.live.bilibili.com
+  summary: 指定用户的所有粉丝勋章信息
+  parameters:
+    - in: query
+      name: target_id
+      schema:
+        type: integer
+      required: true
+      description: 目标 mid
+  responses:
+    '200':
+      description: 勋章信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MedalWallResponse.yaml

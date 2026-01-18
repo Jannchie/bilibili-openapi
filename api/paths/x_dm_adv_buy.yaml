@@ -1,0 +1,40 @@
+post:
+  tags:
+    - 弹幕操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+    - name: mode
+      in: query
+      description: sp
+      schema:
+        type: string
+        enum:
+          - sp
+      required: true
+    - name: cid
+      in: query
+      description: 视频 cid
+      schema:
+        type: integer
+      required: true
+    - name: csrf
+      in: query
+      description: CSRF Token(位于 cookie)
+      schema:
+        type: string
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuAdvBuyResponse.yaml

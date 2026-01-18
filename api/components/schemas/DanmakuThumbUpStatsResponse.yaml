@@ -1,0 +1,39 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    description: 弹幕 id 与之对应数据的 Map
+    additionalProperties:
+      type: object
+      properties:
+        likes:
+          type: integer
+          description: 对应弹幕所获得的点赞数
+        user_like:
+          type: integer
+          description: 当前用户是否点赞，0：未点赞，1：已点赞，需要登录（Cookie 或 APP）
+        id_str:
+          type: string
+          description: 弹幕 dmid 字符串形式
+        show_threshold:
+          type: integer
+          description: （？）
+        reply_count:
+          type: integer
+          description: （？）
+        gray_release_control:
+          type: object
+          description: （？）
+          properties:
+            show_dm_reply:
+              type: boolean
+              description: （？）

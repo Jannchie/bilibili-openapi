@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 充电
+  summary: 检查扫码支付结果
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: qr_token
+      in: query
+      description: 扫码秘钥
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OrderStatusResponse.yaml

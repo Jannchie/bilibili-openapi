@@ -1,0 +1,79 @@
+post:
+  tags:
+    - 登录
+  summary: 发送短信验证码 (APP 端)
+  description: |-
+    同手机号短信发送 CD 时间为 60s
+
+    短信验证码 timeout 为 5min
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SmsSendResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - cid
+            - tel
+            - login_session_id
+            - recaptcha_token
+            - gee_challenge
+            - gee_validate
+            - gee_seccode
+            - channel
+            - buvid
+            - local_id
+            - statistics
+          properties:
+            cid:
+              type: integer
+              description: 国际冠字码
+              default: ''
+            tel:
+              type: string
+              description: 手机号码
+              default: ''
+            login_session_id:
+              type: string
+              description: 登录标识
+              default: ''
+            recaptcha_token:
+              type: string
+              description: 登录 API token
+              default: ''
+            gee_challenge:
+              type: string
+              description: 极验 challenge
+              default: ''
+            gee_validate:
+              type: string
+              description: 极验 result
+              default: ''
+            gee_seccode:
+              type: string
+              description: 极验 result jordan
+              default: ''
+            channel:
+              type: string
+              description: 通道?
+              default: bili
+            buvid:
+              type: string
+              description: buvid
+              default: ''
+            local_id:
+              type: string
+              description: local_id
+              default: ''
+            statistics:
+              type: string
+              description: desc
+              default: ''

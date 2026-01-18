@@ -1,0 +1,98 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      seid:
+        type: string
+        description: 搜索 seid
+      page:
+        type: integer
+        description: 当前页码
+      pagesize:
+        type: integer
+        description: 每页条数
+        default: 20
+      numResults:
+        type: integer
+        description: 总条数
+      numPages:
+        type: integer
+        description: 总计分页数
+      suggest_keyword:
+        type: string
+      rqt_type:
+        type: string
+        default: search
+      cost_time:
+        type: object
+        properties:
+          params_check:
+            type: string
+            format: float
+          illegal_handler:
+            type: string
+            format: float
+          as_response_format:
+            type: string
+            format: float
+          as_request:
+            type: string
+            format: float
+          save_cache:
+            type: string
+            format: float
+          deserialize_response:
+            type: string
+            format: float
+          as_request_format:
+            type: string
+            format: float
+          total:
+            type: string
+            format: float
+          main_handler:
+            type: string
+            format: float
+        description: 详细搜索用时
+      exp_list:
+        type: object
+      egg_hit:
+        type: integer
+        default: 0
+      pageinfo:
+        type: object
+        properties:
+          live_room:
+            $ref: ./LivePageInfoItem.yaml
+          live_user:
+            $ref: ./LivePageInfoItem.yaml
+        description: 副分页信息
+      result:
+        oneOf:
+          - type: object
+            properties:
+              live_room:
+                type: array
+                items:
+                  $ref: ./SearchResult.yaml
+              live_user:
+                type: array
+                items:
+                  $ref: ./SearchResult.yaml
+          - type: array
+            items:
+              $ref: ./SearchResult.yaml
+        description: 结果列表
+      show_column:
+        type: integer
+        default: 0

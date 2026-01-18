@@ -1,0 +1,56 @@
+get:
+  tags:
+    - 用户
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取用户专栏文章列表（旧）
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+    - name: mid
+      in: query
+      description: 用户 uid
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: pn
+      in: query
+      description: 页码
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 1
+    - name: ps
+      in: query
+      description: 每页数量
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 30
+        minimum: 1
+        maximum: 30
+    - name: sort
+      in: query
+      description: 排序方式
+      required: false
+      schema:
+        type: string
+        enum:
+          - publish_time
+          - view
+          - fav
+        default: publish_time
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SpaceArticleResponse.yaml

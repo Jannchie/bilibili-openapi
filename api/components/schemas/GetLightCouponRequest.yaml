@@ -1,0 +1,11 @@
+type: object
+required:
+  - weekIndex
+  - type
+properties:
+  weekIndex:
+    type: integer
+    description: 第几周
+  type:
+    type: integer
+    description: 领取类型

@@ -1,0 +1,23 @@
+type: object
+required:
+  - aid
+  - cid
+properties:
+  access_key:
+    type: string
+    description: APP 登录 Token
+  aid:
+    type: integer
+    description: 稿件 avid
+  cid:
+    type: integer
+    description: 视频 cid
+  progress:
+    type: integer
+    description: 观看进度
+  platform:
+    type: string
+    description: 平台标识
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

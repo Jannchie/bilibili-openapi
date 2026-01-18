@@ -1,0 +1,29 @@
+get:
+  tags:
+    - 众裁信息
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+    - name: ps
+      in: query
+      description: 每页显示数量
+      schema:
+        type: integer
+    - name: Cookie
+      in: header
+      description: Cookie
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryCaseListResponse.yaml

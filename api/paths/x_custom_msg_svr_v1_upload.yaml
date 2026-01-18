@@ -1,0 +1,33 @@
+post:
+  tags:
+    - 客服消息
+  servers:
+    - url: https://customerservice.bilibili.com
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
+              format: binary
+              description: 文件内容
+            filename:
+              type: string
+              description: 文件名
+            mid:
+              type: integer
+              description: 用户mid
+            csrf:
+              type: string
+              description: CSRF Token(位于Cookie中bili_jct)
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UploadResponse.yaml

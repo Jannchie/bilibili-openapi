@@ -1,0 +1,143 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 专栏文章 ID
+    example: 18989884
+  category:
+    $ref: ./SpaceWbiArticleCategory.yaml
+  categories:
+    type: array
+    description: 分类
+    items:
+      $ref: ./SpaceWbiArticleCategory.yaml
+  title:
+    type: string
+    description: 标题
+    example: B站UP主日报2022年10月08日23点（v1.1）
+  summary:
+    type: string
+    description: 摘要
+    example: >-
+      冠：罗翔说刑法(2485.45万粉,+7204) 涨：肯德基(+18.37万粉) 掉：Overidea_China(-186850粉)
+      播：开心锤锤(+927.56万) 赞：荒草音乐(+31.02万) 赞：飞翔的丘丘人(+22.08万) 充：冰糖IO(+210)
+  banner_url:
+    type: string
+    format: url
+    description: 封面图
+    example: >-
+      https://i0.hdslb.com/bfs/article/5e53260f58f77fff0b8ba6b20179db85b8741b76.jpg
+  template_id:
+    type: integer
+    format: int64
+    description: 模板 ID
+    example: 4
+  state:
+    type: integer
+    format: int64
+    description: 状态
+    example: 0
+  author:
+    $ref: ./SpaceWbiArticleAuthor.yaml
+  reprint:
+    type: integer
+    format: int64
+    description: reprint
+    example: 0
+  image_urls:
+    type: array
+    description: image_urls
+    items:
+      type: string
+      format: url
+      example: >-
+        https://i0.hdslb.com/bfs/article/8e5497f7854e7df3468fbc29b0dd10fcf17d1223.png
+  publish_time:
+    type: integer
+    format: int64
+    description: 发布时间戳 (单位：秒)
+    example: 1665278884
+  ctime:
+    type: integer
+    format: int64
+    description: 提交时间戳 (单位：秒)
+    example: 1665278884
+  stats:
+    $ref: ./SpaceWbiArticleStats.yaml
+  tags:
+    type: array
+    description: 标签
+    items:
+      $ref: ./SpaceWbiArticleTag.yaml
+  words:
+    type: integer
+    format: int64
+    description: words
+    example: 0
+  dynamic:
+    type: string
+    description: 粉丝动态文案
+    example: 狸子的UP主日报📰v1.1,每天稳定更新～（如果咕咕咕了，请艾特狸子LePtC检查狐务器 [tv_微笑]
+  origin_image_urls:
+    type: array
+    description: origin_image_urls
+    items:
+      type: string
+      format: url
+      example: >-
+        https://i0.hdslb.com/bfs/article/5e53260f58f77fff0b8ba6b20179db85b8741b76.jpg
+  list:
+    type: string
+    nullable: true
+    description: list
+    example: null
+  is_like:
+    type: boolean
+    description: is_like
+    example: false
+  media:
+    $ref: ./SpaceWbiArticleMedia.yaml
+  apply_time:
+    type: string
+    description: apply_time
+    example: ''
+  check_time:
+    type: string
+    description: check_time
+    example: ''
+  original:
+    type: integer
+    format: int64
+    description: original
+    example: 1
+  act_id:
+    type: integer
+    format: int64
+    description: act_id
+    example: 0
+  dispute:
+    type: string
+    nullable: true
+    description: dispute
+    example: null
+  authenMark:
+    type: string
+    nullable: true
+    description: authenMark
+    example: null
+  cover_avid:
+    type: integer
+    format: int64
+    description: cover_avid
+    example: 0
+  top_video_info:
+    type: string
+    nullable: true
+    description: top_video_info
+    example: null
+  type:
+    type: integer
+    format: int64
+    description: type
+    example: 0

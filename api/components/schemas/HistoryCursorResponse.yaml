@@ -1,0 +1,142 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      cursor:
+        type: object
+        properties:
+          max:
+            type: integer
+            description: 最后一项目标 ID
+          view_at:
+            type: integer
+            description: 最后一项时间节点
+          business:
+            type: string
+            description: 最后一项业务类型
+          ps:
+            type: integer
+            description: 每页项数
+      tab:
+        type: array
+        description: 历史记录筛选类型
+        items:
+          type: object
+          properties:
+            type:
+              type: string
+              description: 类型
+            name:
+              type: string
+              description: 类型名
+      list:
+        type: array
+        description: 分段历史记录列表
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              description: 条目标题
+            long_title:
+              type: string
+              description: 条目副标题
+            cover:
+              type: string
+              description: 条目封面图 URL
+            covers:
+              type: array
+              description: 条目封面图组
+              items:
+                type: string
+            uri:
+              type: string
+              description: 重定向 URL
+            history:
+              type: object
+              properties:
+                oid:
+                  type: integer
+                  description: 目标 ID
+                epid:
+                  type: integer
+                  description: 剧集 epid
+                bvid:
+                  type: string
+                  description: 稿件 bvid
+                page:
+                  type: integer
+                  description: 观看到的视频分 P 数
+                cid:
+                  type: integer
+                  description: 观看到的对象 ID
+                part:
+                  type: string
+                  description: 观看到的视频分 P 标题
+                business:
+                  type: string
+                  description: 业务类型
+                dt:
+                  type: integer
+                  description: 记录查看的平台代码
+            videos:
+              type: integer
+              description: 视频分 P 数目
+            author_name:
+              type: string
+              description: UP 主昵称
+            author_face:
+              type: string
+              description: UP 主头像 URL
+            author_mid:
+              type: integer
+              description: UP 主 mid
+            view_at:
+              type: integer
+              description: 查看时间
+            progress:
+              type: integer
+              description: 视频观看进度
+            badge:
+              type: string
+              description: 角标文案
+            show_title:
+              type: string
+              description: 分 P 标题
+            duration:
+              type: integer
+              description: 视频总时长
+            current:
+              type: string
+              description: (?)
+            total:
+              type: integer
+              description: 总计分集数
+            new_desc:
+              type: string
+              description: 最新一话 / 最新一 P 标识
+            is_finish:
+              type: integer
+              description: 是否已完结
+            is_fav:
+              type: integer
+              description: 是否收藏
+            kid:
+              type: integer
+              description: 条目目标 ID
+            tag_name:
+              type: string
+              description: 子分区名
+            live_status:
+              type: integer
+              description: 直播状态

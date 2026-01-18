@@ -1,0 +1,33 @@
+post:
+  tags:
+    - 投稿
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: ts
+      in: query
+      description: 当前时间, UNIX毫秒时间戳
+      schema:
+        type: integer
+    - name: csrf
+      in: query
+      description: CSRF Token(位于Cookie中bili_jct)
+      schema:
+        type: string
+      required: true
+    - name: cover
+      in: query
+      description: 视频封面, 经过base64编码的图片数据
+      schema:
+        type: string
+        format: base64
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CoverUpResponse.yaml

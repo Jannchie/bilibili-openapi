@@ -1,0 +1,43 @@
+post:
+  tags:
+    - 充电
+  summary: 新版本B币充电
+  description: B币方式充电
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            bp_num:
+              type: integer
+              description: 贝壳数量
+            is_bp_remains_prior:
+              type: boolean
+              description: 是否优先扣除B币余额
+            up_mid:
+              type: integer
+              description: 充电对象用户mid
+            otype:
+              type: string
+              description: 充电来源
+              enum:
+                - up
+                - archive
+            oid:
+              type: integer
+              description: 充电来源代码
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BatteryPayResponse.yaml

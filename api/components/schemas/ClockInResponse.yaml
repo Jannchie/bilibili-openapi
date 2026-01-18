@@ -1,0 +1,15 @@
+type: object
+properties:
+  code:
+    oneOf:
+      - type: integer
+      - type: string
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  meta:
+    type: object
+    description: 错误信息
+  data:
+    type: object

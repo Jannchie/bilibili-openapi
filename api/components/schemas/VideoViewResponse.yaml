@@ -1,0 +1,430 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      bvid:
+        type: string
+        description: 稿件 bvid
+      aid:
+        type: integer
+        description: 稿件 avid
+      videos:
+        type: integer
+        description: 稿件分 P 总数
+        default: 1
+      tid:
+        type: integer
+        description: 分区 tid
+      tname:
+        type: string
+        description: 子分区名称
+      copyright:
+        type: integer
+        description: 视频类型
+      pic:
+        type: string
+        description: 稿件封面图片 url
+      title:
+        type: string
+        description: 稿件标题
+      pubdate:
+        type: integer
+        description: 稿件发布时间
+      ctime:
+        type: integer
+        description: 用户投稿时间
+      desc:
+        type: string
+        description: 视频简介
+      desc_v2:
+        type: array
+        items:
+          type: object
+          properties:
+            raw_text:
+              type: string
+              description: 简介内容
+            type:
+              type: integer
+              description: 类型
+            biz_id:
+              type: integer
+              description: 被@用户的 mid
+        description: 新版视频简介
+      state:
+        type: integer
+        description: 视频状态
+      duration:
+        type: integer
+        description: 稿件总时长 (所有分 P)
+      forward:
+        type: integer
+        description: 撞车视频跳转 avid
+      mission_id:
+        type: integer
+        description: 稿件参与的活动 ID
+      redirect_url:
+        type: string
+        description: 重定向 url
+      rights:
+        type: object
+        properties:
+          bp:
+            type: integer
+            description: 是否允许承包
+          elec:
+            type: integer
+            description: 是否支持充电
+          download:
+            type: integer
+            description: 是否允许下载
+          movie:
+            type: integer
+            description: 是否电影
+          pay:
+            type: integer
+            description: 是否 PGC 付费
+          hd5:
+            type: integer
+            description: 是否有高码率
+          no_reprint:
+            type: integer
+            description: 是否显示“禁止转载”标志
+          autoplay:
+            type: integer
+            description: 是否自动播放
+          ugc_pay:
+            type: integer
+            description: 是否 UGC 付费
+          is_cooperation:
+            type: integer
+            description: 是否为联合投稿
+          ugc_pay_preview:
+            type: integer
+            default: 0
+          no_background:
+            type: integer
+            default: 0
+          clean_mode:
+            type: integer
+            default: 0
+          is_stein_gate:
+            type: integer
+            description: 是否为互动视频
+          is_360:
+            type: integer
+            description: 是否为全景视频
+          no_share:
+            type: integer
+            default: 0
+          arc_pay:
+            type: integer
+            default: 0
+          free_watch:
+            type: integer
+            default: 0
+        description: 视频属性标志
+      owner:
+        type: object
+        properties:
+          mid:
+            type: integer
+            description: UP 主 mid
+          name:
+            type: string
+            description: UP 主昵称
+          face:
+            type: string
+            description: UP 主头像
+        description: 视频 UP 主信息
+      stat:
+        type: object
+        properties:
+          aid:
+            type: integer
+            description: 稿件 avid
+          view:
+            type: integer
+            description: 播放数
+          danmaku:
+            type: integer
+            description: 弹幕数
+          reply:
+            type: integer
+            description: 评论数
+          favorite:
+            type: integer
+            description: 收藏数
+          coin:
+            type: integer
+            description: 投币数
+          share:
+            type: integer
+            description: 分享数
+          now_rank:
+            type: integer
+            description: 当前排名
+          his_rank:
+            type: integer
+            description: 历史最高排行
+          like:
+            type: integer
+            description: 获赞数
+          dislike:
+            type: integer
+            description: 点踩数
+          evaluation:
+            type: string
+            description: 视频评分
+          vt:
+            type: integer
+        description: 视频状态数
+      dynamic:
+        type: string
+        description: 视频同步发布的动态的文字内容
+      cid:
+        type: integer
+        description: 视频 1P cid
+      dimension:
+        type: object
+        properties:
+          width:
+            type: integer
+            description: 当前分 P 宽度
+          height:
+            type: integer
+            description: 当前分 P 高度
+          rotate:
+            type: integer
+            description: 是否将宽高对换
+        description: 视频 1P 分辨率
+      premiere:
+        type: object
+      teenage_mode:
+        type: integer
+      is_chargeable_season:
+        type: boolean
+      is_story:
+        type: boolean
+      is_upower_exclusive:
+        type: boolean
+      is_upower_pay:
+        type: boolean
+      is_upower_show:
+        type: boolean
+      no_cache:
+        type: boolean
+      pages:
+        type: array
+        items:
+          type: object
+          properties:
+            cid:
+              type: integer
+              description: 分 P cid
+            page:
+              type: integer
+              description: 分 P 序号
+            from:
+              type: string
+              description: 视频来源
+            part:
+              type: string
+              description: 分 P 标题
+            duration:
+              type: integer
+              description: 分 P 持续时间
+            vid:
+              type: string
+              description: 站外视频 vid
+            weblink:
+              type: string
+              description: 站外视频跳转 url
+            dimension:
+              type: object
+              properties:
+                width:
+                  type: integer
+                height:
+                  type: integer
+                rotate:
+                  type: integer
+        description: 视频分 P 列表
+      subtitle:
+        type: object
+        properties:
+          allow_submit:
+            type: boolean
+            description: 是否允许提交字幕
+          list:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 字幕 ID
+                lan:
+                  type: string
+                  description: 字幕语言
+                lan_doc:
+                  type: string
+                  description: 字幕语言名称
+                is_lock:
+                  type: boolean
+                  description: 是否锁定
+                author_mid:
+                  type: integer
+                  description: 字幕上传者 mid
+                subtitle_url:
+                  type: string
+                  description: json 格式字幕文件 url
+                author:
+                  type: object
+                  properties:
+                    mid:
+                      type: integer
+                      description: 字幕上传者 mid
+                    name:
+                      type: string
+                      description: 字幕上传者昵称
+                    sex:
+                      type: string
+                      description: 字幕上传者性别
+                    face:
+                      type: string
+                      description: 字幕上传者头像 url
+                    sign:
+                      type: string
+                      description: 字幕上传者签名
+                    rank:
+                      type: integer
+                      default: 10000
+                    birthday:
+                      type: integer
+                      default: 0
+                    is_fake_account:
+                      type: integer
+                      default: 0
+                    is_deleted:
+                      type: integer
+                      default: 0
+        description: 视频 CC 字幕信息
+      staff:
+        type: array
+        items:
+          type: object
+          properties:
+            mid:
+              type: integer
+              description: 成员 mid
+            title:
+              type: string
+              description: 成员名称
+            name:
+              type: string
+              description: 成员昵称
+            face:
+              type: string
+              description: 成员头像 url
+            vip:
+              type: object
+              properties:
+                type:
+                  type: integer
+                  description: 成员会员类型
+                status:
+                  type: integer
+                  description: 会员状态
+                due_date:
+                  type: integer
+                  description: 到期时间
+                vip_pay_type:
+                  type: integer
+                theme_type:
+                  type: integer
+                  default: 0
+                label:
+                  type: object
+              description: 成员大会员状态
+            official:
+              type: object
+              properties:
+                role:
+                  type: integer
+                  description: 成员认证级别
+                title:
+                  type: string
+                  description: 成员认证名
+                desc:
+                  type: string
+                  description: 成员认证备注
+                type:
+                  type: integer
+                  description: 成员认证类型
+            follower:
+              type: integer
+              description: 成员粉丝数
+            label_style:
+              type: integer
+        description: 合作成员列表
+      is_season_display:
+        type: boolean
+      user_garb:
+        type: object
+        properties:
+          url_image_ani_cut:
+            type: string
+            description: 某 url？
+        description: 用户装扮信息
+      honor_reply:
+        type: object
+        properties:
+          honor:
+            type: array
+            items:
+              type: object
+              properties:
+                aid:
+                  type: integer
+                  description: 当前稿件 aid
+                type:
+                  type: integer
+                desc:
+                  type: string
+                  description: 描述
+                weekly_recommend_num:
+                  type: integer
+      like_icon:
+        type: string
+        default: ''
+      need_jump_bv:
+        type: boolean
+      disable_show_up_info:
+        type: boolean
+      is_story_play:
+        type: boolean
+      is_view_self:
+        type: boolean
+      argue_info:
+        type: object
+        properties:
+          argue_msg:
+            type: string
+            description: 警告/争议提示信息
+          argue_type:
+            type: integer
+          argue_link:
+            type: string
+            description: 作用尚不明确
+        description: 争议/警告信息

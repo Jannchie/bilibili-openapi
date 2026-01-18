@@ -1,0 +1,53 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      total:
+        type: integer
+        description: 仲裁案例数
+        example: 5428
+      list:
+        type: array
+        description: 仲裁记录列表
+        items:
+          type: object
+          properties:
+            case_id:
+              type: string
+              description: 案件id
+              example: AC2sOiNenwj1
+            case_type:
+              type: integer
+              description: 案件类型
+              example: 4
+            status:
+              type: integer
+              description: 裁决状态
+              example: 1
+            vote:
+              type: integer
+              description: >-
+                投票选项, “单条评论(弹幕)”分别为`1`或者`2`或者`3`或者`4`,
+                对应:“合适”,“一般”,“不合适”,“无法判断”<br/>“评论(弹幕)氛围”分别为`11`或者`12`或者`13`或者`14`,
+                对应:“好”,“一般”,“差”,“无法判断”
+              example: 11
+            vote_text:
+              type: string
+              description: 投票选项文本, *参考上条*
+              example: 好
+            vote_time:
+              type: integer
+              description: 投票时间, 时间戳, 精确到秒
+              example: 1662700609

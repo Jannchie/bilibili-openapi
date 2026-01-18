@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误，-403：访问权限不足
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: array
+    description: 内容 ID 列表
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 内容 ID
+        type:
+          type: integer
+          description: 内容类型
+        bv_id:
+          type: string
+          description: 视频稿件 bvid
+        bvid:
+          type: string
+          description: 视频稿件 bvid

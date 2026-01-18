@@ -1,0 +1,70 @@
+type: object
+properties:
+  title:
+    type: string
+    description: 标题
+    example: 升级提醒
+  content:
+    type: string
+    description: 内容
+    example: |-
+      -修复了一些bug，并吃了一桶冰淇凌~
+      -记得检查暑假作业哦！
+  version:
+    type: string
+    description: 最新版本名称
+    example: 8.10.0
+  version_code:
+    type: integer
+    format: int64
+    description: 最新版本号
+    example: 8100300
+  url:
+    type: string
+    format: url
+    description: 下载地址
+    example: >-
+      https://dl.hdslb.com/mobile/pack/android64/15793300/iBiliPlayer-apinkRelease-8.10.0-b15793300.apk
+  size:
+    type: integer
+    format: int64
+    description: 大小 (单位字节)
+    example: 132432843
+  md5:
+    type: string
+    description: MD5 值
+    example: f196c0ea68ff894dab0cf380cafad802
+  silent:
+    type: integer
+    format: int64
+    description: 是否静默安装?
+    example: 0
+  upgrade_type:
+    type: integer
+    format: int64
+    description: 升级类型?
+    example: 1
+  cycle:
+    type: integer
+    format: int64
+    description: 升级周期?
+    example: 4
+  policy:
+    type: integer
+    format: int64
+    description: 升级策略?
+    example: 0
+  policy_url:
+    type: string
+    description: 升级策略链接?
+    example: ''
+  is_gray:
+    type: integer
+    format: int64
+    description: 是否灰度
+    example: 0
+  ptime:
+    type: integer
+    format: int64
+    description: 发布时间
+    example: 1724207041

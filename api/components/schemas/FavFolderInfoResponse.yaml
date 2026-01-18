@@ -1,0 +1,99 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: |-
+      返回值，0：成功，-400：请求错误，-403：访问权限不足
+      11010: 内容不存在
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    oneOf:
+      - type: object
+        properties:
+          id:
+            type: integer
+            description: 收藏夹 ID
+          fid:
+            type: integer
+            description: 收藏夹 fid
+          mid:
+            type: integer
+            description: 创建者 mid
+          attr:
+            type: integer
+            description: 属性位（？）
+          title:
+            type: string
+            description: 收藏夹标题
+          cover:
+            type: string
+            description: 收藏夹封面图片 URL
+          upper:
+            type: object
+            properties:
+              mid:
+                type: integer
+                description: 创建者 mid
+              name:
+                type: string
+                description: 创建者昵称
+              face:
+                type: string
+                description: 创建者头像 URL
+              followed:
+                type: boolean
+                description: 是否已关注创建者
+              vip_type:
+                type: integer
+                description: 会员类别
+              vip_statue:
+                type: integer
+                description: 会员开通状态
+          cover_type:
+            type: integer
+            description: 封面图类别（？）
+          cnt_info:
+            type: object
+            properties:
+              collect:
+                type: integer
+                description: 收藏数
+              play:
+                type: integer
+                description: 播放数
+              thumb_up:
+                type: integer
+                description: 点赞数
+              share:
+                type: integer
+                description: 分享数
+          type:
+            type: integer
+            description: 类型（？）
+          intro:
+            type: string
+            description: 备注
+          ctime:
+            type: integer
+            description: 创建时间
+          mtime:
+            type: integer
+            description: 收藏时间
+          state:
+            type: integer
+            description: 状态（？）
+          fav_state:
+            type: integer
+            description: 收藏夹收藏状态
+          like_state:
+            type: integer
+            description: 点赞状态
+          media_count:
+            type: integer
+            description: 收藏夹内容数量
+      - type: object

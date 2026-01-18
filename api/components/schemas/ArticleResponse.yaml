@@ -1,0 +1,65 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: object
+    properties:
+      view:
+        type: integer
+        description: 总计阅读数
+        example: 290
+      reply:
+        type: integer
+        description: 总计评论数
+        example: 17
+      like:
+        type: integer
+        description: 总计点赞数
+        example: 34
+      coin:
+        type: integer
+        description: 总计投币数
+        example: 9
+      fav:
+        type: integer
+        description: 总计收藏数
+        example: 15
+      share:
+        type: integer
+        description: 总计分享数
+        example: 7
+      incr_view:
+        type: integer
+        description: 新增阅读数
+        example: 6
+      incr_reply:
+        type: integer
+        description: 新增评论数
+        example: 0
+      incr_like:
+        type: integer
+        description: 新增点赞数
+        example: 0
+      incr_coin:
+        type: integer
+        description: 新增投币数
+        example: 0
+      incr_fav:
+        type: integer
+        description: 新增收藏数
+        example: 0
+      incr_share:
+        type: integer
+        description: 新增分享数
+        example: 0

@@ -1,0 +1,107 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      total_remain_amount:
+        type: integer
+      user_coupons:
+        type: array
+        items:
+          type: object
+          properties:
+            ID:
+              type: integer
+              description: 漫读券id
+            remain_amount:
+              type: integer
+              description: 漫读券剩余数
+            expire_time:
+              type: string
+              description: 过期时间
+            reason:
+              type: string
+              description: 获取方式
+            type:
+              type: string
+            ctime:
+              type: string
+              description: 获取时间
+            total_amount:
+              type: integer
+              description: 漫读券总数
+            limits:
+              type: array
+              items:
+                type: object
+            type_num:
+              type: integer
+            will_expire:
+              type: integer
+              description: 是否即将过期？ 0：否 1：是
+            discount:
+              type: integer
+            discount_limit:
+              type: integer
+            is_from_card:
+              type: integer
+            valid_time:
+              type: string
+            discount_base:
+              type: integer
+      coupon_info:
+        type: object
+        properties:
+          new_coupon_num:
+            type: integer
+          coupon_will_expire:
+            type: integer
+          rent_will_expire:
+            type: integer
+          new_rent_num:
+            type: integer
+          discount_will_expire:
+            type: integer
+          new_discount_num:
+            type: integer
+          month_ticket_will_expire:
+            type: integer
+          new_month_ticket_num:
+            type: integer
+          silver_will_expire:
+            type: integer
+          new_silver_num:
+            type: integer
+          remain_item:
+            type: integer
+          remain_discount:
+            type: integer
+          remain_coupon:
+            type: integer
+            description: 拥有的漫读券数量
+          remain_silver:
+            type: integer
+            description: 拥有的通用券数量
+          remain_shop_coupon:
+            type: integer
+            description: 拥有的商城优惠券数量
+          new_shop_num:
+            type: integer
+          shop_will_expire:
+            type: integer
+          new_suit_id:
+            type: integer
+          remain_suit_coupon:
+            type: integer
+          new_suit_num:
+            type: integer
+          suit_will_expire:
+            type: integer
+          vip_priv_coupon:
+            type: boolean

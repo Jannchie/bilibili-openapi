@@ -1,0 +1,34 @@
+post:
+  tags:
+    - 漫画用户信息
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 获取已购漫画
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: device
+      schema:
+        type: string
+      required: false
+      description: 设备
+    - in: query
+      name: platform
+      schema:
+        type: string
+      required: false
+      description: 平台
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GetAutoBuyComicsRequest.yaml
+  responses:
+    '200':
+      description: 已购漫画列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetAutoBuyComicsResponse.yaml

@@ -1,0 +1,59 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        tid:
+          type: integer
+          description: 类型 tid
+        business:
+          type: integer
+        weight:
+          type: integer
+          description: 权重
+        round:
+          type: integer
+        state:
+          type: integer
+        name:
+          type: string
+          description: 类型名称
+        remark:
+          type: string
+          description: 类型备注
+        ctime:
+          type: string
+          format: date-time
+        mtime:
+          type: string
+          format: date-time
+        controls:
+          type: array
+          items:
+            type: object
+            properties:
+              tid:
+                type: integer
+              bid:
+                type: integer
+              name:
+                type: string
+              title:
+                type: string
+              component:
+                type: string
+              placeholder:
+                type: string
+              required:
+                type: integer

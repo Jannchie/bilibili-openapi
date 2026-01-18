@@ -1,0 +1,50 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      action:
+        type: string
+        description: （？）
+        example: ''
+      animation:
+        type: string
+        description: 弹幕样式Json？
+      colorful_src:
+        oneOf:
+          - type: string
+          - type: object
+            properties:
+              type:
+                type: integer
+                example: 60001
+              src:
+                type: string
+                description: 渐变色样式Json？
+        description: 渐变彩色样式信息？, 当请求参数`colorful=60001`时有效
+      dm_content:
+        type: string
+        description: （？）
+      dmid:
+        type: integer
+        description: 弹幕dmid
+        example: 32161968826613770
+      dmid_str:
+        type: string
+        description: 弹幕dmid, 字串形式
+        example: '32161968826613767'
+      visible:
+        type: boolean
+        description: （？）
+        example: true

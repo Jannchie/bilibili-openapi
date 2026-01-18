@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        mid:
+          type: integer
+          description: 目标用户 mid
+        tags:
+          type: array
+          items:
+            type: string
+            maxLength: 10
+          maxItems: 5
+          description: TAG 名称

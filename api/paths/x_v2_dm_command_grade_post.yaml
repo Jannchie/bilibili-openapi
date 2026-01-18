@@ -1,0 +1,77 @@
+post:
+  tags:
+    - 弹幕操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: aid
+      in: query
+      description: 稿件aid
+      schema:
+        type: integer
+      required: true
+    - name: cid
+      in: query
+      description: 分P cid
+      schema:
+        type: integer
+      required: true
+    - name: progress
+      in: query
+      description: 播放进度, 单位为毫秒
+      schema:
+        type: integer
+      required: true
+    - name: grade_id
+      in: query
+      description: 打分id
+      schema:
+        type: integer
+      required: true
+    - name: grade_score
+      in: query
+      description: 分数, 偶数, 最大10
+      schema:
+        type: integer
+        maximum: 10
+      required: true
+    - name: polaris_app_id
+      in: query
+      description: '100'
+      schema:
+        type: integer
+        enum:
+          - 100
+    - name: polaris_platfrom
+      in: query
+      description: '5'
+      schema:
+        type: integer
+        enum:
+          - 5
+    - name: spmid
+      in: query
+      description: 333.788.0.0
+      schema:
+        type: string
+        example: 333.788.0.0
+    - name: from_spmid
+      in: query
+      description: 来源spmid
+      schema:
+        type: string
+    - name: csrf
+      in: query
+      description: CSRF Token(即Cookie中的bili_jct)
+      schema:
+        type: string
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuGradePostResponse.yaml

@@ -1,0 +1,70 @@
+type: object
+properties:
+  mid:
+    type: integer
+    description: 用户 mid
+  attribute:
+    type: integer
+    description: 对方对于**自己**的关系属性
+  mtime:
+    type: integer
+    description: 对方关注目标用户时间
+  tag:
+    oneOf:
+      - type: array
+        items:
+          type: integer
+      - type: object
+    description: 目标用户将对方分组到的 ID
+  special:
+    type: integer
+    description: 目标用户特别关注对方标识
+  uname:
+    type: string
+    description: 用户昵称
+  face:
+    type: string
+    description: 用户头像 url
+  sign:
+    type: string
+    description: 用户签名
+  official_verify:
+    type: object
+    properties:
+      type:
+        type: integer
+        description: 用户认证类型
+      desc:
+        type: string
+        description: 用户认证信息
+    description: 认证信息
+  vip:
+    type: object
+    properties:
+      vipType:
+        type: integer
+        description: 会员类型
+      vipDueDate:
+        type: integer
+        description: 会员到期时间
+      dueRemark:
+        type: string
+      accessStatus:
+        type: integer
+      vipStatus:
+        type: integer
+        description: 大会员状态
+      vipStatusWarn:
+        type: string
+      themeType:
+        type: integer
+      label:
+        type: object
+        properties:
+          path:
+            type: string
+        description: 会员标签
+    description: 会员信息
+  live:
+    type: integer
+    description: 是否直播

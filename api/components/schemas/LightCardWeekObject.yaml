@@ -1,0 +1,28 @@
+type: object
+properties:
+  index:
+    type: integer
+    description: 第几领取周期
+  start_time:
+    type: string
+    format: date-time
+    description: 本周期领取开始时间
+  end_time:
+    type: string
+    format: date-time
+    description: 本周期领取结束时间
+  first:
+    type: integer
+    description: 本周期第1天的领取状态
+  second:
+    type: integer
+    description: 本周期第2天的领取状态
+  third:
+    type: integer
+    description: 本周期第3天的领取状态
+  fourth:
+    type: integer
+    description: 本周期第4天的领取状态
+  full_reward_state:
+    type: integer
+    description: 周期全勤奖领取状态

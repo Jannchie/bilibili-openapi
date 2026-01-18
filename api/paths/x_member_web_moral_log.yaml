@@ -1,0 +1,28 @@
+get:
+  tags:
+    - 个人中心
+  summary: 最近一周的节操记录
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: jsonp
+      in: query
+      description: 回调函数名?
+      schema:
+        type: string
+        default: jsonp
+    - name: web_location
+      in: query
+      description: 网页位置?
+      schema:
+        type: string
+        default: '333.33'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MoralLogResponse.yaml

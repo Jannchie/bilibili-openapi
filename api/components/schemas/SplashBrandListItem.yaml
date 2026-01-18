@@ -1,0 +1,19 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 开屏图片 ID
+    example: 10
+  thumb:
+    type: string
+    format: url
+    description: 开屏图片 URL
+    example: >-
+      http://i0.hdslb.com/bfs/archive/e2d2f57e08b511d1a47203859f7bddb4ef9d4e16.png
+  logo_url:
+    type: string
+    format: url
+    description: “bilibili”logo 图片 URL
+    example: >-
+      http://i0.hdslb.com/bfs/archive/ecc9b29bb4b803daf2a46fe5ef71bf530300162c.png

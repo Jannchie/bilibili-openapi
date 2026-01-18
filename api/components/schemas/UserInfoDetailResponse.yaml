@@ -1,0 +1,384 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: mid
+      name:
+        type: string
+        description: 昵称
+      sex:
+        type: string
+        description: 性别
+      face:
+        type: string
+        description: 头像链接
+      face_nft:
+        type: integer
+        description: 是否为 NFT 头像
+      face_nft_type:
+        type: integer
+        description: NFT 头像类型？
+      sign:
+        type: string
+        description: 签名
+      rank:
+        type: integer
+        description: 用户权限等级
+      level:
+        type: integer
+        description: 当前等级
+      jointime:
+        type: integer
+        description: 注册时间
+      moral:
+        type: integer
+        description: 节操值
+      silence:
+        type: integer
+        description: 封禁状态
+      coins:
+        type: integer
+        description: 硬币数
+      fans_badge:
+        type: boolean
+        description: 是否具有粉丝勋章
+      fans_medal:
+        type: object
+        properties:
+          show:
+            type: boolean
+          wear:
+            type: boolean
+            description: 是否佩戴了粉丝勋章
+          medal:
+            type: object
+            properties:
+              uid:
+                type: integer
+              target_id:
+                type: integer
+              medal_id:
+                type: integer
+              level:
+                type: integer
+              medal_name:
+                type: string
+              medal_color:
+                type: integer
+              intimacy:
+                type: integer
+              next_intimacy:
+                type: integer
+              day_limit:
+                type: integer
+              today_feed:
+                type: integer
+              medal_color_start:
+                type: integer
+              medal_color_end:
+                type: integer
+              medal_color_border:
+                type: integer
+              is_lighted:
+                type: integer
+              light_status:
+                type: integer
+              wearing_status:
+                type: integer
+              score:
+                type: integer
+        description: 粉丝勋章信息
+      official:
+        type: object
+        properties:
+          role:
+            type: integer
+            description: 认证类型
+          title:
+            type: string
+            description: 认证信息
+          desc:
+            type: string
+            description: 认证备注
+          type:
+            type: integer
+            description: 是否认证
+        description: 认证信息
+      vip:
+        type: object
+        properties:
+          type:
+            type: integer
+            description: 会员类型
+          status:
+            type: integer
+            description: 会员状态
+          due_date:
+            type: integer
+            description: 会员过期时间
+          vip_pay_type:
+            type: integer
+            description: 支付类型
+          theme_type:
+            type: integer
+          label:
+            type: object
+            properties:
+              path:
+                type: string
+              text:
+                type: string
+                description: 会员类型文案
+              label_theme:
+                type: string
+                description: 会员标签
+              text_color:
+                type: string
+              bg_style:
+                type: integer
+              bg_color:
+                type: string
+                description: 会员标签背景颜色
+              border_color:
+                type: string
+              use_img_label:
+                type: boolean
+              img_label_uri_hans:
+                type: string
+              img_label_uri_hant:
+                type: string
+              img_label_uri_hans_static:
+                type: string
+              img_label_uri_hant_static:
+                type: string
+            description: 会员标签
+          avatar_subscript:
+            type: integer
+            description: 是否显示会员图标
+          nickname_color:
+            type: string
+            description: 会员昵称颜色
+          role:
+            type: integer
+          avatar_subscript_url:
+            type: string
+          tv_vip_status:
+            type: integer
+          tv_vip_pay_type:
+            type: integer
+        description: 会员信息
+      pendant:
+        type: object
+        properties:
+          pid:
+            type: integer
+            description: 头像框 ID
+          name:
+            type: string
+            description: 头像框名称
+          image:
+            type: string
+            description: 头像框图片 URL
+          expire:
+            type: integer
+            description: 过期时间
+          image_enhance:
+            type: string
+            description: 头像框图片 URL
+          image_enhance_frame:
+            type: string
+            description: 头像框图片逐帧序列 URL
+        description: 头像框信息
+      nameplate:
+        type: object
+        properties:
+          nid:
+            type: integer
+            description: 勋章 ID
+          name:
+            type: string
+            description: 勋章名称
+          image:
+            type: string
+            description: 勋章图标
+          image_small:
+            type: string
+            description: 勋章图标（小）
+          level:
+            type: string
+            description: 勋章等级
+          condition:
+            type: string
+            description: 获取条件
+        description: 勋章信息
+      user_honour_info:
+        type: object
+        properties:
+          mid:
+            type: integer
+          colour:
+            type: string
+          tags:
+            type: array
+            items:
+              type: object
+      is_followed:
+        type: boolean
+        description: 是否关注此用户
+      top_photo:
+        type: string
+        description: 主页头图链接
+      theme:
+        type: object
+      sys_notice:
+        type: object
+        properties:
+          id:
+            type: integer
+          content:
+            type: string
+          url:
+            type: string
+          notice_type:
+            type: integer
+          icon:
+            type: string
+          text_color:
+            type: string
+          bg_color:
+            type: string
+        description: 系统通知
+      live_room:
+        type: object
+        properties:
+          roomStatus:
+            type: integer
+            description: 直播间状态
+          liveStatus:
+            type: integer
+            description: 直播状态
+          url:
+            type: string
+            description: 直播间网页 URL
+          title:
+            type: string
+            description: 直播间标题
+          cover:
+            type: string
+            description: 直播间封面 URL
+          watched_show:
+            type: object
+            properties:
+              switch:
+                type: boolean
+              num:
+                type: integer
+              text_small:
+                type: string
+              text_large:
+                type: string
+              icon:
+                type: string
+              icon_location:
+                type: string
+              icon_web:
+                type: string
+          roomid:
+            type: integer
+            description: 直播间 ID
+          roundStatus:
+            type: integer
+            description: 轮播状态
+          broadcast_type:
+            type: integer
+            default: 0
+        description: 直播间信息
+      birthday:
+        type: string
+        description: 生日
+      school:
+        type: object
+        properties:
+          name:
+            type: string
+            description: 就读大学名称
+        description: 学校
+      profession:
+        type: object
+        properties:
+          name:
+            type: string
+            description: 资质名称
+          department:
+            type: string
+            description: 职位
+          title:
+            type: string
+            description: 所属机构
+          is_show:
+            type: integer
+            description: 是否显示
+        description: 专业资质信息
+      tags:
+        type: object
+        description: 个人标签
+      series:
+        type: object
+        properties:
+          user_upgrade_status:
+            type: integer
+          show_upgrade_window:
+            type: boolean
+      is_senior_member:
+        type: integer
+        description: 是否为硬核会员
+      mcn_info:
+        type: object
+      gaia_res_type:
+        type: integer
+      gaia_data:
+        type: object
+      is_risk:
+        type: boolean
+      elec:
+        type: object
+        properties:
+          show_info:
+            type: object
+            properties:
+              show:
+                type: boolean
+                description: 是否开通了充电
+              state:
+                type: integer
+                description: 状态
+              title:
+                type: string
+                default: ''
+              icon:
+                type: string
+                default: ''
+              jump_url:
+                type: string
+                default: ''
+        description: 充电信息
+      contract:
+        type: object
+        properties:
+          is_display:
+            type: boolean
+          is_follow_display:
+            type: boolean
+            description: 是否在显示老粉计划

@@ -1,0 +1,45 @@
+get:
+  tags:
+    - 视频快照
+  servers:
+    - url: https://app.bilibili.com
+  summary: 获取视频快照 (APP 端)
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: true
+      description: 稿件 avid
+    - in: query
+      name: appkey
+      schema:
+        type: string
+        default: 1d8b6e7d45233436
+      required: true
+      description: APP 密钥
+    - in: query
+      name: cid
+      schema:
+        type: integer
+      required: true
+      description: 分 P cid
+    - in: query
+      name: ts
+      schema:
+        type: integer
+      required: true
+      description: 当前时间戳
+    - in: query
+      name: sign
+      schema:
+        type: string
+      required: true
+      description: APP 签名
+  responses:
+    '200':
+      description: 视频快照信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ViewVideoShotResponse.yaml

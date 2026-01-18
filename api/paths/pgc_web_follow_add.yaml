@@ -1,0 +1,36 @@
+post:
+  tags:
+    - 追番
+  servers:
+    - url: https://api.bilibili.com
+  summary: 追番
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            season_id:
+              type: string
+              description: 剧集 ss id
+              example: '41410'
+            csrf:
+              type: string
+              description: csrf token
+          required:
+            - season_id
+            - csrf
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PgcWebFollowAddResponse.yaml

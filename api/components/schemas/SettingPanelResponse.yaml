@@ -1,0 +1,33 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      user_panel_packages:
+        type: array
+        description: 用户拥有的表情包
+        items:
+          $ref: ./EmotePackage.yaml
+      all_packages:
+        type: array
+        description: 所有表情包
+        items:
+          $ref: ./EmotePackage.yaml
+      mall:
+        type: object
+        properties:
+          title:
+            type: string
+            description: 商城名称
+          url:
+            type: string
+            description: 商城页面url

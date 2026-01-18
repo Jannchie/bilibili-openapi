@@ -1,0 +1,63 @@
+post:
+  tags:
+    - 用户注册
+  servers:
+    - url: https://passport.bilibili.com
+  summary: 发送短信验证码
+  parameters:
+    - in: query
+      name: key
+      schema:
+        type: string
+      required: true
+      description: 人机验证 key
+    - in: query
+      name: captchaType
+      schema:
+        type: integer
+      required: true
+      description: 验证码类型
+    - in: query
+      name: type
+      schema:
+        type: integer
+        default: 1
+      required: true
+      description: 短信类型
+    - in: query
+      name: cid
+      schema:
+        type: integer
+      required: true
+      description: 国际冠字码
+    - in: query
+      name: tel
+      schema:
+        type: string
+      required: true
+      description: 手机号码
+    - in: query
+      name: challenge
+      schema:
+        type: string
+      required: true
+      description: 人机验证 challenge
+    - in: query
+      name: validate
+      schema:
+        type: string
+      required: true
+      description: 人机验证 validate
+    - in: query
+      name: seccode
+      schema:
+        type: string
+      required: true
+      description: 人机验证 seccode
+  responses:
+    '200':
+      description: 发送结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SendSmsResponse.yaml

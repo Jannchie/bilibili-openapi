@@ -1,0 +1,11 @@
+type: object
+required:
+  - question_id
+  - ans_hash
+properties:
+  question_id:
+    type: integer
+    description: 题目 ID
+  ans_hash:
+    type: string
+    description: 选项 hash

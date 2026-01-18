@@ -1,0 +1,28 @@
+post:
+  tags:
+    - 轻享卡
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 领取轻享卡奖励
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: access_key
+      schema:
+        type: string
+      required: false
+      description: 登录access_key，与SESSDATA二选其一
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GetLightCouponRequest.yaml
+  responses:
+    '200':
+      description: 领取结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetLightCouponResponse.yaml

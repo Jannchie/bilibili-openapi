@@ -1,0 +1,13 @@
+type: object
+required:
+  - csrf
+properties:
+  aid:
+    type: integer
+    description: 要删除的目标稿件 avid
+  bvid:
+    type: string
+    description: 要删除的目标稿件 bvid
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

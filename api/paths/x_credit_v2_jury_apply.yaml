@@ -1,0 +1,19 @@
+post:
+  tags:
+    - 仲裁操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: csrf
+      in: query
+      description: cookie中`bili_jct`的值
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryApplyResponse.yaml

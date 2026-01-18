@@ -1,0 +1,85 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误，-404：不存在该名词
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    oneOf:
+      - type: object
+        properties:
+          id:
+            type: integer
+            description: 名词id
+          name:
+            type: string
+            description: 名词
+          description:
+            type: string
+            description: 名词解释
+          picture:
+            type: string
+            description: 名词图片 url
+          types:
+            type: array
+            description: 父分类列表
+            items:
+              $ref: ./BuzzwordType.yaml
+          related_words:
+            type: array
+            description: 近义词/相关词
+            items:
+              type: string
+          uppers:
+            oneOf:
+              - type: array
+                items:
+                  $ref: ./BuzzwordUpper.yaml
+              - type: object
+          related_ugc:
+            oneOf:
+              - type: array
+                description: 相关 ucg 视频列表
+                items:
+                  $ref: ./BuzzwordUGC.yaml
+              - type: object
+          related_ogv:
+            oneOf:
+              - type: array
+                description: 相关 pgc 视频列表
+                items:
+                  $ref: ./BuzzwordOGV.yaml
+              - type: object
+          guides:
+            type: object
+            properties:
+              description:
+                type: string
+                description: 创作推介文案
+              contribute_tags:
+                type: array
+                items:
+                  $ref: ./BuzzwordContributeTag.yaml
+          related_buzzwords:
+            type: array
+            description: 推荐名词列表
+            items:
+              $ref: ./BuzzwordRelatedItem.yaml
+          topic:
+            type: object
+            properties:
+              topic_id:
+                type: integer
+                description: 关联话题id
+              topic_name:
+                type: string
+                description: 关联话题名称
+          show_dynamic:
+            type: boolean
+            description: 是否展示话题动态聚合
+      - type: object

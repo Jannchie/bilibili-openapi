@@ -1,0 +1,101 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  result:
+    type: array
+    items:
+      type: object
+      properties:
+        date:
+          type: string
+          description: 当日日期
+          example: 5-15
+        date_ts:
+          type: integer
+          description: 当日日期时间戳
+          example: 1652544000
+        day_of_week:
+          type: integer
+          description: 一周中第几天
+          example: 7
+        episodes:
+          type: array
+          items:
+            type: object
+            properties:
+              cover:
+                type: string
+                description: 封面图url
+                example: >-
+                  http://i0.hdslb.com/bfs/bangumi/image/9918f6e67c26d6bd1ddad8dab70bcc7af3bfae9b.png
+              delay:
+                type: integer
+                description: 是否推迟
+                example: 0
+              delay_id:
+                type: integer
+                description: 推迟一话epid
+                example: 0
+              delay_index:
+                type: string
+                description: 推迟一话名称
+                example: ''
+              delay_reason:
+                type: string
+                description: 推迟原因
+                example: ''
+              ep_cover:
+                type: string
+                description: 最新一话图url
+                example: >-
+                  http://i0.hdslb.com/bfs/archive/0067a09911e2fa252a3ef5126d8dc5392189dd8a.jpg
+              episode_id:
+                type: integer
+                description: 最新一话的epid
+                example: 508403
+              pub_index:
+                type: string
+                description: 最新一话名称
+                example: 第3话
+              pub_time:
+                type: string
+                description: 发布时间
+                example: '01:30'
+              pub_ts:
+                type: integer
+                description: 发布时间戳
+                example: 1652549400
+              published:
+                type: integer
+                description: 是否已发布
+                example: 1
+              follows:
+                type: string
+                example: '-'
+              plays:
+                type: string
+                example: '-'
+              season_id:
+                type: integer
+                description: 剧集ssid
+                example: 41416
+              square_cover:
+                type: string
+                description: 缩略图url
+                example: >-
+                  http://i0.hdslb.com/bfs/bangumi/image/926fd09277605204c2f7c94b322de3156ef9da52.png
+              title:
+                type: string
+                description: 剧集标题
+                example: 式守同学不只可爱而已
+        is_today:
+          type: integer
+          description: 是否今日
+          example: 0

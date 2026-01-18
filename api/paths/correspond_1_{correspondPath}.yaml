@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 登录
+  summary: 获取 refresh_csrf
+  servers:
+    - url: https://www.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: correspondPath
+      in: path
+      description: 使用当前毫秒时间戳生成的签名
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        text/html:
+          schema:
+            type: string

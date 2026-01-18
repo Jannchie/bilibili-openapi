@@ -1,0 +1,8 @@
+type: object
+properties:
+  status:
+    type: boolean
+    description: 是否成功
+  data:
+    type: string
+    description: 错误信息

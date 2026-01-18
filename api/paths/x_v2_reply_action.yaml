@@ -1,0 +1,56 @@
+post:
+  tags:
+    - 评论区操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP登录Token
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: 评论区类型代码, [类型代码见表](readme.md#评论区类型代码)
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 11
+          - 12
+          - 17
+      required: true
+    - name: oid
+      in: query
+      description: 目标评论区id
+      schema:
+        type: integer
+      required: true
+    - name: rpid
+      in: query
+      description: 目标评论rpid
+      schema:
+        type: integer
+      required: true
+    - name: action
+      in: query
+      description: 操作代码, 默认为0, 0:取消赞 1:点赞
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+    - name: csrf
+      in: query
+      description: CSRF Token(位于cookie)
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ReplyActionResponse.yaml

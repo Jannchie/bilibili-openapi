@@ -1,0 +1,35 @@
+get:
+  tags:
+    - 话题
+  summary: 获取包含置顶及热门的动态列表
+  servers:
+    - url: https://api.vc.bilibili.com
+  parameters:
+    - name: topic_name
+      in: query
+      description: 话题名称
+      schema:
+        type: string
+    - name: topic_id
+      in: query
+      description: 话题 ID
+      schema:
+        type: integer
+    - name: sortby
+      in: query
+      description: 排序方式
+      schema:
+        type: integer
+        example: 2
+    - name: offset
+      in: query
+      description: 偏移值
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FetchDynamicsResponse.yaml

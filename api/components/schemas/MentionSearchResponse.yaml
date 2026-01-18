@@ -1,0 +1,47 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      groups:
+        type: array
+        description: 用户分组，根据是否关注该用户来分组
+        items:
+          type: object
+          properties:
+            group_name:
+              type: string
+              description: 分组名称
+            group_type:
+              type: integer
+              description: 分组类型
+            items:
+              type: array
+              description: 搜索到的用户信息
+              items:
+                type: object
+                properties:
+                  face:
+                    type: string
+                    description: 用户头像url
+                  fans:
+                    type: integer
+                    description: 用户粉丝数
+                  name:
+                    type: string
+                    description: 用户昵称
+                  official_verify_type:
+                    type: integer
+                    description: 用户认证状态
+                  uid:
+                    type: string
+                    description: 用户mid

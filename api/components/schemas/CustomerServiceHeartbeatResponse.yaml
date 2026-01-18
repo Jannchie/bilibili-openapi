@@ -1,0 +1,17 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 失败时不存在
+    example: ok
+  message:
+    type: string
+    description: 错误信息, 成功时为ok
+    example: ok
+  ttl:
+    type: integer
+    example: 1

@@ -1,0 +1,68 @@
+post:
+  tags:
+    - 评论区操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP登录Token
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: 评论区类型代码, [类型代码见表](readme.md#评论区类型代码)
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 11
+          - 12
+          - 17
+      required: true
+    - name: oid
+      in: query
+      description: 目标评论区id
+      schema:
+        type: integer
+      required: true
+    - name: root
+      in: query
+      description: 根评论rpid, 二级评论以上使用
+      schema:
+        type: integer
+    - name: parent
+      in: query
+      description: 父评论rpid, 二级评论同根评论id, 大于二级评论为要回复的评论id
+      schema:
+        type: integer
+    - name: message
+      in: query
+      description: 发送评论内容, 最大1000字符, 表情使用表情转义符
+      schema:
+        type: string
+      required: true
+    - name: plat
+      in: query
+      description: 发送平台标识, 默认为1, 1:web端 2:安卓客户端 3:ios客户端 4:wp客户端
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+    - name: csrf
+      in: query
+      description: CSRF Token(位于cookie)
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ReplyAddResponse.yaml

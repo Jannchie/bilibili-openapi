@@ -1,0 +1,60 @@
+get:
+  tags:
+    - APP
+  servers:
+    - url: https://app.bilibili.com
+  summary: 获取 APP 端开屏幕广告信息
+  parameters:
+    - name: build
+      in: query
+      description: 客户端内部版本号
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: mobi_app
+      in: query
+      description: mobi_app
+      required: true
+      schema:
+        type: string
+        enum:
+          - android
+          - iphone
+          - ipad
+    - name: platform
+      in: query
+      description: platform
+      required: true
+      schema:
+        type: string
+        enum:
+          - android
+          - ios
+    - name: height
+      in: query
+      description: 屏幕高度
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: width
+      in: query
+      description: 屏幕宽度
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: birth
+      in: query
+      description: 生日日期 (四位数，例 0101)
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SplashListResponse.yaml

@@ -1,0 +1,170 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      isLogin:
+        type: boolean
+        description: 是否已登录
+      email_verified:
+        type: integer
+        description: 是否验证邮箱地址
+      face:
+        type: string
+        description: 用户头像 url
+      level_info:
+        type: object
+        properties:
+          current_level:
+            type: integer
+            description: 当前等级
+          current_min:
+            type: integer
+            description: 当前等级经验最低值
+          current_exp:
+            type: integer
+            description: 当前经验
+          next_exp:
+            type: integer
+            description: 升级下一等级需达到的经验
+      mid:
+        type: integer
+        description: 用户 mid
+      mobile_verified:
+        type: integer
+        description: 是否验证手机号
+      money:
+        type: integer
+        description: 拥有硬币数
+      moral:
+        type: integer
+        description: 当前节操值
+      official:
+        type: object
+        properties:
+          role:
+            type: integer
+            description: 认证类型
+          title:
+            type: string
+            description: 认证信息
+          desc:
+            type: string
+            description: 认证备注
+          type:
+            type: integer
+            description: 是否认证
+      officialVerify:
+        type: object
+        properties:
+          type:
+            type: integer
+            description: 是否认证
+          desc:
+            type: string
+            description: 认证信息
+      pendant:
+        type: object
+        properties:
+          pid:
+            type: integer
+            description: 挂件 ID
+          name:
+            type: string
+            description: 挂件名称
+          image:
+            type: string
+            description: 挂件图片 URL
+          expire:
+            type: integer
+            description: （？）
+      scores:
+        type: integer
+        description: （？）
+      uname:
+        type: string
+        description: 用户昵称
+      vipDueDate:
+        type: integer
+        description: 会员到期时间
+      vipStatus:
+        type: integer
+        description: 会员开通状态
+      vipType:
+        type: integer
+        description: 会员类型
+      vip_pay_type:
+        type: integer
+        description: 会员开通状态
+      vip_theme_type:
+        type: integer
+        description: （？）
+      vip_label:
+        type: object
+        properties:
+          path:
+            type: string
+            description: （？）
+          text:
+            type: string
+            description: 会员名称
+          label_theme:
+            type: string
+            description: 会员标签
+      vip_avatar_subscript:
+        type: integer
+        description: 是否显示会员图标
+      vip_nickname_color:
+        type: string
+        description: 会员昵称颜色
+      wallet:
+        type: object
+        properties:
+          mid:
+            type: integer
+            description: 登录用户 mid
+          bcoin_balance:
+            type: integer
+            description: 拥有 B 币数
+          coupon_balance:
+            type: integer
+            description: 每月奖励 B 币数
+          coupon_due_time:
+            type: integer
+            description: （？）
+      has_shop:
+        type: boolean
+        description: 是否拥有推广商品
+      shop_url:
+        type: string
+        description: 商品推广页面 URL
+      allowance_count:
+        type: integer
+        description: （？）
+      answer_status:
+        type: integer
+        description: （？）
+      is_senior_member:
+        type: integer
+        description: 是否硬核会员
+      wbi_img:
+        type: object
+        properties:
+          img_url:
+            type: string
+            description: Wbi 签名参数 `imgKey`的伪装 url
+          sub_url:
+            type: string
+            description: Wbi 签名参数 `subKey`的伪装 url
+      is_jury:
+        type: boolean
+        description: 是否风纪委员

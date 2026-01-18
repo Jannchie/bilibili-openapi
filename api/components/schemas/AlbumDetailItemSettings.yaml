@@ -1,0 +1,7 @@
+type: object
+properties:
+  copy_forbidden:
+    type: integer
+    format: int64
+    description: 禁止转载标志
+    example: 0

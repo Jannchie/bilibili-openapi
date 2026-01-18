@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 分类 ID
+    example: 15
+  parent_id:
+    type: integer
+    format: int64
+    description: 父级分类 ID
+    example: 3
+  name:
+    type: string
+    description: 分类名称
+    example: 日常

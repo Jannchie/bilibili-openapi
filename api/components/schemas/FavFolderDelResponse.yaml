@@ -1,0 +1,14 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: integer
+    description: 信息本体

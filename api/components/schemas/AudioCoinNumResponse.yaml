@@ -1,0 +1,15 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: integer
+    format: int64
+    description: 投币数量
+    example: 1

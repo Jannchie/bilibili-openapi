@@ -1,0 +1,22 @@
+type: object
+properties:
+  sid:
+    type: integer
+    description: 音频auid
+    example: 13598
+  play:
+    type: integer
+    description: 播放次数
+    example: 1028516
+  collect:
+    type: integer
+    description: 收藏数
+    example: 30914
+  comment:
+    type: integer
+    description: 评论数
+    example: 523
+  share:
+    type: integer
+    description: 分享数
+    example: 384

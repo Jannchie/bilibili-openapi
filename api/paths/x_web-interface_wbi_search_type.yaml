@@ -1,0 +1,114 @@
+get:
+  tags:
+    - 搜索
+  servers:
+    - url: https://api.bilibili.com
+  summary: 分类搜索（web 端）
+  parameters:
+    - $ref: ../components/parameters/WbiSearchParams.yaml
+    - in: query
+      name: search_type
+      schema:
+        type: string
+        enum:
+          - video
+          - media_bangumi
+          - media_ft
+          - live
+          - live_room
+          - live_user
+          - article
+          - topic
+          - bili_user
+          - photo
+      required: true
+      description: 搜索目标类型
+    - in: query
+      name: keyword
+      schema:
+        type: string
+      required: true
+      description: 需要搜索的关键词
+    - in: query
+      name: order
+      schema:
+        type: string
+        default: totalrank
+        enum:
+          - totalrank
+          - click
+          - pubdate
+          - dm
+          - stow
+          - scores
+          - attention
+          - online
+          - live_time
+          - '0'
+          - fans
+          - level
+      required: false
+      description: 结果排序方式
+    - in: query
+      name: order_sort
+      schema:
+        type: integer
+        default: 0
+        enum:
+          - 0
+          - 1
+      required: false
+      description: 用户粉丝数及等级排序顺序
+    - in: query
+      name: user_type
+      schema:
+        type: integer
+        default: 0
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+      required: false
+      description: 用户分类筛选
+    - in: query
+      name: duration
+      schema:
+        type: integer
+        default: 0
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+      required: false
+      description: 视频时长筛选
+    - in: query
+      name: tids
+      schema:
+        type: integer
+        default: 0
+      required: false
+      description: 视频分区筛选
+    - in: query
+      name: category_id
+      schema:
+        type: integer
+        default: 0
+      required: false
+      description: 专栏及相簿分区筛选
+    - in: query
+      name: page
+      schema:
+        type: integer
+        default: 1
+      required: false
+      description: 页码
+  responses:
+    '200':
+      description: 分类搜索结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SearchTypeResponse.yaml

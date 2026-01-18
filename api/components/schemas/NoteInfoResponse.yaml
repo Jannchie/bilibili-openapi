@@ -1,0 +1,76 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      arc:
+        type: object
+        properties:
+          oid:
+            type: integer
+            description: 目标 ID
+          oid_type:
+            type: integer
+            description: 目标 ID 类型
+          title:
+            type: string
+            description: 视频标题
+          pic:
+            type: string
+            description: 视频封面
+          status:
+            type: integer
+          desc:
+            type: string
+            description: 视频简介
+        description: 对应视频稿件信息
+      audit_status:
+        type: integer
+      cid_count:
+        type: integer
+        description: 视频分 P 数
+      content:
+        type: string
+        description: 笔记正文 JSON 序列
+      forbid_note_entrance:
+        type: boolean
+      pub_reason:
+        type: string
+      pub_status:
+        type: integer
+      pub_version:
+        type: integer
+      summary:
+        type: string
+        description: 笔记预览文本
+      tags:
+        type: array
+        items:
+          type: object
+          properties:
+            cid:
+              type: integer
+              description: 视频 cid
+            status:
+              type: integer
+            index:
+              type: integer
+              description: 在稿件中的分 P 索引
+            seconds:
+              type: integer
+              description: 视频进度
+            pos:
+              type: integer
+              description: 笔记中位置
+      title:
+        type: string
+        description: 笔记标题

@@ -1,0 +1,14 @@
+type: object
+properties:
+  total_count:
+    type: integer
+    format: int64
+    description: 总计相簿数
+    example: 290
+  user:
+    $ref: ./AlbumOthersResponseUser.yaml
+  items:
+    type: array
+    description: 相簿列表
+    items:
+      $ref: ./AlbumIndexItemDetails.yaml

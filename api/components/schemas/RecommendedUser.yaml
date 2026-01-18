@@ -1,0 +1,20 @@
+type: object
+properties:
+  uid:
+    type: integer
+    format: int64
+    description: 作者 mid
+    example: 36974706
+  head_url:
+    type: string
+    description: 头像 URL
+    example: https://i2.hdslb.com/bfs/face/fa7ef3a5124e2ebfd2094e0bc2f42c752c1abd21.jpg
+  name:
+    type: string
+    description: 昵称
+    example: 幹物小幺
+  is_followed:
+    type: integer
+    format: int64
+    description: is_followed
+    example: 0

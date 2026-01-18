@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      recaptcha_type:
+        type: string
+        description: 验证码类型
+      recaptcha_token:
+        type: string
+        description: 验证码 token
+      gee_challenge:
+        type: string
+        description: 极验 challenge
+      gee_gt:
+        type: string
+        description: 极验 gt

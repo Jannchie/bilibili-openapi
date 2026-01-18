@@ -1,0 +1,220 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      title:
+        type: string
+        description: 视频模块（分 P）标题
+      edge_id:
+        type: integer
+        description: 当前模块 ID
+      story_list:
+        type: array
+        items:
+          type: object
+          properties:
+            node_id:
+              type: integer
+              description: 模块编号
+            edge_id:
+              type: integer
+              description: 模块编号
+            title:
+              type: string
+              description: 模块（分 P）标题
+            cid:
+              type: integer
+              description: 模块（分 P）cid
+            start_pos:
+              type: integer
+              description: 记录播放开始位置
+            cover:
+              type: string
+              description: 分 P 封面 url
+            is_current:
+              type: integer
+              description: 是否为当前模块
+            cursor:
+              type: integer
+              description: 进度序号
+        description: 进度回溯信息
+      edges:
+        type: object
+        properties:
+          dimension:
+            type: object
+            properties:
+              width:
+                type: integer
+                description: 当前分 P 宽度
+              height:
+                type: integer
+                description: 当前分 P 高度
+              rotate:
+                type: integer
+                description: 是否将宽高对换
+              sar:
+                type: string
+            description: 当前分 P 分辨率
+          questions:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                type:
+                  type: integer
+                  description: 选项显示模式
+                start_time_r:
+                  type: integer
+                duration:
+                  type: integer
+                  description: 回答限时
+                pause_video:
+                  type: integer
+                  description: 是否暂停播放视频
+                title:
+                  type: string
+                choices:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: 选项所跳转的模块 ID
+                      platform_action:
+                        type: string
+                        description: 跳转信息文字
+                      native_action:
+                        type: string
+                        description: 点击后对变量运算语句
+                      condition:
+                        type: string
+                        description: 选项出现条件判断语句
+                      cid:
+                        type: integer
+                        description: 选项所跳转分 P 的 cid
+                      x:
+                        type: integer
+                        description: 选项出现的 x 坐标
+                      'y':
+                        type: integer
+                        description: 选项出现的 y 坐标
+                      text_align:
+                        type: integer
+                        description: 选项文本对齐方式
+                      option:
+                        type: string
+                        description: 选项文字
+                      selected:
+                        type: object
+                        description: 选择动画信息
+                      submited:
+                        type: object
+                        description: 提交动画信息
+                      is_default:
+                        type: integer
+                        description: 是否为默认选项
+                      is_hidden:
+                        type: integer
+                        description: 是否为隐藏选项
+                fade_in_time:
+                  type: integer
+                  description: 选项淡入时间
+                fade_out_time:
+                  type: integer
+                  description: 选项淡出时间
+          skin:
+            type: object
+            properties:
+              choice_image:
+                type: string
+                description: 选项组件外观图片 url
+              title_text_color:
+                type: string
+                description: 文字颜色
+              title_shadow_color:
+                type: string
+                description: 文字阴影颜色
+              title_shadow_offset_x:
+                type: integer
+                description: 文字阴影 x 偏移
+              title_shadow_offset_y:
+                type: integer
+                description: 文字阴影 y 偏移
+              title_shadow_radius:
+                type: integer
+                description: 文字阴影半径
+              progressbar_color:
+                type: string
+                description: 倒计时条颜色
+              progressbar_shadow_color:
+                type: string
+                description: 倒计时条阴影颜色
+        description: 当前模块信息
+      preload:
+        type: object
+        properties:
+          video:
+            type: array
+            items:
+              type: object
+              properties:
+                aid:
+                  type: integer
+                  description: 稿件 avid
+                cid:
+                  type: integer
+                  description: 分 P cid
+        description: 预加载的分 P
+      hidden_vars:
+        type: array
+        items:
+          type: object
+          properties:
+            value:
+              type: integer
+              description: 变量值
+            id:
+              type: string
+              description: 变量编号
+            id_v2:
+              type: string
+              description: 变量编号
+            type:
+              type: integer
+              description: 变量类型
+            is_show:
+              type: integer
+              description: 是否展示变量
+            name:
+              type: string
+              description: 变量名
+            skip_overwrite:
+              type: integer
+              default: 0
+        description: 变量列表
+      is_leaf:
+        type: integer
+        description: 是否为结束模块
+      no_tutorial:
+        type: integer
+        description: 禁止记录选择
+      no_backtracking:
+        type: integer
+        description: 禁止进度回溯
+      no_evaluation:
+        type: integer
+        description: 禁止结尾评分

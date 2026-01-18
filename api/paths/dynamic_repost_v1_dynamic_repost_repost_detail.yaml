@@ -1,0 +1,29 @@
+get:
+  tags:
+    - 动态基本信息
+  summary: 动态转发列表
+  description: |
+    转发列表总计超过550部分继续获取可能被限制。
+
+    由于参数过多，这里不一一列举，请自行参阅其他文件理解。
+  servers:
+    - url: https://api.vc.bilibili.com
+  parameters:
+    - name: dynamic_id
+      in: query
+      description: 动态id
+      schema:
+        type: integer
+      required: true
+    - name: offset
+      in: query
+      description: offset
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DynamicRepostDetailResponse.yaml

@@ -1,0 +1,41 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 弹幕dmid
+    format: int64
+  oid:
+    type: integer
+    description: 视频cid
+    format: int64
+  mid:
+    type: integer
+    description: 发送者mid
+    format: int64
+  command:
+    type: string
+    description: |
+      弹幕指令
+
+      `#UP#`：UP主头像弹幕
+      `#LINK#`：关联视频弹幕
+      `#ATTENTION#`：视频内嵌引导关注按钮
+  content:
+    type: string
+    description: 弹幕文字
+  progress:
+    type: integer
+    description: 弹幕出现时间，单位为毫秒
+    format: int32
+  ctime:
+    type: string
+    description: 创建时间？
+  mtime:
+    type: string
+    description: 修改时间？
+  extra:
+    type: string
+    description: 弹幕负载数据，json序列字串
+  idStr:
+    type: string
+    description: 弹幕dmid，字串形式

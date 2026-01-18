@@ -1,0 +1,20 @@
+type: object
+required:
+  - like
+  - csrf
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  bvid:
+    type: string
+    description: 稿件 bvid
+  like:
+    type: integer
+    description: 操作方式
+    enum:
+      - 1
+      - 2
+  csrf:
+    type: string
+    description: CSRF Token（位于 Cookie）

@@ -1,0 +1,178 @@
+post:
+  tags:
+    - 投稿
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: ts
+      in: query
+      description: 当前时间, UNIX毫秒时间戳
+      schema:
+        type: integer
+    - name: csrf
+      in: query
+      description: CSRF Token(位于Cookie中bili_jct)
+      schema:
+        type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - videos
+            - cover
+            - cover43
+            - title
+            - copyright
+            - tid
+            - tag
+            - desc_format_id
+            - desc
+            - recreate
+            - dynamic
+            - interactive
+            - act_reserve_create
+            - no_disturbance
+            - no_reprint
+            - subtitle
+            - dolby
+            - lossless_music
+            - up_selection_reply
+            - up_close_reply
+            - up_close_danmu
+            - web_os
+          properties:
+            videos:
+              type: array
+              description: 视频信息, 若为分P视频, 请注意数组元素顺序
+              items:
+                type: object
+                required:
+                  - filename
+                  - title
+                  - desc
+                  - cid
+                properties:
+                  filename:
+                    type: string
+                    description: 视频文件名, 从视频上传接口获取, 无后缀名
+                    example: n240728ad33h52yqhxbtw51cb06sq9gx
+                  title:
+                    type: string
+                    description: 分P标题
+                    example: Telnet手打HTTP
+                  desc:
+                    type: string
+                    description: 分P简介
+                    example: ''
+                  cid:
+                    type: integer
+                    description: 分P cid, 从视频上传接口获取, 即`biz_id`
+                    example: 500001629877726
+            cover:
+              type: string
+              description: 视频封面URL, 参见[上传视频封面](#上传视频封面)
+              example: >-
+                https://archive.biliimg.com/bfs/archive/85447ea20431ef799382c403c84b4bfb82a41053.jpg
+            cover43:
+              type: string
+              description: 视频封面URL(比例为4:3), 可为空
+              example: ''
+            title:
+              type: string
+              description: 视频标题, 最多80字
+              example: Telnet手打HTTP
+            copyright:
+              type: integer
+              description: 1:自制 2:转载
+              example: 1
+            tid:
+              type: integer
+              description: 分类ID
+              example: 122
+            tag:
+              type: string
+              description: 视频标签, 多个标签用`,`分隔, 最多10个
+              example: telnet,socket,tcp,linux,http
+            desc_format_id:
+              type: integer
+              description: 简介格式ID?, 9999:纯文本
+              example: 9999
+            desc:
+              type: string
+              description: 视频简介, 最多2000字
+              example: 测试用Telnet手打HTTP/1.x协议访问本地服务器, 无SSL/TLS支持
+            recreate:
+              type: integer
+              description: 是否允许二创, -1:允许(默认) 1:不允许
+              example: -1
+            dynamic:
+              type: string
+              description: 粉丝动态
+              example: for testing
+            interactive:
+              type: integer
+              description: 互动视频?, 0:否
+              example: 0
+            act_reserve_create:
+              type: integer
+              description: 活动预约?, 0:否
+              example: 0
+            no_disturbance:
+              type: integer
+              description: 勿扰模式?, 0:否
+              example: 0
+            no_reprint:
+              type: integer
+              description: 是否允许转载, 1:允许 0:不允许
+              example: 1
+            subtitle:
+              type: object
+              description: 字幕信息
+              required:
+                - open
+                - lan
+              properties:
+                open:
+                  type: integer
+                  description: 是否启用字幕投稿, 0:启用(默认) 1:不启用
+                  example: 0
+                lan:
+                  type: string
+                  description: 字幕投稿语言, 可为空
+                  example: ''
+            dolby:
+              type: integer
+              description: 杜比音效, 0:否(默认) 1:是
+              example: 0
+            lossless_music:
+              type: integer
+              description: 无损音乐, 0:否(默认) 1:是
+              example: 0
+            up_selection_reply:
+              type: boolean
+              description: 精选评论
+              example: false
+            up_close_reply:
+              type: boolean
+              description: 关闭评论
+              example: false
+            up_close_danmu:
+              type: boolean
+              description: 关闭弹幕
+              example: false
+            web_os:
+              type: integer
+              description: 平台类型?
+              example: 3
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AddV3Response.yaml

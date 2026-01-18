@@ -1,0 +1,76 @@
+get:
+  tags:
+    - 动态
+  summary: 动态详情
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: id
+      in: query
+      description: 动态 ID
+      schema:
+        type: integer
+      required: true
+    - name: timezone_offset
+      in: query
+      description: 时区偏移
+      schema:
+        type: integer
+        example: -480
+    - name: platform
+      in: query
+      description: 平台
+      schema:
+        type: string
+        example: web
+    - name: gaia_source
+      in: query
+      description: 来源
+      schema:
+        type: string
+        example: main_web
+    - name: features
+      in: query
+      description: 功能
+      schema:
+        type: string
+        example: >-
+          itemOpusStyle,opusBigCover,onlyfansVote,endFooterHidden,decorationCard,onlyfansAssetsV2,ugcDelete,onlyfansQaCard,commentsNewVersion
+    - name: web_location
+      in: query
+      description: web_location
+      schema:
+        type: string
+        example: '333.1368'
+    - name: x-bili-device-req-json
+      in: header
+      description: 设备信息?
+      schema:
+        type: object
+        example:
+          platform: web
+          device: pc
+    - name: x-bili-web-req-json
+      in: header
+      description: 请求信息?
+      schema:
+        type: object
+        example:
+          spm_id: '333.1368'
+    - name: w_rid
+      in: query
+      description: Wbi 签名
+      schema:
+        type: string
+    - name: wts
+      in: query
+      description: UNIX 秒级时间戳
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetAllDynamicList.yaml

@@ -1,0 +1,89 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: TimeToLive
+  data:
+    type: object
+    properties:
+      popularity_red_pocket:
+        type: array
+        description: 人气红包信息
+        items:
+          type: object
+          properties:
+            lot_id:
+              type: integer
+              description: 红包 ID
+            sender_uid:
+              type: integer
+              description: 红包发送者 UID
+            sender_name:
+              type: string
+              description: 红包发送者昵称
+            sender_face:
+              type: string
+              description: 红包发送者头像
+            join_requirement:
+              type: integer
+              description: 参与条件?
+            danmu:
+              type: string
+              description: 参与红包时自动发送的弹幕内容
+            awards:
+              type: array
+              description: 红包内容
+              items:
+                type: object
+                properties:
+                  gift_id:
+                    type: integer
+                    description: 礼物 ID
+                  num:
+                    type: integer
+                    description: 该礼物的数量
+                  gift_name:
+                    type: string
+                    description: 礼物名称
+                  gift_pic:
+                    type: string
+                    description: 礼物图标 URL
+            start_time:
+              type: integer
+              description: 可以开始抢红包的 Unix 时间戳
+            end_time:
+              type: integer
+              description: 抢红包的结束时间 Unix 时间戳
+            last_time:
+              type: integer
+              description: 红包的持续时间（秒）
+            remove_time:
+              type: integer
+              description: 待调查
+            replace_time:
+              type: integer
+              description: 待调查
+            current_time:
+              type: integer
+              description: 服务器发送数据包的 Unix 时间戳
+            lot_status:
+              type: integer
+              description: 未知
+            h5_url:
+              type: string
+              description: 红包界面
+            user_status:
+              type: integer
+              description: 用户是否已参与
+            lot_config_id:
+              type: integer
+              description: 未知
+            total_price:
+              type: integer
+              description: 红包总计价格

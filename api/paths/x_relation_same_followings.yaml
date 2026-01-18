@@ -1,0 +1,40 @@
+get:
+  tags:
+    - 用户关系相关
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询共同关注明细
+  parameters:
+    - in: query
+      name: access_key
+      schema:
+        type: string
+      required: false
+      description: APP 登录 Token
+    - in: query
+      name: vmid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+    - in: query
+      name: ps
+      schema:
+        type: integer
+        default: 50
+      required: false
+      description: 每页项数
+    - in: query
+      name: pn
+      schema:
+        type: integer
+        default: 1
+      required: false
+      description: 页码
+  responses:
+    '200':
+      description: 共同关注明细
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RelationSameFollowingsResponse.yaml

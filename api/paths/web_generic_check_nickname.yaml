@@ -1,0 +1,23 @@
+get:
+  tags:
+    - 昵称检查
+  servers:
+    - url: https://passport.bilibili.com
+  summary: |-
+    检查昵称是否可注册。
+    此接口疑似已经无法正常使用，无论输入是什么，返回值都是 `{"code": 0}`。
+  parameters:
+    - in: query
+      name: nickName
+      schema:
+        type: string
+        maxLength: 16
+      required: true
+      description: 目标昵称
+  responses:
+    '200':
+      description: 检查结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CheckNicknameResponse.yaml

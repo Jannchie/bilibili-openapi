@@ -1,0 +1,210 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      lottery_id:
+        type: integer
+        description: 收藏集抽奖 ID
+      name:
+        type: string
+        description: 收藏集抽奖名称
+      item_list:
+        type: array
+        description: 可抽出的物品列表
+        items:
+          type: object
+          properties:
+            item_type:
+              type: integer
+              description: 物品类型
+            card_info:
+              type: object
+              properties:
+                card_type_id:
+                  type: integer
+                  description: 该卡片 ID
+                card_name:
+                  type: string
+                  description: 该卡片名称
+                card_img:
+                  type: string
+                  description: 该卡片图片
+                card_type:
+                  type: integer
+                  description: 未知
+                video_list:
+                  type: array
+                  description: 该卡片动态视频
+                  items:
+                    type: string
+                is_physical_orientation:
+                  type: integer
+                  description: 该卡片旋转方向
+                card_scarcity:
+                  type: integer
+                  description: 该卡片稀有度
+                is_mute:
+                  type: integer
+                  description: 该卡片是否静音
+                width:
+                  type: integer
+                  description: 该卡片像素宽度
+                height:
+                  type: integer
+                  description: 该卡片像素高度
+                card_ext_text:
+                  type: string
+                  description: '?该卡片文件名字符串'
+                card_img_download:
+                  type: string
+                  description: 该卡片图片
+                video_list_download:
+                  type: array
+                  description: 该卡片动态视频
+                  items:
+                    type: string
+                subtitles_url:
+                  type: string
+                play:
+                  type: object
+                tag:
+                  type: object
+                card_sub_type:
+                  type: integer
+                is_new_tag:
+                  type: integer
+                is_up_tag:
+                  type: integer
+                is_limited_card:
+                  type: integer
+                stock_info:
+                  type: object
+      collect_list:
+        type: object
+        properties:
+          collect_infos:
+            type: array
+            items:
+              type: object
+              properties:
+                collect_id:
+                  type: integer
+                  description: 收集品 ID
+                start_time:
+                  type: integer
+                  description: 开始时间
+                end_time:
+                  type: integer
+                  description: 结束时间
+                redeem_text:
+                  type: string
+                  description: 兑换条件
+                redeem_item_type:
+                  type: integer
+                  description: 兑换物类型
+                redeem_item_id:
+                  type: string
+                  description: 兑换物 ID
+                redeem_item_name:
+                  type: string
+                  description: 兑换物名称
+                redeem_item_image:
+                  type: string
+                  description: 兑换物预览图片
+                owned_item_amount:
+                  type: integer
+                  description: 拥有的数量
+                require_item_amount:
+                  type: integer
+                  description: 需要的数量
+                has_redeemed_cnt:
+                  type: integer
+                  description: 兑换次数
+                effective_forever:
+                  type: integer
+                  description: 是否永久有效
+                redeem_item_image_download:
+                  type: string
+                card_item:
+                  type: object
+                  properties:
+                    card_type_info:
+                      type: object
+                    card_asset_info:
+                      type: object
+                    play:
+                      type: object
+                    tag:
+                      type: object
+                jump_url:
+                  type: string
+                redeem_cond_type:
+                  type: string
+                  description: 当前兑换状态
+                remain_stock:
+                  type: integer
+                  description: 当前库存
+                total_stock:
+                  type: integer
+                  description: 总库存
+                lottery_id:
+                  type: integer
+                  description: 抽奖 ID
+                reward_tag:
+                  type: string
+                  description: 奖励显示标签
+                redeem_detail_image:
+                  type: string
+                  description: 兑换详情图片
+                redeem_detail_videos:
+                  type: object
+                sort:
+                  type: integer
+                  description: 排序
+                redeem_items_optional:
+                  type: object
+                unlock_condition:
+                  type: object
+                  properties:
+                    unlocked:
+                      type: boolean
+                      description: 是否解锁
+                    lock_type:
+                      type: integer
+                      description: 解锁类型
+                    expire_at:
+                      type: integer
+                      description: 过期时间
+                    unlocked_at:
+                      type: integer
+                      description: 解锁时间
+                    unlock_threshold:
+                      type: integer
+                      description: '?解锁起点'
+                    current_threshold:
+                      type: integer
+                      description: '?当前起点'
+          collect_chain:
+            type: object
+      button_bubble:
+        type: object
+      guide_info:
+        type: object
+      is_booked:
+        type: integer
+      total_book_cnt:
+        type: integer
+      is_fission:
+        type: integer
+      physical_exchange:
+        type: integer

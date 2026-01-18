@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，65530：token 错误（登录错误），1：错误
+  data:
+    type: object
+    properties:
+      audit_info:
+        type: object
+        properties:
+          audit_title_reason:
+            type: string
+          audit_title_status:
+            type: integer
+            description: '0'
+          update_title:
+            type: string
+      sub_session_key:
+        type: string
+  message:
+    type: string
+    description: 错误信息
+  msg:
+    type: string
+    description: 错误信息

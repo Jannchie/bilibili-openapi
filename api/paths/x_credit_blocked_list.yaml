@@ -1,0 +1,42 @@
+get:
+  tags:
+    - 封禁公示
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: btype
+      in: query
+      description: 来源筛选, 仲裁系统升级后`1`类型已不再更新
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+    - name: otype
+      in: query
+      description: 类型筛选, 默认为`0`, 全部类型
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 8
+          - 10
+          - 11
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BlockedListResponse.yaml

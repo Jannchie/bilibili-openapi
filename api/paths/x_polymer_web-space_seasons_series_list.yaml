@@ -1,0 +1,53 @@
+get:
+  tags:
+    - 合集和视频列表信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取系列和合集视频
+  parameters:
+    - in: query
+      name: mid
+      schema:
+        type: integer
+      required: true
+      description: 用户 mid
+    - in: query
+      name: page_num
+      schema:
+        type: integer
+        default: 1
+      required: true
+      description: 页码
+    - in: query
+      name: page_size
+      schema:
+        type: integer
+        default: 20
+      required: true
+      description: 每页数量
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: UNIX 秒级时间戳
+    - in: query
+      name: web_location
+      schema:
+        type: string
+        default: '333.999'
+      required: false
+      description: 页面位置?
+  responses:
+    '200':
+      description: 系列和合集视频信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonsSeriesListResponse.yaml

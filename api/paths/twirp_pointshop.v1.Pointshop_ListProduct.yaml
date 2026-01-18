@@ -1,0 +1,13 @@
+post:
+  tags:
+    - 积分商城
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 获取兑换奖品列表
+  responses:
+    '200':
+      description: 兑换奖品列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListProductResponse.yaml

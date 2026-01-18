@@ -1,0 +1,22 @@
+type: object
+properties:
+  img_src:
+    type: string
+    description: 图片 URL
+    example: >-
+      https://i0.hdslb.com/bfs/album/d531e3dae34ef65b44ecdb2914d4cc4f5a4da998.jpg
+  img_width:
+    type: integer
+    format: int64
+    description: 图片宽度
+    example: 1236
+  img_height:
+    type: integer
+    format: int64
+    description: 图片高度
+    example: 1600
+  img_size:
+    type: integer
+    format: int64
+    description: 图片大小 (单位为 KByte)
+    example: 508

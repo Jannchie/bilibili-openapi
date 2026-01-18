@@ -1,0 +1,27 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      has_more:
+        type: boolean
+        description: 是否还有下一页
+      total_count:
+        type: integer
+        description: 总计点赞数
+      _gt_:
+        type: integer
+        description: 作用尚不明确
+      item_likes:
+        type: array
+        items:
+          type: object
+  message:
+    type: string
+    description: 错误信息
+  msg:
+    type: number
+    description: 空

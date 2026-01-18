@@ -1,0 +1,19 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: '返回值，0：成功，5100001: 参数错误'
+  msg:
+    type: string
+    description: 错误信息
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      vote_id:
+        type: integer
+        description: 投票id
+      _gt_:
+        type: integer

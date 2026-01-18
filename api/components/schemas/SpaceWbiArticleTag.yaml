@@ -1,0 +1,11 @@
+type: object
+properties:
+  tid:
+    type: integer
+    format: int64
+    description: 标签 ID
+    example: 1598
+  name:
+    type: string
+    description: 标签名称
+    example: 粉丝

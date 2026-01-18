@@ -1,0 +1,23 @@
+type: object
+properties:
+  status:
+    type: boolean
+  data:
+    oneOf:
+      - type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: 空间头图 ID
+            product_name:
+              type: string
+              description: 显示名称
+            price:
+              type: integer
+              description: 价格
+            coin_type:
+              type: integer
+            vip_free:
+              type: integer

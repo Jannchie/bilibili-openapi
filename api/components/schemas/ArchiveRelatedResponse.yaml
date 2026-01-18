@@ -1,0 +1,17 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: array
+    items:
+      type: object
+      description: 推荐视频信息
+    maxItems: 40

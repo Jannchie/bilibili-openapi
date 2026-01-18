@@ -1,0 +1,59 @@
+get:
+  tags:
+    - 评论区
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: 评论区类型代码, [类型代码见表](readme.md#评论区类型代码)
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 11
+          - 12
+          - 17
+      required: true
+    - name: oid
+      in: query
+      description: 目标评论区 id
+      schema:
+        type: integer
+      required: true
+    - name: root
+      in: query
+      description: 根回复 rpid
+      schema:
+        type: integer
+      required: true
+    - name: dialog
+      in: query
+      description: 对话树根 rpid
+      schema:
+        type: integer
+      required: true
+    - name: size
+      in: query
+      description: 每页最大项数
+      schema:
+        type: integer
+      required: true
+    - name: min_floor
+      in: query
+      schema:
+        type: integer
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ReplyDialogCursorResponse.yaml

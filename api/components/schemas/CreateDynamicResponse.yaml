@@ -1,0 +1,29 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      result:
+        type: integer
+        description: '0'
+      errmsg:
+        type: string
+        description: 像是服务器日志一样的东西
+      dynamic_id:
+        type: integer
+        description: 动态 id
+      create_result:
+        type: integer
+        description: '1'
+      dynamic_id_str:
+        type: string
+        description: 动态 id
+      _gt_:
+        type: integer
+        description: '0'

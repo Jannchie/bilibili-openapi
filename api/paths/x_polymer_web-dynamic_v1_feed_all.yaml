@@ -1,0 +1,74 @@
+get:
+  tags:
+    - 动态
+  summary: 获取全部动态列表
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: timezone_offset
+      in: query
+      description: timezone_offset
+      schema:
+        type: string
+        example: '-480'
+    - name: type
+      in: query
+      description: 分类
+      schema:
+        type: string
+        enum:
+          - all
+          - video
+          - pgc
+          - article
+    - name: host_mid
+      in: query
+      description: UP主UID
+      schema:
+        type: integer
+        example: 293793435
+    - name: offset
+      in: query
+      description: 分页偏移量
+      schema:
+        type: integer
+    - name: update_baseline
+      in: query
+      description: 更新基线
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: 页数
+      schema:
+        type: integer
+    - name: platform
+      in: query
+      description: 平台
+      schema:
+        type: string
+        example: web
+    - name: features
+      in: query
+      description: 功能开关?
+      schema:
+        type: string
+        enum:
+          - itemOpusStyle,listOnlyfans
+          - >-
+            itemOpusStyle,listOnlyfans,opusBigCover,onlyfansVote,decorationCard,onlyfansAssetsV2,forwardListHidden,ugcDelete
+    - name: web_location
+      in: query
+      description: web_location
+      schema:
+        type: string
+        example: '333.1365'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetAllDynamicList.yaml

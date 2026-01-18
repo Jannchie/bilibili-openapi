@@ -1,0 +1,34 @@
+get:
+  tags:
+    - 动态
+  summary: 检测是否有新动态
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: type
+      in: query
+      description: 动态类型
+      schema:
+        type: string
+        example: all
+    - name: update_baseline
+      in: query
+      description: 更新基线
+      schema:
+        type: string
+      required: true
+    - name: web_location
+      in: query
+      description: web_location
+      schema:
+        type: string
+        example: '333.1365'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetNewDynamicList.yaml

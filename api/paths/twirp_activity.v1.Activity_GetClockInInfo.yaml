@@ -1,0 +1,15 @@
+post:
+  tags:
+    - 漫画签到
+  summary: 查询签到状态
+  servers:
+    - url: https://manga.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetClockInInfoResponse.yaml

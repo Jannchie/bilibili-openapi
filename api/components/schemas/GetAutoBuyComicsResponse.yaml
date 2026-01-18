@@ -1,0 +1,70 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 内部id
+        comic_id:
+          type: integer
+          description: 漫画id
+        comic_title:
+          type: string
+          description: 漫画标题
+        hcover:
+          type: string
+          description: 横版头图
+        scover:
+          type: string
+          description: 方形头图
+        vcover:
+          type: string
+          description: 竖版封面图
+        bought_ep_count:
+          type: integer
+          description: 已购章节数
+        gold_status:
+          type: integer
+        coupon_status:
+          type: integer
+        comic_status:
+          type: integer
+          description: 漫画状态
+        last_ord:
+          type: integer
+          description: 最后一话
+        ctime:
+          type: string
+          description: 获取时间
+        last_short_title:
+          type: string
+          description: 最后一话的短标题
+        bug_type:
+          type: integer
+          description: 购买类型
+        ep_for_chapters:
+          type: integer
+        orders:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              title:
+                type: string
+          description: 自动扣费顺序
+        enable_auto_pay:
+          type: boolean
+          description: 是否开启自动付费
+        type:
+          type: integer

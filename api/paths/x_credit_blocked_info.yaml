@@ -1,0 +1,19 @@
+get:
+  tags:
+    - 封禁公示
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: id
+      in: query
+      description: 封禁公示id
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BlockedInfoResponse.yaml

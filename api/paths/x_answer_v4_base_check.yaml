@@ -1,0 +1,28 @@
+post:
+  tags:
+    - 答题操作
+  servers:
+    - url: https://api.bilibili.com
+  summary: 提交基础题或附加题
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: csrf
+      schema:
+        type: string
+      required: true
+      description: CSRF Token（位于 cookie）
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/AnswerBaseCheckRequest.yaml
+  responses:
+    '200':
+      description: 答题结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AnswerBaseCheckResponse.yaml

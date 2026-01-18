@@ -1,0 +1,335 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      seasons:
+        type: array
+        description: 合集列表
+        items:
+          type: object
+          properties:
+            season:
+              type: object
+              description: 合集信息
+              properties:
+                id:
+                  type: integer
+                  description: 合集ID
+                  example: 3541247
+                title:
+                  type: string
+                  description: 合集标题
+                  example: 🍥Debian
+                desc:
+                  type: string
+                  description: 合集描述
+                  example: 这里是泽生折腾Debian GNU/Linux的珍贵影像记录喵~
+                cover:
+                  type: string
+                  description: 合集封面URL
+                  example: >-
+                    https://archive.biliimg.com/bfs/archive/ec51de61b53159c5e2430cf963f5f97e692baeaf.jpg
+                isEnd:
+                  type: integer
+                  description: 是否已完结
+                  example: 0
+                mid:
+                  type: integer
+                  description: 合集作者ID
+                  example: 645769214
+                isAct:
+                  type: integer
+                  description: 是否为活动合集
+                  example: 0
+                is_pay:
+                  type: integer
+                  description: 是否付费
+                  example: 0
+                state:
+                  type: integer
+                  description: 合集状态
+                  example: 0
+                partState:
+                  type: integer
+                  description: 合集分段状态
+                  example: 0
+                signState:
+                  type: integer
+                  description: 合集签名状态
+                  example: 0
+                rejectReason:
+                  type: string
+                  description: 合集拒绝原因
+                  example: ''
+                ctime:
+                  type: integer
+                  description: 创建时间
+                  example: 1722573640
+                mtime:
+                  type: integer
+                  description: 修改时间
+                  example: 1722577206
+                no_section:
+                  type: integer
+                  description: 是否设小节, 1:不设小节
+                  example: 1
+                forbid:
+                  type: integer
+                  description: 合集是否禁止
+                  example: 0
+                protocol_id:
+                  type: string
+                  description: 空
+                  example: ''
+                ep_num:
+                  type: integer
+                  description: '0'
+                  example: 0
+                season_price:
+                  type: integer
+                  description: 合集价格
+                  example: 0
+                is_opened:
+                  type: integer
+                  description: 是否公开
+                  example: 1
+                has_charging_pay:
+                  type: integer
+                  description: 是否充电付费
+                  example: 0
+            course:
+              type: object
+            checkin:
+              type: object
+              description: 审核信息?
+              properties:
+                status:
+                  type: integer
+                  description: 状态
+                  example: 0
+                status_reason:
+                  type: string
+                  description: 状态原因
+                  example: ''
+                season_status:
+                  type: integer
+                  description: 合集审核状态
+                  example: 1
+            seasonStat:
+              type: object
+              description: 合集统计信息
+              properties:
+                view:
+                  type: integer
+                  description: 播放量
+                  example: 6793
+                danmaku:
+                  type: integer
+                  description: 弹幕数
+                  example: 21
+                reply:
+                  type: integer
+                  description: 评论数
+                  example: 93
+                fav:
+                  type: integer
+                  description: 收藏数
+                  example: 64
+                coin:
+                  type: integer
+                  description: 硬币数
+                  example: 26
+                share:
+                  type: integer
+                  description: 分享数
+                  example: 12
+                nowRank:
+                  type: integer
+                  description: 当前排名?
+                  example: 0
+                hisRank:
+                  type: integer
+                  description: 历史最高排名?
+                  example: 0
+                like:
+                  type: integer
+                  description: 点赞数
+                  example: 141
+                subscription:
+                  type: integer
+                  description: 订阅数
+                  example: 0
+                vt:
+                  type: integer
+                  description: '0'
+                  example: 0
+            sections:
+              type: object
+              description: 小节列表
+              properties:
+                sections:
+                  type: array
+                  description: 小节列表
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: 小节ID
+                        example: 3954033
+                      type:
+                        type: integer
+                        description: '1'
+                        example: 1
+                      seasonId:
+                        type: integer
+                        description: 合集ID
+                        example: 3541247
+                      title:
+                        type: string
+                        description: 小节标题
+                        example: 正片
+                      order:
+                        type: integer
+                        description: 排序
+                        example: 1
+                      state:
+                        type: integer
+                        description: 状态?
+                        example: 0
+                      partState:
+                        type: integer
+                        description: 合集分段状态?
+                        example: 0
+                      rejectReason:
+                        type: string
+                        description: 拒绝原因?
+                        example: ''
+                      ctime:
+                        type: integer
+                        description: 创建时间
+                        example: 1722573640
+                      mtime:
+                        type: integer
+                        description: 修改时间
+                        example: 1722577206
+                      epCount:
+                        type: integer
+                        description: 视频数量
+                        example: 2
+                      cover:
+                        type: string
+                        description: 封面URL
+                        example: >-
+                          http://i2.hdslb.com/bfs/archive/b76c0b574862f5a8e8eb133f5f33fcbcd602401a.jpg
+                      has_charging_pay:
+                        type: integer
+                        description: 是否充电付费?
+                        example: 0
+                      Episodes:
+                        type: object
+            part_episodes:
+              type: array
+              description: 合集视频列表
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: 合集内视频ID
+                    example: 77260687
+                  title:
+                    type: string
+                    description: 视频标题
+                    example: Linux小寄巧:原地卸载内核然后尝试救活!
+                  aid:
+                    type: integer
+                    description: 视频aid
+                    example: 1906473802
+                  bvid:
+                    type: string
+                    description: 视频bvid
+                    example: BV1MU411S7iJ
+                  cid:
+                    type: integer
+                    description: 视频cid
+                    example: 1625992822
+                  seasonId:
+                    type: integer
+                    description: 合集ID
+                    example: 3541247
+                  sectionId:
+                    type: integer
+                    description: 小节ID
+                    example: 3954033
+                  order:
+                    type: integer
+                    description: 排序编号
+                    example: 1
+                  videoTitle:
+                    type: string
+                    description: 空
+                    example: ''
+                  archiveTitle:
+                    type: string
+                    description: 空
+                    example: ''
+                  archiveState:
+                    type: integer
+                    description: '0'
+                    example: 0
+                  rejectReason:
+                    type: string
+                    description: 拒绝原因?
+                    example: ''
+                  state:
+                    type: integer
+                    description: '0'
+                    example: 0
+                  cover:
+                    type: string
+                    description: 封面URL
+                    example: >-
+                      http://i2.hdslb.com/bfs/archive/b76c0b574862f5a8e8eb133f5f33fcbcd602401a.jpg
+                  is_free:
+                    type: integer
+                    description: 是否免费?
+                    example: 0
+                  aid_owner:
+                    type: boolean
+                    example: false
+                  charging_pay:
+                    type: integer
+                    description: 充电付费?
+                    example: 0
+      tip:
+        type: object
+        properties:
+          title:
+            type: string
+            description: 空
+            example: ''
+          url:
+            type: string
+            description: 空
+            example: ''
+      total:
+        type: integer
+        description: 合集总数
+        example: 2
+      play_type:
+        type: integer
+        description: 1, 作用尚不明确
+        example: 1

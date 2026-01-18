@@ -1,0 +1,20 @@
+type: object
+properties:
+  fmid:
+    type: integer
+    format: int64
+    description: fmid
+    example: 0
+  relation:
+    type: boolean
+    description: relation
+    example: false
+  status:
+    type: integer
+    format: int64
+    description: status
+    example: 2
+  toast:
+    type: string
+    description: toast
+    example: 自己追的番就要好好看完哟^o^

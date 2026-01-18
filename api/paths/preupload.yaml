@@ -1,0 +1,78 @@
+get:
+  tags:
+    - 投稿
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: name
+      in: query
+      description: 文件名, 会影响返回的上传地址
+      schema:
+        type: string
+      required: true
+    - name: r
+      in: query
+      description: 上传区域?
+      schema:
+        type: string
+        enum:
+          - upos
+      required: true
+    - name: profile
+      in: query
+      description: 上传配置?
+      schema:
+        type: string
+        enum:
+          - ugcfx/bup
+          - feedback/bup
+      required: true
+    - name: probe_version
+      in: query
+      description: 上传版本?
+      schema:
+        type: integer
+    - name: upcdn
+      in: query
+      description: 上传CDN?
+      schema:
+        type: string
+    - name: zone
+      in: query
+      description: 上传区域?
+      schema:
+        type: string
+    - name: ssl
+      in: query
+      description: 是否使用SSL?
+      schema:
+        type: integer
+    - name: version
+      in: query
+      description: 上传版本?
+      schema:
+        type: string
+    - name: build
+      in: query
+      description: 上传版本?
+      schema:
+        type: integer
+    - name: size
+      in: query
+      description: 文件大小, 视频文件大小, 单位字节
+      schema:
+        type: integer
+    - name: webVersion
+      in: query
+      description: 上传版本?
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PreuploadResponse.yaml

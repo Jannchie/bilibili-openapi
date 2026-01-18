@@ -1,0 +1,8 @@
+type: object
+properties:
+  has_fav_activity:
+    type: boolean
+  fav_free_amount:
+    type: integer
+  fav_coupon_type:
+    type: integer

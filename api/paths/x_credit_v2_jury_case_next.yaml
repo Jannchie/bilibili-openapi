@@ -1,0 +1,19 @@
+get:
+  tags:
+    - 仲裁操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: cookie
+      in: header
+      description: cookie
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryCaseNextResponse.yaml

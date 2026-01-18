@@ -1,0 +1,10 @@
+type: object
+properties:
+  pageSize:
+    type: integer
+    description: 分段时间？，单位为毫秒
+    format: int64
+  total:
+    type: integer
+    description: 最大分页数？
+    format: int64

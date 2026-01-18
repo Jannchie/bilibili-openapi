@@ -1,0 +1,60 @@
+post:
+  tags:
+    - 登录
+  summary: 登录操作 (web 端)
+  servers:
+    - url: https://passport.bilibili.com
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - username
+            - password
+            - keep
+            - token
+            - challenge
+            - validate
+            - seccode
+          type: object
+          properties:
+            username:
+              type: string
+              description: 用户登录账号
+            password:
+              type: string
+              description: 加密后的带盐密码
+            keep:
+              type: integer
+              format: int32
+              default: 0
+              description: '0'
+            token:
+              type: string
+              description: 登录 token
+            challenge:
+              type: string
+              description: 极验 challenge
+            validate:
+              type: string
+              description: 极验 result
+            seccode:
+              type: string
+              description: 极验 result + '|jordan'
+            go_url:
+              type: string
+              default: https://www.bilibili.com
+              description: 跳转 URL
+            source:
+              type: string
+              enum:
+                - main_web
+                - main_mini
+              description: 登录来源
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WebLoginResponse.yaml

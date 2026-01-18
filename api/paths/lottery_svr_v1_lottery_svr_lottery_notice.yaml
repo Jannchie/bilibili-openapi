@@ -1,0 +1,44 @@
+get:
+  tags:
+    - 动态
+  summary: 动态抽奖详情
+  servers:
+    - url: https://api.vc.bilibili.com
+  parameters:
+    - name: business_id
+      in: query
+      description: 动态 ID
+      schema:
+        type: integer
+      required: true
+    - name: bussiness_type
+      in: query
+      description: 业务类型?
+      schema:
+        type: integer
+        enum:
+          - 1
+      required: true
+    - name: csrf
+      in: query
+      description: CSRF Token (即 Cookie 中 bili_jct 字段)
+      schema:
+        type: string
+    - name: web_location
+      in: query
+      description: web_location
+      schema:
+        type: string
+        example: '333.1330'
+    - name: dynamic_id
+      in: query
+      description: 动态 ID
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LotteryNoticeResponse.yaml

@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      like:
+        type: boolean
+        description: 是否点赞成功
+      coin:
+        type: boolean
+        description: 是否投币成功
+      fav:
+        type: boolean
+        description: 是否收藏成功
+      multiply:
+        type: integer
+        description: 投币枚数

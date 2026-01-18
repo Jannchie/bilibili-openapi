@@ -1,0 +1,22 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 错误信息
+    example: success
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: object
+    properties:
+      type:
+        type: integer
+        format: int64
+        description: 操作方式
+        example: 1

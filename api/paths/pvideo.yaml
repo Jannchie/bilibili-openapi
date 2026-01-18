@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 视频快照
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取视频快照 (web 端) (用于封面预览)
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: true
+      description: 稿件 avid
+  responses:
+    '200':
+      description: 视频快照信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PvideoResponse.yaml

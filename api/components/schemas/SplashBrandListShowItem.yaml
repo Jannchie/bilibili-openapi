@@ -1,0 +1,27 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 开屏图片 ID
+    example: 12
+  begin_time:
+    type: integer
+    format: int64
+    description: 开始时间? (时间戳)
+    example: 1597564800
+  end_time:
+    type: integer
+    format: int64
+    description: 结束时间? (时间戳)
+    example: 1630753108
+  probability:
+    type: integer
+    format: int64
+    description: 概率
+    example: 0
+  duration:
+    type: integer
+    format: int64
+    description: 显示时间? (单位为毫秒)
+    example: 700

@@ -1,0 +1,53 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      data:
+        type: array
+        description: 禁言列表
+        items:
+          type: object
+          properties:
+            tuid:
+              type: integer
+              description: 禁言者 UID
+            tname:
+              type: string
+              description: 禁言者昵称
+            uid:
+              type: integer
+              description: 发起者 UID
+            name:
+              type: string
+              description: 发起者昵称
+            ctime:
+              type: string
+              description: 禁言时间
+            id:
+              type: integer
+              description: 禁言记录 ID
+            is_anchor:
+              type: integer
+              description: 不明
+            face:
+              type: string
+              description: 禁言者头像
+            admin_level:
+              type: integer
+              description: 发起者权限
+      total:
+        type: integer
+        description: 禁言观众数量
+      total_page:
+        type: integer
+        description: 页码总数量

@@ -1,0 +1,77 @@
+type: object
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  bvid:
+    type: string
+    description: 稿件 bvid
+  cid:
+    type: integer
+    description: 视频 cid
+  epid:
+    type: integer
+    description: 番剧 epid
+  sid:
+    type: integer
+    description: 番剧 ssid
+  mid:
+    type: integer
+    description: 当前用户 mid
+  played_time:
+    type: integer
+    description: 视频播放进度
+  realtime:
+    type: integer
+    description: 本轮页面会话真实播放时间
+  real_played_time:
+    type: integer
+    description: 本轮页面会话真实视频播放持续时间
+  refer_url:
+    type: string
+    description: 与请求头 Referer 字段相同
+  quality:
+    type: integer
+    description: 视频清晰度
+  video_duration:
+    type: integer
+    description: 视频时长
+  last_play_progress_time:
+    type: integer
+    description: play_time 与本轮页面会话开始时 played_time 之和
+  max_play_progress_time:
+    type: integer
+    description: 本轮页面会话所有最大 last_play_progress_time 与本轮页面会话开始时 played_time 之和
+  start_ts:
+    type: integer
+    description: 开始播放时刻
+  type:
+    type: integer
+    description: 视频类型
+  sub_type:
+    type: integer
+    description: 剧集副类型
+  dt:
+    type: integer
+    default: 2
+  outer:
+    type: integer
+    default: 0
+  spmid:
+    type: string
+    default: 333.788.0.0
+  from_spmid:
+    type: string
+    description: 播放来源?
+  session:
+    type: string
+    description: 会话信息?
+  extra:
+    type: object
+    description: 额外信息，如播放器版本
+  play_type:
+    type: integer
+    description: 播放动作
+  csrf:
+    type: string
+    description: CSRF Token (即 Cookie 中 bili_jct)

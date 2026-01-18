@@ -1,0 +1,30 @@
+post:
+  tags:
+    - 登录
+  summary: 交换 Cookie
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ExchangeCookieResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - source
+            - code
+          properties:
+            source:
+              type: string
+              description: risk
+              default: risk
+            code:
+              type: string
+              description: 交换代码
+              default: ''

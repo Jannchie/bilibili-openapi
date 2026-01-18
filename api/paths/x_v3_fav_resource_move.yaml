@@ -1,0 +1,48 @@
+post:
+  tags:
+    - 收藏夹
+  summary: 批量移动内容
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - src_media_id
+            - tar_media_id
+            - mid
+            - resources
+            - csrf
+          type: object
+          properties:
+            src_media_id:
+              type: integer
+              format: int32
+              description: 源收藏夹 ID
+            tar_media_id:
+              type: integer
+              format: int32
+              description: 目标收藏夹 ID
+            mid:
+              type: integer
+              format: int32
+              description: 当前用户 mid
+            resources:
+              type: string
+              description: 目标内容 ID 列表
+            platform:
+              type: string
+              description: 平台标识
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavResourceMoveResponse.yaml

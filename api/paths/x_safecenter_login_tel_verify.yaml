@@ -1,0 +1,50 @@
+post:
+  tags:
+    - 登录
+  summary: 验证手机验证码
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TelVerifyResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - tmp_code
+            - captcha_key
+            - type
+            - code
+            - request_id
+            - source
+          properties:
+            tmp_code:
+              type: string
+              description: URL query 中的 tmp_code
+              default: ''
+            captcha_key:
+              type: string
+              description: 验证码 key
+              default: ''
+            type:
+              type: string
+              description: loginTelCheck
+              default: loginTelCheck
+            code:
+              type: integer
+              description: 接收到的验证码
+              default: ''
+            request_id:
+              type: string
+              description: URL query 中的 request_id
+              default: ''
+            source:
+              type: string
+              description: risk
+              default: risk

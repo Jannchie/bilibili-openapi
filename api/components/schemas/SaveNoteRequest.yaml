@@ -1,0 +1,65 @@
+type: object
+required:
+  - oid
+  - oid_type
+  - title
+  - summary
+  - content
+  - csrf
+properties:
+  oid:
+    type: integer
+    description: 目标 ID
+  oid_type:
+    type: integer
+    description: 目标 ID 类型
+    default: 0
+    enum:
+      - 0
+  note_id:
+    type: integer
+    description: 笔记 ID
+  title:
+    type: string
+    description: 笔记标题
+  summary:
+    type: string
+    description: 笔记预览文本
+  content:
+    type: string
+    description: 笔记正文 JSON 序列
+  tags:
+    type: string
+    description: 笔记跳转标签列表
+  cls:
+    type: integer
+    default: 1
+  from:
+    type: string
+    description: 提交类型
+    enum:
+      - auto
+      - save
+      - close
+  cont_len:
+    type: integer
+    description: 正文字数
+  platform:
+    type: string
+    description: 平台
+    example: web
+  publish:
+    type: integer
+    description: 是否公开笔记
+    enum:
+      - 0
+      - 1
+  auto_comment:
+    type: integer
+    description: 是否添加到评论区
+    enum:
+      - 0
+      - 1
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

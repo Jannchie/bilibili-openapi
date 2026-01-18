@@ -1,4 +1,4 @@
-name: Deploy ReDoc to GitHub Pages
+name: Deploy Scalar Docs to GitHub Pages
 
 on:
   push:
@@ -18,15 +18,17 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: npm install -g redoc-cli
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: "9"
 
-      - name: Generate ReDoc HTML
-        run: redoc-cli bundle api/main.yaml --output redoc-static.html
+      - name: Generate Scalar docs
+        run: sh scripts/gen-doc.sh
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./docs
           publish_branch: gh-pages

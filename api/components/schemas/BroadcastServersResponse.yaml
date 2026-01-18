@@ -1,0 +1,62 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      domain:
+        type: string
+        description: 广播服务器url
+        example: broadcast.chat.bilibili.com
+      tcp_port:
+        type: integer
+        description: tcp端口
+        example: 7821
+      ws_port:
+        type: integer
+        description: websocket端口
+        example: 7822
+      wss_port:
+        type: integer
+        description: websocket ssl端口
+        example: 7823
+      heartbeat:
+        type: integer
+        description: 最大心跳包间隔时间
+        example: 30
+      nodes:
+        type: array
+        description: 服务节点地址列表
+        items:
+          type: string
+          example: broadcast.chat.bilibili.com
+      backoff:
+        type: object
+        properties:
+          max_delay:
+            type: integer
+            example: 300
+          base_delay:
+            type: integer
+            example: 3
+          factor:
+            type: number
+            format: float
+            example: 1.8
+          jitter:
+            type: number
+            format: float
+            example: 0.3
+      heartbeat_max:
+        type: integer
+        example: 3

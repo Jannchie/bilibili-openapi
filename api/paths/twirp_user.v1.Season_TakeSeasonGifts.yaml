@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 漫画赛季
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 赛季奖励领取
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/TakeSeasonGiftsRequest.yaml
+  responses:
+    '200':
+      description: 领取结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TakeSeasonGiftsResponse.yaml

@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 用户状态数
+  servers:
+    - url: https://api.bilibili.com
+  summary: 关系状态数
+  parameters:
+    - in: query
+      name: access_key
+      schema:
+        type: string
+      required: false
+      description: APP 登录 Token
+    - in: query
+      name: vmid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+  responses:
+    '200':
+      description: 关系状态数
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RelationStatResponse.yaml

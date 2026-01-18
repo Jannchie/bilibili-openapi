@@ -1,0 +1,68 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误，88214：up主未开通充电
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '0'
+  data:
+    type: object
+    properties:
+      count:
+        type: integer
+        description: 本月充电人数
+      list:
+        type: array
+        description: 本月充电用户列表
+        items:
+          type: object
+          properties:
+            uname:
+              type: string
+              description: 充电用户昵称
+            avatar:
+              type: string
+              description: 充电用户头像url
+            mid:
+              type: integer
+              description: 充电对象mid
+            pay_mid:
+              type: integer
+              description: 充电用户mid
+            rank:
+              type: integer
+              description: 充电用户排名
+            trend_type:
+              type: integer
+              description: '0'
+            vip_info:
+              type: object
+              properties:
+                vipDueMsec:
+                  type: integer
+                  description: 大会员过期时间（？）
+                vipStatus:
+                  type: integer
+                  description: 大会员状态
+                vipType:
+                  type: integer
+                  description: 大会员类型
+            message:
+              type: string
+              description: 充电留言
+            msg_hidden:
+              type: integer
+              description: '0'
+      total_count:
+        type: integer
+        description: 总计充电次数
+      total:
+        type: integer
+        description: 总计充电次数
+      special_day:
+        type: integer
+        description: '0'

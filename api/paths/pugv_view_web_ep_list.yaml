@@ -1,0 +1,31 @@
+get:
+  tags:
+    - 课程信息
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: season_id
+      in: query
+      description: 课程ssid, 与番剧ssid不互通
+      schema:
+        type: integer
+      required: true
+    - name: ps
+      in: query
+      description: 每页项数, 默认为50
+      schema:
+        type: integer
+    - name: pn
+      in: query
+      description: 页码, 默认为1
+      schema:
+        type: integer
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PugvViewWebEpListResponse.yaml

@@ -1,0 +1,16 @@
+type: object
+properties:
+  name:
+    type: string
+    description: 分享名称
+    example: QQ
+  picture:
+    type: string
+    format: url
+    description: 分享图片 URL
+    example: >-
+      https://i0.hdslb.com/bfs/album/114ccfb3a999df9c4d11f274c8c61a804c8f8803.png
+  share_channel:
+    type: string
+    description: 分享代号
+    example: QQ

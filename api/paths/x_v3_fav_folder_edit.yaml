@@ -1,0 +1,47 @@
+post:
+  tags:
+    - 收藏夹
+  summary: 修改收藏夹
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - media_id
+            - title
+            - csrf
+          type: object
+          properties:
+            media_id:
+              type: integer
+              format: int32
+              description: 目标收藏夹mdid
+            title:
+              type: string
+              description: 修改收藏夹标题
+            intro:
+              type: string
+              description: 修改收藏夹简介
+            privacy:
+              type: integer
+              description: 是否公开
+              enum:
+                - 0
+                - 1
+            cover:
+              type: string
+              description: 封面图url
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavFolderEditResponse.yaml

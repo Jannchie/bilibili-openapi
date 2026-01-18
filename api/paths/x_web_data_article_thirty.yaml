@@ -1,0 +1,28 @@
+get:
+  tags:
+    - 统计与数据
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: type
+      in: query
+      description: 目标数据类型, 类型代码见下表
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArticleThirtyResponse.yaml

@@ -1,0 +1,53 @@
+get:
+  tags:
+    - 直播间视频流
+  summary: 根据真实直播间号获取直播视频流
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: cid
+      in: query
+      description: 目标真实直播间号
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: platform
+      in: query
+      description: 直播流格式
+      schema:
+        type: string
+        enum:
+          - h5
+          - web
+        default: web
+    - name: quality
+      in: query
+      description: 画质
+      schema:
+        type: integer
+        format: int32
+        enum:
+          - 2
+          - 3
+          - 4
+    - name: qn
+      in: query
+      description: 画质
+      schema:
+        type: integer
+        format: int32
+        enum:
+          - 80
+          - 150
+          - 400
+          - 10000
+          - 20000
+          - 30000
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PlayUrlResponse.yaml

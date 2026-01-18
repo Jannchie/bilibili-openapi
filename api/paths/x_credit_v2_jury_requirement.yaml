@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 风纪委员会
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP登录Token
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryRequirementResponse.yaml

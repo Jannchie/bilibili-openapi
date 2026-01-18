@@ -1,0 +1,30 @@
+get:
+  tags:
+    - 评论区
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: type
+      in: query
+      description: 评论区类型代码, [类型代码见表](readme.md#评论区类型代码)
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 11
+          - 12
+          - 17
+      required: true
+    - name: oid
+      in: query
+      description: 目标评论区 id
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ReplyCountResponse.yaml

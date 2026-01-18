@@ -1,0 +1,24 @@
+type: object
+properties:
+  mid:
+    type: integer
+    format: int64
+    description: 用户 uid
+    example: 300021061
+  name:
+    type: string
+    description: 用户名
+    example: 狸工智能
+  face:
+    type: string
+    format: url
+    description: 头像
+    example: https://i1.hdslb.com/bfs/face/4cba9bc9d6cf6935a37ec156dedb8f8d26c1df95.jpg
+  pendant:
+    $ref: ./SpaceWbiArticleAuthorPendant.yaml
+  official_verify:
+    $ref: ./SpaceWbiArticleAuthorOfficialVerify.yaml
+  nameplate:
+    $ref: ./SpaceWbiArticleAuthorNameplate.yaml
+  vip:
+    $ref: ./SpaceWbiArticleAuthorVip.yaml

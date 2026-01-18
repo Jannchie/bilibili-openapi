@@ -1,0 +1,50 @@
+post:
+  tags:
+    - 登录
+  summary: 发送验证码
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SmsSendResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - tmp_code
+            - sms_type
+            - recaptcha_token
+            - gee_challenge
+            - gee_validate
+            - gee_seccode
+          properties:
+            tmp_code:
+              type: string
+              description: URL query 中的 tmp_code
+              default: ''
+            sms_type:
+              type: string
+              description: loginTelCheck
+              default: loginTelCheck
+            recaptcha_token:
+              type: string
+              description: 验证码 token
+              default: ''
+            gee_challenge:
+              type: string
+              description: 极验 challenge
+              default: ''
+            gee_validate:
+              type: string
+              description: 极验 validate
+              default: ''
+            gee_seccode:
+              type: string
+              description: 极验 seccode
+              default: ''

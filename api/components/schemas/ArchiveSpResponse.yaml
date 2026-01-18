@@ -1,0 +1,375 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      class:
+        type: object
+        description: 作用尚不明确
+      arc_audits:
+        type: array
+        description: 稿件列表
+        items:
+          type: object
+          properties:
+            Archive:
+              type: object
+              properties:
+                aid:
+                  type: integer
+                  description: av号
+                  example: 1906473802
+                bvid:
+                  type: string
+                  description: bv号
+                  example: BV1MU411S7iJ
+                mid:
+                  type: integer
+                  description: '0'
+                  example: 0
+                tid:
+                  type: integer
+                  description: '0'
+                  example: 0
+                tp_info:
+                  type: object
+                title:
+                  type: string
+                  description: 稿件标题
+                  example: Linux小寄巧:原地卸载内核然后尝试救活!
+                author:
+                  type: string
+                  description: 空
+                  example: ''
+                cover:
+                  type: string
+                  description: 封面图, 位于bfs需要自行拼接URL
+                  example: /bfs/archive/b76c0b574862f5a8e8eb133f5f33fcbcd602401a.jpg
+                reject_reason:
+                  type: string
+                  description: 空
+                  example: ''
+                reject_reason_url:
+                  type: string
+                  description: 空
+                  example: ''
+                tag:
+                  type: string
+                  description: 空
+                  example: ''
+                duration:
+                  type: integer
+                  description: '0'
+                  example: 0
+                copyright:
+                  type: integer
+                  description: '0'
+                  example: 0
+                no_reprint:
+                  type: integer
+                  description: '0'
+                  example: 0
+                ugcpay:
+                  type: integer
+                  description: '0'
+                  example: 0
+                order_id:
+                  type: integer
+                  description: '0'
+                  example: 0
+                order_name:
+                  type: string
+                  description: 空
+                  example: ''
+                adorder_id:
+                  type: integer
+                  description: '0'
+                  example: 0
+                adorder_name:
+                  type: string
+                  description: 空
+                  example: ''
+                adorder_no:
+                  type: string
+                  description: 空
+                  example: ''
+                online_time:
+                  type: integer
+                  description: '0'
+                  example: 0
+                new_adorder_info:
+                  type: object
+                desc:
+                  type: string
+                  description: 稿件简介
+                  example: ''
+                mission_id:
+                  type: integer
+                  description: '0'
+                  example: 0
+                mission_name:
+                  type: string
+                  description: 空
+                  example: ''
+                attribute:
+                  type: integer
+                  description: '0'
+                  example: 0
+                state:
+                  type: integer
+                  description: '0'
+                  example: 0
+                state_desc:
+                  type: string
+                  description: 空
+                  example: ''
+                state_panel:
+                  type: integer
+                  description: '0'
+                  example: 0
+                source:
+                  type: string
+                  description: 空
+                  example: ''
+                desc_format_id:
+                  type: integer
+                  description: '0'
+                  example: 0
+                attrs:
+                  type: object
+                porder:
+                  type: object
+                dynamic:
+                  type: string
+                  description: 空
+                  example: ''
+                poi_object:
+                  type: object
+                dtime:
+                  type: integer
+                  description: '0'
+                  example: 0
+                ptime:
+                  type: integer
+                  description: '0'
+                  example: 0
+                ctime:
+                  type: integer
+                  description: '0'
+                  example: 0
+                ugcpay_info:
+                  type: object
+                staffs:
+                  type: object
+                vote:
+                  type: object
+                activity:
+                  type: object
+                interactive:
+                  type: integer
+                  description: '0'
+                  example: 0
+                hl:
+                  type: object
+                no_background:
+                  type: integer
+                  description: '0'
+                  example: 0
+                dynamic_video:
+                  type: integer
+                  description: '0'
+                  example: 0
+                no_public:
+                  type: integer
+                  description: '0'
+                  example: 0
+                is_360:
+                  type: integer
+                  description: '0'
+                  example: 0
+                is_dolby:
+                  type: integer
+                  description: '0'
+                  example: 0
+                lossless_music:
+                  type: integer
+                  description: '0'
+                  example: 0
+                bs_editor:
+                  type: integer
+                  description: '0'
+                  example: 0
+                up_from:
+                  type: integer
+                  description: '0'
+                  example: 0
+                desc_v2:
+                  type: object
+                dynamic_v2:
+                  type: object
+                topic_id:
+                  type: integer
+                  description: '0'
+                  example: 0
+                topic_name:
+                  type: string
+                  description: 空
+                  example: ''
+                topic_stat:
+                  type: integer
+                  description: '0'
+                  example: 0
+                premiere:
+                  type: integer
+                  description: '0'
+                  example: 0
+                is_ugcpay_v2:
+                  type: integer
+                  description: '0'
+                  example: 0
+                recreate:
+                  type: object
+                charging_pay:
+                  type: integer
+                  description: '0'
+                  example: 0
+                neutral_mark:
+                  type: string
+                  description: 空
+                  example: ''
+                preview:
+                  type: object
+                upower_level:
+                  type: object
+                cover43:
+                  type: string
+                  description: 空
+                  example: ''
+                had_passed:
+                  type: boolean
+                  example: false
+                is_staff:
+                  type: integer
+                  description: '0'
+                  example: 0
+                is_pugv:
+                  type: integer
+                  description: '0'
+                  example: 0
+                upower_mode:
+                  type: integer
+                  description: '0'
+                  example: 0
+                upower_unit_price:
+                  type: integer
+                  description: '0'
+                  example: 0
+            Videos:
+              type: object
+            stat:
+              type: object
+              properties:
+                aid:
+                  type: integer
+                  description: av号
+                  example: 1906473802
+                view:
+                  type: integer
+                  description: 播放量
+                  example: 4036
+                danmaku:
+                  type: integer
+                  description: 弹幕数
+                  example: 8
+                reply:
+                  type: integer
+                  description: 评论数
+                  example: 56
+                favorite:
+                  type: integer
+                  description: 收藏数
+                  example: 53
+                coin:
+                  type: integer
+                  description: 硬币数
+                  example: 12
+                share:
+                  type: integer
+                  description: 分享数
+                  example: 8
+                now_rank:
+                  type: integer
+                  description: 0, 当前排名
+                  example: 0
+                his_rank:
+                  type: integer
+                  description: 0, 历史最高排名
+                  example: 0
+                like:
+                  type: integer
+                  description: 点赞数
+                  example: 99
+                dislike:
+                  type: integer
+                  description: 点踩数, 恒为0
+                  example: 0
+                vt:
+                  type: integer
+                  description: '0'
+                  example: 0
+                vv:
+                  type: integer
+                  description: 播放量
+                  example: 4036
+            state_panel:
+              type: integer
+              description: '0'
+              example: 0
+            parent_tname:
+              type: string
+              description: 空
+              example: ''
+            typename:
+              type: string
+              description: 空
+              example: ''
+            open_appeal:
+              type: integer
+              description: '0'
+              example: 0
+            activity:
+              type: object
+            season_add_state:
+              type: integer
+              description: 是否可加入合集, 0:可以 1:不可以
+              example: 0
+      page:
+        type: object
+        properties:
+          pn:
+            type: integer
+            description: 页码
+            example: 1
+          ps:
+            type: integer
+            description: 每页数量
+            example: 3
+          count:
+            type: integer
+            description: 总视频数
+            example: 32
+      play_type:
+        type: integer
+        description: '1'
+        example: 1

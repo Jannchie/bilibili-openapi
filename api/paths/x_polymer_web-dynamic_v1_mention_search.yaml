@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 动态
+  summary: 根据关键字搜索用户 (at别人时的填充列表)
+  description: 注意关键字不一定顺序匹配
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: keyword
+      in: query
+      description: 搜索关键字
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MentionSearchResponse.yaml

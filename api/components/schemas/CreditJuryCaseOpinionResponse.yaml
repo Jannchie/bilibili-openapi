@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: object
+    properties:
+      total:
+        type: integer
+        description: 当前案件众议观点总数
+        example: 48
+      list:
+        type: array
+        description: 无数据时是一个空数组:“[]”
+        items:
+          $ref: ./MyPoint.yaml

@@ -1,0 +1,30 @@
+post:
+  tags:
+    - 收藏夹
+  summary: 删除收藏夹
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - media_ids
+            - csrf
+          type: object
+          properties:
+            media_ids:
+              type: string
+              description: 目标收藏夹mdid列表
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavFolderDelResponse.yaml

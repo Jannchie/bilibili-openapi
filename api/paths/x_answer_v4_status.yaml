@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 查询信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询答题状态
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 答题状态信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AnswerStatusResponse.yaml

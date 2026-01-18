@@ -1,0 +1,44 @@
+get:
+  tags:
+    - 直播
+  summary: 用户关注的所有 UP 的直播情况
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    - name: page_size
+      in: query
+      description: 每页的数据数量
+      schema:
+        type: integer
+        format: int32
+        default: 10
+        minimum: 1
+        maximum: 10
+    - name: ignoreRecord
+      in: query
+      description: 尚不明确
+      schema:
+        type: integer
+        format: int32
+        default: 1
+    - name: hit_ab
+      in: query
+      description: 尚不明确
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FollowingResponse.yaml

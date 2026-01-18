@@ -1,0 +1,80 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      trending:
+        type: object
+        properties:
+          title:
+            type: string
+            description: 标题
+          trackid:
+            type: string
+            description: 跟踪 ID?
+          list:
+            type: array
+            items:
+              type: object
+              properties:
+                keyword:
+                  type: string
+                  description: 关键词
+                show_name:
+                  type: string
+                  description: 显示文字
+                icon:
+                  type: string
+                  description: 图标 URL
+                uri:
+                  type: string
+                goto:
+                  type: string
+            description: 热搜列表
+          top_list:
+            type: array
+            items:
+              type: object
+example:
+  code: 0
+  message: '0'
+  ttl: 1
+  data:
+    trending:
+      title: bilibili 热搜
+      trackid: '8079760748892487175'
+      list:
+        - keyword: 马克龙祝贺中国世界前两名
+          show_name: 马克龙祝贺中国世界前两名
+          icon: >-
+            http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png
+          uri: ''
+          goto: ''
+        - keyword: 小孩电竞世界杯夺冠
+          show_name: 小孩电竞世界杯夺冠
+          icon: >-
+            http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png
+          uri: ''
+          goto: ''
+        - keyword: 孙颖莎说我全勤下班了
+          show_name: 孙颖莎说我全勤下班了
+          icon: >-
+            http://i0.hdslb.com/bfs/activity-plat/static/20221118/eaf2dd702d7cc14d8d9511190245d057/UF7B1wVKT2.png
+          uri: ''
+          goto: ''
+        - keyword: 7月广东新冠新增一万余例
+          show_name: 7月广东新冠新增一万余例
+          icon: >-
+            http://i0.hdslb.com/bfs/activity-plat/static/20221213/eaf2dd702d7cc14d8d9511190245d057/lrx9rnKo24.png
+          uri: ''
+          goto: ''
+      top_list: []

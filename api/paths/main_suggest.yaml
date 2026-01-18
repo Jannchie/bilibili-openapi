@@ -1,0 +1,121 @@
+get:
+  tags:
+    - 搜索建议
+  servers:
+    - url: https://s.search.bilibili.com
+  summary: 获取搜索建议关键词（web 端）
+  parameters:
+    - in: query
+      name: term
+      schema:
+        type: string
+      required: true
+      description: 需要获得建议的输入内容
+    - in: query
+      name: main_ver
+      schema:
+        type: string
+        default: v1
+      required: false
+    - in: query
+      name: highlight
+      schema:
+        type: string
+      required: false
+    - in: query
+      name: func
+      schema:
+        type: string
+        default: suggest
+      required: false
+    - in: query
+      name: suggest_type
+      schema:
+        type: string
+        default: accurate
+      required: false
+    - in: query
+      name: sub_type
+      schema:
+        type: string
+        default: tag
+      required: false
+    - in: query
+      name: userid
+      schema:
+        type: integer
+      required: false
+      description: 本用户 mid
+    - in: query
+      name: bangumi_acc_num
+      schema:
+        type: integer
+        default: 1
+      required: false
+    - in: query
+      name: special_acc_num
+      schema:
+        type: integer
+        default: 1
+      required: false
+    - in: query
+      name: topic_acc_num
+      schema:
+        type: integer
+        default: 1
+      required: false
+    - in: query
+      name: upuser_acc_num
+      schema:
+        type: integer
+        default: 1
+      required: false
+    - in: query
+      name: tag_num
+      schema:
+        type: integer
+        default: 10
+      required: false
+    - in: query
+      name: special_num
+      schema:
+        type: integer
+        default: 10
+      required: false
+    - in: query
+      name: bangumi_num
+      schema:
+        type: integer
+        default: 10
+      required: false
+    - in: query
+      name: upuser_num
+      schema:
+        type: integer
+        default: 3
+      required: false
+    - in: query
+      name: rnd
+      schema:
+        type: number
+        format: float
+      required: false
+    - in: query
+      name: buvid
+      schema:
+        type: string
+      required: false
+      description: 同 Cookie 中 buvid3
+    - in: query
+      name: spmid
+      schema:
+        type: string
+        default: '333.1007'
+      required: false
+  responses:
+    '200':
+      description: 搜索建议关键词
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SuggestResponse.yaml

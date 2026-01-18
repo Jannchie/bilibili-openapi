@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 充电
+  summary: 查询充电留言详情
+  servers:
+    - url: https://member.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: id
+      in: query
+      description: 留言id
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RemarkDetailResponse.yaml

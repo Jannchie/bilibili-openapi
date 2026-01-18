@@ -1,0 +1,41 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      listen_fid:
+        type: integer
+        description: 畅听版歌单收藏夹原始id
+        example: 23317138
+      all_fid:
+        type: integer
+        description: 完整版歌单收藏夹原始id
+        example: 23672948
+      fav_mid:
+        type: integer
+        description: 绑定收藏夹用户的mid
+        example: 1164440244
+      cover_url:
+        type: string
+        description: 榜单封面url
+        example: >-
+          http://i0.hdslb.com/bfs/music-publicity/d8509dc6ee94dd5cc4658a2cbca4f525b4396df5.png
+      is_subscribe:
+        type: boolean
+        description: 是否已订阅榜单
+        example: false
+      listen_count:
+        type: integer
+        description: 平台有版权音频数量
+        example: 5

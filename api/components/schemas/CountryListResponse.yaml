@@ -1,0 +1,38 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      common:
+        type: array
+        description: 常用国家&地区
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: 国际代码值
+            cname:
+              type: string
+              description: 国家&地区名
+            country_id:
+              type: string
+              description: 国家&地区区号
+      others:
+        type: array
+        description: 其他国家&地区
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: 国际代码值
+            cname:
+              type: string
+              description: 国家&地区名
+            country_id:
+              type: string
+              description: 国家&地区区号

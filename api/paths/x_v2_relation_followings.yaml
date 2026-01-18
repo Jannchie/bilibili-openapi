@@ -1,0 +1,43 @@
+get:
+  tags:
+    - 用户关系相关
+  servers:
+    - url: https://app.biliapi.net
+  summary: 查询用户关注明细2
+  parameters:
+    - in: query
+      name: vmid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+    - in: query
+      name: order
+      schema:
+        type: string
+        enum:
+          - desc
+          - asc
+      required: false
+      description: 排序方式
+    - in: query
+      name: ps
+      schema:
+        type: integer
+        default: 50
+      required: false
+      description: 每页项数
+    - in: query
+      name: pn
+      schema:
+        type: integer
+        default: 1
+      required: false
+      description: 页码
+  responses:
+    '200':
+      description: 用户关注明细2
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RelationFollowingsV2Response.yaml

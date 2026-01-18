@@ -1,0 +1,56 @@
+get:
+  tags:
+    - 音频
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP登录Token
+      schema:
+        type: string
+      required: true
+    - name: songid
+      in: query
+      description: 音频auid
+      schema:
+        type: integer
+      required: true
+    - name: quality
+      in: query
+      description: 音质代码, 详见表格
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+      required: true
+    - name: privilege
+      in: query
+      description: 必须为2
+      schema:
+        type: integer
+        enum:
+          - 2
+      required: true
+    - name: mid
+      in: query
+      description: 当前用户mid, 可为任意值
+      schema:
+        type: integer
+      required: true
+    - name: platform
+      in: query
+      description: 平台标识, 可为任意值
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AudioUrlResponse.yaml

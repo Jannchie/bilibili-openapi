@@ -1,0 +1,18 @@
+get:
+  tags:
+    - 风纪委员会
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: term_id
+      in: query
+      description: 任期id, 未传参或留空时, **只**返回最近一次已结束的任期的数据
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryKpiResponse.yaml

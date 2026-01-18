@@ -1,0 +1,50 @@
+post:
+  tags:
+    - 青少年模式
+  servers:
+    - url: https://app.bilibili.com
+  summary: 开启/关闭青少年模式
+  parameters:
+    - in: header
+      name: Device-Id
+      schema:
+        type: string
+      required: true
+      description: 设备 ID
+    - in: header
+      name: Fp_local
+      schema:
+        type: string
+      required: true
+      description: 本地设备指纹
+    - in: header
+      name: Fp_remote
+      schema:
+        type: string
+      required: true
+      description: 远程设备指纹
+    - in: header
+      name: Session_id
+      schema:
+        type: string
+      required: true
+      description: 会话 ID
+    - in: header
+      name: App-Key
+      schema:
+        type: string
+        default: android
+      required: true
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/TeenagersModeUpdateRequest.yaml
+  responses:
+    '200':
+      description: 更新结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TeenagersModeUpdateResponse.yaml

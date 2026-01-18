@@ -1,0 +1,216 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，1：不存在
+  message:
+    type: string
+    description: 错误信息
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      uid:
+        type: integer
+        format: int32
+        description: 主播 mid
+      room_id:
+        type: integer
+        format: int32
+        description: 直播间长号
+      short_id:
+        type: integer
+        format: int32
+        description: 直播间短号
+      attention:
+        type: integer
+        format: int32
+        description: 关注数量
+      online:
+        type: integer
+        format: int32
+        description: 观看人数
+      is_portrait:
+        type: boolean
+        description: 是否竖屏
+      description:
+        type: string
+        description: 描述
+      live_status:
+        type: integer
+        format: int32
+        description: 直播状态
+      area_id:
+        type: integer
+        format: int32
+        description: 分区 ID
+      parent_area_id:
+        type: integer
+        format: int32
+        description: 父分区 ID
+      parent_area_name:
+        type: string
+        description: 父分区名称
+      old_area_id:
+        type: integer
+        format: int32
+        description: 旧版分区 ID
+      background:
+        type: string
+        description: 背景图片链接
+      title:
+        type: string
+        description: 标题
+      user_cover:
+        type: string
+        description: 封面
+      keyframe:
+        type: string
+        description: 关键帧
+      is_strict_room:
+        type: boolean
+        description: 未知
+      live_time:
+        type: string
+        description: 直播开始时间
+      tags:
+        type: string
+        description: 标签
+      is_anchor:
+        type: integer
+        format: int32
+        description: 未知
+      room_silent_type:
+        type: string
+        description: 禁言状态
+      room_silent_level:
+        type: integer
+        format: int32
+        description: 禁言等级
+      room_silent_second:
+        type: integer
+        format: int32
+        description: 禁言时间
+      area_name:
+        type: string
+        description: 分区名称
+      pendants:
+        type: string
+        description: 未知
+      area_pendants:
+        type: string
+        description: 未知
+      hot_words:
+        type: array
+        description: 热词
+        items:
+          type: string
+      hot_words_status:
+        type: integer
+        format: int32
+        description: 热词状态
+      verify:
+        type: string
+        description: 未知
+      new_pendants:
+        type: object
+        properties:
+          frame:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+              position:
+                type: integer
+                format: int32
+              desc:
+                type: string
+              area:
+                type: integer
+                format: int32
+              area_old:
+                type: integer
+                format: int32
+              bg_color:
+                type: string
+              bg_pic:
+                type: string
+              use_old_area:
+                type: boolean
+          badge:
+            type: object
+            properties:
+              name:
+                type: string
+                description: 类型
+              position:
+                type: integer
+                format: int32
+                description: 位置
+              value:
+                type: string
+                description: 值
+              desc:
+                type: string
+                description: 描述
+          mobile_frame:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+              position:
+                type: integer
+                format: int32
+              desc:
+                type: string
+              area:
+                type: integer
+                format: int32
+              area_old:
+                type: integer
+                format: int32
+              bg_color:
+                type: string
+              bg_pic:
+                type: string
+              use_old_area:
+                type: boolean
+          mobile_badge:
+            type: object
+      up_session:
+        type: string
+        description: 未知
+      pk_status:
+        type: integer
+        format: int32
+        description: PK 状态
+      pk_id:
+        type: integer
+        format: int32
+        description: PK ID
+      battle_id:
+        type: integer
+        format: int32
+        description: 未知
+      allow_change_area_time:
+        type: integer
+        format: int32
+      allow_upload_cover_time:
+        type: integer
+        format: int32
+      studio_info:
+        type: object
+        properties:
+          status:
+            type: integer
+            format: int32
+          master_list:
+            type: array
+            items:
+              type: string

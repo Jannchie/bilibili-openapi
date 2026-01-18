@@ -1,0 +1,41 @@
+get:
+  tags:
+    - 历史弹幕
+  summary: 获取历史弹幕xml接口
+  description: |
+    结果为[标准xml格式弹幕](danmaku_xml.md#弹幕格式)
+
+    使用deflate压缩，注意解码
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: type
+      in: query
+      description: '1'
+      schema:
+        type: integer
+        enum:
+          - 1
+      required: true
+    - name: oid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+      required: true
+    - name: date
+      in: query
+      description: 弹幕日期
+      schema:
+        type: string
+        format: date
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/DanmakuList.yaml

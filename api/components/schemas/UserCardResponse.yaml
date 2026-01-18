@@ -1,0 +1,192 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      card:
+        type: object
+        properties:
+          mid:
+            type: string
+            description: 用户 mid
+          approve:
+            type: boolean
+            default: false
+          name:
+            type: string
+            description: 用户昵称
+          sex:
+            type: string
+            description: 用户性别
+          face:
+            type: string
+            description: 用户头像链接
+          DisplayRank:
+            type: string
+            default: '0'
+          regtime:
+            type: integer
+            default: 0
+          spacesta:
+            type: integer
+            description: 用户状态
+          birthday:
+            type: string
+          place:
+            type: string
+          description:
+            type: string
+          article:
+            type: integer
+            default: 0
+          attentions:
+            type: array
+            items:
+              type: object
+          fans:
+            type: integer
+            description: 粉丝数
+          friend:
+            type: integer
+            description: 关注数
+          attention:
+            type: integer
+            description: 关注数
+          sign:
+            type: string
+            description: 签名
+          level_info:
+            type: object
+            properties:
+              current_level:
+                type: integer
+                description: 当前等级
+              current_min:
+                type: integer
+                default: 0
+              current_exp:
+                type: integer
+                default: 0
+              next_exp:
+                type: integer
+                default: 0
+            description: 等级
+          pendant:
+            type: object
+            properties:
+              pid:
+                type: integer
+                description: 挂件 ID
+              name:
+                type: string
+                description: 挂件名称
+              image:
+                type: string
+                description: 挂件图片 URL
+              expire:
+                type: integer
+                default: 0
+            description: 挂件
+          nameplate:
+            type: object
+            properties:
+              nid:
+                type: integer
+                description: 勋章 ID
+              name:
+                type: string
+                description: 勋章名称
+              image:
+                type: string
+                description: 挂件图片 URL 正常
+              image_small:
+                type: string
+                description: 勋章图片 URL 小
+              level:
+                type: string
+                description: 勋章等级
+              condition:
+                type: string
+                description: 勋章条件
+            description: 勋章
+          Official:
+            type: object
+            properties:
+              role:
+                type: integer
+                description: 认证类型
+              title:
+                type: string
+                description: 认证信息
+              desc:
+                type: string
+                description: 认证备注
+              type:
+                type: integer
+                description: 是否认证
+            description: 认证信息
+          official_verify:
+            type: object
+            properties:
+              type:
+                type: integer
+                description: 是否认证
+              desc:
+                type: string
+                description: 认证信息
+            description: 认证信息2
+          vip:
+            type: object
+            properties:
+              vipType:
+                type: integer
+                description: 大会员类型
+              dueRemark:
+                type: string
+              accessStatus:
+                type: integer
+                default: 0
+              vipStatus:
+                type: integer
+                description: 大会员状态
+              vipStatusWarn:
+                type: string
+              theme_type:
+                type: integer
+                default: 0
+            description: 大会员状态
+          space:
+            type: object
+            properties:
+              s_img:
+                type: string
+                description: 主页头图 URL 小图
+              l_img:
+                type: string
+                description: 主页头图 URL 正常
+            description: 主页头图
+        description: 卡片信息
+      following:
+        type: boolean
+        description: 是否关注此用户
+      archive_count:
+        type: integer
+        description: 用户稿件数
+      article_count:
+        type: integer
+        default: 0
+      follower:
+        type: integer
+        description: 粉丝数
+      like_num:
+        type: integer
+        description: 点赞数

@@ -1,0 +1,34 @@
+get:
+  tags:
+    - 笔记详细信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询私有笔记内容
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: oid
+      schema:
+        type: integer
+      required: true
+      description: 目标 ID
+    - in: query
+      name: oid_type
+      schema:
+        type: integer
+      required: true
+      description: 目标 ID 类型
+    - in: query
+      name: note_id
+      schema:
+        type: integer
+      required: true
+      description: 笔记 ID
+  responses:
+    '200':
+      description: 笔记内容
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NoteInfoResponse.yaml

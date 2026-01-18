@@ -1,0 +1,27 @@
+post:
+  tags:
+    - 漫画
+  summary: 分享漫画
+  servers:
+    - url: https://manga.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ShareComicResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - platform
+          properties:
+            platform:
+              type: string
+              description: 平台
+              default: android

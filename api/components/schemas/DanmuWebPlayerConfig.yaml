@@ -1,0 +1,80 @@
+type: object
+properties:
+  dmSwitch:
+    type: boolean
+    description: 弹幕开关
+  aiSwitch:
+    type: boolean
+    description: 智能云屏蔽
+  aiLevel:
+    type: integer
+    description: 智能云屏蔽级别
+    format: int32
+  blocktop:
+    type: boolean
+    description: 屏蔽类型-顶部
+  blockscroll:
+    type: boolean
+    description: 屏蔽类型-滚动
+  blockbottom:
+    type: boolean
+    description: 屏蔽类型-底部
+  blockcolor:
+    type: boolean
+    description: 屏蔽类型-彩色
+  blockspecial:
+    type: boolean
+    description: 屏蔽类型-特殊
+  preventshade:
+    type: boolean
+    description: 防挡弹幕（底部15%）
+  dmask:
+    type: boolean
+    description: 智能防挡弹幕（人像蒙版）
+  opacity:
+    type: number
+    description: 弹幕不透明度
+    format: float
+  dmarea:
+    type: integer
+    description: |
+      弹幕显示区域
+
+      100：不重叠
+      75：3/4屏
+      50：半瓶
+      25：1/4屏
+      0：不限
+    format: int32
+  speedplus:
+    type: number
+    description: 弹幕速度
+    format: float
+  fontsize:
+    type: number
+    description: 字体大小
+    format: float
+  screensync:
+    type: boolean
+    description: 跟随屏幕缩放比例
+  speedsync:
+    type: boolean
+    description: 根据播放倍速调整速度
+  fontfamily:
+    type: string
+    description: 字体类型？
+  bold:
+    type: boolean
+    description: 粗体？
+  fontborder:
+    type: integer
+    description: |
+      描边类型
+
+      0：重墨
+      1：描边
+      2：45°投影
+    format: int32
+  drawType:
+    type: string
+    description: 渲染类型？

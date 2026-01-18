@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 剧集信息
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: media_id
+      in: query
+      description: 剧集mdid
+      schema:
+        type: string
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PgcReviewUserResponse.yaml

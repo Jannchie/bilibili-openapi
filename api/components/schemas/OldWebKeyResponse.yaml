@@ -1,0 +1,8 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: 密码盐值
+  key:
+    type: string
+    description: RSA 公钥

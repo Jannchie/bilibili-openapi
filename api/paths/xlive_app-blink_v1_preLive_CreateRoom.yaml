@@ -1,0 +1,32 @@
+post:
+  tags:
+    - 直播间管理
+  summary: 开通直播间
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - platform
+            - csrf
+          type: object
+          properties:
+            platform:
+              type: string
+              default: web
+            visit_id:
+              type: string
+              default: ''
+            csrf:
+              type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateRoomResponse.yaml

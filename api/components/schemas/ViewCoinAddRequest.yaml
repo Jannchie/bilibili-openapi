@@ -1,0 +1,18 @@
+type: object
+required:
+  - aid
+  - multiply
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  multiply:
+    type: integer
+    description: 投币数量
+    maximum: 2
+  select_like:
+    type: integer
+    description: 附加点赞
+    enum:
+      - 0
+      - 1

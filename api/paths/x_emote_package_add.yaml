@@ -1,0 +1,39 @@
+post:
+  tags:
+    - 表情操作
+  summary: 添加表情包
+  description: 只能添加有会员权限或已购买的表情包
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - package_id
+            - business
+            - csrf
+          type: object
+          properties:
+            package_id:
+              type: integer
+              format: int32
+              description: 表情包 ID
+            business:
+              type: string
+              description: 使用场景
+              enum:
+                - reply
+                - dynamic
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EmoteAddResponse.yaml

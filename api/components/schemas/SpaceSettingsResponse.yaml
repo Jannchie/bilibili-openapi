@@ -1,0 +1,96 @@
+type: object
+properties:
+  status:
+    type: boolean
+    description: 用户是否存在
+  data:
+    oneOf:
+      - type: object
+        properties:
+          privacy:
+            type: object
+            properties:
+              bangumi:
+                type: integer
+                description: 追番及追剧
+              bbq:
+                type: integer
+                description: 轻视频
+              channel:
+                type: integer
+                description: 频道
+              coins_video:
+                type: integer
+                description: 最近投币的视频
+              comic:
+                type: integer
+                description: 追漫
+              dress_up:
+                type: integer
+                description: 装扮
+              fav_video:
+                type: integer
+                description: 收藏夹
+              groups:
+                type: integer
+                description: 圈子？
+              likes_video:
+                type: integer
+                description: 最近点赞的视频
+              played_game:
+                type: integer
+                description: 最近玩过的游戏
+              tags:
+                type: integer
+                description: 订阅标签
+              user_info:
+                type: integer
+                description: 个人资料
+            description: 空间隐私权限
+          index_order:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 板块编号
+                name:
+                  type: string
+                  description: 板块名称
+            description: 空间板块布局
+          theme:
+            type: string
+            description: default 主题？
+          theme_preview_img_path:
+            type: string
+            description: 主题预览图路径？
+          toutu:
+            type: object
+            properties:
+              sid:
+                type: integer
+                description: 空间头图 ID
+              expire:
+                type: integer
+                description: 到期时间？
+              s_img:
+                type: string
+                description: 空间头图小图相对路径
+              l_img:
+                type: string
+                description: 空间头图相对路径
+              android_img:
+                type: string
+              iphone_img:
+                type: string
+              ipad_img:
+                type: string
+              thumbnail_img:
+                type: string
+                description: 缩略图
+              platform:
+                type: integer
+                default: 0
+            description: 空间头图
+      - type: string

@@ -1,0 +1,32 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 我的 mid
+      vip_type:
+        type: integer
+        description: 大会员类型
+      vip_status:
+        type: integer
+        description: 大会员状态
+      vip_due_date:
+        type: integer
+        description: 大会员到期时间
+      vip_pay_type:
+        type: integer
+        description: 是否已购买大会员
+      theme_type:
+        type: integer
+        description: '0'

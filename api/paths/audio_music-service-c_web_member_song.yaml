@@ -1,0 +1,19 @@
+get:
+  tags:
+    - 音频
+  servers:
+    - url: https://www.bilibili.com
+  parameters:
+    - name: sid
+      in: query
+      description: 音频auid
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SongMemberResponse.yaml

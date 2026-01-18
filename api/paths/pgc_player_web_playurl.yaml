@@ -1,0 +1,95 @@
+get:
+  tags:
+    - 视频流
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: avid
+      in: query
+      description: 稿件avid
+      schema:
+        type: integer
+    - name: bvid
+      in: query
+      description: 稿件bvid
+      schema:
+        type: string
+    - name: ep_id
+      in: query
+      description: 稿件epid
+      schema:
+        type: integer
+    - name: cid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+    - name: qn
+      in: query
+      description: 视频清晰度选择, 未登录默认32(480P), 登录默认64(720P), 值含义见表格
+      schema:
+        type: integer
+        enum:
+          - 6
+          - 16
+          - 32
+          - 64
+          - 74
+          - 80
+          - 112
+          - 116
+          - 120
+    - name: fnval
+      in: query
+      description: >-
+        视频获取方式选择, 默认为0, 0 2:flv方式(可能会有分段) 1:低清mp4方式(仅240P与360P,且限速65K/s) 16
+        80:dash方式(音视频分流,支持H.265)
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 16
+          - 80
+    - name: fnver
+      in: query
+      description: 固定为0
+      schema:
+        type: integer
+        enum:
+          - 0
+    - name: fourk
+      in: query
+      description: 是否允许4K视频, 默认为0, 画质最高1080P:0, 画质最高4K:1
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+    - name: session
+      in: query
+      description: 从视频播放页的网页源码中获取
+      schema:
+        type: string
+    - name: from_client
+      in: query
+      description: 固定值:BROWSER
+      schema:
+        type: string
+    - name: drm_tech_type
+      in: query
+      description: 固定值:2
+      schema:
+        type: integer
+        enum:
+          - 2
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PgcPlayerWebPlayurlResponse.yaml

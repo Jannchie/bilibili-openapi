@@ -1,0 +1,63 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      hid:
+        type: integer
+        description: 答题会话 ID
+      mid:
+        type: integer
+        description: 答题用户 mid
+      score:
+        type: integer
+        description: 当前得分
+      status:
+        type: integer
+        description: 答题状态
+      number:
+        type: integer
+        description: 当前题号
+      result:
+        type: string
+        description: 是否通过答题
+      stage:
+        type: string
+        description: 当前答题阶段
+      version:
+        type: string
+        description: 答题版本
+      start_time:
+        type: integer
+        description: 本次答题开始时间
+      first_answer:
+        type: integer
+      progress:
+        type: string
+        description: 当前答题进度
+      text:
+        type: string
+        description: 提示文案
+      url:
+        type: string
+        description: 答题页面 URL
+      in_reg_audit:
+        type: boolean
+        description: 是否为第一次答题
+      edition:
+        type: integer
+        description: 答题版本
+      rewards:
+        type: object
+      captcha:
+        type: integer
+        description: 是否已经提交验证码

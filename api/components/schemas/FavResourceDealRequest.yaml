@@ -1,0 +1,40 @@
+type: object
+required:
+  - rid
+  - type
+  - csrf
+properties:
+  rid:
+    type: integer
+    description: 稿件 avid
+  type:
+    type: integer
+    default: 2
+    enum:
+      - 2
+  add_media_ids:
+    type: string
+    description: 需要加入的收藏夹 mlid
+  del_media_ids:
+    type: string
+    description: 需要取消的收藏夹 mlid
+  csrf:
+    type: string
+    description: CSRF Token（即 Cookie 中 bili_jct）
+  platform:
+    type: string
+    default: web
+    description: 平台标识?
+  eab_x:
+    type: integer
+    default: 1
+  ramval:
+    type: integer
+    description: 正整数
+  ga:
+    type: integer
+    default: 1
+  gaia_source:
+    type: string
+    default: web_normal
+    description: gaia_source

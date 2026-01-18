@@ -1,0 +1,16 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 响应码
+  message:
+    type: string
+    default: '0'
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      success_toast:
+        type: string

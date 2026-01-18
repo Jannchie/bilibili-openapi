@@ -1,0 +1,26 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      qr_token:
+        type: string
+        description: 扫码秘钥
+      order_no:
+        type: string
+        description: 留言token
+      mid:
+        type: integer
+        description: 当前用户mid
+      status:
+        type: integer
+        description: 状态值

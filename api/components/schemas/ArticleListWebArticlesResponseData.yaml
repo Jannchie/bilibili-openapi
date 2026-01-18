@@ -1,0 +1,19 @@
+type: object
+properties:
+  list:
+    $ref: ./ArticleListWebArticlesList.yaml
+  articles:
+    type: array
+    description: 文集内的文章列表
+    items:
+      $ref: ./ArticleListWebArticlesArticle.yaml
+  author:
+    type: object
+    description: 文集作者信息
+  last:
+    type: object
+    description: last
+  attention:
+    type: boolean
+    description: 是否关注文集作者
+    example: true

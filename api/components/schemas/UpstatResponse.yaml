@@ -1,0 +1,31 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      archive:
+        type: object
+        properties:
+          view:
+            type: integer
+            description: 视频播放量
+        description: 视频播放量
+      article:
+        type: object
+        properties:
+          view:
+            type: integer
+            description: 专栏阅读量
+        description: 专栏阅读量
+      likes:
+        type: integer
+        description: 获赞次数

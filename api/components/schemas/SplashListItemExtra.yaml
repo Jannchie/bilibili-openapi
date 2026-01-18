@@ -1,0 +1,120 @@
+type: object
+properties:
+  use_ad_web_v2:
+    type: boolean
+    description: use_ad_web_v2
+    example: true
+  show_urls:
+    type: array
+    description: 展示 URL
+    items:
+      type: string
+      format: url
+  click_urls:
+    type: array
+    description: 点击 URL
+    items:
+      type: string
+      format: url
+  show_1s_urls:
+    type: array
+    description: show_1s_urls
+    items:
+      type: string
+  download_whitelist:
+    type: array
+    description: 下载白名单
+    items:
+      type: string
+  open_whitelist:
+    type: array
+    description: 打开白名单
+    items:
+      type: string
+  card:
+    type: object
+    properties:
+      card_type:
+        type: integer
+        format: int64
+        description: 卡片类型
+        example: 0
+      extreme_team_status:
+        type: boolean
+        description: extreme_team_status
+        example: false
+      support_transition:
+        type: boolean
+        description: support_transition
+        example: false
+      under_player_interaction_style:
+        type: integer
+        format: int64
+        description: under_player_interaction_style
+        example: 0
+      grade_denominator:
+        type: integer
+        format: int64
+        description: grade_denominator
+        example: 0
+      star_level:
+        type: integer
+        format: int64
+        description: star_level
+        example: 0
+      live_booking_population_threshold:
+        type: integer
+        format: int64
+        description: live_booking_population_threshold
+        example: 0
+      ori_mark_hidden:
+        type: integer
+        format: int64
+        description: ori_mark_hidden
+        example: 0
+      use_multi_cover:
+        type: boolean
+        description: use_multi_cover
+        example: false
+      fold_time:
+        type: integer
+        format: int64
+        description: fold_time
+        example: 0
+      live_room_popularity:
+        type: integer
+        format: int64
+        description: live_room_popularity
+        example: 0
+      live_tag_show:
+        type: boolean
+        description: live_tag_show
+        example: false
+      grade_level:
+        type: integer
+        format: int64
+        description: grade_level
+        example: 0
+  report_time:
+    type: integer
+    format: int64
+    description: 报告时间
+    example: 0
+  sales_type:
+    type: integer
+    format: int64
+    description: 销售类型
+    example: 75
+  special_industry:
+    type: boolean
+    description: 特殊行业
+    example: false
+  preload_landingpage:
+    type: integer
+    format: int64
+    description: 预加载 LandingPage
+    example: 0
+  share_info:
+    type: object
+    description: 分享信息
+    example: {}

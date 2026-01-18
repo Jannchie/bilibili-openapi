@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 个人中心
+  summary: 查询账号安全情况
+  servers:
+    - url: https://passport.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserInfoResponse.yaml

@@ -1,0 +1,12 @@
+type: object
+properties:
+  lists:
+    type: array
+    description: 文集信息列表
+    items:
+      $ref: ./ArticleUpListsInfo.yaml
+  total:
+    type: integer
+    format: int64
+    description: 文集总数
+    example: 9

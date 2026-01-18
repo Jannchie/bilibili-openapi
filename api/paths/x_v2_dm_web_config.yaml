@@ -1,0 +1,114 @@
+post:
+  tags:
+    - 弹幕设置
+  summary: 修改弹幕个人配置（web端）
+  description: 修改弹幕个人配置
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      form-data:
+        schema:
+          type: object
+          properties:
+            access_key:
+              type: string
+              description: APP登录Token
+              example: ''
+            dm_switch:
+              type: boolean
+              description: 弹幕开关
+              example: true
+            blockscroll:
+              type: boolean
+              description: 屏蔽类型-滚动
+              example: false
+            blocktop:
+              type: boolean
+              description: 屏蔽类型-顶部
+              example: false
+            blockbottom:
+              type: boolean
+              description: 屏蔽类型-底部
+              example: false
+            blockcolor:
+              type: boolean
+              description: 屏蔽类型-彩色
+              example: false
+            blockspecial:
+              type: boolean
+              description: 屏蔽类型-特殊
+              example: false
+            ai_switch:
+              type: boolean
+              description: 是否打开智能云屏蔽
+              example: false
+            ai_level:
+              type: integer
+              description: 智能云屏蔽等级
+              example: 0
+            preventshade:
+              type: boolean
+              description: 防挡弹幕（底部15%）
+              example: false
+            dmask:
+              type: boolean
+              description: 智能防挡弹幕（人像蒙版）
+              example: false
+            opacity:
+              type: number
+              description: 弹幕不透明度
+              example: 0.5
+            dmarea:
+              type: integer
+              description: 弹幕显示区域
+              example: 100
+            speedplus:
+              type: number
+              description: 弹幕速度
+              example: 1
+            fontsize:
+              type: number
+              description: 字体大小
+              example: 1
+            screensync:
+              type: boolean
+              description: 跟随屏幕缩放比例
+              example: false
+            speedsync:
+              type: boolean
+              description: 根据播放倍速调整速度
+              example: false
+            fontfamily:
+              type: string
+              description: 字体类型
+              example: ''
+            bold:
+              type: boolean
+              description: 粗体
+              example: false
+            fontborder:
+              type: integer
+              description: 描边类型
+              example: 0
+            drawType:
+              type: string
+              description: 渲染类型
+              example: ''
+            ts:
+              type: integer
+              description: 当前时间戳
+              example: 0
+            csrf:
+              type: string
+              description: CSRF Token
+              example: ''
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuConfigResponse.yaml

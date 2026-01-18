@@ -1,0 +1,50 @@
+get:
+  tags:
+    - 用户
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取用户专栏文集列表
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+    - name: mid
+      in: query
+      description: 用户 uid
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: sort
+      in: query
+      description: 排序方式
+      required: false
+      schema:
+        type: integer
+        format: int64
+        enum:
+          - 0
+          - 1
+        default: 0
+    - name: jsonp
+      in: query
+      description: jsonp
+      required: false
+      schema:
+        type: string
+    - name: callback
+      in: query
+      description: callback
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArticleUpListsResponse.yaml

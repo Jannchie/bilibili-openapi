@@ -1,0 +1,77 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  msg:
+    type: string
+    description: '0'
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      page:
+        type: object
+        properties:
+          current:
+            type: integer
+            description: 当前页数
+          size:
+            type: integer
+            description: 当前分页大小
+          total:
+            type: integer
+            description: 记录总数
+      list:
+        type: array
+        description: 信息本体
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+            bvid:
+              type: string
+            id:
+              type: integer
+              description: 留言记录id
+            mid:
+              type: integer
+            reply_mid:
+              type: integer
+              description: '0'
+            elec_num:
+              type: integer
+              description: '0'
+            state:
+              type: integer
+              description: UP是否已经回复这条留言
+            msg:
+              type: string
+              description: 留言信息
+            aname:
+              type: string
+              description: 空
+            uname:
+              type: string
+              description: 空
+            avator:
+              type: string
+              description: 空
+            reply_name:
+              type: string
+              description: 空
+            reply_avator:
+              type: string
+              description: 空
+            reply_msg:
+              type: string
+              description: 空
+            ctime:
+              type: integer
+              description: 留言时间
+            reply_time:
+              type: integer
+              description: '0'

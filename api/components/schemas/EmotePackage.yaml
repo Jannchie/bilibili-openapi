@@ -1,0 +1,90 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 表情包id
+  text:
+    type: string
+    description: 表情包名称
+  url:
+    type: string
+    description: 表情包标志图片url
+  mtime:
+    type: integer
+    description: 创建时间
+  type:
+    type: integer
+    description: 表情包类型
+    enum:
+      - 1
+      - 2
+      - 3
+      - 4
+  attr:
+    type: integer
+    description: ？？？
+  meta:
+    type: object
+    properties:
+      size:
+        type: integer
+        description: 表情尺寸信息
+      item_id:
+        type: integer
+        description: 购买物品id
+      item_url:
+        type: string
+        description: 购买物品页面url
+  emote:
+    type: array
+    description: 表情列表
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 表情id
+        package_id:
+          type: integer
+          description: 表情包id
+        text:
+          type: string
+          description: 表情转义符
+        url:
+          type: string
+          description: 表情图片url
+        mtime:
+          type: integer
+          description: 创建时间
+        type:
+          type: integer
+          description: 表情类型
+          enum:
+            - 1
+            - 2
+            - 3
+            - 4
+        attr:
+          type: integer
+          description: ？？？
+        meta:
+          type: object
+          properties:
+            size:
+              type: integer
+              description: 表情尺寸信息
+            alias:
+              type: string
+              description: 简写名
+        flags:
+          type: object
+          properties:
+            no_access:
+              type: boolean
+              description: 是否为禁用
+  flags:
+    type: object
+    properties:
+      added:
+        type: boolean
+        description: 是否已添加

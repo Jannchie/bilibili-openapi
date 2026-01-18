@@ -1,0 +1,19 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: TTL
+    example: 1
+  data:
+    type: array
+    description: 版本信息列表
+    items:
+      $ref: ./VersionInfo.yaml

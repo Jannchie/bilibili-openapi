@@ -1,0 +1,86 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，800501007：user not login，800501008：内部错误，800501011：请求参数有误
+  errno:
+    type: integer
+  msg:
+    type: string
+  showMsg:
+    type: string
+  success:
+    type: boolean
+  data:
+    type: object
+    properties:
+      page:
+        type: object
+        properties:
+          currentPage:
+            type: integer
+            description: 当前页数
+          pageSize:
+            type: integer
+            description: 当前分页大小
+          totalCount:
+            type: integer
+            description: 记录总数
+          totalPage:
+            type: integer
+            description: 总页数
+      result:
+        type: array
+        description: 充电信息本体
+        items:
+          type: object
+          properties:
+            mid:
+              type: integer
+              description: 充电人mid
+            name:
+              type: string
+              description: 充电人昵称
+            avatar:
+              type: string
+              description: 充电人头像
+            originalThirdCoin:
+              type: integer
+              description: 原始B币数
+            brokerage:
+              type: number
+              format: float
+              description: 实际收到的贝壳数
+            remark:
+              type: string
+              description: 充电渠道
+            ctime:
+              type: string
+              description: 充电时间
+      config:
+        type: array
+        description: (?)
+        items:
+          type: object
+          properties:
+            mid:
+              type: number
+              format: float
+            name:
+              type: number
+              format: float
+            avatar:
+              type: number
+              format: float
+            originalThirdCoin:
+              type: number
+              format: float
+            brokerage:
+              type: number
+              format: float
+            remark:
+              type: number
+              format: float
+            ctime:
+              type: number
+              format: float

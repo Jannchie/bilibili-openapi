@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 弹幕快照
+  summary: 获取弹幕快照
+  description: 最近产生的几条弹幕内容，最多20条
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: aid
+      in: query
+      description: 稿件avid或稿件bvid
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuSnapShotResponse.yaml

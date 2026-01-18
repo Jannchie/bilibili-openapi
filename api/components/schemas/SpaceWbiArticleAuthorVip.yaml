@@ -1,0 +1,51 @@
+type: object
+properties:
+  type:
+    type: integer
+    format: int64
+    description: 大会员类型
+    example: 0
+  status:
+    type: integer
+    format: int64
+    description: 大会员状态
+    example: 0
+  due_date:
+    type: integer
+    format: int64
+    description: 大会员过期时间时间戳 (单位：毫秒)
+    example: 0
+  vip_pay_type:
+    type: integer
+    format: int64
+    description: 支付类型
+    example: 0
+  theme_type:
+    type: integer
+    format: int64
+    description: theme_type
+    example: 0
+  label:
+    type: object
+    properties:
+      path:
+        type: string
+        description: path
+        example: ''
+      text:
+        type: string
+        description: text
+        example: ''
+      label_theme:
+        type: string
+        description: label_theme
+        example: ''
+  avatar_subscript:
+    type: integer
+    format: int64
+    description: 是否显示大会员图标
+    example: 0
+  nickname_color:
+    type: string
+    description: 大会员昵称颜色
+    example: ''

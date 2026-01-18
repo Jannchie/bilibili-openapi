@@ -1,0 +1,14 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  status:
+    type: boolean
+    example: 'true'
+  data:
+    type: object
+    properties:
+      money:
+        type: integer
+        description: 当前硬币数

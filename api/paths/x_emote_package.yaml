@@ -1,0 +1,29 @@
+get:
+  tags:
+    - 表情
+  summary: 获取指定的表情包明细
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: business
+      in: query
+      description: 使用场景
+      schema:
+        type: string
+        enum:
+          - reply
+          - dynamic
+      required: true
+    - name: ids
+      in: query
+      description: 表情包 ID
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EmotePackageResponse.yaml

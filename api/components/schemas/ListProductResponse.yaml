@@ -1,0 +1,80 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 物品id
+        type:
+          type: integer
+          description: 物品类型
+        title:
+          type: string
+          description: 物品名
+        image:
+          type: string
+          description: 显示的图像
+        amount:
+          type: integer
+          description: 库存总量
+        cost:
+          type: integer
+          description: 兑换所需点数（原价）
+        real_cost:
+          type: integer
+          description: 兑换所需点数（现价）
+        remain_amount:
+          type: integer
+          description: 库存剩余数
+        comic_id:
+          type: integer
+          description: 相关漫画id
+        limits:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: integer
+              id:
+                type: integer
+              title:
+                type: string
+          description: 限定使用范围（漫画）
+        discount:
+          type: integer
+        product_type:
+          type: integer
+          description: 物品类型
+        pendant_url:
+          type: string
+        pendant_expire:
+          type: integer
+        exchange_limit:
+          type: integer
+          description: 兑换次数限制
+        address_deadline:
+          type: string
+          format: date-time
+        act_type:
+          type: integer
+        has_exchanged:
+          type: boolean
+          description: 是否兑换过该物品
+        main_coupon_deadline:
+          type: string
+          format: date-time
+        deadline:
+          type: string
+          format: date-time
+        point:
+          type: integer

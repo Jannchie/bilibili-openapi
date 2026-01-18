@@ -1,0 +1,38 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      drafts:
+        type: array
+        description: 草稿列表
+        items:
+          type: object
+          properties:
+            draft_id:
+              type: string
+              description: 草稿id
+            publish_time:
+              type: integer
+              description: 定时发送的秒级时间戳
+            type:
+              type: integer
+              description: 动态类型
+            uid:
+              type: integer
+              description: 自己的mid
+            user_profile:
+              type: object
+              description: 自己的用户信息
+            request:
+              type: string
+              description: 动态内容
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'

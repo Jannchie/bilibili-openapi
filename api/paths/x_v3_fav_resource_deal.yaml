@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 收藏
+  servers:
+    - url: https://api.bilibili.com
+  summary: 收藏视频（Web 端）
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/FavResourceDealRequest.yaml
+  responses:
+    '200':
+      description: 收藏结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavResourceDealResponse.yaml

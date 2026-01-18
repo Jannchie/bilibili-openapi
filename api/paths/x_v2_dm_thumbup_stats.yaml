@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 弹幕点赞查询
+  summary: 查询指定dmid的点赞数
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: oid
+      in: query
+      description: 视频 cid
+      schema:
+        type: integer
+      required: true
+    - name: ids
+      in: query
+      description: 欲查询的弹幕 dmid，多个 id 之间用`,`分隔
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuThumbUpStatsResponse.yaml

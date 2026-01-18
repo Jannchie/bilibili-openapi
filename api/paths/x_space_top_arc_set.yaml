@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 用户空间相关
+  servers:
+    - url: https://api.bilibili.com
+  summary: 设置置顶视频
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/SetTopArcRequest.yaml
+  responses:
+    '200':
+      description: 设置结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SetTopArcResponse.yaml

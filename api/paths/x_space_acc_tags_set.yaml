@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 用户空间相关
+  servers:
+    - url: https://api.bilibili.com
+  summary: 修改个人 TAG
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/SetTagsRequest.yaml
+  responses:
+    '200':
+      description: 修改结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SetTagsResponse.yaml

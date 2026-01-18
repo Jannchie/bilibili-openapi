@@ -1,0 +1,37 @@
+post:
+  tags:
+    - 专栏
+  servers:
+    - url: https://api.bilibili.com
+  summary: 收藏文章
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+              description: 文章 cv id
+              example: 5806746
+            csrf:
+              type: string
+              description: CSRF Token
+          required:
+            - id
+            - csrf
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArticleFavoritesAddResponse.yaml

@@ -1,0 +1,85 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 字符串形式的code
+    example: '0'
+  msg:
+    type: string
+    description: 返回信息
+    example: success
+  data:
+    type: object
+    properties:
+      sid:
+        type: integer
+        description: 音频auid
+        example: 777180
+      title:
+        type: string
+        description: 音频标题
+        example: aLIEz
+      cover:
+        type: string
+        description: 音频封面url
+        example: >-
+          http://i0.hdslb.com/bfs/music/61d3f8cfdce14d2d1b006af59559c9bd22a2d21b.jpg
+      type:
+        type: integer
+        description: '-1:试听片段 0:流畅 1:标准 2:高品质 3:无损'
+        example: 3
+      info:
+        type: string
+        description: 作用尚不明确
+        example: ''
+      timeout:
+        type: integer
+        description: 有效时长, 单位为秒
+        example: 10800
+      size:
+        type: integer
+        description: 文件大小, 单位为字节
+        example: 34456494
+      cdns:
+        type: array
+        items:
+          type: string
+          example: >-
+            https://upos-sz-mirrorkodo.bilivideo.com/ugaxcode/m190102ws2pzf6jitbem841vq2x0du5x-flac.flac?deadline=1595332269&gen=uga&os=kodobv&uparams=deadline,gen,os&upsig=ac2284d97a61ef8758681eccf621c56d
+      qualities:
+        type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: integer
+              description: 音质代码
+              example: 3
+            desc:
+              type: string
+              description: 音质描述
+              example: 无损音质
+            size:
+              type: integer
+              description: 该音质的文件大小, 单位为字节
+              example: 34456494
+            bps:
+              type: string
+              description: 比特率标签
+              example: ''
+            tag:
+              type: string
+              description: 音质标签
+              example: SQ
+            require:
+              type: integer
+              description: 是否需要会员
+              example: 1
+            requiredesc:
+              type: string
+              description: 会员标签
+              example: 付费享受

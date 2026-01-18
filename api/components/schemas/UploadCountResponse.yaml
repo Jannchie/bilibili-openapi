@@ -1,0 +1,28 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+    default: success
+  message:
+    type: string
+    description: 错误信息
+    default: success
+  data:
+    type: object
+    properties:
+      all_count:
+        type: integer
+        description: 相簿总数
+      draw_count:
+        type: integer
+        description: 发布绘画数
+      photo_count:
+        type: integer
+        description: 发布摄影数
+      daily_count:
+        type: integer
+        description: 发布日常（图片动态）数

@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 包月充电
+  summary: UP主包月充电详情
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: up_mid
+      in: query
+      description: 目标用户mid
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ItemDetailResponse.yaml

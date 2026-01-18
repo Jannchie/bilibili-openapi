@@ -1,0 +1,451 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  result:
+    type: object
+    properties:
+      activity:
+        type: object
+        properties:
+          head_bg_url:
+            type: string
+            description: 作用尚不明确
+            example: ''
+          id:
+            type: integer
+            description: 活动id
+          title:
+            type: string
+            description: 活动标题
+      alias:
+        type: string
+        description: 作用尚不明确
+        example: ''
+      bkg_cover:
+        type: string
+        description: 网页背景图片url
+      cover:
+        type: string
+        description: 剧集封面图片url
+      episodes:
+        type: array
+        description: 正片剧集列表
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+              description: 单集稿件avid
+            badge:
+              type: string
+              description: 标签文字
+              example: 会员
+            badge_info:
+              type: object
+            badge_type:
+              type: integer
+            bvid:
+              type: string
+              description: 单集稿件bvid
+            cid:
+              type: integer
+              description: 视频cid
+            cover:
+              type: string
+              description: 单集封面url
+            dimension:
+              type: object
+              description: 分辨率信息
+            from:
+              type: string
+            id:
+              type: integer
+              description: 单集epid
+            link:
+              type: string
+              description: 单集网页url
+            long_title:
+              type: string
+              description: 单集完整标题
+            pub_time:
+              type: integer
+              description: 发布时间, 时间戳
+            pv:
+              type: integer
+              description: 作用尚不明确
+              example: 0
+            release_date:
+              type: string
+              description: 作用尚不明确
+              example: ''
+            rights:
+              type: object
+            share_copy:
+              type: string
+            share_url:
+              type: string
+              description: 单集网页url
+            short_link:
+              type: string
+              description: 单集网页url短链接
+            status:
+              type: integer
+            subtitle:
+              type: string
+              description: 单集副标题
+            title:
+              type: string
+              description: 单集标题
+            vid:
+              type: string
+              description: 单集vid
+      evaluate:
+        type: string
+        description: 简介
+      jp_title:
+        type: string
+        description: 作用尚不明确
+        example: ''
+      link:
+        type: string
+        description: 简介页面url
+      media_id:
+        type: integer
+        description: 剧集mdid
+      mode:
+        type: integer
+        description: 作用尚不明确
+        example: 2
+      new_ep:
+        type: object
+        properties:
+          desc:
+            type: string
+            description: 更新备注
+          id:
+            type: integer
+            description: 最新一话epid
+          is_new:
+            type: integer
+            description: 是否最新发布
+            example: 0
+          title:
+            type: string
+            description: 最新一话标题
+      payment:
+        type: object
+        properties:
+          discount:
+            type: integer
+            description: 折扣, 100为原价
+          pay_type:
+            type: object
+            properties:
+              allow_discount:
+                type: integer
+                description: 启用折扣, 0:否 1:是<br />下同
+              allow_pack:
+                type: integer
+              allow_ticket:
+                type: integer
+                description: 启用票券
+              allow_time_limit:
+                type: integer
+                description: 启用时间限制
+              allow_vip_discount:
+                type: integer
+                description: 启用大会员折扣
+              forbid_bb:
+                type: integer
+                description: 禁止使用B币券
+          price:
+            type: string
+            description: 售价
+          promotion:
+            type: string
+            description: 推广信息
+          vip_discount:
+            type: integer
+            description: 大会员折扣
+          vip_first_promotion:
+            type: string
+          vip_price:
+            type: string
+            description: 大会员售价
+          vip_promotion:
+            type: string
+            description: 大会员推广信息
+      positive:
+        type: object
+        properties:
+          id:
+            type: integer
+          title:
+            type: string
+      publish:
+        type: object
+        properties:
+          is_finish:
+            type: integer
+            description: 完结状态, 0:未完结 1:已完结
+          is_started:
+            type: integer
+            description: 是否发布, 0:未发布 1:已发布
+          pub_time:
+            type: string
+            description: 发布时间, YYYY-MM-DD hh:mm:ss
+          pub_time_show:
+            type: string
+            description: 发布时间文字介绍
+          unknow_pub_date:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          weekday:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+      rating:
+        type: object
+        properties:
+          count:
+            type: integer
+            description: 总计评分人数
+          score:
+            type: number
+            format: float
+            description: 评分
+      record:
+        type: string
+        description: 备案号
+      rights:
+        type: object
+        properties:
+          allow_bp:
+            type: integer
+          allow_bp_rank:
+            type: integer
+          allow_download:
+            type: integer
+          allow_review:
+            type: integer
+          area_limit:
+            type: integer
+          ban_area_show:
+            type: integer
+          can_watch:
+            type: integer
+          copyright:
+            type: string
+            description: 版权标志
+            example: bilibili
+          forbid_pre:
+            type: integer
+          is_cover_show:
+            type: integer
+          is_preview:
+            type: integer
+          only_vip_download:
+            type: integer
+          resource:
+            type: string
+          watch_platform:
+            type: integer
+      season_id:
+        type: integer
+        description: 番剧ssid
+      season_title:
+        type: string
+        description: 剧集标题
+      season_type:
+        type: integer
+        description: 剧集类型
+      seasons:
+        type: array
+        description: 同系列所有季信息
+        items:
+          type: object
+          properties:
+            badge:
+              type: string
+            badge_info:
+              type: object
+            badge_type:
+              type: integer
+            cover:
+              type: string
+            media_id:
+              type: string
+            new_ep:
+              type: integer
+            season_id:
+              type: object
+            season_title:
+              type: integer
+            season_type:
+              type: string
+            stat:
+              type: object
+      sections:
+        type: array
+        description: 花絮、PV、番外等非正片内容
+        items:
+          type: object
+          properties:
+            episodes:
+              type: array
+              items:
+                type: object
+                properties:
+                  aid:
+                    type: integer
+                    description: 分集av号
+                  badge:
+                    type: string
+                  badge_info:
+                    type: object
+                  badge_type:
+                    type: integer
+                    example: 0
+                  cid:
+                    type: integer
+                    description: 分集cid
+                  cover:
+                    type: string
+                    description: 分集封面
+                  from:
+                    type: string
+                    example: bangumi
+                  id:
+                    type: integer
+                    description: 分集epId
+                  is_premiere:
+                    type: integer
+                    example: 0
+                  long_title:
+                    type: string
+                    description: 长标题
+                  share_url:
+                    type: string
+                    description: 分集播放页url
+                  status:
+                    type: integer
+                    example: 2
+                  title:
+                    type: string
+                    description: 短标题
+                  vid:
+                    type: string
+            episode_id:
+              type: integer
+              description: 始终为0
+              example: 0
+            id:
+              type: integer
+              description: 板块id?
+            title:
+              type: string
+              description: 板块标题
+            type:
+              type: integer
+      series:
+        type: object
+        properties:
+          series_id:
+            type: integer
+            description: 系列id
+          series_title:
+            type: string
+            description: 系列名
+      share_copy:
+        type: string
+        description: 《{标题}》+{备注}
+      share_sub_title:
+        type: string
+        description: 备注
+      share_url:
+        type: string
+        description: 番剧播放页面url
+      show:
+        type: object
+        properties:
+          wide_screen:
+            type: integer
+            description: 是否全屏, 0:否 1:是
+      square_cover:
+        type: string
+        description: 方形封面图片url
+      stat:
+        type: object
+        properties:
+          coins:
+            type: integer
+            description: 投币数
+          danmakus:
+            type: integer
+            description: 弹幕数
+          favorites:
+            type: integer
+            description: 收藏数
+          likes:
+            type: integer
+            description: 点赞数
+          reply:
+            type: integer
+            description: 评论数
+          share:
+            type: integer
+            description: 分享数
+          views:
+            type: integer
+            description: 播放数
+      status:
+        type: integer
+      subtitle:
+        type: string
+        description: 剧集副标题
+      title:
+        type: string
+        description: 剧集标题
+      total:
+        type: integer
+        description: 总计正片集数
+      type:
+        type: integer
+        description: 剧集类型
+      up_info:
+        type: object
+        properties:
+          avatar:
+            type: string
+            description: 头像图片url
+          follower:
+            type: integer
+            description: 粉丝数
+          is_follow:
+            type: integer
+            example: 0
+          mid:
+            type: integer
+            description: UP主mid
+          pendant:
+            type: object
+          theme_type:
+            type: integer
+            example: 0
+          uname:
+            type: string
+            description: UP主昵称
+          verify_type:
+            type: integer
+          vip_status:
+            type: integer
+          vip_type:
+            type: integer

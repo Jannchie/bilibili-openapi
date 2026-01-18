@@ -1,0 +1,32 @@
+post:
+  tags:
+    - 漫画签到
+  summary: 签到
+  servers:
+    - url: https://manga.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - platform
+            - device
+          properties:
+            platform:
+              type: string
+              description: 平台
+              default: android
+            device:
+              type: string
+              description: 平台
+              default: h5
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ClockInResponse.yaml

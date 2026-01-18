@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 用户空间相关
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查看用户个人 TAG
+  parameters:
+    - in: query
+      name: mid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+  responses:
+    '200':
+      description: 个人 TAG 列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TagsResponse.yaml

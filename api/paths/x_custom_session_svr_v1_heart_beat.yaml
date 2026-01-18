@@ -1,0 +1,41 @@
+get:
+  tags:
+    - 客服消息
+  servers:
+    - url: https://customerservice.bilibili.com
+  parameters:
+    - name: shop_id
+      in: query
+      description: '0'
+      schema:
+        type: integer
+        enum:
+          - 0
+    - name: shop_father_id
+      in: query
+      description: '0'
+      schema:
+        type: integer
+        enum:
+          - 0
+    - name: build
+      in: query
+      description: 客户端版本, web:0
+      schema:
+        type: integer
+        enum:
+          - 0
+    - name: mobi_app
+      in: query
+      description: 客户端类型
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CustomerServiceHeartbeatResponse.yaml

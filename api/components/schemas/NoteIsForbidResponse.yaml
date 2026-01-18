@@ -1,0 +1,17 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      forbid_note_entrance:
+        type: boolean
+        description: 是否禁止笔记

@@ -1,0 +1,28 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      date:
+        type: array
+        description: 数据记录时间, 每周更新
+        items:
+          type: string
+          example: 05-17
+      score:
+        type: array
+        description: 电磁力等级, 每周更新
+        items:
+          type: integer
+          example: 48

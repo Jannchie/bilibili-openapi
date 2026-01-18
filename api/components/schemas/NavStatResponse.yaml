@@ -1,0 +1,23 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      following:
+        type: integer
+        description: 关注数
+      follower:
+        type: integer
+        description: 粉丝数
+      dynamic_count:
+        type: integer
+        description: 发布动态数

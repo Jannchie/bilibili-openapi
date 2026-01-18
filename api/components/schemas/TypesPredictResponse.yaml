@@ -1,0 +1,80 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: array
+    description: 信息本体
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 子分区ID
+          example: 122
+        parent:
+          type: integer
+          description: 总分区ID
+          example: 36
+        parent_name:
+          type: string
+          description: 总分区名称
+          example: 知识
+        name:
+          type: string
+          description: 子分区名称
+          example: 野生技能协会
+        description:
+          type: string
+          description: 子分区描述
+          example: 技能展示或技能教学分享类视频
+        desc:
+          type: string
+          description: 子分区描述
+          example: 技能展示或技能教学分享类视频
+        intro_original:
+          type: string
+          description: 原创简介说明
+          example: >-
+            可对视频内容进行补充说明, 并对所使用的视频素材进行标明.\n如是系列,
+            也可附带上期视频地址.\n请勿加入涉政或具较大争议性的文字简介, 否则将做打回处理.
+        intro_copy:
+          type: string
+          description: 转载简介说明
+          example: >-
+            转载稿件需标明出处,
+            请注明原作者、原作者频道名或原作者投稿地址.\n可对相关内容进行补充说明.\n请勿加入涉政或具较大争议性的文字简介,
+            否则将做打回处理.\n如是系列, 也可附带上期视频地址.
+        notice:
+          type: string
+          description: 注意事项
+          example: 清晰明了表明内容亮点的标题会更受观众欢迎哟!
+        copy_right:
+          type: integer
+          description: 版权信息?
+          example: 0
+        show:
+          type: boolean
+          description: 是否显示?
+          example: true
+        rank:
+          type: integer
+          description: 排序权重?
+          example: 75
+        max_video_count:
+          type: integer
+          description: 最大视频数量?
+          example: 100
+        request_id:
+          type: string
+          description: 空
+          example: ''

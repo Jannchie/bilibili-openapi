@@ -1,0 +1,45 @@
+type: object
+properties:
+  OK:
+    type: integer
+    example: 1
+  auth:
+    type: string
+    description: 上传凭证, 作为后面请求中请求头, 有效期5天
+    example: >-
+      ak=1494471752&cdn=%2F%2Fupos-cs-upcdntxa.bilivideo.com&os=upos&sign=b6c5cc520a281200906aea97e190b098&timestamp=1722155211.324&uid=616368979&uip=108.181.24.77&uport=52096&use_dqp=0
+  biz_id:
+    type: integer
+    description: 业务ID?
+    example: 500001630152509
+  chunk_retry:
+    type: integer
+    description: 重试次数?
+    example: 10
+  chunk_retry_delay:
+    type: integer
+    description: 重试延迟?
+    example: 3
+  chunk_size:
+    type: integer
+    description: 分块大小, 后面要用
+    example: 10485760
+  endpoint:
+    type: string
+    description: 上传节点, 后面要用
+    example: //upos-cs-upcdntxa.bilivideo.com
+  endpoints:
+    type: array
+    description: 上传节点列表
+    items:
+      type: string
+      example: //upos-cs-upcdntxa.bilivideo.com
+  expose_params:
+    type: object
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1

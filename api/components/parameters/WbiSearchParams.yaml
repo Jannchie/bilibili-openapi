@@ -1,0 +1,6 @@
+in: query
+name: wbi_sign
+schema:
+  type: string
+required: false
+description: wbi 签名

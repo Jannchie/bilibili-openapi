@@ -1,0 +1,243 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      current_time:
+        type: string
+        format: date-time
+        description: 当前时间字符串
+      start_time:
+        type: string
+        format: date-time
+        description: 赛季开始
+      end_time:
+        type: string
+        format: date-time
+        description: 赛季结束
+      remain_amount:
+        type: integer
+        description: 拥有积分
+      season_id:
+        type: string
+        description: 第几个赛季
+      tasks:
+        type: array
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              description: 任务描述
+            id:
+              type: string
+            status:
+              type: integer
+              description: 任务状态
+            type:
+              type: integer
+            amount:
+              type: integer
+              description: 可获取积分
+            ctime:
+              type: string
+              format: date-time
+              description: 完成时间
+        description: 待领取奖励的任务
+      welfare:
+        type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: integer
+              description: 奖励类型
+            success:
+              type: integer
+              description: 兑换状态
+            exchange_amount:
+              type: integer
+              description: 积分消耗
+            boss_welfare:
+              type: boolean
+              description: 最终奖励
+            boss_remain:
+              type: integer
+              description: 最终奖励剩余
+            rank:
+              type: integer
+              description: 顺序
+            title:
+              type: string
+            url:
+              type: string
+            kind_address_id:
+              type: string
+        description: 赛季奖励
+      next:
+        type: object
+        properties:
+          title:
+            type: string
+          amount:
+            type: integer
+          gap_time:
+            type: integer
+          current_time:
+            type: integer
+        description: 未知
+      cover:
+        type: string
+        description: 版头图片
+      today_tasks:
+        type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: integer
+            title:
+              type: string
+              description: 任务标题
+            amount:
+              type: integer
+              description: 可获得积分
+            status:
+              type: integer
+              description: 完成状态
+            duration:
+              type: integer
+              description: 耗时（分）
+            comics:
+              type: array
+              items:
+                type: object
+                properties:
+                  comic_id:
+                    type: integer
+                    description: 漫画 id
+                  title:
+                    type: string
+                    description: 漫画名称
+                  vertical_cover:
+                    type: string
+                    description: 漫画封面
+                  styles:
+                    type: array
+                    items:
+                      type: string
+                    description: 漫画类型
+              description: 任务指定漫画
+            page_url:
+              type: string
+            progress:
+              type: integer
+              description: 已完成进度
+            sub_id:
+              type: integer
+            share_type:
+              type: integer
+        description: 今日的任务完成情况
+      text:
+        type: object
+        properties:
+          notice:
+            type: string
+            description: 赛季公告
+          clonckInRule:
+            type: string
+            description: 赛季签到规则
+        description: 赛季相关文案
+      season_clock_in:
+        type: object
+        properties:
+          is_super_luck:
+            type: boolean
+          draw_luck_time:
+            type: string
+          prize_type:
+            type: integer
+          prize_title:
+            type: string
+          add_up_sign:
+            type: integer
+            description: 赛季连续签到天数
+          title:
+            type: string
+            description: 签到标题
+          sign_old_amount:
+            type: integer
+          preluck_amount:
+            type: integer
+          continuous_days:
+            type: integer
+            description: 连续签到天数
+          address_id:
+            type: string
+          has_super_prize:
+            type: boolean
+          subtitle:
+            type: string
+            description: 签到子标题
+          prize_image:
+            type: string
+          prize_target_days:
+            type: integer
+          prize_amount:
+            type: integer
+          tomorrow_amount:
+            type: integer
+            description: 明日签到积分
+          entrance_tag:
+            type: string
+      announcement:
+        type: object
+        properties:
+          title:
+            type: string
+          jump_url:
+            type: string
+          enable:
+            type: boolean
+        description: 未知
+      lottery:
+        type: object
+        properties:
+          lottery_act_id:
+            type: string
+          enable_lottery:
+            type: boolean
+            description: 是否开启抽奖
+          lottery_id:
+            type: string
+          advance_lottery_act_id:
+            type: string
+          advance_pool_id:
+            type: string
+      mission_point_rate:
+        type: integer
+      season_title:
+        type: string
+        description: 赛季标题
+      point_rate:
+        type: object
+        properties:
+          sign_in:
+            type: integer
+          game:
+            type: integer
+          daily_mission:
+            type: integer
+          week_mission:
+            type: integer
+      rank:
+        type: object
+        properties:
+          is_visible:
+            type: boolean

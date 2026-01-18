@@ -1,0 +1,9 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 响应码
+  msg:
+    type: string
+  data:
+    type: object

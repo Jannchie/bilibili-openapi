@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 老粉计划
+  servers:
+    - url: https://api.bilibili.com
+  summary: 老粉计划发送留言
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/AddMessageRequest.yaml
+  responses:
+    '200':
+      description: 发送结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AddMessageResponse.yaml

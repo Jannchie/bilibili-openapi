@@ -1,0 +1,49 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      prizes:
+        type: array
+        items:
+          type: object
+          properties:
+            user_prize_id:
+              type: string
+              description: 兑换id?
+            prize_id:
+              type: integer
+              description: 兑换的物品id
+            ctime:
+              type: string
+              format: date-time
+              description: 兑换时间
+            addr:
+              type: object
+            deadline:
+              type: string
+              format: date-time
+              description: 过期时间
+            type:
+              type: integer
+              description: 类型
+            name:
+              type: string
+              description: 物品名
+      addr:
+        type: object
+        properties:
+          name:
+            type: string
+          phone:
+            type: string
+          address:
+            type: string
+          id_card:
+            type: string

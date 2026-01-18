@@ -1,0 +1,45 @@
+type: object
+properties:
+  ts:
+    type: integer
+    format: int32
+    description: 当前时间戳
+  code:
+    type: integer
+    description: 返回值，0：成功，-3：API 校验密匙错误，-400：请求错误
+  data:
+    type: array
+    description: 主题颜色列表
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 颜色 ID
+        name:
+          type: string
+          description: 颜色名称
+        is_free:
+          type: boolean
+          description: 是否免费
+        price:
+          type: integer
+          description: 价格
+        is_bought:
+          type: boolean
+          description: 是否已购买
+        status:
+          type: integer
+          description: 状态
+        buy_time:
+          type: integer
+          description: 购买时间
+        due_time:
+          type: integer
+          description: 到期时间
+        color_name:
+          type: string
+          description: 颜色类型名称
+        is_overdue:
+          type: boolean
+          description: 是否已到期

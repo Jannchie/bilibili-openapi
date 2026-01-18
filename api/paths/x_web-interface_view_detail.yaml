@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 视频基本信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取视频超详细信息 (web 端)
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+  responses:
+    '200':
+      description: 视频超详细信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/VideoViewDetailResponse.yaml

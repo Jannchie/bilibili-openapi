@@ -1,0 +1,40 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: array
+    description: 成员类型列表
+    items:
+      type: object
+      properties:
+        list:
+          type: array
+          description: 成员列表
+          items:
+            type: object
+            properties:
+              mid:
+                type: integer
+                description: 作用尚不明确
+                example: 0
+              name:
+                type: string
+                description: 成员名
+                example: 匀子Cyrena
+              member_id:
+                type: integer
+                description: 成员id？？
+                example: 164341
+        type:
+          type: integer
+          description: >-
+            成员类型代码, 1:歌手 2:作词 3:作曲 4:编曲 5:后期/混音 7:封面制作 8:音源 9:调音 10:演奏 11:乐器
+            127:UP主
+          example: 1

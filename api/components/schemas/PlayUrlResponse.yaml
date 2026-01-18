@@ -1,0 +1,59 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功,-400：参数错误,19002003：房间信息不存在
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      current_quality:
+        type: integer
+        description: 当前画质代码 qn
+      accept_quality:
+        type: array
+        description: 可选画质数参数
+        items:
+          type: integer
+          description: qn 画质代码
+      current_qn:
+        type: integer
+        description: 当前画质代码 quality
+      quality_description:
+        type: array
+        description: 可选画质参数 quality
+        items:
+          type: object
+          properties:
+            qn:
+              type: integer
+              description: 画质代码
+            desc:
+              type: string
+              description: 该代码对应的画质名称
+      durl:
+        type: array
+        description: 直播流 url 组
+        items:
+          type: object
+          properties:
+            url:
+              type: string
+              description: 直播流 URL
+            length:
+              type: integer
+              description: '0'
+            order:
+              type: integer
+              description: 服务器线路序号
+            stream_type:
+              type: integer
+              description: '0'
+            p2p_type:
+              type: integer
+              description: '0'

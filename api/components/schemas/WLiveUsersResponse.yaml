@@ -1,0 +1,44 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      count:
+        type: integer
+        description: 直播者数量
+      group:
+        type: string
+        description: default
+      items:
+        type: array
+        description: 直播者列表
+        items:
+          type: object
+          properties:
+            face:
+              type: string
+              description: 直播者头像
+            link:
+              type: string
+              description: 直播链接
+            title:
+              type: string
+              description: 直播标题
+            uid:
+              type: integer
+              description: 直播者 ID
+            uname:
+              type: string
+              description: 直播者昵称
+      _gt_:
+        type: integer
+        description: 作用尚不明确
+  message:
+    type: string
+    description: 错误信息
+  msg:
+    type: number
+    description: 空

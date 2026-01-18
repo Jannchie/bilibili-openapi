@@ -1,0 +1,42 @@
+post:
+  servers:
+    - url: https://api.vc.bilibili.com
+  tags:
+    - 相簿
+  summary: 取消收藏相簿
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            fav_id:
+              type: integer
+              format: int64
+              description: 相簿 ID
+              example: 99184721
+            biz_type:
+              type: integer
+              format: int64
+              description: 业务类型
+              example: 2
+            csrf_token:
+              type: string
+              description: CSRF Token
+          required:
+            - fav_id
+            - biz_type
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavOperateResponse.yaml

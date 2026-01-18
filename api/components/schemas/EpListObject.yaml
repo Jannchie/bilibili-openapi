@@ -1,0 +1,56 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 章节id
+  ord:
+    type: integer
+    description: 章节序号，最新章节排在前面
+  read:
+    type: integer
+    description: 是否阅读过，0：没有 1：阅读过
+  pay_mode:
+    type: integer
+  is_locked:
+    type: boolean
+    description: 是否处于锁定状态
+  pay_gold:
+    type: integer
+    description: 解锁所需漫币
+  size:
+    type: integer
+    description: 文件大小（字节）
+  short_title:
+    type: string
+    description: 短标题
+  is_in_free:
+    type: boolean
+  title:
+    type: string
+    description: 标题
+  cover:
+    type: string
+    description: 封面
+  pub_time:
+    type: string
+    description: 发布日期
+  comments:
+    type: integer
+    description: 评论数
+  unlock_expire_at:
+    type: string
+  unlock_type:
+    type: integer
+  allow_wait_free:
+    type: boolean
+  progress:
+    type: string
+  like_count:
+    type: integer
+    description: 点赞数
+  chapter_id:
+    type: integer
+  type:
+    type: integer
+  extra:
+    type: integer

@@ -1,0 +1,32 @@
+get:
+  tags:
+    - 视频在线人数
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取视频在线人数 (web 端)
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+    - in: query
+      name: cid
+      schema:
+        type: integer
+      required: true
+      description: 视频 cid
+  responses:
+    '200':
+      description: 视频在线人数
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PlayerOnlineTotalResponse.yaml

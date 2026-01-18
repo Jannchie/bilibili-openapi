@@ -1,0 +1,19 @@
+type: object
+required:
+  - pageNum
+  - pageSize
+properties:
+  pageNum:
+    type: integer
+    description: 页数
+  pageSize:
+    type: integer
+    description: 分页大小
+  notExpired:
+    type: boolean
+  tabType:
+    type: integer
+    default: 1
+  type:
+    type: integer
+    default: 0

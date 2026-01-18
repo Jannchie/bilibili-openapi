@@ -1,0 +1,324 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      aid:
+        type: integer
+        description: 视频 aid
+      bvid:
+        type: string
+        description: 视频 bvid
+      allow_bp:
+        type: boolean
+      no_share:
+        type: boolean
+        description: 禁止分享?
+      cid:
+        type: integer
+        description: 视频 cid
+      dm_mask:
+        type: object
+        properties:
+          cid:
+            type: integer
+            description: 视频 cid
+          plat:
+            type: integer
+            description: 未知
+          fps:
+            type: integer
+            description: webmask 取样 fps
+          time:
+            type: integer
+            description: 未知
+          mask_url:
+            type: string
+            description: webmask 资源 url
+        description: webmask 防挡字幕信息
+      subtitle:
+        type: object
+        properties:
+          allow_submit:
+            type: boolean
+            default: true
+          lan:
+            type: string
+            default: ''
+          lan_doc:
+            type: string
+            default: ''
+          subtitles:
+            type: array
+            items:
+              type: object
+              properties:
+                ai_status:
+                  type: integer
+                ai_type:
+                  type: integer
+                id:
+                  type: integer
+                id_str:
+                  type: string
+                is_lock:
+                  type: boolean
+                lan:
+                  type: string
+                  description: 语言类型英文字母缩写
+                lan_doc:
+                  type: string
+                  description: 语言类型中文名称
+                subtitle_url:
+                  type: string
+                  description: 资源 url 地址
+                type:
+                  type: integer
+                  default: 0
+        description: 字幕信息
+      view_points:
+        type: array
+        items:
+          type: object
+          properties:
+            content:
+              type: string
+              description: 章节名
+            from:
+              type: number
+            to:
+              type: number
+            type:
+              type: integer
+            imgUrl:
+              type: string
+              description: 图片资源地址
+            logoUrl:
+              type: string
+              default: ''
+        description: 章节看点信息
+      ip_info:
+        type: object
+        properties:
+          ip:
+            type: string
+            description: 请求 IP
+          zone_ip:
+            type: string
+            description: 分区 IP
+          zone_id:
+            type: integer
+            description: 分区 ID
+          country:
+            type: string
+            description: 国家
+          province:
+            type: string
+            description: 省份
+          city:
+            type: string
+            description: 城市
+      login_mid:
+        type: integer
+        description: 登录用户 mid
+      login_mid_hash:
+        type: string
+      is_owner:
+        type: boolean
+        description: 是否为该视频 UP 主
+      name:
+        type: string
+      permission:
+        type: string
+      level_info:
+        type: object
+        properties:
+          current_level:
+            type: integer
+          current_min:
+            type: integer
+          current_exp:
+            type: integer
+          next_exp:
+            type: integer
+          level_up:
+            type: integer
+      vip:
+        type: object
+        properties:
+          type:
+            type: integer
+          status:
+            type: integer
+          due_date:
+            type: integer
+          vip_pay_type:
+            type: integer
+          theme_type:
+            type: integer
+          label:
+            type: object
+            properties:
+              path:
+                type: string
+              text:
+                type: string
+              label_theme:
+                type: string
+              text_color:
+                type: string
+              bg_style:
+                type: integer
+              bg_color:
+                type: string
+              border_color:
+                type: string
+              use_img_label:
+                type: boolean
+              img_label_uri_hans:
+                type: string
+              img_label_uri_hant:
+                type: string
+              img_label_uri_hans_static:
+                type: string
+              img_label_uri_hant_static:
+                type: string
+          avatar_subscript:
+            type: integer
+          nickname_color:
+            type: string
+          role:
+            type: integer
+          avatar_subscript_url:
+            type: string
+          tv_vip_status:
+            type: integer
+          tv_vip_pay_type:
+            type: integer
+          tv_due_date:
+            type: integer
+          avatar_icon:
+            type: object
+            properties:
+              icon_resource:
+                type: object
+      answer_status:
+        type: integer
+        description: 答题状态
+      block_time:
+        type: integer
+        description: 封禁时间?
+      role:
+        type: string
+      last_play_time:
+        type: integer
+        description: 上次观看时间?
+      last_play_cid:
+        type: integer
+        description: 上次观看 cid?
+      now_time:
+        type: integer
+        description: 当前 UNIX 秒级时间戳
+      online_count:
+        type: integer
+        description: 在线人数
+      need_login_subtitle:
+        type: boolean
+        description: 是否必须登陆才能查看字幕
+      preview_toast:
+        type: string
+        description: 为创作付费，购买观看完整视频|购买观看
+      options:
+        type: object
+        properties:
+          is_360:
+            type: boolean
+            description: 是否 360 全景视频
+          without_vip:
+            type: boolean
+      guide_attention:
+        type: array
+        items:
+          type: object
+      jump_card:
+        type: array
+        items:
+          type: object
+      operation_card:
+        type: array
+        items:
+          type: object
+      online_switch:
+        type: object
+        properties:
+          enable_gray_dash_playback:
+            type: string
+          new_broadcast:
+            type: string
+          realtime_dm:
+            type: string
+          subtitle_submit_switch:
+            type: string
+      fawkes:
+        type: object
+        properties:
+          config_version:
+            type: integer
+          ff_version:
+            type: integer
+      show_switch:
+        type: object
+        properties:
+          long_progress:
+            type: boolean
+      bgm_info:
+        type: object
+        properties:
+          music_id:
+            type: string
+            description: 音乐 id
+          music_title:
+            type: string
+            description: 音乐标题
+          jump_url:
+            type: string
+            description: 跳转 URL
+      toast_block:
+        type: boolean
+      is_upower_exclusive:
+        type: boolean
+        description: 充电专属?
+      is_upower_play:
+        type: boolean
+      is_ugc_pay_preview:
+        type: boolean
+      elec_high_level:
+        type: object
+        properties:
+          privilege_type:
+            type: integer
+          title:
+            type: string
+          sub_title:
+            type: string
+          show_button:
+            type: boolean
+          button_text:
+            type: string
+          jump_url:
+            type: string
+          intro:
+            type: string
+          new:
+            type: boolean
+      disable_show_up_info:
+        type: boolean

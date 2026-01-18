@@ -1,0 +1,28 @@
+get:
+  tags:
+    - 充电
+  summary: 查询历史充电数据
+  servers:
+    - url: https://member.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: pn
+      in: query
+      description: 页数
+      schema:
+        type: integer
+    - name: ps
+      in: query
+      description: 分页大小
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 20
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RecentRankResponse.yaml

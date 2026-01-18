@@ -1,0 +1,50 @@
+type: object
+required:
+  - aid
+properties:
+  mid:
+    type: integer
+    description: 当前用户 mid
+  aid:
+    type: integer
+    description: 稿件 aid
+  cid:
+    type: integer
+    description: 视频 cid
+  part:
+    type: integer
+    description: 视频分 P 编号
+  lv:
+    type: integer
+    description: 当前用户等级
+  ftime:
+    type: integer
+    description: 同 URL 参数中带有 `w_` 前缀的同名参数
+  stime:
+    type: integer
+    description: 同 URL 参数中带有 `w_` 前缀的同名参数
+  type:
+    type: integer
+    description: 视频类型
+  sub_type:
+    type: integer
+    description: 视频子类型
+  referer_url:
+    type: string
+    description: 与请求头 Referer 字段相同
+  outer:
+    type: integer
+    default: 0
+  spmid:
+    type: string
+    default: 333.788.0.0
+    description: 作用尚不明确
+  from_spmid:
+    type: string
+    description: 播放来源?
+  session:
+    type: string
+    description: 会话信息?
+  csrf:
+    type: string
+    description: CSRF Token (即 Cookie 中 bili_jct)

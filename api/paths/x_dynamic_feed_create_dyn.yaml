@@ -1,0 +1,118 @@
+post:
+  tags:
+    - 动态
+  summary: 发表复杂动态
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: csrf
+      in: query
+      description: CSRF Token（位于cookie）
+      schema:
+        type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            dyn_req:
+              type: object
+              properties:
+                attach_card:
+                  type: object
+                  description: 特殊卡片
+                content:
+                  type: object
+                  properties:
+                    contents:
+                      type: array
+                      description: 动态组件对象有序数组
+                      items:
+                        type: object
+                        properties:
+                          raw_text:
+                            type: string
+                            description: ui上直接显示的字符串
+                          type:
+                            type: integer
+                            description: 组件类型id
+                            enum:
+                              - 1
+                              - 2
+                              - 9
+                              - 4
+                          biz_id:
+                            type: string
+                            description: 动态组件的内容id转字符串,比如投票id
+                meta:
+                  type: object
+                  description: 元信息
+                  example:
+                    app_meta:
+                      from: create.dynamic.web
+                      mobi_app: web
+                scene:
+                  type: integer
+                  description: 动态类型?
+                  enum:
+                    - 1
+                    - 2
+                pics:
+                  type: array
+                  description: 携带图片
+                  items:
+                    type: object
+                    properties:
+                      img_height:
+                        type: integer
+                        description: 图片高
+                      img_width:
+                        type: integer
+                        description: 图片宽
+                      img_size:
+                        type: number
+                        format: float
+                        description: 图片文件大小(KB)
+                      img_src:
+                        type: string
+                        description: 图片bfs链接
+                topic:
+                  type: object
+                  description: 话题
+                  properties:
+                    from_source:
+                      type: string
+                      description: 来源id?
+                    from_topic_id:
+                      type: integer
+                      example: 0
+                    id:
+                      type: integer
+                      description: 话题id
+                    name:
+                      type: string
+                      description: 话题名
+                option:
+                  type: object
+                  description: 互动设置
+                  properties:
+                    up_choose_comment:
+                      type: integer
+                      description: 精选评论flag
+                    close_comment:
+                      type: integer
+                      description: 关闭评论flag
+                upload_id:
+                  type: string
+                  description: 客户端生成的
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateDynResponse.yaml

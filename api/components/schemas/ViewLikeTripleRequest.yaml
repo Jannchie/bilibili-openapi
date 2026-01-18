@@ -1,0 +1,7 @@
+type: object
+required:
+  - aid
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid

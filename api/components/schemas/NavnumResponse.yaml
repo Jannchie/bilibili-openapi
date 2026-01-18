@@ -1,0 +1,67 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      video:
+        type: integer
+        description: 投稿视频数
+      bangumi:
+        type: integer
+        description: 追番数
+      cinema:
+        type: integer
+        description: 追剧数
+      channel:
+        type: object
+        properties:
+          master:
+            type: integer
+            description: 视频列表数
+          guest:
+            type: integer
+            description: 视频列表数
+        description: 视频列表数
+      favourite:
+        type: object
+        properties:
+          master:
+            type: integer
+            description: 全部收藏夹数
+          guest:
+            type: integer
+            description: 公开收藏夹数
+        description: 收藏夹数
+      tag:
+        type: integer
+        description: 关注 TAG 数
+      article:
+        type: integer
+        description: 投稿专栏数
+      playlist:
+        type: integer
+        default: 0
+      album:
+        type: integer
+        description: 投稿图文数
+      audio:
+        type: integer
+        description: 投稿音频数
+      pugv:
+        type: integer
+        description: 投稿课程数
+      upos:
+        type: integer
+        description: 动态数
+      season_num:
+        type: integer
+        description: 视频合集数

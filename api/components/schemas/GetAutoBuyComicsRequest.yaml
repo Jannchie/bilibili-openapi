@@ -1,0 +1,12 @@
+type: object
+required:
+  - page_num
+  - page_size
+properties:
+  page_num:
+    type: integer
+    description: 页数
+  page_size:
+    type: integer
+    default: 15
+    description: 分页大小

@@ -1,0 +1,44 @@
+post:
+  tags:
+    - 直播间管理
+  summary: 开始直播
+  description: 开播时必须有分区选择
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - room_id
+            - area_v2
+            - platform
+            - csrf
+          type: object
+          properties:
+            room_id:
+              type: integer
+              format: int32
+              description: 直播间 ID
+            area_v2:
+              type: integer
+              format: int32
+              description: 直播分区 ID（子分区 ID）
+            platform:
+              type: string
+              enum:
+                - web
+                - bililink
+              description: 直播平台
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/StartLiveResponse.yaml

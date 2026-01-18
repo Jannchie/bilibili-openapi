@@ -1,0 +1,64 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      question:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 问题 ID
+          number:
+            type: integer
+            description: 当前题号
+          q_height:
+            type: number
+            format: float
+            description: 问题部分总高度
+          q_coord_y:
+            type: integer
+            description: 问题部分 Y 裁剪起始
+          image:
+            type: string
+            description: 题图 URL
+          from:
+            type: string
+            description: 问题来源页面 URL
+          options:
+            type: array
+            items:
+              type: object
+              properties:
+                number:
+                  type: integer
+                  description: 选项序号
+                high:
+                  type: number
+                  format: float
+                  description: 选项部分总高度
+                coord_y:
+                  type: integer
+                  description: 选项部分 Y 裁剪起始
+                hash:
+                  type: string
+                  description: 选项 hash
+            description: 选项列表
+          type_id:
+            type: integer
+            description: 题目父类型 ID
+          type_name:
+            type: string
+            description: 分院小电视提示文案
+          type_image:
+            type: string
+            description: 分院小电视图标 URL

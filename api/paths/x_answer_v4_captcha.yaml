@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 答题操作
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取验证码
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 验证码信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CaptchaResponse.yaml

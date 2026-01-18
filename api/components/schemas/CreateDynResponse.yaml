@@ -1,0 +1,171 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      result:
+        type: integer
+        description: '0'
+      message:
+        type: string
+        description: 错误信息
+      dyn_id:
+        type: integer
+        description: 动态 id
+      dyn_id_str:
+        type: string
+        description: 动态 id
+      dyn_type:
+        type: integer
+        description: 动态类型
+      dyn_rid:
+        type: integer
+      fake_card:
+        type: object
+        properties:
+          card_type:
+            type: integer
+            description: 卡片类型
+          modules:
+            type: array
+            description: 卡片组件列表
+            items:
+              type: object
+              properties:
+                module_type:
+                  type: integer
+                  description: 组件类型
+                ModuleItem:
+                  type: object
+                  properties:
+                    module_author:
+                      type: object
+                      properties:
+                        mid:
+                          type: integer
+                          description: 发送者mid
+                        ptime_label_text:
+                          type: string
+                          description: 发送时间(人类可读形式)肯定是刚刚
+                        author:
+                          type: object
+                          description: 作者详细信息
+                    module_desc:
+                      type: object
+                      properties:
+                        desc:
+                          type: array
+                          description: 动态组件列表
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: string
+                                description: 该组件对外显示的纯文本
+                              type:
+                                type: integer
+                                description: 组件类型
+                              rid:
+                                type: string
+                                description: 组件内容的id,例如@人的mid
+                              uri:
+                                type: string
+                                description: b站自定义`bilibili://`协议链接,用于@人点击跳转等
+                        text:
+                          type: string
+                          description: 动态纯文本形式
+                    module_dynamic:
+                      type: object
+                      properties:
+                        type:
+                          type: integer
+                          description: 不知道是什么的类型
+                        ModuleItem:
+                          type: object
+                          properties:
+                            dyn_draw:
+                              type: object
+                              properties:
+                                items:
+                                  type: array
+                                  description: 图片数组
+                                  items:
+                                    type: object
+                                id:
+                                  type: integer
+                                  description: 这条图片动态所对应的相簿`doc_id`
+                    module_stat:
+                      type: object
+                      description: 不明,貌似一直都是空对象
+          extend:
+            type: object
+            properties:
+              dyn_id_str:
+                type: string
+                description: 动态id字符串形式
+              business_id:
+                type: string
+                description: 未知
+              orif_img_url:
+                type: string
+                description: 封面图url(如果有)
+              desc:
+                type: array
+                description: 动态组件列表,重复了一遍`module_desc`的desc数组
+                items:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                      description: 该组件对外显示的纯文本
+                    type:
+                      type: integer
+                      description: 组件类型
+                    rid:
+                      type: string
+                      description: 组件内容的id,例如@人的mid
+                    uri:
+                      type: string
+                      description: b站自定义`bilibili://`协议链接,用于@人点击跳转等
+              share_type:
+                type: string
+                description: 一般为3
+              share_scene:
+                type: string
+                description: 一般为dynamic
+              is_fast_share:
+                type: boolean
+                description: 一般为true
+              dyn_type:
+                type: integer
+                description: 动态类型
+              uid:
+                type: integer
+                description: 发送者mid
+              card_url:
+                type: string
+                description: b站自定义`bilibili://`协议链接,指向该条动态
+              reply:
+                type: object
+                properties:
+                  uri:
+                    type: string
+                    description: b站自定义`bilibili://`协议链接,指向该条动态评论区
+                  params:
+                    type: array
+                    description: 未知
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                        value:
+                          type: string
+      _gt_:
+        type: integer

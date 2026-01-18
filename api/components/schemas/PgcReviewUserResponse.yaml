@@ -1,0 +1,102 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  result:
+    type: object
+    properties:
+      media:
+        type: object
+        properties:
+          areas:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 所属地区编号
+                  example: 2
+                name:
+                  type: string
+                  description: 所属地区名称
+                  example: 日本
+          cover:
+            type: string
+            description: 封面图片url
+            example: >-
+              http://i0.hdslb.com/bfs/bangumi/8aa0bfce050c72c6626b63d3093a88527c251026.jpg
+          horizontal_picture:
+            type: string
+            description: 横板封面图片url
+            example: >-
+              http://i0.hdslb.com/bfs/bangumi/8aa0bfce050c72c6626b63d3093a88527c251026.jpg
+          media_id:
+            type: integer
+            description: 剧集mdid
+            example: 28220978
+          new_ep:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: 最新一话的epid
+                example: 21278
+              index:
+                type: string
+                description: 最新一话名称
+                example: '14'
+              index_show:
+                type: string
+                description: 最新一话显示名称
+                example: 全14话
+          rating:
+            type: object
+            properties:
+              count:
+                type: integer
+                description: 总计评分人数
+                example: 80693
+              score:
+                type: number
+                format: float
+                description: 评分
+                example: 9.9
+          season_id:
+            type: integer
+            description: 剧集ssid
+            example: 1172
+          share_url:
+            type: string
+            format: url
+            description: 剧集详情页url
+            example: https://www.bilibili.com/bangumi/media/md28220978
+          title:
+            type: string
+            description: 标题
+            example: 轻音少女 第一季
+          type:
+            type: integer
+            description: 剧集类型id
+            example: 1
+          type_name:
+            type: string
+            description: 剧集类型
+            example: 番剧
+      review:
+        type: object
+        properties:
+          is_coin:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          is_open:
+            type: integer
+            description: 作用尚不明确
+            example: 1

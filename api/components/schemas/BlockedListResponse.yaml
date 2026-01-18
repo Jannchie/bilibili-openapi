@@ -1,0 +1,122 @@
+type: object
+properties:
+  code:
+    type: integer
+    example: 0
+  message:
+    type: string
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 封禁公示id
+          example: 1118220
+        uname:
+          type: string
+          description: 对象用户名
+          example: 漫城林语
+        face:
+          type: string
+          description: 对象用户头像url
+          example: >-
+            http://i2.hdslb.com/bfs/face/970f2da4a58f83879e69e259f4a9d3587cba03f0.jpg
+        uid:
+          type: integer
+          description: 对象用户mid
+          example: 135913
+        originTitle:
+          type: string
+          description: 来源标题
+          example: 【罗翔】聊聊网络喷子与键盘侠
+        blockedRemark:
+          type: string
+          description: 副标题
+          example: 内容涉及人身攻击
+        originUrl:
+          type: string
+          description: 来源url
+          example: https://www.bilibili.com/video/av752825895
+        originContentModify:
+          type: string
+          description: 裁决正文
+          example: >-
+            <p>案情：</p><p>1、大量刷屏/引战</p><p>我看新闻了，竹鼠全部被ZF无害化处理了，看的爽死我了，亏死你们，啊哈哈哈（x10）</p><p>【BV16g4y187he，2020-4-21
+            10：46：23～10：46：47】</p><p>2、大量人身攻击</p><p>N * * L</p><p>Deine Mu**er
+            ist tot. （x10）</p><p>【BV1rk4y1R7id，2020-4-21
+            20：31：08～20：32：23】</p><p>3、引战</p><p>每次看他厨房乱七八糟的，可能有数不清的小强，你们还看美食看的有味也是奇PA</p><p>【BV1Kg4y1z7mA，2020-4-22&nbsp;
+            00：52：37】<br/></p><p>批注：</p><p>满地狼藉招摇过，人皆愤懑怒拳握。</p><p>余恶不堪漏夜扫，正气于心涤龌龊。</p><p><br/></p><p>（发现违规引战、人身攻击、刷屏评论，请按照相应分类进行举报。若发现反复进行上述行为，可联系工作人员反馈相关违规账号信息，我们会予以排查。）</p><p>（案例感想请发布在小黑屋评论区讨论，请勿骚扰被封禁的用户）</p><p>【本次判罚为管理员判定，请注意案件右上无蓝色标记（风纪委员众裁）】</p><p><br/></p>
+        originType:
+          type: integer
+          description: 来源类型
+          example: 1
+        originTypeName:
+          type: string
+          description: 来源名
+          example: 评论
+        punishTitle:
+          type: string
+          description: 公示标题
+          example: 在评论中发布人身攻击言论
+        punishTime:
+          type: integer
+          description: 处罚时间, 时间戳
+          example: 1587494264
+        punishType:
+          type: integer
+          description: 处理手段类型
+          example: 3
+        punishTypeName:
+          type: string
+          description: 处理手段名
+          example: 永久封禁
+        moralNum:
+          type: integer
+          description: 0节操值, 被封禁用户节操值均为0
+          example: 0
+        blockedDays:
+          type: integer
+          description: 封禁天数, 永封为`0`
+          example: 0
+        publishStatus:
+          type: integer
+          description: 作用尚不明确
+          example: 1
+        blockedType:
+          type: integer
+          description: 处理来源
+          example: 0
+        blockedForever:
+          type: integer
+          description: 是否永封
+          example: 1
+        reasonType:
+          type: integer
+          description: 封禁原因类型
+          example: 7
+        reasonTypeName:
+          type: string
+          description: 封禁原因类型名称
+          example: 发布人身攻击言论
+        operatorName:
+          type: string
+          description: 作用尚不明确
+          example: ''
+        caseId:
+          type: integer
+          description: 仲裁信息id, 系统封禁时固定为0
+          example: 0
+        ctime:
+          type: integer
+          description: 创建时间, 时间戳
+          example: 1587494264
+        commentSum:
+          type: integer
+          description: 该条目评论数
+          example: 606

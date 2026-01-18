@@ -1,0 +1,130 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      cvid:
+        type: integer
+        description: 公开笔记对应的专栏 cvid
+      note_id:
+        type: integer
+        description: 笔记 ID
+      title:
+        type: string
+        description: 笔记标题
+      summary:
+        type: string
+        description: 笔记预览
+      content:
+        type: string
+        description: 笔记正文 JSON 序列
+      cid_count:
+        type: integer
+      pub_status:
+        type: integer
+        description: 公开状态
+      tags:
+        type: array
+        items:
+          type: object
+      arc:
+        type: object
+        properties:
+          oid:
+            type: integer
+            description: 目标 ID
+          oid_type:
+            type: integer
+            description: 目标 ID 类型
+          title:
+            type: string
+            description: 标题
+          pic:
+            type: string
+            description: 封面 URL
+          status:
+            type: integer
+          desc:
+            type: string
+            description: 简介
+        description: 稿件信息
+      author:
+        type: object
+        properties:
+          mid:
+            type: integer
+            description: 用户 mid
+          name:
+            type: string
+            description: 昵称
+          face:
+            type: string
+            description: 头像 URL
+          level:
+            type: integer
+            description: 用户等级
+          vip_info:
+            type: object
+            properties:
+              type:
+                type: integer
+              status:
+                type: integer
+              due_date:
+                type: integer
+              vip_pay_type:
+                type: integer
+              theme_type:
+                type: integer
+              label:
+                type: object
+                properties:
+                  path:
+                    type: string
+                  text:
+                    type: string
+                  label_theme:
+                    type: string
+                  text_color:
+                    type: string
+                  bg_style:
+                    type: integer
+                  bg_color:
+                    type: string
+                  border_color:
+                    type: string
+              avatar_subscript:
+                type: integer
+              nickname_color:
+                type: string
+              role:
+                type: integer
+              avatar_subscript_url:
+                type: string
+          pendant:
+            type: object
+            properties:
+              pid:
+                type: integer
+              name:
+                type: string
+              image:
+                type: string
+              expire:
+                type: integer
+              image_enhance:
+                type: string
+              image_enhance_frame:
+                type: string
+        description: 作者信息
+      forbid_note_entrance:
+        type: boolean

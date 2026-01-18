@@ -1,0 +1,59 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误，203101：UP主未开通包月充电功能
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      upower_rank:
+        type: object
+        properties:
+          total:
+            type: integer
+            description: 充电用户总数
+          total_desc:
+            type: string
+            description: 充电总数文字说明
+          list:
+            type: array
+            description: 充电用户列表
+            items:
+              type: object
+              properties:
+                rank:
+                  type: integer
+                  description: 充电用户索引
+                mid:
+                  type: integer
+                  description: 充电用户mid
+                nickname:
+                  type: string
+                  description: 充电用户昵称
+                avatar:
+                  type: string
+                  description: 充电用户头像url
+      item:
+        type: object
+        properties:
+          intro_video_aid:
+            type: string
+            description: 充电介绍视频AV号
+          welcomes:
+            type: string
+            description: 充电介绍语
+      user_card:
+        type: object
+        properties:
+          avatar:
+            type: string
+            description: UP主头像url
+          nickname:
+            type: string
+            description: UP主昵称

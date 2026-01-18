@@ -1,0 +1,102 @@
+post:
+  tags:
+    - 漫画图片
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 获取某一图片的token
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: access_key
+      schema:
+        type: string
+      required: true
+      description: APP登录凭证，使用APP鉴权方式时必填
+    - in: query
+      name: appkey
+      schema:
+        type: string
+        default: cc8617fd6961e070
+      required: false
+    - in: query
+      name: mobi_app
+      schema:
+        type: string
+        default: android_comic
+      required: false
+    - in: query
+      name: version
+      schema:
+        type: string
+        default: 4.21.0
+      required: false
+    - in: query
+      name: build
+      schema:
+        type: string
+        default: '36421000'
+      required: false
+    - in: query
+      name: channel
+      schema:
+        type: string
+        default: bilicomic
+      required: false
+    - in: query
+      name: platform
+      schema:
+        type: string
+        default: android
+      required: false
+    - in: query
+      name: device
+      schema:
+        type: string
+        default: android
+      required: false
+    - in: query
+      name: buvid
+      schema:
+        type: string
+        example: XY118701XXXXXXXXX104911DXXXXXCAEXXXXE
+      required: false
+      description: 长度为37
+    - in: query
+      name: machine
+      schema:
+        type: string
+        default: samsung+SM-G9730
+      required: false
+      description: 手机品牌+型号
+    - in: query
+      name: is_teenager
+      schema:
+        type: integer
+        default: 0
+      required: false
+    - in: query
+      name: no_recommend
+      schema:
+        type: integer
+        default: 0
+      required: false
+    - in: query
+      name: ts
+      schema:
+        type: integer
+      required: false
+      description: 秒级时间戳
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ImageTokenRequest.yaml
+  responses:
+    '200':
+      description: 图片token信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ImageTokenResponse.yaml

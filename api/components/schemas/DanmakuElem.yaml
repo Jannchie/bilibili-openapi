@@ -1,0 +1,81 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 弹幕 dmid
+    format: int64
+  progress:
+    type: integer
+    description: 视频内弹幕出现时间，毫秒
+    format: int32
+  mode:
+    type: integer
+    description: |
+      弹幕类型
+
+      1 2 3：普通弹幕
+      4：底部弹幕
+      5：顶部弹幕
+      6：逆向弹幕
+      7：高级弹幕
+      8：代码弹幕
+      9：BAS 弹幕（仅限于特殊弹幕专包）
+    format: int32
+  fontsize:
+    type: integer
+    description: |
+      弹幕字号
+
+      18：小
+      25：标准
+      36：大
+    format: int32
+  color:
+    type: integer
+    description: 弹幕颜色，十进制 RGB888 值
+    format: uint32
+  midHash:
+    type: string
+    description: 发送者 mid 的 HASH，用于屏蔽用户和查看用户发送的所有弹幕，也可反查用户id
+  content:
+    type: string
+    description: 弹幕内容，utf-8编码
+  ctime:
+    type: integer
+    description: 弹幕发送时间，时间戳
+    format: int64
+  weight:
+    type: integer
+    description: |
+      权重，用于智能屏蔽，根据弹幕语义及长度通过AI识别得出
+
+      范围：[0-10]
+      值越大权重越高
+    format: int32
+  action:
+    type: string
+    description: 动作？
+  pool:
+    type: integer
+    description: |
+      弹幕池
+
+      0：普通池
+      1：字幕池
+      2：特殊池（代码/BAS弹幕）
+    format: int32
+  idStr:
+    type: string
+    description: 弹幕 dmid，字串形式，唯一，可用于操作参数
+  attr:
+    type: integer
+    description: |
+      弹幕属性位
+
+      bit0：保护
+      bit1：直播
+      bit2：高赞
+    format: int32
+  animation:
+    type: string
+    description: 动画？

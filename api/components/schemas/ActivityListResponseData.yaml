@@ -1,0 +1,22 @@
+type: object
+properties:
+  list:
+    type: array
+    description: 活动列表
+    items:
+      $ref: ./ActivityListItem.yaml
+  num:
+    type: integer
+    format: int64
+    description: 当前页码
+    example: 1
+  size:
+    type: integer
+    format: int64
+    description: 每页条数
+    example: 4
+  total:
+    type: integer
+    format: int64
+    description: 总条数
+    example: 5391

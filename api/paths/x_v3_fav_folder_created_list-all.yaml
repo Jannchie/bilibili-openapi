@@ -1,0 +1,37 @@
+get:
+  tags:
+    - 收藏夹
+  summary: 获取指定用户创建的所有收藏夹信息
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: up_mid
+      in: query
+      description: 目标用户mid
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: type
+      in: query
+      description: 目标内容属性
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 2
+    - name: rid
+      in: query
+      description: 目标内容id
+      schema:
+        type: integer
+        format: int32
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavFolderCreatedListAllResponse.yaml

@@ -1,0 +1,40 @@
+get:
+  tags:
+    - 互动视频信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取互动视频模块详细信息
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+    - in: query
+      name: graph_version
+      schema:
+        type: integer
+      required: true
+      description: 剧情图 ID
+    - in: query
+      name: edge_id
+      schema:
+        type: integer
+      required: false
+      description: 模块编号
+  responses:
+    '200':
+      description: 互动视频模块详细信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/EdgeInfoResponse.yaml

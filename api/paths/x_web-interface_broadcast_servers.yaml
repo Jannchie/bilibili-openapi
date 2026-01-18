@@ -1,0 +1,19 @@
+get:
+  tags:
+    - 全站广播
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: platform
+      in: query
+      description: 平台选择
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/BroadcastServersResponse.yaml

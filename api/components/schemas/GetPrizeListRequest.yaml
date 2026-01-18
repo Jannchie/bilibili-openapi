@@ -1,0 +1,8 @@
+type: object
+required:
+  - act_id
+properties:
+  act_id:
+    type: integer
+    default: 90018
+    description: 固定值：90018

@@ -1,0 +1,25 @@
+type: object
+properties:
+  pull_interval:
+    type: integer
+    format: int64
+    description: 拉取间隔
+    example: 1800
+  forcibly:
+    type: boolean
+    description: forcibly
+    example: false
+  rule:
+    type: string
+    description: 规则
+    example: order
+  list:
+    type: array
+    description: 开屏图片列表
+    items:
+      $ref: ./SplashBrandListItem.yaml
+  show:
+    type: array
+    description: 默认显示项
+    items:
+      $ref: ./SplashBrandListShowItem.yaml

@@ -1,0 +1,128 @@
+get:
+  tags:
+    - APP
+  servers:
+    - url: https://app.bilibili.com
+  summary: 版本升级
+  parameters:
+    - name: abi
+      in: query
+      description: 设备 CPU ABI
+      required: false
+      schema:
+        type: string
+        example: arm64-v8a
+    - name: appid
+      in: query
+      description: 客户端类型
+      required: false
+      schema:
+        type: string
+        example: tv.danmaku.bili
+    - name: brand
+      in: query
+      description: 设备品牌
+      required: false
+      schema:
+        type: string
+        example: google
+    - name: build
+      in: query
+      description: 当前 APP 版本号
+      required: true
+      schema:
+        type: integer
+        format: int64
+        example: 8000200
+    - name: channel
+      in: query
+      description: APP 分发渠道
+      required: true
+      schema:
+        type: string
+        example: master
+    - name: deviceid
+      in: query
+      description: 设备唯一 ID
+      required: false
+      schema:
+        type: string
+    - name: env
+      in: query
+      description: APP 分发环境
+      required: false
+      schema:
+        type: string
+        default: prod
+    - name: iv
+      in: query
+      description: 当前 APP innerVer
+      required: false
+      schema:
+        type: integer
+        format: int64
+        example: 8000210
+    - name: mobi_app
+      in: query
+      description: APP mobi_app
+      required: true
+      schema:
+        type: string
+        example: android
+    - name: model
+      in: query
+      description: 设备型号
+      required: false
+      schema:
+        type: string
+        example: Pixel 2 XL
+    - name: nt
+      in: query
+      description: nt
+      required: true
+      schema:
+        type: string
+        default: '1'
+    - name: ov
+      in: query
+      description: 设备 OS 版本
+      required: true
+      schema:
+        type: string
+        example: '30'
+    - name: platform
+      in: query
+      description: 设备平台
+      required: false
+      schema:
+        type: string
+        example: android
+    - name: screen
+      in: query
+      description: 设备屏幕参数
+      required: false
+      schema:
+        type: string
+        example: 2712_1440@537.882_537.882
+    - name: sn
+      in: query
+      description: 当前 APP SN
+      required: true
+      schema:
+        type: integer
+        format: int64
+        example: 15088473
+    - name: vn
+      in: query
+      description: 当前 APP 版本名称
+      required: true
+      schema:
+        type: string
+        example: 8.0.0
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpgradeResponse.yaml

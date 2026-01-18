@@ -1,0 +1,200 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      seid:
+        type: string
+        description: 搜索 ID
+      page:
+        type: integer
+        description: 页数
+        default: 1
+      pagesize:
+        type: integer
+        description: 每页条数
+        default: 20
+      numResults:
+        type: integer
+        description: 总条数
+      numPages:
+        type: integer
+        description: 分页数
+      suggest_keyword:
+        type: string
+      rqt_type:
+        type: string
+        default: search
+      cost_time:
+        type: object
+        properties:
+          params_check:
+            type: string
+            format: float
+          get upuser live status:
+            type: string
+            format: float
+          illegal_handler:
+            type: string
+            format: float
+          as_response_format:
+            type: string
+            format: float
+          mysql_request:
+            type: string
+            format: float
+          as_request:
+            type: string
+            format: float
+          as_request_format:
+            type: string
+            format: float
+          deserialize_response:
+            type: string
+            format: float
+          total:
+            type: string
+            format: float
+          main_handler:
+            type: string
+            format: float
+        description: 详细搜索用时
+      exp_list:
+        type: object
+        properties:
+          '5520':
+            type: boolean
+      egg_hit:
+        type: integer
+        default: 0
+      pageinfo:
+        type: object
+        properties:
+          pgc:
+            $ref: ./PageInfoItem.yaml
+          live_room:
+            $ref: ./PageInfoItem.yaml
+          photo:
+            $ref: ./PageInfoItem.yaml
+          topic:
+            $ref: ./PageInfoItem.yaml
+          video:
+            $ref: ./PageInfoItem.yaml
+          user:
+            $ref: ./PageInfoItem.yaml
+          bili_user:
+            $ref: ./PageInfoItem.yaml
+          media_ft:
+            $ref: ./PageInfoItem.yaml
+          article:
+            $ref: ./PageInfoItem.yaml
+          media_bangumi:
+            $ref: ./PageInfoItem.yaml
+          special:
+            $ref: ./PageInfoItem.yaml
+          operation_card:
+            $ref: ./PageInfoItem.yaml
+          upuser:
+            $ref: ./PageInfoItem.yaml
+          movie:
+            $ref: ./PageInfoItem.yaml
+          live_all:
+            $ref: ./PageInfoItem.yaml
+          tv:
+            $ref: ./PageInfoItem.yaml
+          live:
+            $ref: ./PageInfoItem.yaml
+          bangumi:
+            $ref: ./PageInfoItem.yaml
+          activity:
+            $ref: ./PageInfoItem.yaml
+          live_master:
+            $ref: ./PageInfoItem.yaml
+          live_user:
+            $ref: ./PageInfoItem.yaml
+        description: 分类页数信息
+      top_tlist:
+        type: object
+        properties:
+          pgc:
+            type: integer
+          live_room:
+            type: integer
+          photo:
+            type: integer
+          bili_user:
+            type: integer
+          topic:
+            type: integer
+          video:
+            type: integer
+          user:
+            type: integer
+          article:
+            type: integer
+          media_ft:
+            type: integer
+          media_bangumi:
+            type: integer
+          card:
+            type: integer
+          operation_card:
+            type: integer
+          upuser:
+            type: integer
+          movie:
+            type: integer
+          tv:
+            type: integer
+          live:
+            type: integer
+          special:
+            type: integer
+          bangumi:
+            type: integer
+          activity:
+            type: integer
+          live_master:
+            type: integer
+          live_user:
+            type: integer
+        description: 分类结果数目信息
+      show_column:
+        type: integer
+        default: 0
+      show_module_list:
+        type: array
+        items:
+          type: string
+          enum:
+            - activity
+            - web_game
+            - card
+            - media_bangumi
+            - media_ft
+            - bili_user
+            - user
+            - star
+            - video
+        description: 返回结果类型列表
+      result:
+        type: array
+        items:
+          type: object
+          properties:
+            result_type:
+              type: string
+              description: 结果类型
+            data:
+              type: array
+              items:
+                $ref: ./SearchResult.yaml

@@ -1,0 +1,71 @@
+post:
+  tags:
+    - 视频观看数据上报
+  servers:
+    - url: https://api.bilibili.com
+  summary: 开始观看视频 (web 端)
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: w_aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 aid
+    - in: query
+      name: w_part
+      schema:
+        type: integer
+      required: false
+      description: 视频分 P 编号
+    - in: query
+      name: w_ftime
+      schema:
+        type: integer
+      required: false
+      description: 点击时间戳?
+    - in: query
+      name: w_stime
+      schema:
+        type: integer
+      required: false
+      description: 开始播放时间戳?
+    - in: query
+      name: w_type
+      schema:
+        type: integer
+      required: false
+      description: 视频类型
+    - in: query
+      name: web_location
+      schema:
+        type: integer
+        default: 1315873
+      required: false
+      description: 网页位置?
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: UNIX 秒级时间戳
+  requestBody:
+    required: false
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/ClickWebH5Request.yaml
+  responses:
+    '200':
+      description: 上报结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ClickWebH5Response.yaml

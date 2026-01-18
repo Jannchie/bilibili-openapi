@@ -1,0 +1,28 @@
+type: object
+required:
+  - epId
+  - buyMethod
+  - couponId
+properties:
+  epId:
+    type: integer
+    description: 章节id
+  buyMethod:
+    type: integer
+    description: 购买方式
+    enum:
+      - 2
+      - 4
+      - 5
+  couponId:
+    type: integer
+    description: 漫读券id
+  comicId:
+    type: integer
+    description: 漫画id
+  autoPayGoldStatus:
+    type: integer
+    description: 自动支付漫币状态
+  isPresale:
+    type: integer
+    description: 是否预售

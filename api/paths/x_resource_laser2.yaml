@@ -1,0 +1,18 @@
+post:
+  tags:
+    - 播放反馈
+  servers:
+    - url: https://app.bilibili.com
+  summary: 播放反馈
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/LaserReportRequest.yaml
+  responses:
+    '200':
+      description: 播放反馈结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LaserReportResponse.yaml

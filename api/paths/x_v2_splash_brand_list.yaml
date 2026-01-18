@@ -1,0 +1,33 @@
+get:
+  tags:
+    - APP
+  servers:
+    - url: https://app.bilibili.com
+  summary: 获取 APP 端开屏图片列表
+  parameters:
+    - name: appkey
+      in: query
+      description: APP 密钥
+      required: true
+      schema:
+        type: string
+    - name: ts
+      in: query
+      description: 当前时间戳
+      required: true
+      schema:
+        type: integer
+        format: int64
+    - name: sign
+      in: query
+      description: APP 签名
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SplashBrandListResponse.yaml

@@ -1,0 +1,46 @@
+post:
+  tags:
+    - 仲裁操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: case_id
+      in: query
+      description: 案件id
+      schema:
+        type: string
+      required: true
+    - name: vote
+      in: query
+      description: 投票类型, 见「[众裁信息](judgement_info.md)」中表
+      schema:
+        type: integer
+      required: true
+    - name: insiders
+      in: query
+      description: 是否观看此类视频, 默认值为0, 见「[众裁信息](judgement_info.md)」中表
+      schema:
+        type: integer
+    - name: content
+      in: query
+      description: 理由
+      schema:
+        type: string
+    - name: anonymous
+      in: query
+      description: 是否匿名, 默认值为0, 0:不匿名 1:匿名
+      schema:
+        type: integer
+    - name: csrf
+      in: query
+      description: cookie中`bili_jct`的值
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreditJuryVoteResponse.yaml

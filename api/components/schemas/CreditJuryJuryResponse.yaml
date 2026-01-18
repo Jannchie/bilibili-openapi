@@ -1,0 +1,43 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      allow_apply:
+        type: boolean
+        description: 尚不明确(用户从未担任风纪委员时也为true)
+        example: true
+      apply_status:
+        type: integer
+        description: 任期审核状态
+        example: -1
+      case_total:
+        type: integer
+        description: 总众裁数
+      err_msg:
+        type: string
+        description: 空, 尚不明确
+      face:
+        type: string
+        description: 用户头像url
+      status:
+        type: integer
+        description: 当前资格状态
+        example: 0
+      term_end:
+        type: integer
+        description: 任期结束时间, 时间戳(秒级), 无任期时为0
+      uname:
+        type: string
+        description: 用户昵称

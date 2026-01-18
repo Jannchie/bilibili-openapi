@@ -1,0 +1,88 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 用户UID
+        example: 10001
+      uname:
+        type: string
+        description: 留空
+        example: ''
+      face:
+        type: string
+        description: 留空
+        example: ''
+      term_id:
+        type: integer
+        description: 任期ID, 未传入`term_id`时, 返回的是最近一次已结束的任期的id
+        example: 300009
+      term_start:
+        type: integer
+        description: 任期开始时间, 时间戳, 精确到秒
+        example: 1669100000
+      term_end:
+        type: integer
+        description: 任期结束时间, 时间戳, 精确到秒
+        example: 1671690000
+      case_total:
+        type: integer
+        description: 任内总投票数
+        example: 591
+      active_days:
+        type: integer
+        description: 活跃天数
+        example: 30
+      like_num:
+        type: integer
+        description: 发表观点, 被点赞数
+        example: 0
+      accuracy_rate:
+        type: integer
+        description: 投中率, 所选观点与大多数风纪委员一致, 记为一次“投中”
+        example: 74
+      pass:
+        type: integer
+        description: 任期是否合格, 0:不合格 1:合格
+        example: 1
+      status:
+        type: integer
+        description: 当前资格状态, 0:未曾拥有资格 1:任期内 2:资格失效
+        example: 1
+      apply_status:
+        type: integer
+        description: 当前资格申请状态, -1:资格失效, 且未申请 0:刚申请连任时 5:申请后, 等待审核 3:申请连任成功, status为1
+        example: 3
+      prev_term_id:
+        type: integer
+        description: 上一任期的任期ID, 新版风纪委员启用后的第一个任期, 此项的值为0
+        example: 300007
+      next_term_id:
+        type: integer
+        description: 下一任期的任期ID, 若当前任期尚未结束, 此项的值为0
+        example: 0
+      rewards:
+        type: object
+        description: 任期奖励, 有`pendant`和`coin`两个子项
+        properties:
+          pendant:
+            type: integer
+            description: 头像挂件礼包ID, 合格后一般为1, 不合格为0
+            example: 1
+          coin:
+            type: integer
+            description: 硬币礼包ID, 合格后一般为3, 不合格为0
+            example: 3

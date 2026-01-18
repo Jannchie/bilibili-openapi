@@ -1,0 +1,137 @@
+post:
+  tags:
+    - 弹幕操作
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: web_location
+      in: query
+      description: '1315873'
+      schema:
+        type: integer
+        enum:
+          - 1315873
+    - name: csrf
+      in: query
+      description: CSRF Token(即Cookie中bili_jct)
+      schema:
+        type: string
+    - name: w_rid
+      in: query
+      description: Wbi签名, 参见[Wbi签名](../misc/sign/wbi.md)
+      schema:
+        type: string
+      required: true
+    - name: wts
+      in: query
+      description: UNIX秒级时间戳, 参见[Wbi签名](../misc/sign/wbi.md)
+      schema:
+        type: string
+      required: true
+    - name: access_key
+      in: query
+      description: APP登录Token
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: 弹幕类选择
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+      required: true
+    - name: oid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+      required: true
+    - name: msg
+      in: query
+      description: 弹幕内容, 长度小于100字符
+      schema:
+        type: string
+      required: true
+    - name: bvid
+      in: query
+      description: 稿件bvid
+      schema:
+        type: string
+    - name: aid
+      in: query
+      description: 稿件avid
+      schema:
+        type: integer
+    - name: progress
+      in: query
+      description: 弹幕出现在视频内的时间, 单位为毫秒, 默认为0
+      schema:
+        type: integer
+    - name: color
+      in: query
+      description: 弹幕颜色设置, 十进制RGB888值, 如`16777215`为#FFFFFF即白色
+      schema:
+        type: integer
+    - name: fontsize
+      in: query
+      description: 弹幕字号设置, 默认为25, 极小:12, 超小:16, 小:18, 标准:25, 大:36, 超大:45, 极大:64
+      schema:
+        type: integer
+        enum:
+          - 12
+          - 16
+          - 18
+          - 25
+          - 36
+          - 45
+          - 64
+    - name: pool
+      in: query
+      description: 弹幕池选择, 默认为0, 0:普通池 1:字幕池 2:特殊池(代码/BAS弹幕)
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+    - name: mode
+      in: query
+      description: 弹幕类型选择
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 4
+          - 5
+          - 7
+          - 9
+      required: true
+    - name: rnd
+      in: query
+      description: 当前时间戳*1000000, 若无此项, 则发送弹幕冷却时间限制为90s, 若有此项, 则发送弹幕冷却时间限制为5s
+      schema:
+        type: integer
+    - name: colorful
+      in: query
+      description: 彩色弹幕, 60001:专属渐变彩色(需要会员)
+      schema:
+        type: integer
+        enum:
+          - 60001
+    - name: checkbox_type
+      in: query
+      description: 是否带UP身份标识, 0:普通 4:带有标识
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 4
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuPostResponse.yaml

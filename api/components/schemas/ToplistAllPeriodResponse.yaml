@@ -1,0 +1,36 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      list:
+        type: object
+        properties:
+          '2023':
+            type: array
+            items:
+              type: object
+              properties:
+                ID:
+                  type: integer
+                  description: 榜单id
+                  example: 76
+                priod:
+                  type: integer
+                  description: 榜单期数
+                  example: 48
+                publish_time:
+                  type: integer
+                  description: 发布时间, 秒时间戳
+                  example: 1683885696

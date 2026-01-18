@@ -1,0 +1,41 @@
+post:
+  tags:
+    - 直播间管理
+  summary: 更新直播间公告
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - room_id
+            - uid
+            - content
+            - csrf
+          type: object
+          properties:
+            room_id:
+              type: integer
+              format: int32
+              description: 直播间 ID
+            uid:
+              type: integer
+              format: int32
+              description: 用户 ID
+            content:
+              type: string
+              maxLength: 60
+              description: 公告内容
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UpdateRoomNewsResponse.yaml

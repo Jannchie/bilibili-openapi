@@ -1,0 +1,27 @@
+get:
+  tags:
+    - 装扮/收藏集
+  summary: 收藏集信息 API
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: act_id
+      in: query
+      description: 收藏集活动 ID
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: lottery_id
+      in: query
+      description: 收藏集抽奖 ID
+      schema:
+        type: integer
+        format: int32
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DlcActLotteryHomeDetailResponse.yaml

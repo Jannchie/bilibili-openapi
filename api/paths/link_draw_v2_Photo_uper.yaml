@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 相簿
+  servers:
+    - url: https://api.vc.bilibili.com
+  summary: 获取摄影推荐作者
+  parameters:
+    - name: num
+      in: query
+      description: 请求数量
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 6
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RecommendedUserResponse.yaml

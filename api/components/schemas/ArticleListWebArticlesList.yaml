@@ -1,0 +1,73 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 文集 rl id
+    example: 207146
+  mid:
+    type: integer
+    format: int64
+    description: 文集作者 mid
+    example: 293793435
+  name:
+    type: string
+    description: 文集名称
+    example: B站api研究笔记
+  image_url:
+    type: string
+    format: url
+    description: 文集封面图片 URL
+    example: >-
+      https://i0.hdslb.com/bfs/article/96d2b3d2a72e6497a011c885ab9245c51507ce18.png
+  update_time:
+    type: integer
+    format: int64
+    description: 文集更新时间 (时间戳)
+    example: 1585036952
+  ctime:
+    type: integer
+    format: int64
+    description: 文集创建时间 (时间戳)
+    example: 1582718126
+  publish_time:
+    type: integer
+    format: int64
+    description: 文集发布时间 (时间戳)
+    example: 1585045493
+  summary:
+    type: string
+    description: 文集简介
+    example: ''
+  words:
+    type: integer
+    format: int64
+    description: 文集字数
+    example: 8697
+  read:
+    type: integer
+    format: int64
+    description: 文集阅读量
+    example: 1654
+  articles_count:
+    type: integer
+    format: int64
+    description: 文集内文章数量
+    example: 3
+  state:
+    type: integer
+    format: int64
+    description: state
+    example: 1
+  reason:
+    type: string
+    description: reason
+    example: ''
+  apply_time:
+    type: string
+    description: apply_time
+    example: ''
+  check_time:
+    type: string
+    description: check_time
+    example: ''

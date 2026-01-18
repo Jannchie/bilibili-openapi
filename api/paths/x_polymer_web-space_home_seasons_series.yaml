@@ -1,0 +1,50 @@
+get:
+  tags:
+    - 合集和视频列表信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 只获取系列视频
+  parameters:
+    - in: query
+      name: mid
+      schema:
+        type: integer
+      required: true
+      description: 用户 mid
+    - in: query
+      name: page_num
+      schema:
+        type: integer
+      required: true
+      description: 页码索引
+    - in: query
+      name: page_size
+      schema:
+        type: integer
+      required: true
+      description: 单页内容数量
+    - in: query
+      name: gaia_vtoken
+      schema:
+        type: string
+      required: false
+      description: 风控验证?
+    - in: query
+      name: w_rid
+      schema:
+        type: string
+      required: false
+      description: WBI 签名
+    - in: query
+      name: wts
+      schema:
+        type: integer
+      required: false
+      description: UNIX 秒级时间戳
+  responses:
+    '200':
+      description: 系列视频信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonsSeriesResponse.yaml

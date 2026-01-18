@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 直播间信息流
+  summary: 获取信息流认证秘钥
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: id
+      in: query
+      description: 直播间真实 ID
+      schema:
+        type: integer
+        format: int32
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmuInfoResponse.yaml

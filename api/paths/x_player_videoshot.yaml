@@ -1,0 +1,41 @@
+get:
+  tags:
+    - 视频快照
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取视频快照 (web 端)
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+    - in: query
+      name: cid
+      schema:
+        type: integer
+      required: false
+      description: 分 P cid
+    - in: query
+      name: index
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+      required: false
+      description: json 数组截取时间表
+  responses:
+    '200':
+      description: 视频快照信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/VideoShotResponse.yaml

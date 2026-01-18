@@ -1,0 +1,47 @@
+type: object
+properties:
+  opid:
+    type: integer
+    description: 观点编号
+    example: 46087379
+  mid:
+    type: integer
+    description: 用户mid
+    example: 22006415
+  uname:
+    type: string
+    description: 用户名
+    example: 匿名用户
+  face:
+    type: string
+    description: 用户头像
+    example: http://i0.hdslb.com/bfs/face/e48952d599dbf011c2235239fafa2bf0deccef5a.jpg
+  vote:
+    type: integer
+    description: 投票选项
+    example: 11
+  vote_text:
+    type: string
+    example: ''
+  content:
+    type: string
+    description: 观点内容
+    example: 正常评论
+  anonymous:
+    type: integer
+    example: 1
+  like:
+    type: integer
+    example: 0
+  hate:
+    type: integer
+    example: 0
+  like_status:
+    type: integer
+    example: 0
+  vote_time:
+    type: integer
+    example: 1661430391
+  insiders:
+    type: integer
+    example: 1

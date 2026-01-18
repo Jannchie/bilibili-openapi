@@ -1,0 +1,44 @@
+post:
+  tags:
+    - 动态
+  summary: 为图片动态上传图片
+  description: 注意，非日常类型像素宽高必须大于 420
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          required:
+            - file_up
+            - category
+            - csrf
+            - biz
+          type: object
+          properties:
+            file_up:
+              type: string
+              format: binary
+              description: 需要上传的图片文件
+            category:
+              type: string
+              enum:
+                - daily
+                - draw
+                - cos
+              description: 图片类型
+            biz:
+              type: string
+              description: biz
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DrawUploadResponse.yaml

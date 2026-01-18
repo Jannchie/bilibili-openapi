@@ -1,0 +1,26 @@
+post:
+  tags:
+    - 稍后再看
+  summary: 清空稍后再看视频列表
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      x-www-form-urlencoded:
+        schema:
+          required:
+            - csrf
+          type: object
+          properties:
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ToviewClearResponse.yaml

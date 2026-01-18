@@ -1,0 +1,92 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: object
+    properties:
+      items:
+        type: array
+        description: 课程分集列表
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+              description: 课程分集avid, 与普通稿件avid部分不互通
+              example: 76973173
+            cid:
+              type: integer
+              description: 课程分集cid, 与普通视频cid部分不互通
+              example: 132105993
+            duration:
+              type: integer
+              description: 课程分集时间长度, 单位为秒
+              example: 2223
+            from:
+              type: string
+              example: pugv
+            id:
+              type: integer
+              description: 课程分集epid, 与番剧epid不互通
+              example: 790
+            index:
+              type: integer
+              description: 课程分集数
+              example: 1
+            page:
+              type: integer
+              example: 1
+            play:
+              type: integer
+              description: 课程分集播放量
+              example: 2406951
+            release_date:
+              type: integer
+              description: 课程分集发布时间, 时间戳
+              example: 1574762407
+            status:
+              type: integer
+              description: 分集权限属性, 1:可观看 2:不可观看
+              example: 1
+            title:
+              type: string
+              description: 课程分集标题
+              example: 唐盾:一起从0基础学日语吧(含50音 词汇试听)
+            watched:
+              type: boolean
+              description: >-
+                是否观看该集,
+                需要登录(SESSDATA)且referer为`https://www.bilibili.com`<br/>false:未观看
+                true:已观看
+              example: false
+            watchedHistory:
+              type: integer
+              description: 该集观看历史, 需要登录(SESSDATA)且referer为`https://www.bilibili.com`
+              example: 0
+      page:
+        type: object
+        description: 列表分页信息
+        properties:
+          next:
+            type: boolean
+            description: 是否存在下一页, false:不存在下一页 true:存在下一页
+            example: true
+          num:
+            type: integer
+            description: 当前页码
+            example: 1
+          size:
+            type: integer
+            description: 每页项数
+            example: 5
+          total:
+            type: integer
+            description: 总价项数
+            example: 66

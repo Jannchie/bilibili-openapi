@@ -1,0 +1,20 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      case_id:
+        type: string
+        description: 仲裁案件id
+        example: AC2m4HlrIrHv

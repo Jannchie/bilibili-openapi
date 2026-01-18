@@ -1,0 +1,54 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      addr:
+        type: string
+        description: 公网IP地址
+        example: 36.40.120.145
+      country:
+        type: string
+        description: 国家/地区名
+        example: 中国
+      province:
+        type: string
+        description: 省/州, 非必须存在项
+        example: 陕西
+      city:
+        type: string
+        description: 城市, 非必须存在项
+        example: 渭南
+      isp:
+        type: string
+        description: 运营商名
+        example: 电信
+      latitude:
+        type: number
+        format: float
+        description: 纬度
+        example: 34.4995
+      longitude:
+        type: number
+        format: float
+        description: 经度
+        example: 109.492821
+      zone_id:
+        type: integer
+        description: ip数据库id
+        example: 4472912
+      country_code:
+        type: integer
+        description: 国家/地区代码
+        example: 86

@@ -1,0 +1,30 @@
+get:
+  tags:
+    - 直播间
+  summary: 获取直播间基本信息
+  description: 注：亦可用于批量获取
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: req_biz
+      in: query
+      description: req_biz
+      schema:
+        type: string
+        default: web_room_componet
+      required: true
+    - name: room_ids
+      in: query
+      description: 直播间短 ID
+      schema:
+        type: array
+        items:
+          type: integer
+        format: int32
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RoomBaseInfoResponse.yaml

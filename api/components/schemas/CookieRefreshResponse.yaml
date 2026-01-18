@@ -1,0 +1,25 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: >-
+      返回值，0：成功，-101：账号未登录，-111：csrf 校验失败，86095：refresh_csrf 错误或 refresh_token 与
+      cookie 不匹配
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      status:
+        type: integer
+        description: '0'
+      message:
+        type: string
+        description: 空
+      refresh_token:
+        type: string
+        description: 新的持久化刷新口令

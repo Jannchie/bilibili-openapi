@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 直播签到
+  summary: 直播签到
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DoSignResponse.yaml

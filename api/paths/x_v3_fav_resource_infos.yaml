@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 收藏夹
+  summary: 批量获取指定收藏id的内容
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: resources
+      in: query
+      description: 目标内容id列表
+      schema:
+        type: string
+      required: true
+    - name: platform
+      in: query
+      description: 平台标识
+      schema:
+        type: string
+        example: web
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavResourceInfosResponse.yaml

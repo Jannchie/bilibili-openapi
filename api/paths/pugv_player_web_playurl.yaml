@@ -1,0 +1,66 @@
+get:
+  tags:
+    - 课程视频流
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: avid
+      in: query
+      description: 课程avid
+      schema:
+        type: integer
+      required: true
+    - name: ep_id
+      in: query
+      description: 课程epid
+      schema:
+        type: integer
+      required: true
+    - name: cid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+      required: true
+    - name: qn
+      in: query
+      description: 视频清晰度选择, 参考[qn定义](../video/videostream_url.md#qn视频清晰度标识)
+      schema:
+        type: integer
+        enum:
+          - 6
+          - 16
+          - 32
+          - 64
+          - 74
+          - 80
+          - 112
+          - 116
+          - 120
+    - name: fnver
+      in: query
+      description: 视频流版本, 参考[fnver定义](../video/videostream_url.md#fnver视频流版本标识)
+      schema:
+        type: integer
+    - name: fnval
+      in: query
+      description: 视频流类型, 参考[fnval定义](../video/videostream_url.md#fnval视频流格式标识)
+      schema:
+        type: integer
+    - name: fourk
+      in: query
+      description: 是否允许4K视频, 默认为0, 画质最高1080P:0, 画质最高4K:1
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PugvPlayerWebPlayurlResponse.yaml

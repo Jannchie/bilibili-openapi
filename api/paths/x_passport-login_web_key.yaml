@@ -1,0 +1,13 @@
+get:
+  tags:
+    - 登录
+  summary: 获取公钥&盐 (web 端)
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WebKeyResponse.yaml

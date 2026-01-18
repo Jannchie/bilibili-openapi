@@ -1,0 +1,32 @@
+get:
+  tags:
+    - 投币
+  servers:
+    - url: https://api.bilibili.com
+  summary: 判断视频是否被投币（双端）
+  parameters:
+    - in: query
+      name: access_key
+      schema:
+        type: string
+      required: false
+      description: APP 登录 Token
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+  responses:
+    '200':
+      description: 投币状态
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArchiveCoinsResponse.yaml

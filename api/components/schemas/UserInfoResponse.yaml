@@ -1,0 +1,68 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      account_info:
+        type: object
+        properties:
+          hide_tel:
+            type: string
+            description: 绑定的手机号
+          hide_mail:
+            type: string
+            description: 绑定的邮箱
+          bind_tel:
+            type: boolean
+            description: 是否绑定手机号
+          bind_mail:
+            type: boolean
+            description: 是否绑定邮箱
+          tel_verify:
+            type: boolean
+            description: 是否验证手机号
+          mail_verify:
+            type: boolean
+            description: 是否验证邮箱
+          unneeded_check:
+            type: boolean
+            description: 是否未设置密码
+          realname_certified:
+            type: boolean
+            description: 是否实名认证
+      account_safe:
+        type: object
+        properties:
+          Score:
+            type: integer
+            description: 账号安全等级
+          score_new:
+            type: integer
+            description: 新版账号安全等级
+          pwd_level:
+            type: integer
+            description: 当前密码强度等级
+          security:
+            type: boolean
+            description: 当前密码是否安全
+      account_sns:
+        type: object
+        properties:
+          weibo_bind:
+            type: integer
+            description: 是否绑定微博
+          qq_bind:
+            type: integer
+            description: 是否绑定 qq
+          wechat_bind:
+            type: integer
+            description: 是否绑定微信
+      account_other:
+        type: object
+        properties:
+          skipVerify:
+            type: boolean
+            default: false

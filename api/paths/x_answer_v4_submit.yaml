@@ -1,0 +1,22 @@
+post:
+  tags:
+    - 答题操作
+  servers:
+    - url: https://api.bilibili.com
+  summary: 提前交卷
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: csrf
+      schema:
+        type: string
+      required: true
+      description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 交卷结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SubmitResponse.yaml

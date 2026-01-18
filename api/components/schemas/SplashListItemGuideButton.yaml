@@ -1,0 +1,9 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 按钮 ID
+    example: 49037
+  x:
+    type: integer

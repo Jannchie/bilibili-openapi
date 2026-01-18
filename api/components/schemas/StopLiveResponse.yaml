@@ -1,0 +1,21 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，65530：token 错误（登录错误），-400：没有权限
+  msg:
+    type: string
+    description: 错误信息
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      change:
+        type: integer
+        format: int32
+        description: 是否改变状态
+      status:
+        type: string
+        description: PREPARING

@@ -1,0 +1,25 @@
+get:
+  tags:
+    - 直播心跳上报
+  summary: 直播心跳 (Web 端)
+  servers:
+    - url: https://live-trace.bilibili.com
+  parameters:
+    - name: hb
+      in: query
+      description: heartbeat 正文
+      schema:
+        type: string
+    - name: pf
+      in: query
+      description: 平台名称
+      schema:
+        type: string
+        example: web
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WebHeartBeatResponse.yaml

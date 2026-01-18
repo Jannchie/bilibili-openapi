@@ -1,0 +1,110 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      hid:
+        type: integer
+        description: 答题会话 ID
+      mid:
+        type: integer
+        description: 答题用户 mid
+      member:
+        type: integer
+      score:
+        type: integer
+        description: 得分
+      level:
+        type: integer
+        description: 用户等级
+      first_pass:
+        type: integer
+      uname:
+        type: string
+        description: 用户昵称
+      face:
+        type: string
+        description: 用户头像 URL
+      status:
+        type: string
+        description: 答题结果
+      question_types:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        description: 已选择的自选题列表
+      power:
+        type: array
+        items:
+          type: object
+          properties:
+            score:
+              type: integer
+            name:
+              type: string
+        description: 自选题分类得分情况
+      start_time:
+        type: integer
+        description: 开始答题时间
+      share:
+        type: object
+        properties:
+          content:
+            type: string
+          short_content:
+            type: string
+      can_show_rank_btn:
+        type: boolean
+      is_same_user:
+        type: boolean
+      view_more:
+        type: string
+      video_info:
+        type: object
+        properties:
+          url:
+            type: string
+          name:
+            type: string
+          img:
+            type: string
+          watch_num:
+            type: string
+          up_num:
+            type: string
+      main_tids:
+        type: array
+        items:
+          type: integer
+      sub_tids:
+        type: array
+        items:
+          type: integer
+      power_result:
+        type: object
+      score_rate:
+        type: integer
+        description: 分数超过平均用户的百分比
+      permission:
+        type: object
+        properties:
+          reply:
+            type: boolean
+          color_dm:
+            type: boolean
+      rewards:
+        type: object

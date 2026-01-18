@@ -1,0 +1,48 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      at:
+        type: integer
+        description: 未读at数
+      chat:
+        type: integer
+      coin:
+        type: integer
+        description: 未读投币数
+      danmu:
+        type: integer
+        description: 未读弹幕数
+      favorite:
+        type: integer
+        description: 未读收藏数
+      like:
+        type: integer
+        description: 未读点赞数
+      recv_like:
+        type: integer
+        description: 未读点赞数
+      recv_reply:
+        type: integer
+        description: 未读回复数
+      reply:
+        type: integer
+        description: 未读回复数
+      sys_msg:
+        type: integer
+        description: 未读系统通知数
+      sys_msg_style:
+        type: integer
+      up:
+        type: integer
+        description: 未读UP主助手信息数

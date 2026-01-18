@@ -1,0 +1,40 @@
+type: object
+properties:
+  doc_id:
+    type: integer
+    format: int64
+    description: 相簿 ID
+    example: 99184721
+  poster_uid:
+    type: integer
+    format: int64
+    description: 作者 mid
+    example: 813818
+  pictures:
+    type: array
+    description: 相簿图片
+    items:
+      $ref: ./AlbumIndexItemPicture.yaml
+  title:
+    type: string
+    description: 标题
+    example: 旅行
+  category:
+    type: string
+    description: 子分区名
+    example: illustration
+  upload_time:
+    type: integer
+    format: int64
+    description: 投稿时间 (时间戳)
+    example: 1606143792
+  already_liked:
+    type: integer
+    format: int64
+    description: already_liked
+    example: 0
+  already_voted:
+    type: integer
+    format: int64
+    description: 是否已点赞
+    example: 1

@@ -1,0 +1,120 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-3：API 校验密匙错误，-101：账号未登录，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 用户 mid
+      name:
+        type: string
+        description: 用户昵称
+      sign:
+        type: string
+        description: 用户签名
+      coins:
+        type: number
+        format: float
+        description: 拥有硬币数
+      birthday:
+        type: string
+        description: 用户生日
+      face:
+        type: string
+        description: 用户头像 URL
+      sex:
+        type: integer
+        description: 用户性别
+      level:
+        type: integer
+        description: 用户等级
+      rank:
+        type: integer
+        default: 1000
+      silence:
+        type: integer
+        description: 用户是否被封禁
+      vip:
+        type: object
+        properties:
+          type:
+            type: integer
+            description: 大会员类型
+          status:
+            type: integer
+            description: 会员开通状态
+          due_date:
+            type: integer
+            description: 大会员到期时间
+          vip_pay_type:
+            type: integer
+            description: 会员开通状态
+          theme_type:
+            type: integer
+            description: 会员开通状态
+          label:
+            type: object
+            properties:
+              path:
+                type: string
+                description: 空
+              text:
+                type: string
+                description: 会员类型文字
+              label_theme:
+                type: string
+                description: 会员类型
+          avatar_subscript:
+            type: integer
+            description: 是否显示会员图标
+          nickname_color:
+            type: string
+            description: 会员昵称颜色
+      email_status:
+        type: integer
+        description: 是否验证邮箱地址
+      tel_status:
+        type: integer
+        description: 是否验证手机号
+      official:
+        type: object
+        properties:
+          role:
+            type: integer
+            description: 认证类型
+          title:
+            type: string
+            description: 认证信息
+          desc:
+            type: string
+            description: 认证备注
+          type:
+            type: string
+            description: 认证备注
+      identification:
+        type: integer
+        description: '1'
+      invite:
+        type: object
+        properties:
+          invite_remind:
+            type: integer
+            description: '1'
+          display:
+            type: boolean
+            example: true
+      is_tourist:
+        type: integer
+        description: '0'
+      pin_prompting:
+        type: integer
+        description: '0'

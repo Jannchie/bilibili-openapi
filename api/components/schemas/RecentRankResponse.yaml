@@ -1,0 +1,53 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        description: 充电信息本体
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+              description: '0'
+            bvid:
+              type: string
+              description: 空
+            elec_num:
+              type: integer
+              description: 充电电池数
+            title:
+              type: string
+              description: 空
+            uname:
+              type: string
+              description: 空
+            avatar:
+              type: string
+              description: 空
+            ctime:
+              type: string
+              description: 充电时间
+      pager:
+        type: object
+        properties:
+          current:
+            type: integer
+            description: 当前页数
+          size:
+            type: integer
+            description: 当前分页大小
+          total:
+            type: integer
+            description: 记录总数

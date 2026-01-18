@@ -1,0 +1,55 @@
+post:
+  tags:
+    - 登录
+  summary: 使用短信验证码登录 (web 端)
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/WebLoginSmsResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - cid
+            - tel
+            - code
+            - source
+            - captcha_key
+            - go_url
+            - keep
+          properties:
+            cid:
+              type: integer
+              description: 国际冠字码
+              default: ''
+            tel:
+              type: string
+              description: 手机号码
+              default: ''
+            code:
+              type: integer
+              description: 短信验证码
+              default: ''
+            source:
+              type: string
+              description: 登录来源
+              default: ''
+            captcha_key:
+              type: string
+              description: 短信登录 token
+              default: ''
+            go_url:
+              type: string
+              description: 跳转 URL
+              default: https://www.bilibili.com
+            keep:
+              type: boolean
+              description: 是否记住登录
+              default: ''

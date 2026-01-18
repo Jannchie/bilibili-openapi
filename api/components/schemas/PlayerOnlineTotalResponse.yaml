@@ -1,0 +1,30 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      total:
+        type: string
+        description: 所有终端总计人数
+      count:
+        type: integer
+        description: web 端实时在线人数
+      show_switch:
+        type: object
+        properties:
+          total:
+            type: boolean
+            description: 展示所有终端总计人数
+          count:
+            type: boolean
+            description: 展示 web 端实时在线人数
+        description: 数据显示控制

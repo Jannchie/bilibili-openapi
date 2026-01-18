@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 登录
+  summary: 申请 captcha 验证码 (旧版)
+  servers:
+    - url: http://passport.bilibili.com
+  parameters:
+    - name: plat
+      in: query
+      description: 平台类型
+      schema:
+        type: integer
+        format: int32
+        default: 6
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CombineCaptchaResponse.yaml

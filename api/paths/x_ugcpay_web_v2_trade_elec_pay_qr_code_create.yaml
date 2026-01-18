@@ -1,0 +1,62 @@
+post:
+  tags:
+    - 充电
+  summary: 申请充电二维码及扫码秘钥
+  description: |
+    微信&支付宝方式充电
+
+    操作流程：
+
+    1. 申请充电二维码及扫码秘钥，秘钥临时保存备用
+    2. 使用`qr_code_url`中的值生成二维码
+    3. 用支付宝或微信扫描
+    4. 以扫码秘钥作为参数轮询检查扫码支付结果
+
+    秘钥有效时间为10分钟
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - bp_num
+            - up_mid
+            - is_bp_remains_prior
+            - otype
+            - oid
+            - csrf
+          type: object
+          properties:
+            bp_num:
+              type: integer
+              description: 充电B币数量
+              minimum: 2
+              maximum: 9999
+            up_mid:
+              type: integer
+              description: 充电对象用户mid
+            is_bp_remains_prior:
+              type: boolean
+              description: 是否优先扣除B币
+            otype:
+              type: string
+              description: 充电来源
+              enum:
+                - up
+                - archive
+            oid:
+              type: integer
+              description: 充电来源代码
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/QrCodeCreateResponse.yaml

@@ -1,0 +1,57 @@
+post:
+  tags:
+    - 动态
+  summary: 创建投票
+  description: 注意，options 最少两个，下标 n 从 0 开始
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          required:
+            - info[title]
+            - info[type]
+            - info[choice_cnt]
+            - info[duration]
+            - info[options][0][desc]
+            - info[options][1][desc]
+            - csrf
+          type: object
+          properties:
+            info[title]:
+              type: string
+              description: 投票标题
+            info[desc]:
+              type: string
+              description: 投票描述
+            info[type]:
+              type: integer
+              enum:
+                - 0
+                - 1
+              description: 投票类型
+            info[choice_cnt]:
+              type: integer
+              description: 最多选几项
+            info[duration]:
+              type: integer
+              description: 投票持续秒数
+            info[options][n][desc]:
+              type: string
+              description: 第 n 项选项文字内容
+            info[options][n][img_url]:
+              type: string
+              description: 第 n 项选项投票图片
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/CreateVoteResponse.yaml

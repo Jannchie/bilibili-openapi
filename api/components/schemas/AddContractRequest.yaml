@@ -1,0 +1,26 @@
+type: object
+required:
+  - up_mid
+  - csrf
+properties:
+  aid:
+    type: string
+    default: ''
+  up_mid:
+    type: integer
+    description: UP 主 UID
+  source:
+    type: integer
+    default: 4
+  scene:
+    type: integer
+    default: 105
+  platform:
+    type: string
+    default: web
+  mobi_app:
+    type: string
+    default: pc
+  csrf:
+    type: string
+    description: 用户 csrf

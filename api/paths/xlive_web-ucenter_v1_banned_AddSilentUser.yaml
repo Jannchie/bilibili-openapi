@@ -1,0 +1,49 @@
+post:
+  tags:
+    - 直播间管理
+  summary: 禁言观众
+  servers:
+    - url: https://api.live.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - room_id
+            - tuid
+            - mobile_app
+            - csrf_token
+            - csrf
+          type: object
+          properties:
+            room_id:
+              type: string
+              description: 直播间 ID
+            tuid:
+              type: string
+              description: 要禁言的 UID
+            msg:
+              type: string
+              description: 要禁言的弹幕内容
+            mobile_app:
+              type: string
+              default: web
+              description: web
+            csrf_token:
+              type: string
+              description: CSRF Token
+            csrf:
+              type: string
+              description: CSRF Token
+            visit_id:
+              type: string
+              description: 不明
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AddSilentUserResponse.yaml

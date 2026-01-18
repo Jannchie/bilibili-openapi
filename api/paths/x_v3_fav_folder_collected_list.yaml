@@ -1,0 +1,42 @@
+get:
+  tags:
+    - 收藏夹
+  summary: 查询用户收藏的视频收藏夹
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: ps
+      in: query
+      description: 每页项数
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+      required: true
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: up_mid
+      in: query
+      description: 目标用户mid
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: platform
+      in: query
+      description: 平台类型
+      schema:
+        type: string
+        example: web
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavFolderCollectedListResponse.yaml

@@ -1,0 +1,28 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: array
+    description: 趋势列表
+    items:
+      type: object
+      properties:
+        date_key:
+          type: integer
+          description: 对应时间, 时间戳 前一天的8:00
+          example: 1586044800
+        total_inc:
+          type: integer
+          description: 增加数量, 意义为数据类型决定
+          example: 46

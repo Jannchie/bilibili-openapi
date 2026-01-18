@@ -1,0 +1,35 @@
+get:
+  tags:
+    - 音频
+  servers:
+    - url: https://www.bilibili.com
+  summary: 查询音频投币数
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+    - in: cookie
+      name: DedeUserID
+      required: true
+      schema:
+        type: integer
+        format: int64
+        minimum: 1
+      description: DedeUserID Cookie
+    - name: sid
+      in: query
+      description: 音频 au id
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AudioCoinNumResponse.yaml

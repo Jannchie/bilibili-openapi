@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 拉取题目
+  servers:
+    - url: https://api.bilibili.com
+  summary: 拉取附加题
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 附加题信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/QuestionResponse.yaml

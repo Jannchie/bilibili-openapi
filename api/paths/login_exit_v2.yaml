@@ -1,0 +1,30 @@
+post:
+  tags:
+    - 登录
+  summary: 退出登录 (web 端)
+  servers:
+    - url: https://passport.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - biliCSRF
+          type: object
+          properties:
+            biliCSRF:
+              type: string
+              description: CSRF Token (位于 cookie 中的 `bili_jct`)
+            gourl:
+              type: string
+              default: javascript:history.go(-1)
+              description: 成功后跳转到的页面
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LoginExitResponse.yaml

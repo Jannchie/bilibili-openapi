@@ -1,0 +1,116 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: object
+    description: 信息本体
+    properties:
+      id:
+        type: integer
+        description: 音频auid
+        example: 13598
+      uid:
+        type: integer
+        description: UP主mid
+        example: 486183
+      uname:
+        type: string
+        description: UP主昵称
+        example: 排骨教主
+      author:
+        type: string
+        description: 作者名
+        example: 排骨教主
+      title:
+        type: string
+        description: 歌曲标题
+        example: 牵丝戏
+      cover:
+        type: string
+        description: 封面图片url
+        example: >-
+          http://i0.hdslb.com/bfs/music/cf50d93b4dc08bfc6d3112041d6de0e56045ac5b.jpg
+      intro:
+        type: string
+        description: 歌曲简介
+        example: >-
+          自制
+          这次要特别感谢山东省京剧院的各位年轻的老师们对我戏腔发声的悉心指导\n关注排骨的微博@排骨节操收割机\n排骨QQ群456237456\n感谢@妄北没睡够（新浪微博）
+          画的视频图，太美了！！！！！
+      lyric:
+        type: string
+        description: lrc歌词url
+        example: http://i0.hdslb.com/bfs/music/150587810313598.lrc
+      crtype:
+        type: integer
+        description: 作用尚不明确
+        example: 1
+      duration:
+        type: integer
+        description: 歌曲时间长度, 单位为秒
+        example: 239
+      passtime:
+        type: integer
+        description: 歌曲发布时间, 时间戳
+        example: 1501640683
+      curtime:
+        type: integer
+        description: 当前请求时间, 时间戳
+        example: 1590154258
+      aid:
+        type: integer
+        description: 关联稿件avid, 无为0
+        example: 2554020
+      bvid:
+        type: string
+        description: 关联稿件bvid, 无为空
+        example: BV1us411S7E6
+      cid:
+        type: integer
+        description: 关联视频cid, 无为0
+        example: 3990196
+      msid:
+        type: integer
+        description: 作用尚不明确
+        example: 0
+      attr:
+        type: integer
+        description: 作用尚不明确
+        example: 0
+      limit:
+        type: integer
+        description: 作用尚不明确
+        example: 0
+      activityId:
+        type: integer
+        description: 作用尚不明确
+        example: 0
+      limitdesc:
+        type: string
+        description: 作用尚不明确
+        example: ''
+      ctime:
+        type: integer
+        nullable: true
+        description: 作用尚不明确
+      statistic:
+        $ref: ./SongStatistic.yaml
+      vipInfo:
+        $ref: ./SongVipInfo.yaml
+      collectIds:
+        type: array
+        description: 歌曲所在的收藏夹mlid, 需要登录(SESSDATA)
+        items:
+          type: integer
+          example: 15967839
+      coin_num:
+        type: integer
+        description: 投币数
+        example: 1777

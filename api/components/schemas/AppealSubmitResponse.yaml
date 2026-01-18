@@ -1,0 +1,10 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回码
+  message:
+    type: string
+  ttl:
+    type: integer
+    default: 1

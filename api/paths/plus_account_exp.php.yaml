@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 个人中心
+  summary: 查询每日投币获得经验数
+  servers:
+    - url: https://www.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AccountExpResponse.yaml

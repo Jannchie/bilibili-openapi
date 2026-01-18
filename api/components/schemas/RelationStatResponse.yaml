@@ -1,0 +1,29 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 目标用户 mid
+      following:
+        type: integer
+        description: 关注数
+      whisper:
+        type: integer
+        description: 悄悄关注数
+      black:
+        type: integer
+        description: 黑名单数
+      follower:
+        type: integer
+        description: 粉丝数

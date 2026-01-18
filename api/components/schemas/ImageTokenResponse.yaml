@@ -1,0 +1,19 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        url:
+          type: string
+          description: 图片下载的地址
+        token:
+          type: string
+          description: 图片下载需要的token

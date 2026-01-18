@@ -1,0 +1,8 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 漫画风格id
+  name:
+    type: string
+    description: 漫画风格名称

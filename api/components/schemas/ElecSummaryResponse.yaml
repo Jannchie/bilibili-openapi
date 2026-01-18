@@ -1,0 +1,96 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      date:
+        type: string
+        description: 数据刷新时间, YYYY-MM-DD
+        example: '2020-07-05'
+      level:
+        type: object
+        description: 电磁力等级
+        properties:
+          data:
+            type: integer
+            example: 1
+          prev:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          desc:
+            type: string
+            description: 描述
+            example: 正式开启创作之路, 希望未来的路上我们携手相伴, 创作更多优质内容~
+          date:
+            type: integer
+            description: 刷新时间, 时间戳
+            example: 1593878400
+      creative:
+        type: object
+        description: 创作力
+        properties:
+          data:
+            type: integer
+            example: 39
+          prev:
+            type: integer
+            description: 作用尚不明确
+            example: 39
+          desc:
+            type: string
+            description: 描述
+            example: 考察近一年来的创作行为, 良好的原创投稿行为和互动数据有助于提升创作力.
+          date:
+            type: integer
+            description: 刷新时间, 时间戳
+            example: 1593878400
+      influence:
+        type: object
+        description: 影响力
+        properties:
+          data:
+            type: integer
+            example: 54
+          prev:
+            type: integer
+            description: 作用尚不明确
+            example: 54
+          desc:
+            type: string
+            description: 描述
+            example: 根据近一年活跃粉丝数据进行评估, 良好的粉丝活跃度是影响力的基础.
+          date:
+            type: integer
+            description: 刷新时间, 时间戳
+            example: 1593878400
+      credit:
+        type: object
+        description: 信用分
+        properties:
+          data:
+            type: integer
+            example: 100
+          prev:
+            type: integer
+            description: 作用尚不明确
+            example: 100
+          desc:
+            type: string
+            description: 描述
+            example: 良好的投稿记录将维持较高的信用分, 违反投稿公约的行为将扣除信用分.
+          date:
+            type: integer
+            description: 刷新时间, 时间戳
+            example: 1594106147

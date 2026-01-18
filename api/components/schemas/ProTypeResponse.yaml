@@ -1,0 +1,33 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 父分类 ID
+        name:
+          type: string
+          description: 父分类名
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: 子分类 ID
+              name:
+                type: string
+                description: 子分类名

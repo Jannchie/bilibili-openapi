@@ -1,0 +1,33 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      month:
+        type: integer
+        description: 上月月份值
+      days:
+        type: integer
+        description: 上月天数
+      hadSignDays:
+        type: integer
+        description: 上月已签到天数
+      signDaysList:
+        type: array
+        description: 上月已签到日列表
+        items:
+          type: integer
+      signBonusDaysList:
+        type: array
+        description: 上月已签到且有特殊奖励日列表
+        items:
+          type: integer

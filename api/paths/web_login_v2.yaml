@@ -1,0 +1,53 @@
+post:
+  tags:
+    - 登录
+  summary: 登录操作 (web 端-旧版)
+  servers:
+    - url: https://passport.bilibili.com
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - captchaType
+            - username
+            - password
+            - keep
+            - key
+            - challenge
+            - validate
+            - seccode
+          type: object
+          properties:
+            captchaType:
+              type: integer
+              format: int32
+              default: 6
+            username:
+              type: string
+              description: 用户登录账号
+            password:
+              type: string
+              description: 加密后的带盐密码
+            keep:
+              type: boolean
+              description: 是否记住登录
+            key:
+              type: string
+              description: 登录 token
+            challenge:
+              type: string
+              description: 极验 challenge
+            validate:
+              type: string
+              description: 极验 result
+            seccode:
+              type: string
+              description: 极验 result + '|jordan'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OldWebLoginResponse.yaml

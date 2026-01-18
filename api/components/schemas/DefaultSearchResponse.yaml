@@ -1,0 +1,37 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      seid:
+        type: string
+        description: 搜索 seid
+      id:
+        type: integer
+        description: 默认搜索 ID
+      type:
+        type: integer
+        default: 0
+      show_name:
+        type: string
+        description: 显示文字
+      name:
+        type: string
+      goto_type:
+        type: integer
+        description: 跳转类型
+      goto_value:
+        type: string
+        description: 搜索目标 ID
+      url:
+        type: string
+        description: 搜索目标跳转 URL

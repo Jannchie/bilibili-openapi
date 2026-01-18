@@ -1,0 +1,38 @@
+get:
+  tags:
+    - 音频
+  servers:
+    - url: https://www.bilibili.com
+  parameters:
+    - name: sid
+      in: query
+      description: 音频auid
+      schema:
+        type: integer
+      required: true
+    - name: quality
+      in: query
+      description: 音质代码, 详见表格
+      schema:
+        type: integer
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+      required: true
+    - name: privilege
+      in: query
+      description: 必须为2
+      schema:
+        type: integer
+        enum:
+          - 2
+      required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AudioUrlResponse.yaml

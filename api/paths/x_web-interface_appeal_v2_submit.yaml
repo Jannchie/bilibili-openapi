@@ -1,0 +1,34 @@
+post:
+  tags:
+    - 稿件投诉
+  servers:
+    - url: https://api.bilibili.com
+  summary: 投诉稿件
+  security:
+    - sessionData: []
+  parameters:
+    - in: header
+      name: buid
+      schema:
+        type: string
+      required: true
+      description: 风控代码
+    - in: cookie
+      name: Buid
+      schema:
+        type: string
+      required: true
+      description: 风控代码
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/AppealSubmitRequest.yaml
+  responses:
+    '200':
+      description: 投诉结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AppealSubmitResponse.yaml

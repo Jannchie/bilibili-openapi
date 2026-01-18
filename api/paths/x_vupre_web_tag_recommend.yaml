@@ -1,0 +1,50 @@
+get:
+  tags:
+    - 投稿
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: upload_id
+      in: query
+      description: 同[预测稿件类型](#预测稿件类型)的`upload_id`
+      schema:
+        type: string
+    - name: subtype_id
+      in: query
+      description: 子分区ID
+      schema:
+        type: integer
+    - name: title
+      in: query
+      description: 视频标题
+      schema:
+        type: string
+    - name: filename
+      in: query
+      description: 同[预测稿件类型](#预测稿件类型)的`filename`
+      schema:
+        type: string
+    - name: description
+      in: query
+      description: 视频简介
+      schema:
+        type: string
+    - name: cover_url
+      in: query
+      description: 视频封面URL, 不含`https:`或`http:`字串
+      schema:
+        type: string
+    - name: t
+      in: query
+      description: 当前UNIX毫秒时间戳
+      schema:
+        type: integer
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TagRecommendResponse.yaml

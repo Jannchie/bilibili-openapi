@@ -1,0 +1,73 @@
+get:
+  tags:
+    - protobuf弹幕
+  summary: 获取实时弹幕(web端)
+  description: >
+    2020年5月23日，哔哩哔哩网页端及移动端启用了新的默认弹幕 API，网页端弹幕显示的上限变为原弹幕池上限的两倍。
+
+
+    新的 API 是以 6min 为一个单位加载，即每次加载 6min 内的弹幕
+
+
+    此接口与漫画弹幕相同
+
+
+    只能返回普通弹幕（`pool=1` `mode=1-7`）和代码弹幕（`pool=2` `mode=8`），BAS弹幕（`pool=2`
+    `mode=9`）请从[弹幕元数据](danmaku_view_proto.md)中获取
+
+
+    互动弹幕（UP 主头像弹幕、关联视频、内嵌关注按钮）也不存在这个接口，请从[弹幕元数据](danmaku_view_proto.md)中获取
+
+
+    **注：仅获取 6min 的整数倍时间内的弹幕，6min 内最多弹幕数为 6000 条（如第一包中弹幕`progress`值域为0-360000）**
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: type
+      in: query
+      description: 弹幕类
+      schema:
+        type: integer
+        enum:
+          - 1
+          - 2
+      required: true
+    - name: oid
+      in: query
+      description: 视频 cid
+      schema:
+        type: integer
+      required: true
+    - name: pid
+      in: query
+      description: 稿件 avid
+      schema:
+        type: integer
+    - name: segment_index
+      in: query
+      description: 分包
+      schema:
+        type: integer
+      required: true
+    - name: pull_mode
+      in: query
+      description: （？）
+      schema:
+        type: integer
+    - name: ps
+      in: query
+      description: （？）
+      schema:
+        type: integer
+    - name: pe
+      in: query
+      description: （？）
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/protobuf:
+          schema:
+            $ref: ../components/schemas/DmSegMobileReply.yaml

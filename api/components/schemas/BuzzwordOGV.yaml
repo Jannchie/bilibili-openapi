@@ -1,0 +1,27 @@
+type: object
+properties:
+  season_id:
+    type: integer
+    description: 剧集 ssid
+  name:
+    type: string
+    description: 剧集标题
+  play:
+    type: integer
+    description: 播放数
+  followed:
+    type: integer
+    description: 追剧/番数
+  is_followed:
+    type: boolean
+    description: 是否追剧/番
+  new_ep:
+    type: string
+    description: 最新一集信息
+  cover:
+    type: string
+    description: 剧集封面 url
+  episodes:
+    type: object
+  follow_info:
+    type: object

@@ -1,0 +1,77 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-111：csrf校验失败，40022：签名过长
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    oneOf:
+      - type: object
+        properties:
+          count:
+            type: integer
+            description: 创建的收藏夹数
+          list:
+            oneOf:
+              - type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: 收藏夹 ID
+                    fid:
+                      type: integer
+                      description: 收藏夹 fid
+                    mid:
+                      type: integer
+                      description: 创建用户 mid
+                    attr:
+                      type: integer
+                      description: 收藏夹属性
+                    title:
+                      type: string
+                      description: 收藏夹标题
+                    cover:
+                      type: string
+                      description: 收藏夹封面图片 URL
+                    upper:
+                      type: object
+                      properties:
+                        mid:
+                          type: integer
+                          description: 创建人 mid
+                        name:
+                          type: string
+                          description: 创建人昵称
+                        face:
+                          type: string
+                          description: 空
+                    cover_type:
+                      type: integer
+                      default: 2
+                    intro:
+                      type: string
+                      description: 空
+                    ctime:
+                      type: integer
+                      description: 创建时间
+                    mtime:
+                      type: integer
+                      description: 审核时间
+                    state:
+                      type: integer
+                      description: 0, 1
+                    fav_state:
+                      type: integer
+                      description: '0'
+                    media_count:
+                      type: integer
+                      description: 收藏夹总计视频数
+              - type: object
+      - type: object

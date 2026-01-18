@@ -1,0 +1,224 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      View:
+        $ref: ./VideoViewResponse.yaml
+      Card:
+        type: object
+        properties:
+          card:
+            type: object
+            properties:
+              mid:
+                type: string
+                description: 用户 mid
+              approve:
+                type: boolean
+                default: false
+              name:
+                type: string
+                description: 用户昵称
+              sex:
+                type: string
+                description: 用户性别
+              rank:
+                type: string
+                default: '10000'
+              face:
+                type: string
+                description: 用户头像链接
+              face_nft:
+                type: integer
+                description: 是否为 nft 头像
+              DisplayRank:
+                type: string
+                default: '0'
+              regtime:
+                type: integer
+                default: 0
+              spacesta:
+                type: integer
+                default: 0
+              birthday:
+                type: string
+              place:
+                type: string
+              description:
+                type: string
+              article:
+                type: integer
+                default: 0
+              attentions:
+                type: array
+                items:
+                  type: object
+              fans:
+                type: integer
+                description: 粉丝数
+              friend:
+                type: integer
+                description: 关注数
+              attention:
+                type: integer
+                description: 关注数
+              sign:
+                type: string
+                description: 签名
+              level_info:
+                type: object
+                properties:
+                  current_level:
+                    type: integer
+                    description: 当前等级
+                  current_min:
+                    type: integer
+                    default: 0
+                  current_exp:
+                    type: integer
+                    default: 0
+                  next_exp:
+                    type: integer
+                    default: 0
+                description: 等级
+              pendant:
+                type: object
+                properties:
+                  pid:
+                    type: integer
+                    description: 挂件 ID
+                  name:
+                    type: string
+                    description: 挂件名称
+                  image:
+                    type: string
+                    description: 挂件图片 url
+                  expire:
+                    type: integer
+                    default: 0
+                description: 挂件
+              nameplate:
+                type: object
+                properties:
+                  nid:
+                    type: integer
+                    description: 勋章 ID
+                  name:
+                    type: string
+                    description: 勋章名称
+                  image:
+                    type: string
+                    description: 挂件图片 url 正常
+                  image_small:
+                    type: string
+                    description: 勋章图片 url 小
+                  level:
+                    type: string
+                    description: 勋章等级
+                  condition:
+                    type: string
+                    description: 勋章条件
+                description: 勋章
+              Official:
+                type: object
+                properties:
+                  role:
+                    type: integer
+                    description: 认证类型
+                  title:
+                    type: string
+                    description: 认证信息
+                  desc:
+                    type: string
+                    description: 认证备注
+                  type:
+                    type: integer
+                    description: 是否认证
+                description: 认证信息
+              official_verify:
+                type: object
+                properties:
+                  type:
+                    type: integer
+                    description: 是否认证
+                  desc:
+                    type: string
+                    description: 认证信息
+                description: 认证信息2
+              vip:
+                type: object
+                properties:
+                  type:
+                    type: integer
+                    description: 会员类型
+                  status:
+                    type: integer
+                    description: 会员状态
+                  due_date:
+                    type: integer
+                    description: 会员过期时间
+                  vip_pay_type:
+                    type: integer
+                    description: 支付类型
+                  theme_type:
+                    type: integer
+                  label:
+                    type: object
+                    properties:
+                      path:
+                        type: string
+                      text:
+                        type: string
+                        description: 会员类型文案
+                      label_theme:
+                        type: string
+                        description: 会员标签
+                      text_color:
+                        type: string
+                      bg_style:
+                        type: integer
+                      bg_color:
+                        type: string
+                        description: 会员标签背景颜色
+                      border_color:
+                        type: string
+                      use_img_label:
+                        type: boolean
+                      img_label_uri_hans:
+                        type: string
+                      img_label_uri_hant:
+                        type: string
+                      img_label_uri_hans_static:
+                        type: string
+                      img_label_uri_hant_static:
+                        type: string
+                    description: 会员标签
+                  avatar_subscript:
+                    type: integer
+                    description: 是否显示会员图标
+                  nickname_color:
+                    type: string
+                    description: 会员昵称颜色
+                  role:
+                    type: integer
+                  avatar_subscript_url:
+                    type: string
+                  tv_vip_status:
+                    type: integer
+                  tv_vip_pay_type:
+                    type: integer
+                description: 大会员状态
+              is_senior_member:
+                type: integer
+                description: 是否为硬核会员
+            description: UP 主名片信息

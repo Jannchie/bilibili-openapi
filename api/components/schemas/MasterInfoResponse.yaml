@@ -1,0 +1,44 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，1：参数错误
+  msg:
+    type: string
+    description: 错误信息
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      info:
+        type: object
+        properties:
+          uid:
+            type: integer
+            format: int32
+            description: 主播 mid
+          uname:
+            type: string
+            description: 主播用户名
+          face:
+            type: string
+            description: 主播头像 URL
+          official_verify:
+            type: object
+            properties:
+              type:
+                type: integer
+                description: 主播认证类型
+              desc:
+                type: string
+                description: 主播认证信息
+          gender:
+            type: integer
+            description: 主播性别
+      exp:
+        type: object
+        properties:
+          master_level:
+            type: object

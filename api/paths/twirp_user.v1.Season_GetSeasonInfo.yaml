@@ -1,0 +1,15 @@
+post:
+  tags:
+    - 漫画赛季
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 获取赛季信息
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 赛季信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetSeasonInfoResponse.yaml

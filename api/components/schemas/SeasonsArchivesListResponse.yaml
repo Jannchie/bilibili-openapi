@@ -1,0 +1,116 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      aids:
+        type: array
+        items:
+          type: integer
+        description: 稿件 avid 列表
+      archives:
+        type: array
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+              description: 稿件 avid
+            bvid:
+              type: string
+              description: 稿件 bvid
+            ctime:
+              type: integer
+              description: 创建时间
+            duration:
+              type: integer
+              description: 视频时长
+            enable_vt:
+              type: boolean
+              default: false
+            interactive_video:
+              type: boolean
+              description: 是否是互动视频
+            pic:
+              type: string
+              description: 封面 URL
+            playback_position:
+              type: integer
+              description: 播放进度百分比
+            pubdate:
+              type: integer
+              description: 发布日期
+            stat:
+              type: object
+              properties:
+                view:
+                  type: integer
+                  description: 稿件播放量
+                vt:
+                  type: integer
+                  default: 0
+              description: 稿件信息
+            state:
+              type: integer
+              default: 0
+            title:
+              type: string
+              description: 稿件标题
+            ugc_pay:
+              type: integer
+              description: UGC 付费?
+              default: 0
+            vt_display:
+              type: string
+              description: vt_display
+        description: 合集中的视频
+      meta:
+        type: object
+        properties:
+          category:
+            type: integer
+            default: 0
+          cover:
+            type: string
+            description: 合集封面 URL
+          description:
+            type: string
+            description: 合集描述
+          mid:
+            type: integer
+            description: UP 主 ID
+          name:
+            type: string
+            description: 合集标题
+          ptime:
+            type: integer
+            description: 发布时间
+          season_id:
+            type: integer
+            description: 合集 ID
+          total:
+            type: integer
+            description: 合集内视频数量
+        description: 合集元数据
+      page:
+        type: object
+        properties:
+          page_num:
+            type: integer
+            description: 分页页码
+          page_size:
+            type: integer
+            description: 单页个数
+          total:
+            type: integer
+            description: 合集内视频数量
+        description: 分页信息

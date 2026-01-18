@@ -1,0 +1,54 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      archive:
+        type: object
+        description: 稿件信息
+        properties:
+          aid:
+            type: integer
+            description: av号
+            example: 1906473802
+          bvid:
+            type: string
+            description: bvid
+            example: BV1MU411S7iJ
+          title:
+            type: string
+            description: 标题
+            example: Linux小寄巧:原地卸载内核然后尝试救活!
+      videos:
+        type: array
+        description: 视频信息
+        items:
+          type: object
+          properties:
+            cid:
+              type: integer
+              description: 分P cid
+              example: 1625992822
+            index:
+              type: integer
+              description: 分P序号
+              example: 1
+            title:
+              type: string
+              description: 分P标题
+              example: Linux小寄巧:原地卸载内核然后尝试救活!
+            duration:
+              type: integer
+              description: '0'
+              example: 0

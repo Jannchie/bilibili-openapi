@@ -1,0 +1,485 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      success_action:
+        type: integer
+        description: 作用尚不明确
+        example: 0
+      success_toast:
+        type: string
+        description: 状态文字
+        example: 发送成功
+      need_captcha:
+        type: boolean
+        description: 评论需要验证码(未证实)
+        example: false
+      url:
+        type: string
+        description: 作用尚不明确
+        example: ''
+      rpid:
+        type: integer
+        description: 评论rpid
+        example: 3043212039
+      rpid_str:
+        type: string
+        description: 评论rpid, 字串格式
+        example: '3043212039'
+      dialog:
+        type: integer
+        description: 回复对方rpid, 若为一级评论则为0, 若为二级评论则为该评论id, 大于二级评论为上一级评论id
+        example: 0
+      dialog_str:
+        type: string
+        description: 回复对方rpid, 字串格式
+        example: '0'
+      root:
+        type: integer
+        description: 根评论rpid, 若为一级评论则为0, 大于一级评论则为根评论id
+        example: 0
+      root_str:
+        type: string
+        description: 根评论rpid, 字串格式
+        example: '0'
+      parent:
+        type: integer
+        description: 回复父评论rpid, 若为一级评论则为0, 若为二级评论则为根评论id, 大于二级评论为上一级评论id
+        example: 0
+      parent_str:
+        type: string
+        description: 回复父评论rpid, 字串格式
+        example: '0'
+      emote:
+        type: object
+        description: 表情转义符信息
+        properties:
+          '[泠鸢yousa_awsl]':
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 2086
+              package_id:
+                type: integer
+                example: 93
+              state:
+                type: integer
+                example: 0
+              type:
+                type: integer
+                example: 3
+              attr:
+                type: integer
+                example: 0
+              text:
+                type: string
+                example: '[泠鸢yousa_awsl]'
+              url:
+                type: string
+                example: >-
+                  http://i0.hdslb.com/bfs/emote/7663b729161bd4556c2ec318c07791000743eb56.png
+              meta:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                    example: 2
+              mtime:
+                type: integer
+                example: 1589776042
+      reply:
+        type: object
+        properties:
+          rpid:
+            type: integer
+            description: 评论rpid
+            example: 3043212039
+          oid:
+            type: integer
+            description: 评论区id
+            example: 243322853
+          type:
+            type: integer
+            description: 评论区类型, 1:视频评论
+            example: 1
+          mid:
+            type: integer
+            description: 用户mid
+            example: 293793435
+          root:
+            type: integer
+            description: 根评论rpid
+            example: 0
+          parent:
+            type: integer
+            description: 父评论rpid
+            example: 0
+          dialog:
+            type: integer
+            description: 对话rpid
+            example: 0
+          count:
+            type: integer
+            description: 子评论数
+            example: 0
+          rcount:
+            type: integer
+            description: 楼层数
+            example: 0
+          state:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          fansgrade:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          attr:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          ctime:
+            type: integer
+            description: 创建时间, 时间戳
+            example: 1592233764
+          rpid_str:
+            type: string
+            description: 评论rpid, 字符串格式
+            example: '3043212039'
+          root_str:
+            type: string
+            description: 根评论rpid, 字符串格式
+            example: '0'
+          parent_str:
+            type: string
+            description: 父评论rpid, 字符串格式
+            example: '0'
+          like:
+            type: integer
+            description: 点赞数
+            example: 0
+          action:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          member:
+            type: object
+            properties:
+              mid:
+                type: string
+                description: 用户mid, 字符串格式
+                example: '293793435'
+              uname:
+                type: string
+                description: 用户名
+                example: 社会易姐QwQ
+              sex:
+                type: string
+                description: 性别
+                example: 男
+              sign:
+                type: string
+                description: 个性签名
+                example: 高中技术宅一枚, 爱好MC&电子&8-bit音乐&数码&编程, 资深猿厨
+              avatar:
+                type: string
+                description: 头像url
+                example: >-
+                  http://i1.hdslb.com/bfs/face/aebb2639a0d47f2ce1fec0631f412eaf53d4a0be.jpg
+              rank:
+                type: string
+                description: 作用尚不明确
+                example: '10000'
+              DisplayRank:
+                type: string
+                description: 作用尚不明确
+                example: '0'
+              level_info:
+                type: object
+                properties:
+                  current_level:
+                    type: integer
+                    description: 当前等级
+                    example: 5
+                  current_min:
+                    type: integer
+                    description: 作用尚不明确
+                    example: 0
+                  current_exp:
+                    type: integer
+                    description: 当前经验值
+                    example: 0
+                  next_exp:
+                    type: integer
+                    description: 下一级所需经验值
+                    example: 0
+              pendant:
+                type: object
+                properties:
+                  pid:
+                    type: integer
+                    description: 头像挂件pid
+                    example: 1888
+                  name:
+                    type: string
+                    description: 头像挂件名
+                    example: 泠鸢yousa
+                  image:
+                    type: string
+                    description: 头像挂件url
+                    example: >-
+                      http://i0.hdslb.com/bfs/garb/item/3e66e712b8e70c6b02393c54ad5fd8d993eb39f9.png
+                  expire:
+                    type: integer
+                    description: 作用尚不明确
+                    example: 0
+                  image_enhance:
+                    type: string
+                    description: 作用尚不明确
+                    example: >-
+                      http://i0.hdslb.com/bfs/garb/item/3e66e712b8e70c6b02393c54ad5fd8d993eb39f9.png
+              nameplate:
+                type: object
+                properties:
+                  nid:
+                    type: integer
+                    description: 作用尚不明确
+                    example: 0
+                  name:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+                  image:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+                  image_small:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+                  level:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+                  condition:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+              official_verify:
+                type: object
+                properties:
+                  type:
+                    type: integer
+                    description: 作用尚不明确
+                    example: -1
+                  desc:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+              vip:
+                type: object
+                properties:
+                  vipType:
+                    type: integer
+                    description: 会员类型
+                    example: 2
+                  vipDueDate:
+                    type: integer
+                    description: 会员到期时间, 时间戳
+                    example: 1612454400000
+                  dueRemark:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+                  accessStatus:
+                    type: integer
+                    description: 作用尚不明确
+                    example: 0
+                  vipStatus:
+                    type: integer
+                    description: 会员状态
+                    example: 1
+                  vipStatusWarn:
+                    type: string
+                    description: 作用尚不明确
+                    example: ''
+                  themeType:
+                    type: integer
+                    description: 作用尚不明确
+                    example: 0
+                  label:
+                    type: object
+                    properties:
+                      path:
+                        type: string
+                        description: 作用尚不明确
+                        example: ''
+                      text:
+                        type: string
+                        description: 会员类型文字
+                        example: 年度大会员
+                      label_theme:
+                        type: string
+                        description: 作用尚不明确
+                        example: annual_vip
+              fans_detail:
+                type: object
+                description: 作用尚不明确
+              following:
+                type: integer
+                description: 作用尚不明确
+                example: 0
+              is_followed:
+                type: integer
+                description: 作用尚不明确
+                example: 0
+              user_sailing:
+                type: object
+                properties:
+                  pendant:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: 头像挂件pid
+                        example: 1888
+                      name:
+                        type: string
+                        description: 头像挂件名
+                        example: 泠鸢yousa
+                      image:
+                        type: string
+                        description: 头像挂件url
+                        example: >-
+                          http://i0.hdslb.com/bfs/garb/item/3e66e712b8e70c6b02393c54ad5fd8d993eb39f9.png
+                      jump_url:
+                        type: string
+                        description: 作用尚不明确
+                        example: ''
+                      type:
+                        type: string
+                        description: 作用尚不明确
+                        example: suit
+                  cardbg:
+                    type: object
+                    description: 作用尚不明确
+                  cardbg_with_focus:
+                    type: object
+                    description: 作用尚不明确
+          content:
+            type: object
+            properties:
+              message:
+                type: string
+                description: 评论内容
+                example: 测试test[泠鸢yousa_awsl]
+              plat:
+                type: integer
+                description: 评论平台
+                example: 1
+              device:
+                type: string
+                description: 评论设备
+                example: ''
+              members:
+                type: array
+                description: at用户列表
+                items:
+                  type: string
+              emote:
+                type: object
+                description: 表情包信息
+                properties:
+                  '[泠鸢yousa_awsl]':
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2086
+                      package_id:
+                        type: integer
+                        example: 93
+                      state:
+                        type: integer
+                        example: 0
+                      type:
+                        type: integer
+                        example: 3
+                      attr:
+                        type: integer
+                        example: 0
+                      text:
+                        type: string
+                        example: '[泠鸢yousa_awsl]'
+                      url:
+                        type: string
+                        example: >-
+                          http://i0.hdslb.com/bfs/emote/7663b729161bd4556c2ec318c07791000743eb56.png
+                      meta:
+                        type: object
+                        properties:
+                          size:
+                            type: integer
+                            example: 2
+                      mtime:
+                        type: integer
+                        example: 1589776042
+              jump_url:
+                type: object
+                description: 作用尚不明确
+              max_line:
+                type: integer
+                description: 作用尚不明确
+                example: 0
+          replies:
+            type: array
+            description: 子评论列表
+            items:
+              type: object
+          assist:
+            type: integer
+            description: 作用尚不明确
+            example: 0
+          folder:
+            type: object
+            properties:
+              has_folded:
+                type: boolean
+                description: 是否被折叠
+                example: false
+              is_folded:
+                type: boolean
+                description: 是否被折叠
+                example: false
+              rule:
+                type: string
+                description: 折叠规则url
+                example: https://www.bilibili.com/blackboard/foldingreply.html
+          up_action:
+            type: object
+            properties:
+              like:
+                type: boolean
+                description: up主是否点赞
+                example: false
+              reply:
+                type: boolean
+                description: up主是否回复
+                example: false
+          show_follow:
+            type: boolean
+            description: 作用尚不明确
+            example: false

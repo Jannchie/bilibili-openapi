@@ -1,0 +1,26 @@
+post:
+  tags:
+    - 投币
+  servers:
+    - url: https://app.bilibili.com
+  summary: 投币视频（APP 端）
+  parameters:
+    - in: header
+      name: access_key
+      schema:
+        type: string
+      required: true
+      description: APP 登录 Token
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/ViewCoinAddRequest.yaml
+  responses:
+    '200':
+      description: 投币结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ViewCoinAddResponse.yaml

@@ -1,0 +1,34 @@
+type: object
+properties:
+  i:
+    type: object
+    properties:
+      chatserver:
+        type: string
+        example: chat.bilibili.com
+      chatid:
+        type: integer
+        description: 视频cid
+        example: 144541892
+      mission:
+        type: integer
+        example: 0
+      maxlimit:
+        type: integer
+        description: 实时弹幕池最大容量
+        example: 1500
+      state:
+        type: integer
+        description: 弹幕状态（0：正常 1：弹幕已关闭）
+        example: 0
+      real_name:
+        type: integer
+        example: 0
+      source:
+        type: string
+        example: e-r
+      d:
+        type: array
+        description: 弹幕内容
+        items:
+          type: string

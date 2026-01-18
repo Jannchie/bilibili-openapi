@@ -1,0 +1,51 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      roomStatus:
+        type: integer
+        format: int32
+        description: 直播间状态
+      roundStatus:
+        type: integer
+        format: int32
+        description: 轮播状态
+      live_status:
+        type: integer
+        format: int32
+        description: 直播状态
+      url:
+        type: string
+        description: 直播间网页 URL
+      title:
+        type: string
+        description: 直播间标题
+      cover:
+        type: string
+        description: 直播间封面 URL
+      online:
+        type: integer
+        format: int32
+        description: 直播间人气
+      roomid:
+        type: integer
+        format: int32
+        description: 直播间 ID（短号）
+      broadcast_type:
+        type: integer
+        format: int32
+        description: '0'
+      online_hidden:
+        type: integer
+        format: int32
+        description: '0'

@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 用户基本信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 用户名片信息
+  parameters:
+    - in: query
+      name: mid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+    - in: query
+      name: photo
+      schema:
+        type: boolean
+      required: false
+      description: 是否请求用户主页头图
+  responses:
+    '200':
+      description: 用户名片信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserCardResponse.yaml

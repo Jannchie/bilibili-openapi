@@ -1,0 +1,59 @@
+post:
+  tags:
+    - 登录
+  summary: 发送短信验证码 (web 端)
+  description: |-
+    同手机号短信发送 CD 时间为 60s
+
+    短信验证码 timeout 为 5min
+  servers:
+    - url: https://passport.bilibili.com
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SmsSendResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - cid
+            - tel
+            - source
+            - token
+            - challenge
+            - validate
+            - seccode
+          properties:
+            cid:
+              type: integer
+              description: 国际冠字码
+              default: ''
+            tel:
+              type: string
+              description: 手机号码
+              default: ''
+            source:
+              type: string
+              description: 登录来源
+              default: ''
+            token:
+              type: string
+              description: 登录 API token
+              default: ''
+            challenge:
+              type: string
+              description: 极验 challenge
+              default: ''
+            validate:
+              type: string
+              description: 极验 result
+              default: ''
+            seccode:
+              type: string
+              description: 极验 result + '|jordan'
+              default: ''

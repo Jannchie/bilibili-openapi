@@ -1,0 +1,41 @@
+get:
+  tags:
+    - 历史弹幕
+  summary: 查询历史弹幕日期
+  description: |
+    注：历史弹幕的xml接口已经失效，现已改为protobuf接口
+
+    注：查询历史弹幕需要登录
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: type
+      in: query
+      description: '1'
+      schema:
+        type: integer
+        enum:
+          - 1
+      required: true
+    - name: oid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+      required: true
+    - name: month
+      in: query
+      description: 查询目标年月
+      schema:
+        type: string
+        format: date
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DanmakuHistoryIndexResponse.yaml

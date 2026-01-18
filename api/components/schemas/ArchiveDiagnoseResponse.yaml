@@ -1,0 +1,177 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        description: 最近的视频
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+              description: av号
+            bvid:
+              type: string
+              description: bv号
+            cover:
+              type: string
+              description: 封面url
+            title:
+              type: string
+              description: 标题
+            pubtime:
+              type: integer
+              description: 发布时间
+            duration:
+              type: integer
+              description: 视频长度(秒)
+            play:
+              type: integer
+              description: 播放数
+            vt:
+              type: integer
+              description: 未知
+            like:
+              type: integer
+              description: 点赞数
+            comment:
+              type: integer
+              description: 评论数
+            dm:
+              type: integer
+              description: 弹幕数
+            fav:
+              type: integer
+              description: 收藏数
+            coin:
+              type: integer
+              description: 投币数
+            share:
+              type: integer
+              description: 分享数
+            full_play_ratio:
+              type: number
+              format: float
+              description: 完播比, 用户平均在百分之多少退出
+            play_viewer_rate:
+              type: number
+              format: float
+              description: 游客播放数, 这个视频有多少是游客播放
+            active_fans_rate:
+              type: number
+              format: float
+              description: 粉丝观看率, 多少粉丝看了这个视频
+            active_fans_med:
+              type: number
+              format: float
+            tm_rate:
+              type: number
+              format: float
+              description: 封面点击率
+            tm_rate_med:
+              type: number
+              format: float
+              description: 你自己平均封面点击率
+            tm_fan_simi_rate_med:
+              type: number
+              format: float
+              description: 同类up粉丝封面点击率
+            tm_viewer_simi_rate_med:
+              type: number
+              format: float
+              description: 同类up游客封面点击率
+            tm_fan_rate:
+              type: number
+              format: float
+              description: 粉丝封面点击率
+            tm_viewer_rate:
+              type: number
+              format: float
+              description: 游客封面点击率
+            tm_pass_rate:
+              type: number
+              format: float
+              description: 封面点击率超过n%同类稿件
+            tm_fan_pass_rate:
+              type: number
+              format: float
+              description: 粉丝封面点击率超过n%同类稿件
+            tm_viewer_pass_rate:
+              type: number
+              format: float
+              description: 游客封面点击率超过n%同类稿件
+            crash_rate:
+              type: number
+              format: float
+              description: 3秒退出率
+            crash_rate_med:
+              type: number
+              format: float
+            crash_fan_simi_rate_med:
+              type: number
+              format: float
+              description: 同类up粉丝3秒退出率
+            crash_viewer_simi_rate_med:
+              type: number
+              format: float
+              description: 同类up游客3秒退出率
+            crash_fan_rate:
+              type: number
+              format: float
+              description: 粉丝3秒退出率
+            crash_viewer_rate:
+              type: number
+              format: float
+              description: 游客3秒退出率
+            interact_rate:
+              type: number
+              format: float
+              description: 互动率
+            interact_rate_med:
+              type: number
+              format: float
+            interact_fan_simi_rate_med:
+              type: number
+              format: float
+              description: 同类up粉丝互动率
+            interact_viewer_simi_rate_med:
+              type: number
+              format: float
+              description: 同类up游客互动率
+            interact_fan_rate:
+              type: number
+              format: float
+              description: 粉丝互动率
+            interact_viewer_rate:
+              type: number
+              format: float
+              description: 游客互动率
+            avg_play_time:
+              type: integer
+              description: 平均播放时间, 注意:此字段总是0, 可能b站正在写代码, 或者和播放量改播放时长有关?
+              example: 0
+            total_new_attention_cnt:
+              type: integer
+              description: 涨粉
+            play_trans_fan_rate:
+              type: number
+              format: float
+              description: 播转粉率
+            play_trans_fan_rate_med:
+              type: number
+              format: float
+              description: 其他up平均播转粉率

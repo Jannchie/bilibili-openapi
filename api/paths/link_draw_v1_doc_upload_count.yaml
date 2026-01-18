@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 用户状态数
+  servers:
+    - url: https://api.vc.bilibili.com
+  summary: 相簿投稿数
+  parameters:
+    - in: query
+      name: uid
+      schema:
+        type: integer
+      required: true
+      description: 目标用户 mid
+  responses:
+    '200':
+      description: 相簿投稿数
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UploadCountResponse.yaml

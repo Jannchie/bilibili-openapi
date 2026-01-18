@@ -1,0 +1,131 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-3：API 校验密匙错误，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      user_equip:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 装扮 ID
+          name:
+            type: string
+            description: 装扮名称
+          preview:
+            type: string
+            description: 装扮封面 URL
+          ver:
+            type: integer
+            description: 装扮版本
+          package_url:
+            type: string
+            description: 装扮包 URL
+          package_md5:
+            type: string
+            description: 装扮包 md5 校验值
+          data:
+            type: object
+            properties:
+              color_mode:
+                type: string
+                description: 颜色模式
+              color:
+                type: string
+                description: 前景色？
+              color_second_page:
+                type: string
+                description: 背景色？
+              tail_color:
+                type: string
+                description: 底边栏颜色
+              tail_color_selected:
+                type: string
+                description: 底边栏颜色(选择时)
+              tail_icon_ani:
+                type: boolean
+                description: 有无底边栏动画
+              tail_icon_ani_mode:
+                type: string
+                description: 底边栏动画循环播放
+              head_myself_mp4_play:
+                type: string
+                description: 我的页面头图（视频）循环
+              tail_icon_mode:
+                type: string
+                description: 底栏改图标或改颜色
+              side_bg_color:
+                type: string
+                description: 侧边栏颜色
+              side_line_color:
+                type: string
+                description: 侧边栏线条颜色？
+              tail_icon_color:
+                type: string
+                description: 底栏图标颜色
+              tail_icon_color_dark:
+                type: string
+                description: 底栏图标颜色(夜间模式)
+              tail_icon_color_selected:
+                type: string
+                description: 底栏图标颜色(选择时)
+              tail_icon_color_selected_dark:
+                type: string
+                description: 底栏图标颜色(选择时)(夜间模式)
+      skin_colors:
+        type: array
+        description: 主题颜色列表
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: 颜色 ID
+            name:
+              type: string
+              description: 颜色名称
+            is_free:
+              type: boolean
+              description: 是否免费
+            price:
+              type: integer
+              description: 价格
+            is_bought:
+              type: boolean
+              description: 是否已购买
+            status:
+              type: integer
+              description: 状态
+            buy_time:
+              type: integer
+              description: 购买时间
+            due_time:
+              type: integer
+              description: 到期时间
+            color_name:
+              type: string
+              description: 颜色类型名称
+            is_overdue:
+              type: boolean
+              description: 是否已到期
+      load_equip:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 动画 ID
+          name:
+            type: string
+            description: 动画名称
+          ver:
+            type: integer
+            description: 动画版本
+          loading_url:
+            type: string
+            description: 加载动画图标 URL

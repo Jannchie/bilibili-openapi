@@ -1,0 +1,170 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      live_users:
+        type: object
+        description: 不明
+      my_info:
+        type: object
+        properties:
+          dyns:
+            type: integer
+            description: 个人动态
+          face:
+            type: string
+            description: 头像
+          face_nft:
+            type: integer
+            description: 不明
+          follower:
+            type: integer
+            description: 粉丝数量
+          following:
+            type: integer
+            description: 我的关注
+          level_info:
+            type: object
+            properties:
+              current_level:
+                type: integer
+                description: 当前等级
+              current_min:
+                type: integer
+                description: '0'
+              current_exp:
+                type: integer
+                description: '0'
+              next_exp:
+                type: integer
+                description: '0'
+          mid:
+            type: integer
+            description: 账户mid
+          name:
+            type: string
+            description: 账户名称
+          offcial:
+            type: object
+            properties:
+              role:
+                type: integer
+                description: 认证类型
+              title:
+                type: string
+                description: 认证信息
+              desc:
+                type: string
+                description: 认证备注
+              type:
+                type: integer
+                description: 是否认证
+          space_bg:
+            type: string
+            description: 账户个人中心的背景横幅
+          vip:
+            type: object
+            properties:
+              type:
+                type: integer
+                description: 会员类型
+              status:
+                type: integer
+                description: 会员状态
+              due_date:
+                type: number
+                description: 会员过期时间
+              vip_pay_type:
+                type: integer
+                description: 支付类型
+              theme_type:
+                type: integer
+                description: '0'
+              label:
+                type: object
+                properties:
+                  path:
+                    type: string
+                    description: 空
+                  text:
+                    type: string
+                    description: 会员类型文案
+                  label_theme:
+                    type: string
+                    description: 会员标签
+                  text_color:
+                    type: string
+                    description: 会员标签
+                  bg_style:
+                    type: integer
+                    description: '1'
+                  bg_color:
+                    type: string
+                    description: 会员标签背景颜色
+                  border_color:
+                    type: string
+                    description: 会员标签边框颜色
+                  use_img_label:
+                    type: boolean
+                    default: true
+                  img_label_uri_hans:
+                    type: string
+                    description: 空串
+                  img_label_uri_hant:
+                    type: string
+                    description: 空串
+                  img_label_uri_hans_static:
+                    type: string
+                    description: 大会员牌子图片
+                  img_label_uri_hant_static:
+                    type: string
+                    description: 大会员牌子图片
+              avatar_subscript:
+                type: integer
+                description: 是否显示会员图标
+              nickname_color:
+                type: string
+                description: 会员昵称颜色
+              role:
+                type: integer
+                description: 大角色类型
+              avatar_subscript_url:
+                type: string
+                description: 大会员角标地址
+              tv_vip_status:
+                type: integer
+                description: 电视大会员状态
+              tv_vip_pay_type:
+                type: integer
+                description: 电视大会员支付类型
+      up_list:
+        type: array
+        description: 最近更新的up主列表
+        items:
+          type: object
+          properties:
+            face:
+              type: string
+              description: UP主头像
+            has_update:
+              type: boolean
+              description: 最近更新是否更新？
+            is_reserve_recall:
+              type: boolean
+              description: 不明
+            mid:
+              type: integer
+              description: UP主mid
+            uname:
+              type: string
+              description: up主昵称
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'

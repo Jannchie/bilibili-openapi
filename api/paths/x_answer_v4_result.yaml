@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 查询信息
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询答题结果
+  parameters:
+    - in: query
+      name: hid
+      schema:
+        type: integer
+      required: true
+      description: 答题会话 ID
+  responses:
+    '200':
+      description: 答题结果信息
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AnswerResultResponse.yaml

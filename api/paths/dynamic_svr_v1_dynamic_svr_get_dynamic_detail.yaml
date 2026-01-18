@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 动态
+  summary: 获取特定动态卡片信息
+  servers:
+    - url: https://api.vc.bilibili.com
+  parameters:
+    - name: dynamic_id
+      in: query
+      description: 动态id
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetDynamicDetailResponse.yaml

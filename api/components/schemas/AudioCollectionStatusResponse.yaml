@@ -1,0 +1,14 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  msg:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: boolean
+    description: 是否收藏
+    example: true

@@ -1,0 +1,29 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      status:
+        type: integer
+        description: 认证状态
+      remark:
+        type: string
+        description: 驳回信息
+      realname:
+        type: string
+        description: 实名姓名
+      card:
+        type: string
+        description: 证件号码
+      card_type:
+        type: integer
+        description: 证件类型代码

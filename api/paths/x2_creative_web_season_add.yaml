@@ -1,0 +1,45 @@
+post:
+  tags:
+    - 合集管理
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: title
+      in: query
+      description: 合集标题
+      schema:
+        type: string
+      required: true
+    - name: desc
+      in: query
+      description: 合集简介
+      schema:
+        type: string
+    - name: cover
+      in: query
+      description: 封面图, 从[上传封面](upload.md#上传封面)处获取
+      schema:
+        type: string
+      required: true
+    - name: season_price
+      in: query
+      description: 0, 作用尚不明确
+      schema:
+        type: integer
+        enum:
+          - 0
+    - name: csrf
+      in: query
+      description: CSRF Token(即Cookies中bili_jct)
+      schema:
+        type: string
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonAddResponse.yaml

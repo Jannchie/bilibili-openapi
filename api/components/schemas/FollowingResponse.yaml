@@ -1,0 +1,118 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      title:
+        type: string
+        description: 标题
+      page_size:
+        type: integer
+        description: 每页的数据数量
+      total_page:
+        type: integer
+        description: 分页数量
+      list:
+        type: array
+        description: UP 直播情况列表
+        items:
+          type: object
+          properties:
+            roomid:
+              type: integer
+              description: 房间号
+            uid:
+              type: integer
+              description: 主播 uid
+            uname:
+              type: string
+              description: 主播名
+            title:
+              type: string
+              description: 直播标题
+            face:
+              type: string
+              description: 主播头像
+            live_status:
+              type: integer
+              description: 是否正在直播
+            record_num:
+              type: integer
+              description: 尚不明确
+            recent_record_id:
+              type: string
+              description: 尚不明确
+            is_attention:
+              type: integer
+              description: 尚不明确
+            clipnum:
+              type: integer
+              description: 尚不明确
+            fans_num:
+              type: integer
+              description: 尚不明确
+            area_name:
+              type: string
+              description: 尚不明确
+            area_value:
+              type: string
+              description: 尚不明确
+            tags:
+              type: string
+              description: 尚不明确
+            recent_record_id_v2:
+              type: string
+              description: 尚不明确
+            record_num_v2:
+              type: integer
+              description: 尚不明确
+            record_live_time:
+              type: integer
+              description: 主播上一次直播结束的时间戳
+            area_name_v2:
+              type: string
+              description: 频道的名称
+            room_news:
+              type: string
+              description: 房间公告
+            switch:
+              type: boolean
+              description: 尚不明确
+            watch_icon:
+              type: string
+              description: 尚不明确
+            text_small:
+              type: string
+              description: 尚不明确
+            room_cover:
+              type: string
+              description: 房间封面图片的 URL
+            parent_area_id:
+              type: integer
+              description: 父分区 ID
+            area_id:
+              type: integer
+              description: 分区 ID
+      count:
+        type: integer
+        description: 曾直播过的 UP 数量
+      never_lived_count:
+        type: integer
+        description: 未直播过的 UP 数量
+      live_count:
+        type: integer
+        description: 正在直播的 UP 数量
+      never_lived_faces:
+        type: array
+        description: 尚不明确
+        items:
+          type: string

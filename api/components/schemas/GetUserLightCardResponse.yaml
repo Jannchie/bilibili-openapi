@@ -1,0 +1,46 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 响应码
+  msg:
+    type: string
+  data:
+    type: object
+    properties:
+      state:
+        type: integer
+        description: 轻享卡开通状态
+      show_state:
+        type: integer
+      expire_date:
+        type: string
+        format: date-time
+        description: 轻享卡到期时间
+      receive_amount:
+        type: integer
+        description: 已领取数量
+      save_money:
+        type: integer
+        description: 已节省漫币
+      index:
+        type: integer
+        description: 默认选择签到周期
+      week:
+        type: array
+        items:
+          $ref: ./LightCardWeekObject.yaml
+        description: 一个领取周期内的领取状态信息
+      month_reward_state:
+        type: integer
+        description: 是否可选择全勤奖
+      month_reward:
+        type: integer
+      cur_month_end:
+        type: string
+        format: date-time
+        description: 全勤奖领取剩余时间
+      server_time:
+        type: string
+        format: date-time
+        description: 当前服务器时间

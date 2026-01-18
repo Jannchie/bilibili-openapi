@@ -1,0 +1,42 @@
+type: object
+properties:
+  view:
+    type: integer
+    format: int64
+    description: 浏览数
+    example: 689
+  favorite:
+    type: integer
+    format: int64
+    description: 收藏数
+    example: 2
+  like:
+    type: integer
+    format: int64
+    description: 点赞数
+    example: 61
+  dislike:
+    type: integer
+    format: int64
+    description: 点踩数
+    example: 0
+  reply:
+    type: integer
+    format: int64
+    description: 回复数
+    example: 18
+  share:
+    type: integer
+    format: int64
+    description: 转发数
+    example: 0
+  coin:
+    type: integer
+    format: int64
+    description: 投币数
+    example: 1
+  dynamic:
+    type: integer
+    format: int64
+    description: dynamic
+    example: 0

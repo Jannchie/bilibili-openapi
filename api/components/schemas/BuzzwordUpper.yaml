@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: UP 主 mid
+  recommend:
+    type: string
+  name:
+    type: string
+    description: UP 主昵称
+  face:
+    type: string
+    description: UP 主头像 url
+  official:
+    type: object
+    properties:
+      role:
+        type: integer
+      title:
+        type: string
+      desc:
+        type: string
+      type:
+        type: integer
+  followed:
+    type: boolean
+    description: 是否关注，需要登录(Cookie 或 APP)
+  fans_count:
+    type: integer
+    description: 粉丝数

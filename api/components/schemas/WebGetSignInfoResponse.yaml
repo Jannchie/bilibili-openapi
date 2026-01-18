@@ -1,0 +1,54 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      text:
+        type: string
+        description: 今日签到奖励信息
+      specialText:
+        type: string
+        description: 连续签到奖励信息
+      status:
+        type: integer
+        description: 签到状态
+      allDays:
+        type: integer
+        description: 当月天数
+      curMonth:
+        type: integer
+        description: 当前月
+      curYear:
+        type: integer
+        description: 当前年
+      curDay:
+        type: integer
+        description: 当前日
+      curData:
+        type: string
+        description: 当前日期（格式化）
+      hadSignDays:
+        type: integer
+        description: 当月已签到天数
+      newTask:
+        type: integer
+        description: 作用未知
+      signDaysList:
+        type: array
+        description: 当月已签到日列表
+        items:
+          type: integer
+      signBonusDaysList:
+        type: array
+        description: 当月已签到且有特殊奖励日列表
+        items:
+          type: integer

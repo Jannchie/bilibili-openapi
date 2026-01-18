@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 直播间人气红包
+  summary: 获取指定直播间的红包信息
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: roomid
+      in: query
+      description: 直播间id
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetLotteryInfoWebResponse.yaml

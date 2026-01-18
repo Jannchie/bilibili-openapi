@@ -1,0 +1,32 @@
+post:
+  tags:
+    - 登录
+  summary: 确认更新
+  servers:
+    - url: https://passport.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ConfirmRefreshResponse.yaml
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          required:
+            - csrf
+            - refresh_token
+          properties:
+            csrf:
+              type: string
+              description: CSRF Token（位于 cookie）
+              default: ''
+            refresh_token:
+              type: string
+              description: 旧的持久化刷新口令
+              default: ''

@@ -1,0 +1,41 @@
+post:
+  tags:
+    - 投稿
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: ts
+      in: query
+      description: 当前时间, UNIX毫秒时间戳
+      schema:
+        type: integer
+    - name: csrf
+      in: query
+      description: CSRF Token(位于Cookie中bili_jct)
+      schema:
+        type: string
+      required: true
+    - name: filename
+      in: query
+      description: 视频文件名, 从视频上传接口获取,无后缀名,可为空
+      schema:
+        type: string
+    - name: title
+      in: query
+      description: 视频标题
+      schema:
+        type: string
+    - name: upload_id
+      in: query
+      description: 上传ID
+      schema:
+        type: string
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TypesPredictResponse.yaml

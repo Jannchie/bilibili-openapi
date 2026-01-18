@@ -1,0 +1,25 @@
+type: object
+properties:
+  plat:
+    type: integer
+    format: int64
+    description: 平台
+    example: 0
+  desc:
+    type: string
+    description: 版本描述
+    example: '-修复了一些bug，切了个大西瓜~'
+  version:
+    type: string
+    description: 版本号
+    example: 8.9.0
+  build:
+    type: integer
+    format: int64
+    description: 内部版本号
+    example: 8090300
+  ptime:
+    type: integer
+    format: int64
+    description: 发布时间
+    example: 1723612377

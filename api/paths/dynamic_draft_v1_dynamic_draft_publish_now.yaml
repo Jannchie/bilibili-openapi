@@ -1,0 +1,30 @@
+post:
+  tags:
+    - 动态
+  summary: 立即发布定时动态
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          required:
+            - draft_id
+            - csrf
+          type: object
+          properties:
+            draft_id:
+              type: integer
+              description: 定时动态(草稿)id
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PublishNowResponse.yaml

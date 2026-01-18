@@ -1,0 +1,48 @@
+get:
+  tags:
+    - APP主题
+  summary: 获取主题及加载动画
+  servers:
+    - url: https://app.bilibili.com
+  parameters:
+    - name: access_key
+      in: query
+      description: APP 登录 Token
+      schema:
+        type: string
+      required: true
+    - name: appkey
+      in: query
+      description: APP 密钥
+      schema:
+        type: string
+      required: true
+    - name: build
+      in: query
+      description: 版本
+      schema:
+        type: integer
+        format: int32
+        example: 6082000
+      required: true
+    - name: ts
+      in: query
+      description: 当前时间戳
+      schema:
+        type: integer
+        format: int32
+        example: 0
+      required: true
+    - name: sign
+      in: query
+      description: APP 签名
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ShowSkinResponse.yaml

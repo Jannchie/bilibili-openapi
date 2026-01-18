@@ -1,0 +1,49 @@
+get:
+  tags:
+    - 充电
+  summary: 查询我收到的充电列表
+  servers:
+    - url: https://pay.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: currentPage
+      in: query
+      description: 页数
+      schema:
+        type: integer
+      required: true
+    - name: pageSize
+      in: query
+      description: 分页大小
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+      required: true
+    - name: customerId
+      in: query
+      description: customerId
+      schema:
+        type: integer
+        default: 10026
+      required: true
+    - name: beginTime
+      in: query
+      description: 开始日期
+      schema:
+        type: string
+        format: date
+    - name: endTime
+      in: query
+      description: 结束日期
+      schema:
+        type: string
+        format: date
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListForCustomerRechargeRecordResponse.yaml

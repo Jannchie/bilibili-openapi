@@ -1,0 +1,28 @@
+post:
+  tags:
+    - 漫画用户信息
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 获取拥有的漫读券列表
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: access_key
+      schema:
+        type: string
+      required: true
+      description: APP登录凭证，使用APP鉴权方式时必填
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/GetCouponsRequest.yaml
+  responses:
+    '200':
+      description: 漫读券列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetCouponsResponse.yaml

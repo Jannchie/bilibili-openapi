@@ -1,0 +1,394 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: success
+  data:
+    type: object
+    properties:
+      brief:
+        type: object
+        description: 课程概述信息
+        properties:
+          content:
+            type: string
+            description: 内容为空
+            example: ''
+          img:
+            type: array
+            description: 简介图片
+            items:
+              type: object
+              properties:
+                aspect_ratio:
+                  type: number
+                  format: float
+                  description: 作用尚不明确
+                  example: 0.9375
+                url:
+                  type: string
+                  description: 简介图片url
+                  example: >-
+                    http://i0.hdslb.com/bfs/archive/29942f338ee570632838403a09871bad130cfe9a.jpg
+          title:
+            type: string
+            description: 课程概述
+            example: 课程概述
+          type:
+            type: integer
+            example: 2
+      coupon:
+        type: object
+        description: 优惠信息, 若无优惠则无此项
+        properties:
+          amount:
+            type: number
+            format: float
+            description: 折扣乘数
+            example: 0.66
+          expire_time:
+            type: string
+            description: 结束时间, YYYY-MM-DD HH:MM:SS
+            example: '2020-06-30 00:00:00'
+          start_time:
+            type: string
+            description: 起始时间, YYYY-MM-DD HH:MM:SS
+            example: '2020-05-21 00:00:00'
+          status:
+            type: integer
+            description: 作用尚不明确
+            example: 1
+          title:
+            type: string
+            description: 优惠标题
+            example: 【上新限时6.6折】《唐盾:0-N4日语精讲》
+          token:
+            type: string
+            description: 领取token
+            example: B20200521135929161905873
+      cover:
+        type: string
+        description: 课程封面url
+        example: >-
+          http://i0.hdslb.com/bfs/archive/95d4de9e6691ccc2b18f087f5f654652dee3c01b.jpg
+      episode_page:
+        type: object
+        description: 课程分集信息
+        properties:
+          next:
+            type: boolean
+            example: false
+          num:
+            type: integer
+            example: 1
+          size:
+            type: integer
+            description: 总计集数
+            example: 66
+          total:
+            type: integer
+            description: 总计集数
+            example: 66
+      episode_sort:
+        type: integer
+        description: 作用尚不明确
+        example: 1
+      episodes:
+        type: array
+        description: 课程分集列表
+        items:
+          type: object
+          properties:
+            aid:
+              type: integer
+              description: 课程分集avid, 与普通稿件avid部分不互通
+              example: 76973173
+            cid:
+              type: integer
+              description: 课程分集cid, 与普通视频cid部分不互通
+              example: 132105993
+            duration:
+              type: integer
+              description: 课程分集时间长度, 单位为秒
+              example: 2223
+            from:
+              type: string
+              example: pugv
+            id:
+              type: integer
+              description: 课程分集epid, 与番剧epid不互通
+              example: 790
+            index:
+              type: integer
+              description: 课程分集数
+              example: 1
+            page:
+              type: integer
+              example: 1
+            play:
+              type: integer
+              description: 课程分集播放量
+              example: 2406406
+            release_date:
+              type: integer
+              description: 课程分集发布时间, 时间戳
+              example: 1574762407
+            status:
+              type: integer
+              description: 分集权限属性, 1:可观看 2:不可观看
+              example: 1
+            title:
+              type: string
+              description: 课程分集标题
+              example: 唐盾:一起从0基础学日语吧(含50音 词汇试听)
+            watched:
+              type: boolean
+              description: >-
+                是否观看该集,
+                需要登录(SESSDATA)且referer为`https://www.bilibili.com`<br/>false:未观看
+                true:已观看
+              example: false
+            watchedHistory:
+              type: integer
+              description: 该集观看历史, 需要登录(SESSDATA)且referer为`https://www.bilibili.com`
+              example: 0
+      faq:
+        type: object
+        description: 常见问题信息1, 合并格式
+        properties:
+          content:
+            type: string
+            description: 常见问题信息
+            example: >-
+              Q:课程在什么时间更新？\nA:课程更新频次以页面前端展示为准。购买成功后，课程更新将通过账号动态提示，方便及时观看。\n\nQ:课程购买后有收看时间限制吗？\nA:购买后除不可抗力因素外，课程均可永久收看，请您放心购买。\n\nQ:原价购买课程后，如遇到优惠折扣，是否可以退还差价或重新购买？\nA:虚拟商品付款后无法返还，请您随时留意各类课程折扣信息，按需购买。\n\nQ:购买课程后是否可以加入老师的粉丝群或者用户群？\nA:如老师设置用户群，我们将邀您加入，但我们无法承诺所有老师均提供用户群服务，感谢理解。
+          link:
+            type: string
+            description: 常见问题页面url
+            example: http://m.bilibili.com
+          title:
+            type: string
+            description: 常见问题
+            example: 常见问题
+      faq1:
+        type: object
+        description: 常见问题信息2, 分离格式
+        properties:
+          items:
+            type: array
+            description: 常见问题列表
+            items:
+              type: object
+              properties:
+                answer:
+                  type: string
+                  description: 回答信息
+                  example: 课程更新频次以页面前端展示为准。购买成功后，课程更新将通过账号动态提示，方便及时观看。
+                question:
+                  type: string
+                  description: 问题信息
+                  example: 课程在什么时间更新?
+          title:
+            type: string
+            description: 常见问题
+            example: 常见问题
+      payment:
+        type: object
+        description: 付费信息
+        properties:
+          desc:
+            type: string
+            description: 付费价格说明
+            example: 券后262.68 B币起/53期
+          discount_desc:
+            type: string
+            description: 折扣说明信息, 若无优惠则无此项
+            example: 262.68 B币
+          discount_prefix:
+            type: string
+            description: 折扣类型前缀, 若无优惠则无此项
+            example: 券后
+          pay_shade:
+            type: string
+            description: 观看所有视频付费说明
+            example: 券后支付262.68 B币即可观看所有视频
+          price:
+            type: integer
+            description: 课程价格, 单位为B币(折扣后价格)
+            example: 398
+          price_format:
+            type: string
+            description: 课程价格, 单位为B币(折扣后价格)
+            example: '398'
+      purchase_note:
+        type: object
+        description: 购买须知信息
+        properties:
+          content:
+            type: string
+            description: 购买须知信息文字内容
+            example: >-
+              1. 本内容为付费内容，购买成功后方可观看。<br/>2. 本内容为虚拟服务，已购买内容不支持退款，敬请谅解。<br/>3.
+              实际购买价格以页面展示的价格及订单结算页显示价格为准。<br/>4.
+              如您在购买付费内容时有任何疑问，可随时咨询在线客服。<br/>完整的购买协议，请点击阅读<a
+              href="https://www.bilibili.com/blackboard/activity-y-SJTTYBp.html"
+              color="#0ba395" target="_blank">《bilibili付费内容购买协议》</a>
+          link:
+            type: string
+            description: 购买须知页面url
+            example: https://www.bilibili.com/blackboard/activity-y-SJTTYBp.html
+          title:
+            type: string
+            description: 购买须知
+            example: 购买须知
+      purchase_protocol:
+        type: object
+        description: 付费内容协议信息
+        properties:
+          link:
+            type: string
+            description: 付费内容协议页面url
+            example: https://www.bilibili.com/blackboard/activity-y-SJTTYBp.html
+          title:
+            type: string
+            description: 付费内容协议
+            example: bilibili付费内容购买协议
+      release_bottom_info:
+        type: string
+        description: 底部更新状态文字
+        example: 没有更多啦~
+      release_info:
+        type: string
+        description: 更新状态文字+更新连载状态文字
+        example: 已完结, 共53期
+      release_info2:
+        type: string
+        description: 更新连载状态文字
+        example: 共53期
+      release_status:
+        type: string
+        description: 更新状态文字
+        example: 已完结
+      season_id:
+        type: integer
+        description: 课程ssid, 与番剧ssid不互通
+        example: 61
+      share_url:
+        type: string
+        description: 页面url
+        example: https://m.bilibili.com/cheese/play/ss61
+      short_link:
+        type: string
+        description: bilibili uri链接
+        example: bilibili://cheese/season/61
+      stat:
+        type: object
+        description: 播放数信息
+        properties:
+          play:
+            type: integer
+            description: 播放量
+            example: 2878146
+          play_desc:
+            type: string
+            description: 播放量文字信息
+            example: 287.8万播放
+      status:
+        type: integer
+        description: 作用尚不明确
+        example: 10
+      subtitle:
+        type: string
+        description: 课程简介信息
+        example: 新东方名师唐盾的精品日语课，包含50音/N5/N4的词汇/语法/课文/练习精讲，让我们一起轻松学日语~
+      title:
+        type: string
+        description: 课程标题
+        example: 唐盾:0-N4日语精讲
+      up_info:
+        type: object
+        description: UP主信息
+        properties:
+          avatar:
+            type: string
+            description: UP主头像url
+            example: >-
+              http://i1.hdslb.com/bfs/face/564421428d1f74314ed50e16a8f570ad968828b0.jpg
+          brief:
+            type: string
+            description: UP主备注, 非个人签名
+            example: 唐盾:前新东方日语名师，倾注日语教学、翻译14年。曾任新东方欧亚教育长沙中心总监。
+          follower:
+            type: integer
+            description: UP主粉丝数
+            example: 21333
+          is_follow:
+            type: integer
+            description: >-
+              是否关注UP主, 需要登录(SESSDATA)且referer为`https://www.bilibili.com` 0:未关注
+              1:已关注
+            example: 0
+          link:
+            type: string
+            description: UP主空间url
+            example: https://space.bilibili.com/19452605
+          mid:
+            type: integer
+            description: UP主uid
+            example: 19452605
+          pendant:
+            type: object
+            description: '???, 作用尚不明确'
+            properties:
+              image:
+                type: string
+                description: 作用尚不明确
+                example: ''
+              name:
+                type: string
+                description: 作用尚不明确
+                example: ''
+              pid:
+                type: integer
+                description: 作用尚不明确
+                example: 0
+          uname:
+            type: string
+            description: UP主昵称
+            example: 盾盾桑教你学日语
+      user_status:
+        type: object
+        description: 用户状态信息, **需要登录(SESSDATA)且referer为`https://www.bilibili.com`**
+        properties:
+          favored:
+            type: integer
+            description: 是否收藏, 0:未收藏 1:已收藏
+            example: 1
+          favored_count:
+            type: integer
+            description: 作用尚不明确
+            example: 1
+          payed:
+            type: integer
+            description: 是否购买, 0:未购买 1:已购买
+            example: 0
+          progress:
+            type: object
+            description: 课程进度, 未登录无此项
+            properties:
+              last_ep_id:
+                type: integer
+                description: 最后观看的epid
+                example: 790
+              last_ep_index:
+                type: string
+                description: 最后观看的标题
+                example: 唐盾:一起从0基础学日语吧(含50音 词汇试听)
+              last_time:
+                type: integer
+                description: 最后观看的时间进度, 单位为秒
+                example: 1

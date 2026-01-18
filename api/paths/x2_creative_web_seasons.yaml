@@ -1,0 +1,50 @@
+get:
+  tags:
+    - 合集管理
+  servers:
+    - url: https://member.bilibili.com
+  parameters:
+    - name: pn
+      in: query
+      description: 页码
+      schema:
+        type: integer
+      required: true
+    - name: ps
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+      required: true
+    - name: order
+      in: query
+      description: 排序方式
+      schema:
+        type: string
+        enum:
+          - ctime
+          - mtime
+    - name: sort
+      in: query
+      description: 排序方式
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: draft
+      in: query
+      description: '1'
+      schema:
+        type: integer
+        enum:
+          - 1
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SeasonsResponse.yaml

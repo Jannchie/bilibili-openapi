@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 笔记操作
+  servers:
+    - url: https://api.bilibili.com
+  summary: 保存视频笔记
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/SaveNoteRequest.yaml
+  responses:
+    '200':
+      description: 保存结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/SaveNoteResponse.yaml

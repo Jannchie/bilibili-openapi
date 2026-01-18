@@ -1,0 +1,37 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  data:
+    type: object
+    properties:
+      attentions:
+        type: object
+        description: 当前登录账户关注列表
+      cards:
+        type: array
+        description: 动态列表
+        items:
+          type: object
+      founder_uid:
+        type: integer
+        description: 作用尚不明确
+      has_more:
+        type: integer
+        description: 当前话题是否有额外的动态
+      is_drawer_topic:
+        type: integer
+        description: 作用尚不明确
+      offset:
+        type: string
+        description: 偏移值
+      _gt_:
+        type: integer
+        description: 作用尚不明确
+  message:
+    type: string
+    description: 错误信息
+  msg:
+    type: number
+    description: 空

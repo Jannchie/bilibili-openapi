@@ -1,0 +1,56 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: '返回值，0: 成功，-101: 未登录'
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      has_more:
+        type: boolean
+        description: 是否有更多数据
+      items:
+        type: array
+        description: 数据数组
+        items:
+          type: object
+          properties:
+            author:
+              type: object
+              description: UP主
+            cover:
+              type: string
+              description: 封面URL
+            id_str:
+              type: string
+              description: 动态id
+            pub_time:
+              type: string
+              description: 发布时间
+            rid:
+              type: integer
+              description: 关联id
+            title:
+              type: string
+              description: 标题
+            type:
+              type: integer
+              description: 动态类型
+            visible:
+              type: boolean
+              description: 是否可见
+      offset:
+        type: string
+        description: 偏移量
+      update_baseline:
+        type: string
+        description: 更新基线
+      update_num:
+        type: integer
+        description: 本次获取获取到了多少条新动态

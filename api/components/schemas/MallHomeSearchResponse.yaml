@@ -1,0 +1,244 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        description: 返回数据
+        items:
+          type: object
+          properties:
+            item_id:
+              type: integer
+              description: 装扮对应的id
+            name:
+              type: string
+              description: 装扮/收藏集名称
+            group_id:
+              type: integer
+              description: '?分类的id'
+            group_name:
+              type: string
+              description: '?分类的名称'
+            part_id:
+              type: integer
+              description: 类型id
+            state:
+              type: string
+              description: 当前状态
+            properties:
+              type: object
+              properties:
+                image_cover:
+                  type: string
+                  description: 图片封面
+                sale_bp_forever_raw:
+                  type: string
+                  description: 价格
+                type:
+                  type: string
+                  description: 类型
+                desc:
+                  type: string
+                  description: 介绍文本
+                fan_desc:
+                  type: string
+                  description: 装扮名称
+                fan_item_ids:
+                  type: string
+                  description: 未知
+                fan_mid:
+                  type: string
+                  description: 该up的uid
+                fan_no_color:
+                  type: string
+                  description: 十六进制颜色
+                fan_recommend_desc:
+                  type: string
+                  description: 装备说明
+                fan_recommend_jump_type:
+                  type: string
+                  description: 跳转类型
+                fan_recommend_jump_value:
+                  type: string
+                  description: 跳转值
+                fan_share_image:
+                  type: string
+                  description: 分享时的背景图
+                gray_rule:
+                  type: string
+                  description: 未知
+                gray_rule_type:
+                  type: string
+                  description: 未知
+                image_cover_color:
+                  type: string
+                  description: '?图片封面纯色背景'
+                is_hide:
+                  type: string
+                  description: 是否隐藏
+                item_id_card:
+                  type: string
+                  description: 装扮背景卡片id
+                item_id_emoji:
+                  type: string
+                  description: 装扮表情包id
+                item_id_thumbup:
+                  type: string
+                  description: 装扮点赞动画id
+                open_platform_vip_discount:
+                  type: string
+                  description: 是否有大会员减免
+                owner_uid:
+                  type: string
+                  description: UID
+                rank_investor_show:
+                  type: string
+                  description: 未知
+                realname_auth:
+                  type: string
+                  description: '?是否需要实名认证'
+                sale_bp_pm_raw:
+                  type: string
+                  description: 该装扮基础套餐价格
+                sale_buy_num_limit:
+                  type: string
+                  description: 购买限额
+                sale_quantity:
+                  type: string
+                  description: 该装扮粉丝专属套餐限额
+                sale_quantity_limit:
+                  type: string
+                  description: 该装扮粉丝专属套餐是否限额
+                sale_region_ip_limit:
+                  type: string
+                  description: 该装扮限制购买地区
+                sale_reserve_switch:
+                  type: string
+                  description: 未知
+                sale_time_begin:
+                  type: string
+                  description: 开始售卖时的时间戳
+                sale_type:
+                  type: string
+                  description: 售卖类型
+                suit_card_type:
+                  type: string
+                book_amount:
+                  type: string
+                  description: 购买总数
+                dlc_act_id:
+                  type: string
+                  description: 收藏集活动 ID
+                dlc_act_status:
+                  type: string
+                  description: 收藏集活动状态
+                dlc_is_free:
+                  type: string
+                  description: 收藏集抽奖是否免费
+                dlc_lottery_id:
+                  type: string
+                  description: 收藏集抽奖 ID
+                dlc_lottery_sale_quantity:
+                  type: string
+                  description: 购买总数
+                dlc_lottery_type:
+                  type: string
+                  description: '?抽奖类型'
+                dlc_sale_end_time:
+                  type: string
+                  description: 收藏集抽奖结束时间
+                dlc_sale_mode:
+                  type: string
+                  description: 未知
+                dlc_sale_start_time:
+                  type: string
+                  description: 收藏集抽奖开始时间
+                dlc_surplus_stock:
+                  type: string
+                  description: 未知
+            current_activity:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: 当前永久价格活动类型
+                time_limit:
+                  type: boolean
+                  description: 是否存在时间限制
+                time_left:
+                  type: integer
+                  description: 剩余时间
+                tag:
+                  type: string
+                  description: 显示标签
+                price_bp_forever:
+                  type: integer
+                  description: 永久价格
+                price_bp_month:
+                  type: integer
+                  description: 一个月的价格
+                type_month:
+                  type: string
+                  description: 当前一个月的价格活动类型
+                tag_month:
+                  type: string
+                  description: 显示标签
+                time_limit_month:
+                  type: boolean
+                  description: 是否存在时间限制
+                time_left_month:
+                  type: integer
+                  description: 剩余时间
+            next_activity:
+              type: integer
+              description: '?下次活动的时间'
+            current_sources:
+              type: integer
+              description: '?活动开始时间'
+            finish_sources:
+              type: integer
+              description: '?活动结束时间'
+            sale_left_time:
+              type: integer
+              description: '?销售剩余时间'
+            sale_time_end:
+              type: integer
+              description: '?销售结束时间'
+            sale_surplus:
+              type: integer
+              description: 未知
+            sale_count_desc:
+              type: string
+              description: 销售量显示文本
+            total_count_desc:
+              type: string
+              description: 总量显示文本
+            tag:
+              type: string
+              description: 当前状态标签
+            jump_link:
+              type: string
+              description: 跳转链接
+            sales_mode:
+              type: integer
+              description: '?销售状态'
+      ps:
+        type: integer
+        description: 每页返回数据的最大值
+      pn:
+        type: integer
+        description: 当前页数
+      total:
+        type: integer
+        description: 查询到数据的总个数

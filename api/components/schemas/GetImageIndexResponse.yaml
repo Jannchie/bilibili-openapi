@@ -1,0 +1,58 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      path:
+        type: string
+        description: .index 文件路径
+      images:
+        type: array
+        items:
+          $ref: ./ImageIndexObject.yaml
+        description: 本话图片信息
+      last_modified:
+        type: string
+        description: 本话信息最后修改时间
+      host:
+        type: string
+        default: https://manga.hdslb.com
+      video:
+        type: object
+        properties:
+          svid:
+            type: string
+          filename:
+            type: string
+          route:
+            type: string
+          resource:
+            type: array
+            items:
+              type: object
+          raw_width:
+            type: string
+          raw_height:
+            type: string
+          raw_rotate:
+            type: string
+          img_urls:
+            type: array
+            items:
+              type: string
+          bin_url:
+            type: string
+          img_x_len:
+            type: integer
+          img_x_size:
+            type: integer
+          img_y_len:
+            type: integer
+          img_y_size:
+            type: integer

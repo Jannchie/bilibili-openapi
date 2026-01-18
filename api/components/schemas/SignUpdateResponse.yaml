@@ -1,0 +1,13 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: >-
+      返回值，0：成功，-101：账号未登录，-111：csrf
+      校验失败，40015：签名包含敏感词，40021：签名不能包含表情图片，40022：签名过长
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'

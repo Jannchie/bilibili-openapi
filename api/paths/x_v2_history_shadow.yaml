@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 历史记录
+  summary: 查询历史记录停用状态
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HistoryShadowResponse.yaml

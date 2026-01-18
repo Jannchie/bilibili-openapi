@@ -1,0 +1,38 @@
+get:
+  tags:
+    - 笔记列表
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询稿件公开笔记
+  parameters:
+    - in: query
+      name: oid
+      schema:
+        type: integer
+      required: true
+      description: 目标 ID
+    - in: query
+      name: oid_type
+      schema:
+        type: integer
+      required: true
+      description: 目标 ID 类型
+    - in: query
+      name: ps
+      schema:
+        type: integer
+      required: true
+      description: 每页项数
+    - in: query
+      name: pn
+      schema:
+        type: integer
+      required: true
+      description: 页码
+  responses:
+    '200':
+      description: 公开笔记列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArchivePublishNoteListResponse.yaml

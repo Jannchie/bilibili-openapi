@@ -1,0 +1,12 @@
+type: object
+required:
+  - urls
+properties:
+  urls:
+    type: array
+    description: 请求token的图片地址
+    example:
+      - >-
+        https://i0.hdslb.com/bfs/manga/11e404e602fa9f709bfb89d692ac56d2e17f974d.jpg
+    items:
+      type: string

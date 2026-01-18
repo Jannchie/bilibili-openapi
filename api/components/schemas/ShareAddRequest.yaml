@@ -1,0 +1,27 @@
+type: object
+properties:
+  aid:
+    type: integer
+    description: 稿件 aid
+  bvid:
+    type: string
+    description: 稿件 bvid
+  csrf:
+    type: string
+    description: CSRF Token (即 Cookie 中 bili_jct)
+  eab_x:
+    type: integer
+    default: 2
+    description: eab_x
+  ramval:
+    type: integer
+    default: 0
+    description: ramval
+  source:
+    type: string
+    default: web_normal
+    description: source
+  ga:
+    type: integer
+    default: 1
+    description: ga

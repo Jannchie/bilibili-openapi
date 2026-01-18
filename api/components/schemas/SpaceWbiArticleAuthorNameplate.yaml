@@ -1,0 +1,29 @@
+type: object
+properties:
+  nid:
+    type: integer
+    format: int64
+    description: 勋章 ID
+    example: 3
+  name:
+    type: string
+    description: 勋章名称
+    example: 白银殿堂
+  image:
+    type: string
+    format: url
+    description: 勋章图标
+    example: https://i2.hdslb.com/bfs/face/f6a31275029365ae5dc710006585ddcf1139bde1.png
+  image_small:
+    type: string
+    format: url
+    description: 勋章图标（小）
+    example: https://i2.hdslb.com/bfs/face/b09cdb4c119c467cf2d15db5263b4f539fa6e30b.png
+  level:
+    type: string
+    description: 勋章等级
+    example: 高级勋章
+  condition:
+    type: string
+    description: 获取条件
+    example: 单个自制视频总播放数>=10万

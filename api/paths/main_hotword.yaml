@@ -1,0 +1,13 @@
+get:
+  tags:
+    - 默认搜索&热搜
+  servers:
+    - url: https://s.search.bilibili.com
+  summary: 获取热搜列表（web 端）
+  responses:
+    '200':
+      description: 热搜列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HotwordWebResponse.yaml

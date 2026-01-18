@@ -1,0 +1,37 @@
+get:
+  tags:
+    - 番剧时间线
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: types
+      in: query
+      description: 类别
+      schema:
+        type: string
+        enum:
+          - '1'
+          - '3'
+          - '4'
+      required: true
+    - name: before
+      in: query
+      description: 开始于前几日
+      schema:
+        type: integer
+      required: true
+    - name: after
+      in: query
+      description: 结束于后几日
+      schema:
+        type: integer
+      required: true
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PgcWebTimelineResponse.yaml

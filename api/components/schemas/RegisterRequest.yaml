@@ -1,0 +1,32 @@
+type: object
+required:
+  - cid
+  - tel
+  - code
+  - nickName
+  - pwd
+  - plat
+properties:
+  cid:
+    type: integer
+    description: 国际冠字码
+  tel:
+    type: string
+    description: 手机号码
+  code:
+    type: string
+    description: 短信验证码
+  nickName:
+    type: string
+    description: 昵称
+  pwd:
+    type: string
+    description: 密码
+  plat:
+    type: integer
+    default: 0
+    description: 平台？
+  gourl:
+    type: string
+    default: https://www.bilibili.com/
+    description: 注册成功跳转地址

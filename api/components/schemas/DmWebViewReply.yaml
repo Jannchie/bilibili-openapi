@@ -1,0 +1,38 @@
+type: object
+properties:
+  state:
+    type: integer
+    description: 弹幕开放状态，0：开放弹幕，1：禁止弹幕
+    format: int32
+  text:
+    type: string
+    description: ？
+  textSide:
+    type: string
+    description: ？
+  dmSge:
+    $ref: ./DmSegConfig.yaml
+    description: 分段弹幕包信息？
+  flag:
+    $ref: ./DanmakuFlagConfig.yaml
+    description: ？
+  specialDms:
+    type: array
+    description: BAS（代码）弹幕专包url
+    items:
+      type: string
+  checkBox:
+    type: boolean
+    description: ？
+  count:
+    type: integer
+    description: 实际弹幕总数，具有1500-6000不等的上限
+    format: int64
+  commandDms:
+    type: array
+    description: 互动弹幕条目
+    items:
+      $ref: ./CommandDm.yaml
+  dmSetting:
+    $ref: ./DanmuWebPlayerConfig.yaml
+    description: 弹幕个人配置

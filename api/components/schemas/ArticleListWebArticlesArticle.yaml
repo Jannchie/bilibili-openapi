@@ -1,0 +1,82 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 专栏 cv id
+    example: 4815593
+  title:
+    type: string
+    description: 文章标题
+    example: 【B站API】api研究笔记ep1-视频基本信息
+  state:
+    type: integer
+    format: int64
+    description: state
+    example: 0
+  publish_time:
+    type: integer
+    format: int64
+    description: 发布时间 (秒时间戳)
+    example: 1582643908
+  words:
+    type: integer
+    format: int64
+    description: 文章字数
+    example: 2906
+  image_urls:
+    type: array
+    description: 文章封面
+    items:
+      type: string
+      format: url
+  category:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: id
+        example: 26
+      parent_id:
+        type: integer
+        format: int64
+        description: parent_id
+        example: 17
+      name:
+        type: string
+        description: name
+        example: 数码
+  categories:
+    type: array
+    description: 文章标签列表
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: id
+          example: 17
+        parent_id:
+          type: integer
+          format: int64
+          description: parent_id
+          example: 0
+        name:
+          type: string
+          description: name
+          example: 科技
+  summary:
+    type: string
+    description: 文章摘要
+    example: >-
+      各位小可爱们大家好啊，终于可以结束我长达一年的咕咕了.........在这蝠想联翩的日子里也闲的没事，除了上课就是睡觉，还不如搞点事情哪个猿不想拥有自己的B站爬虫呢（误），当然自制一个B站的综合信息台也是可以的，比如显示粉丝数
+      获赞数（掉粉警告）于是就萌生了这个研究B站api的想法，以后也会继续不定期分享我的主体思路是利用Chrome中的F12工具进行分析，再用curl进行验证先从视频下手吧qwq我们以av2075941为例network检测下，有各种图片、视频、网页、js。。。。。的传输记录
+  stats:
+    $ref: ./ArticleListWebArticlesArticleStats.yaml
+  like_state:
+    type: integer
+    format: int64
+    description: 是否点赞
+    example: 0

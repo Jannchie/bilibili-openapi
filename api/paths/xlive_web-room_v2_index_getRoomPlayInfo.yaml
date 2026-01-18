@@ -1,0 +1,73 @@
+get:
+  tags:
+    - 直播间
+  summary: 获取直播间信息
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: room_id
+      in: query
+      description: 直播间 ID
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: protocol
+      in: query
+      description: 直播协议
+      schema:
+        type: string
+      required: true
+    - name: format
+      in: query
+      description: 格式
+      schema:
+        type: string
+      required: true
+    - name: codec
+      in: query
+      description: 编码格式
+      schema:
+        type: string
+      required: true
+    - name: qn
+      in: query
+      description: 清晰度编码
+      schema:
+        type: integer
+        format: int32
+        default: 150
+    - name: platform
+      in: query
+      description: platform
+      schema:
+        type: string
+        default: web
+    - name: ptype
+      in: query
+      description: ptype
+      schema:
+        type: integer
+        format: int32
+        default: 8
+    - name: dolby
+      in: query
+      description: dolby
+      schema:
+        type: integer
+        format: int32
+        default: 5
+    - name: panorama
+      in: query
+      description: panorama
+      schema:
+        type: integer
+        format: int32
+        default: 1
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/RoomPlayInfoResponse.yaml

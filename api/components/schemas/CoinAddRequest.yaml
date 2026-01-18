@@ -1,0 +1,24 @@
+type: object
+required:
+  - multiply
+  - csrf
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  bvid:
+    type: string
+    description: 稿件 bvid
+  multiply:
+    type: integer
+    description: 投币数量
+    maximum: 2
+  select_like:
+    type: integer
+    description: 是否附加点赞
+    enum:
+      - 0
+      - 1
+  csrf:
+    type: string
+    description: CSRF Token（位于 Cookie）

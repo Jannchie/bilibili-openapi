@@ -1,0 +1,14 @@
+type: object
+required:
+  - oid
+  - csrf
+properties:
+  oid:
+    type: integer
+    description: 目标稿件 avid
+  note_id:
+    type: integer
+    description: 笔记 ID
+  csrf:
+    type: string
+    description: CSRF Token（位于 cookie）

@@ -1,0 +1,8 @@
+type: object
+properties:
+  aid:
+    type: integer
+    description: 稿件 avid
+  bvid:
+    type: string
+    description: 稿件 bvid

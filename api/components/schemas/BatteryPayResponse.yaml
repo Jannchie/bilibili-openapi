@@ -1,0 +1,35 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功（并不代表充电成功），-101：账号未登录，-111：csrf校验失败，-400：请求错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 本用户mid
+      up_mid:
+        type: integer
+        description: 目标用户mid
+      order_no:
+        type: string
+        description: 留言token
+      bp_num:
+        type: integer
+        description: 充电贝壳数
+      exp:
+        type: integer
+        description: 获得经验数
+      status:
+        type: integer
+        description: 返回结果
+      msg:
+        type: string
+        description: 错误信息

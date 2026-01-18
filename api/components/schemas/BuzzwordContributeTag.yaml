@@ -1,0 +1,8 @@
+type: object
+properties:
+  title:
+    type: string
+    description: 按钮文案
+  link:
+    type: string
+    description: 跳转 uri， 跳转至必剪或客户端创作入口

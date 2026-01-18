@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 视频推荐
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取单视频推荐列表 (web 端)
+  parameters:
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+  responses:
+    '200':
+      description: 推荐视频列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArchiveRelatedResponse.yaml

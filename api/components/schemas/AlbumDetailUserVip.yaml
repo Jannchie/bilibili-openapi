@@ -1,0 +1,42 @@
+type: object
+properties:
+  vipType:
+    type: integer
+    format: int64
+    description: 会员类型
+    example: 2
+  vipDueDate:
+    type: integer
+    format: int64
+    description: 会员到期时间 (毫秒时间戳)
+    example: 1613750400000
+  dueRemark:
+    type: string
+    description: dueRemark
+    example: ''
+  accessStatus:
+    type: integer
+    format: int64
+    description: accessStatus
+    example: 0
+  vipStatus:
+    type: integer
+    format: int64
+    description: 会员开通状态
+    example: 1
+  vipStatusWarn:
+    type: string
+    description: vipStatusWarn
+    example: ''
+  themeType:
+    type: integer
+    format: int64
+    description: themeType
+    example: 0
+  label:
+    type: object
+    properties:
+      path:
+        type: string
+        description: path
+        example: ''

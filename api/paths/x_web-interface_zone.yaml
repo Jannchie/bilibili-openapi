@@ -1,0 +1,12 @@
+get:
+  tags:
+    - 地理位置
+  servers:
+    - url: https://api.bilibili.com
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ZoneResponse.yaml

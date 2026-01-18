@@ -1,0 +1,42 @@
+get:
+  tags:
+    - 弹幕元数据
+  summary: 获取弹幕个人配置与互动弹幕及BAS（代码）弹幕专包（web端）
+  description: |
+    2020-09-25 B站更新了互动弹幕功能，包括UP主头像弹幕、关联视频弹幕、视频内嵌引导关注按钮三大功能。
+
+    详情见：
+
+    - [【客户端更新】6.10版本更新！UP主支持发布关联视频弹幕]( https://www.bilibili.com/read/cv7728299 )
+    - [引导关注卡片](https://www.bilibili.com/blackboard/activity-c8a0iDRQy.html )
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: type
+      in: query
+      description: 弹幕类
+      schema:
+        type: integer
+        enum:
+          - 1
+      required: true
+    - name: oid
+      in: query
+      description: 视频cid
+      schema:
+        type: integer
+      required: true
+    - name: pid
+      in: query
+      description: 稿件avid
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/protobuf:
+          schema:
+            $ref: ../components/schemas/DmWebViewReply.yaml

@@ -1,0 +1,34 @@
+get:
+  tags:
+    - 笔记列表
+  servers:
+    - url: https://api.bilibili.com
+  summary: 查询用户私有笔记
+  security:
+    - sessionData: []
+  parameters:
+    - in: query
+      name: ps
+      schema:
+        type: integer
+      required: true
+      description: 每页项数
+    - in: query
+      name: pn
+      schema:
+        type: integer
+      required: true
+      description: 页码
+    - in: query
+      name: csrf
+      schema:
+        type: string
+      required: false
+      description: CSRF Token（位于 cookie）
+  responses:
+    '200':
+      description: 用户私有笔记列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/UserNoteListResponse.yaml

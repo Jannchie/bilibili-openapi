@@ -1,0 +1,17 @@
+type: object
+properties:
+  mid:
+    type: integer
+    description: 当前用户 mid
+  buvid:
+    type: string
+    description: BUVID (APP) 或 buvid3 (Web)
+  app_key:
+    type: string
+    description: APP 密钥
+  url:
+    type: string
+    description: 日志 URL
+  task_type:
+    type: integer
+    description: 任务类型

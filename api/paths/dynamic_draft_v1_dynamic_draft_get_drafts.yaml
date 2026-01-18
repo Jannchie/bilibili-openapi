@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 动态基本信息
+  summary: 获取草稿列表
+  servers:
+    - url: https://api.vc.bilibili.com
+  security:
+    - sessionData: []
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GetDraftResponse.yaml

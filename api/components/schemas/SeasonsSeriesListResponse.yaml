@@ -1,0 +1,120 @@
+allOf:
+  - $ref: ./SeasonsSeriesResponse.yaml
+properties:
+  data:
+    type: object
+    properties:
+      items_lists:
+        type: object
+        properties:
+          seasons_list:
+            type: array
+            items:
+              type: object
+              properties:
+                archives:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      aid:
+                        type: integer
+                        description: 稿件 avid
+                      bvid:
+                        type: string
+                        description: 稿件 bvid
+                      ctime:
+                        type: integer
+                        description: 创建时间
+                      duration:
+                        type: integer
+                        description: 视频时长
+                      enable_vt:
+                        type: boolean
+                        default: false
+                      interactive_video:
+                        type: boolean
+                        description: 是否是互动视频
+                      pic:
+                        type: string
+                        description: 封面 URL
+                      playback_position:
+                        type: number
+                        format: float
+                        description: 播放进度百分比
+                      pubdate:
+                        type: integer
+                        description: 发布日期
+                      stat:
+                        type: object
+                        properties:
+                          view:
+                            type: integer
+                            description: 稿件播放量
+                          vt:
+                            type: integer
+                            default: 0
+                      state:
+                        type: integer
+                        default: 0
+                      title:
+                        type: string
+                        description: 稿件标题
+                      ugc_pay:
+                        type: integer
+                        description: UGC 付费?
+                        default: 0
+                      vt_display:
+                        type: string
+                        description: vt_display
+                  description: 合集视频列表
+                meta:
+                  type: object
+                  properties:
+                    category:
+                      type: integer
+                    cover:
+                      type: string
+                      description: 合集封面 URL
+                    creator:
+                      type: string
+                      description: 创建者
+                    ctime:
+                      type: integer
+                      description: 创建时间
+                    description:
+                      type: string
+                      description: 合集描述
+                    keywords:
+                      type: array
+                      items:
+                        type: string
+                      description: 合集关键词列表
+                    last_update_ts:
+                      type: integer
+                      description: 最近更新时间
+                    mid:
+                      type: integer
+                      description: UP 主 ID
+                    mtime:
+                      type: integer
+                      description: 修改时间
+                    name:
+                      type: string
+                      description: 合集标题
+                    raw_keywords:
+                      type: string
+                      description: 原始合集关键词
+                    season_id:
+                      type: integer
+                      description: 合集 ID
+                    state:
+                      type: integer
+                    total:
+                      type: integer
+                      description: 合集视频数量
+                recent_aids:
+                  type: array
+                  items:
+                    type: integer
+                  description: 合集视频 aid 列表

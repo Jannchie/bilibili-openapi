@@ -1,0 +1,28 @@
+get:
+  tags:
+    - 登录记录
+  summary: 查询登录记录
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: mid
+      in: query
+      description: 用户 mid
+      schema:
+        type: integer
+        format: int32
+      required: true
+    - name: buvid
+      in: query
+      description: 设备虚拟 ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/LoginNoticeResponse.yaml

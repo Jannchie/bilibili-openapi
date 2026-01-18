@@ -1,0 +1,38 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      login:
+        type: boolean
+        description: 每日登录
+      watch:
+        type: boolean
+        description: 每日观看
+      coins:
+        type: integer
+        description: 每日投币所奖励的经验
+      share:
+        type: boolean
+        description: 每日分享
+      email:
+        type: boolean
+        description: 绑定邮箱
+      tel:
+        type: boolean
+        description: 绑定手机号
+      safe_question:
+        type: boolean
+        description: 设置密保问题
+      identify_card:
+        type: boolean
+        description: 实名认证

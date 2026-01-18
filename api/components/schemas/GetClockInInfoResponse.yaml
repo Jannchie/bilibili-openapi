@@ -1,0 +1,49 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功
+  msg:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      day_count:
+        type: integer
+        description: 连续签到天数
+      status:
+        type: integer
+        description: 今日是否已签到
+      credit_icon:
+        type: string
+      sign_before_icon:
+        type: string
+      sign_today_icon:
+        type: string
+      breathe_icon:
+        type: string
+      new_credit_x_icon:
+        type: string
+      coupon_pic:
+        type: string
+      points:
+        type: array
+        description: 一次签到周期中每次签到可获得点数
+        items:
+          type: integer
+      point_infos:
+        type: array
+        items:
+          type: object
+          properties:
+            point:
+              type: integer
+              description: 签到可获取积分
+            origin_point:
+              type: integer
+            is_activity:
+              type: boolean
+            title:
+              type: string
+              description: 签到奖励描述

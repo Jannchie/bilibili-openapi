@@ -1,0 +1,24 @@
+post:
+  tags:
+    - 积分商城
+  servers:
+    - url: https://manga.bilibili.com
+  summary: 兑换物品
+  security:
+    - sessionData: []
+  requestBody:
+    required: true
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: ../components/schemas/ExchangeRequest.yaml
+      application/json:
+        schema:
+          $ref: ../components/schemas/ExchangeRequest.yaml
+  responses:
+    '200':
+      description: 兑换结果
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ExchangeResponse.yaml

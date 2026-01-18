@@ -1,0 +1,35 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          type: object
+          properties:
+            mid:
+              type: string
+              description: 用户 mid
+            attribute:
+              type: integer
+              description: 关注属性
+            uname:
+              type: string
+              description: 用户昵称
+            face:
+              type: string
+              description: 用户头像 url
+        description: 明细列表
+  ts:
+    type: integer
+    description: 当前时间戳
+  request_id:
+    type: string
+    description: 请求 ID

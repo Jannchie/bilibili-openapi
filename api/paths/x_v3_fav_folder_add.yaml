@@ -1,0 +1,42 @@
+post:
+  tags:
+    - 收藏夹
+  summary: 新建收藏夹
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          required:
+            - title
+            - csrf
+          type: object
+          properties:
+            title:
+              type: string
+              description: 收藏夹标题
+            intro:
+              type: string
+              description: 收藏夹简介
+            privacy:
+              type: integer
+              description: 是否公开
+              enum:
+                - 0
+                - 1
+            cover:
+              type: string
+              description: 封面图url
+            csrf:
+              type: string
+              description: CSRF Token（位于cookie）
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/FavFolderAddResponse.yaml

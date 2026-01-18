@@ -1,0 +1,38 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      mid:
+        type: integer
+        description: 我的 mid
+      uname:
+        type: string
+        description: 我的昵称
+      userid:
+        type: string
+        description: 我的用户名
+      sign:
+        type: string
+        description: 我的签名
+      birthday:
+        type: string
+        description: 我的生日
+      sex:
+        type: string
+        description: 我的性别
+      nick_free:
+        type: boolean
+        description: 是否未设置昵称
+      rank:
+        type: string
+        description: 我的会员等级

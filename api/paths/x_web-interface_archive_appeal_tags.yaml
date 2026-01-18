@@ -1,0 +1,13 @@
+get:
+  tags:
+    - 稿件投诉
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取投诉类型
+  responses:
+    '200':
+      description: 投诉类型列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AppealTagsResponse.yaml

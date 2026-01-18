@@ -1,0 +1,125 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      business_card:
+        type: object
+      floor_info:
+        type: object
+      item:
+        type: array
+        items:
+          type: object
+          properties:
+            av_feature:
+              type: object
+            business_info:
+              type: object
+            bvid:
+              type: string
+              description: 视频 bvid
+            cid:
+              type: integer
+              description: 稿件 cid
+            dislike_switch:
+              type: integer
+              description: 显示不感兴趣开关?
+            dislike_switch_pc:
+              type: integer
+              description: 显示不感兴趣开关 (PC)?
+            duraion:
+              type: integer
+              description: 视频时长
+            enable_vt:
+              type: integer
+            goto:
+              type: string
+              description: 目标类型
+            id:
+              type: integer
+              description: 视频 aid / 直播间 ID
+            is_followed:
+              type: integer
+              description: 已关注
+            is_stock:
+              type: integer
+            ogv_info:
+              type: object
+            owner:
+              type: object
+              properties:
+                mid:
+                  type: integer
+                name:
+                  type: string
+                face:
+                  type: string
+            pic:
+              type: string
+              description: 封面
+            pic_4_3:
+              type: string
+              description: 封面 (4:3)
+            pos:
+              type: integer
+            pubdate:
+              type: integer
+              description: 发布时间
+            rcmd_reason:
+              type: object
+              properties:
+                reason_type:
+                  type: integer
+                  description: 原因类型
+                content:
+                  type: string
+                  description: 原因描述
+            room_info:
+              type: object
+            show_info:
+              type: integer
+              description: 展示信息
+            stat:
+              type: object
+            title:
+              type: string
+              description: 标题
+            track_id:
+              type: string
+              description: 跟踪标识?
+            uri:
+              type: string
+              description: 目标页 URI
+            vt_display:
+              type: string
+        description: 推荐列表
+      mid:
+        type: integer
+        description: 用户 mid
+      preload_expose_pct:
+        type: number
+        format: float
+        default: 0.5
+        description: 用于预加载?
+      preload_floor_expose_pct:
+        type: number
+        format: float
+        default: 0.5
+        description: 用于预加载?
+      side_bar_column:
+        type: array
+        items:
+          type: object
+        description: 边栏列表?
+      user_feature:
+        type: object

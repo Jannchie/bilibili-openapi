@@ -1,0 +1,29 @@
+get:
+  tags:
+    - 装扮/收藏集
+  summary: 装扮/收藏集搜索 API
+  servers:
+    - url: https://api.bilibili.com
+  parameters:
+    - name: keyword
+      in: query
+      description: 关键词
+      schema:
+        type: string
+    - name: ps
+      in: query
+      description: 每页返回数据的最大值
+      schema:
+        type: integer
+    - name: pn
+      in: query
+      description: 当前页数
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MallHomeSearchResponse.yaml

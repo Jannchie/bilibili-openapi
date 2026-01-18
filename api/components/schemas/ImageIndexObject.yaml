@@ -1,0 +1,15 @@
+type: object
+properties:
+  path:
+    type: string
+    description: 图片的路径
+  x:
+    type: integer
+    description: 图片宽度
+  'y':
+    type: integer
+    description: 图片高度
+  video_path:
+    type: string
+  video_size:
+    type: string

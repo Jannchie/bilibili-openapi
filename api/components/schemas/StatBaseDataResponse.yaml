@@ -1,0 +1,165 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息
+    example: '0'
+  ttl:
+    type: integer
+    description: 作用尚不明确
+    example: 1
+  data:
+    type: object
+    properties:
+      period:
+        type: object
+        description: 提示信息
+        properties:
+          module_one:
+            type: string
+            description: 各维度每日 12:00 a.m. 更新前一日数据
+            example: 各维度每日12:00 a.m. 更新前一日数据
+          module_two:
+            type: string
+            description: 每日 12:00 a.m. 更新前一日数据
+            example: 每日12:00 a.m. 更新前一日数据
+          module_three:
+            type: string
+            description: 每周二 12:00 a.m. 更新前一周数据
+            example: 每周二12:00 a.m. 更新前一周数据
+          module_four:
+            type: string
+            description: 各维度每日 12:00 a.m. 更新前一日数据
+            example: 各维度每日12:00 a.m. 更新前一日数据
+      viewer_area:
+        type: object
+        description: 播放地区情况
+        properties:
+          fan:
+            type: object
+            description: 粉丝播放地区情况
+            additionalProperties:
+              type: integer
+              description: 该地区的粉丝播放量，字段名为行政区名
+            example:
+              上海: 7
+          not_fan:
+            type: object
+            description: 路人播放地区情况
+            additionalProperties:
+              type: integer
+              description: 该地区的路人播放量，字段名为行政区名
+            example:
+              上海: 1
+      viewer_base:
+        type: object
+        description: 播放数据情况
+        properties:
+          fan:
+            type: object
+            description: 粉丝播放数据情况
+            properties:
+              male:
+                type: integer
+                description: 男性粉丝播放数
+                example: 153
+              female:
+                type: integer
+                description: 女性粉丝播放数
+                example: 24
+              age_one:
+                type: integer
+                description: 0-16 岁粉丝播放数
+                example: 91
+              age_two:
+                type: integer
+                description: 16-25 岁粉丝播放数
+                example: 174
+              age_three:
+                type: integer
+                description: 25-40 岁粉丝播放数
+                example: 77
+              age_four:
+                type: integer
+                description: 40+岁粉丝播放数
+                example: 53
+              plat_pc:
+                type: integer
+                description: pc 网页端粉丝播放数
+                example: 12072
+              plat_h5:
+                type: integer
+                description: 移动 h5 端粉丝播放数
+                example: 186
+              plat_out:
+                type: integer
+                description: 站外端粉丝播放数
+                example: 0
+              plat_ios:
+                type: integer
+                description: ios 端粉丝播放数
+                example: 23453
+              plat_android:
+                type: integer
+                description: 安卓端粉丝播放数
+                example: 87387
+              plat_other_app:
+                type: integer
+                description: 其他粉丝播放数
+                example: 1631
+          not_fan:
+            type: object
+            description: 路人播放数据情况
+            properties:
+              male:
+                type: integer
+                description: 男性路人播放数
+                example: 462
+              female:
+                type: integer
+                description: 女性路人播放数
+                example: 72
+              age_one:
+                type: integer
+                description: 0-16 岁路人播放数
+                example: 425
+              age_two:
+                type: integer
+                description: 16-25 岁路人播放数
+                example: 445
+              age_three:
+                type: integer
+                description: 25-40 岁路人播放数
+                example: 360
+              age_four:
+                type: integer
+                description: 40+岁路人播放数
+                example: 188
+              plat_pc:
+                type: integer
+                description: pc 网页端路人播放数
+                example: 64760
+              plat_h5:
+                type: integer
+                description: 移动 h5 端路人播放数
+                example: 660
+              plat_out:
+                type: integer
+                description: 站外端路人播放数
+                example: 1
+              plat_ios:
+                type: integer
+                description: ios 端路人播放数
+                example: 111259
+              plat_android:
+                type: integer
+                description: 安卓端路人播放数
+                example: 467767
+              plat_other_app:
+                type: integer
+                description: 其他路人播放数
+                example: 3408

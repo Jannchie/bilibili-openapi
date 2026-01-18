@@ -1,0 +1,15 @@
+type: object
+properties:
+  uid:
+    type: integer
+    format: int64
+    description: 作者 mid
+    example: 1360010
+  head_url:
+    type: string
+    description: 头像 URL
+    example: https://i2.hdslb.com/bfs/face/865c7b03575a69822e503ef291ac26199c6a540a.jpg
+  name:
+    type: string
+    description: 昵称
+    example: 楚楚子

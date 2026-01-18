@@ -1,0 +1,13 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 名词 id
+  name:
+    type: string
+    description: 名词
+  name_pinyin:
+    type: object
+  picture:
+    type: string
+    description: 空

@@ -1,0 +1,21 @@
+get:
+  tags:
+    - 直播间
+  summary: 获取主播信息
+  servers:
+    - url: https://api.live.bilibili.com
+  parameters:
+    - name: uid
+      in: query
+      description: 目标用户 mid
+      schema:
+        type: integer
+        format: int32
+      required: true
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MasterInfoResponse.yaml

@@ -1,0 +1,27 @@
+get:
+  tags:
+    - 专栏
+  servers:
+    - url: https://api.bilibili.com
+  summary: 获取文集基本信息
+  parameters:
+    - in: cookie
+      name: SESSDATA
+      required: true
+      schema:
+        type: string
+      description: SESSDATA Cookie
+    - name: id
+      in: query
+      description: 文集 rl id
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ArticleListWebArticlesResponse.yaml

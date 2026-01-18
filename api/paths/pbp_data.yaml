@@ -1,0 +1,32 @@
+get:
+  tags:
+    - 高能进度条
+  servers:
+    - url: https://bvc.bilivideo.com
+  summary: 获取弹幕趋势顶点列表
+  parameters:
+    - in: query
+      name: cid
+      schema:
+        type: integer
+      required: true
+      description: 视频 cid
+    - in: query
+      name: aid
+      schema:
+        type: integer
+      required: false
+      description: 稿件 avid
+    - in: query
+      name: bvid
+      schema:
+        type: string
+      required: false
+      description: 稿件 bvid
+  responses:
+    '200':
+      description: 弹幕趋势顶点列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/PbpDataResponse.yaml

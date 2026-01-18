@@ -1,0 +1,29 @@
+get:
+  tags:
+    - 主题色
+  summary: 获取主题色基本信息 2
+  servers:
+    - url: https://api.bilibili.com
+  security:
+    - sessionData: []
+  parameters:
+    - name: mobi_app
+      in: query
+      description: 平台标识
+      schema:
+        type: string
+        example: android
+    - name: build
+      in: query
+      description: 版本
+      schema:
+        type: integer
+        format: int32
+        example: 6082000
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/GarbSkinColorListResponse.yaml

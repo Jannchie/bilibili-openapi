@@ -1,0 +1,22 @@
+get:
+  tags:
+    - 默认搜索&热搜
+  servers:
+    - url: https://app.bilibili.com
+  summary: 获取热搜列表（手机端）
+  parameters:
+    - in: query
+      name: limit
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+      required: false
+      description: 热搜数量
+  responses:
+    '200':
+      description: 热搜列表
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HotwordAppResponse.yaml

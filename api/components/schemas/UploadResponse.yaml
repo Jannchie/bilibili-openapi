@@ -1,0 +1,25 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+    example: 0
+  message:
+    type: string
+    description: 错误信息, 成功时为ok
+    example: ok
+  ttl:
+    type: integer
+    example: 1
+  data:
+    type: object
+    properties:
+      key:
+        type: string
+        description: 文件名
+        example: 1a0c88d240852155a111e4cc6893be39.xcf
+      url:
+        type: string
+        description: 文件URL, 注意转义
+        example: >-
+          https://jssz-boss.hdslb.com/customer-video-upload/1a0c88d240852155a111e4cc6893be39.xcf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=f9TxwsagojnE1DWM%2F20240803%2Fjssz%2Fs3%2Faws4_request&X-Amz-Date=20240803T115447Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=cef962c8e503c6ff564fd485bdef1079df1b4a7e38f4fbd9c21a5667207f406e

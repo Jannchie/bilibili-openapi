@@ -1,0 +1,23 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值，0：成功，-101：账号未登录，-111：csrf校验失败，-400：请求错误，-500：服务器错误
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    description: '1'
+  data:
+    type: object
+    properties:
+      qr_code_url:
+        type: string
+        description: 支付二维码生成内容
+      qr_token:
+        type: string
+        description: 扫码秘钥
+      exp:
+        type: integer
+        description: 获得经验数

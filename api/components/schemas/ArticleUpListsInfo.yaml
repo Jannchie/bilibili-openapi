@@ -1,0 +1,73 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    description: 文集 ID
+    example: 77163
+  mid:
+    type: integer
+    format: int64
+    description: 作者 uid
+    example: 2859372
+  name:
+    type: string
+    description: 文集名称
+    example: 碟报
+  image_url:
+    type: string
+    format: url
+    description: 封面
+    example: >-
+      https://i0.hdslb.com/bfs/article/96d2b3d2a72e6497a011c885ab9245c51507ce18.png
+  update_time:
+    type: integer
+    format: int64
+    description: 最后更新时间戳 (单位：秒)
+    example: 1664854854
+  ctime:
+    type: integer
+    format: int64
+    description: 创建时间戳 (单位：秒)
+    example: 1554785697
+  publish_time:
+    type: integer
+    format: int64
+    description: publish_time (单位：秒)
+    example: 1664863200
+  summary:
+    type: string
+    description: summary
+    example: ''
+  words:
+    type: integer
+    format: int64
+    description: 总字数
+    example: 71532
+  read:
+    type: integer
+    format: int64
+    description: 阅读量
+    example: 478726
+  articles_count:
+    type: integer
+    format: int64
+    description: 包含文章数
+    example: 113
+  state:
+    type: integer
+    format: int64
+    description: state
+    example: 1
+  reason:
+    type: string
+    description: reason
+    example: ''
+  apply_time:
+    type: string
+    description: apply_time
+    example: ''
+  check_time:
+    type: string
+    description: check_time
+    example: ''

@@ -1,0 +1,128 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: 返回值
+  message:
+    type: string
+    description: 错误信息
+  ttl:
+    type: integer
+    default: 1
+  data:
+    type: object
+    properties:
+      list:
+        type: array
+        items:
+          type: object
+          properties:
+            cvid:
+              type: integer
+              description: 公开笔记对应的专栏 cvid
+            title:
+              type: string
+              description: 笔记标题
+            summary:
+              type: string
+              description: 笔记预览
+            pubtime:
+              type: string
+              description: 发布时间
+            web_url:
+              type: string
+              description: 笔记 h5 页 URL
+            message:
+              type: string
+              description: 更新信息
+            author:
+              type: object
+              properties:
+                mid:
+                  type: integer
+                  description: 用户 mid
+                name:
+                  type: string
+                  description: 昵称
+                face:
+                  type: string
+                  description: 头像 URL
+                level:
+                  type: integer
+                  description: 用户等级
+                vip_info:
+                  type: object
+                  properties:
+                    type:
+                      type: integer
+                    status:
+                      type: integer
+                    due_date:
+                      type: integer
+                    vip_pay_type:
+                      type: integer
+                    theme_type:
+                      type: integer
+                    label:
+                      type: object
+                      properties:
+                        path:
+                          type: string
+                        text:
+                          type: string
+                        label_theme:
+                          type: string
+                        text_color:
+                          type: string
+                        bg_style:
+                          type: integer
+                        bg_color:
+                          type: string
+                        border_color:
+                          type: string
+                    avatar_subscript:
+                      type: integer
+                    nickname_color:
+                      type: string
+                    role:
+                      type: integer
+                    avatar_subscript_url:
+                      type: string
+                pendant:
+                  type: object
+                  properties:
+                    pid:
+                      type: integer
+                    name:
+                      type: string
+                    image:
+                      type: string
+                    expire:
+                      type: integer
+                    image_enhance:
+                      type: string
+                    image_enhance_frame:
+                      type: string
+            likes:
+              type: integer
+              description: 点赞数
+            has_like:
+              type: boolean
+              description: 是否点赞
+        description: 公开笔记列表
+      page:
+        type: object
+        properties:
+          total:
+            type: integer
+            description: 笔记总数
+          size:
+            type: integer
+            description: 每页项数
+          num:
+            type: integer
+            description: 页码
+      show_public_note:
+        type: boolean
+      message:
+        type: string
